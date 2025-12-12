@@ -1,0 +1,12 @@
+<svg viewBox="0 0 40 50" xmlns="http://www.w3.org/2000/svg">
+    <!-- Dictionary/Lexicon book -->
+    <rect x="6" y="4" width="28" height="42" rx="2" fill="#f8f4e8" stroke="#c9a227" stroke-width="2"/>
+    <!-- Book binding -->
+    <rect x="6" y="4" width="4" height="42" fill="#b8941f" stroke="#c9a227" stroke-width="1"/>
+    <!-- Dictionary entries with letters -->
+    <text x="12" y="18" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#c9a227">A</text>
+    <line x1="12" y1="20" x2="30" y2="20" stroke="#c9a227" stroke-width="1"/>
+    <text x="12" y="28" font-family="Arial, sans-serif" font-size="8" fill="#666">Begriff 1</text>
+    <text x="12" y="36" font-family="Arial, sans-serif" font-size="8" fill="#666">Begriff 2</text>
+    <text x="12" y="44" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#c9a227">B</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 50 60" xmlns="http://www.w3.org/2000/svg">
+    <!-- Two connected windows (Fensterkopplungen) -->
+    <rect x="3" y="8" width="20" height="44" rx="2" fill="#ecf0f1" stroke="#34495e" stroke-width="2"/>
+    <rect x="27" y="8" width="20" height="44" rx="2" fill="#ecf0f1" stroke="#34495e" stroke-width="2"/>
+    <!-- Connection element -->
+    <rect x="21" y="20" width="8" height="20" rx="1" fill="#2c3e50"/>
+    <line x1="23" y1="20" x2="27" y2="20" stroke="#34495e" stroke-width="1"/>
+    <line x1="23" y1="40" x2="27" y2="40" stroke="#34495e" stroke-width="1"/>
+    <!-- Window panes -->
+    <rect x="6" y="15" width="14" height="30" fill="#bdc3c7" stroke="#34495e" stroke-width="1"/>
+    <rect x="30" y="15" width="14" height="30" fill="#bdc3c7" stroke="#34495e" stroke-width="1"/>
+</svg>

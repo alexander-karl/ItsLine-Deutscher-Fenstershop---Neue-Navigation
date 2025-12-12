@@ -1,0 +1,9 @@
+<svg viewBox="0 0 50 60" xmlns="http://www.w3.org/2000/svg">
+    <!-- Window frame -->
+    <rect x="8" y="8" width="34" height="44" rx="2" fill="#ecf0f1" stroke="#34495e" stroke-width="2"/>
+    <!-- Window pane -->
+    <rect x="12" y="15" width="26" height="30" fill="#bdc3c7" stroke="#34495e" stroke-width="1"/>
+    <!-- Window sill (Fensterbank) -->
+    <rect x="5" y="50" width="40" height="8" rx="1" fill="#95a5a6" stroke="#34495e" stroke-width="1"/>
+    <polygon points="5,50 45,50 42,58 8,58" fill="#7f8c8d" stroke="#34495e" stroke-width="1"/>
+</svg>

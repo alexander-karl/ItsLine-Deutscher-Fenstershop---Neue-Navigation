@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutscher Fenstershop - Mega Menu Demo</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <!-- Bootstrap 4 CSS (for testing compatibility) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- 
+    =====================================================
+    DFS MEGA MENU - Gekapseltes CSS für Bootstrap 4
+    =====================================================
+    Alle Klassen haben das Prefix "dfs-" um Konflikte 
+    mit Bootstrap-4- und bestehenden Klassen im Shop
+    zu vermeiden.
+    
+    Styleguide-Farben:
+    - Primär Orange: #F47C26
+    - Primär Dunkelblau: #003A66
+    - Akzent Himmelblau: #3FA9F5
+    
+    Typografie:
+    - Headlines: Helvetica
+    - Body/Buttons: Arial
+    =====================================================
+    -->
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+    <!-- DFS Mega Menu Wrapper -->
+    <div class="dfs-megamenu-wrapper">
+        <!-- Header -->
+        <header class="dfs-header">
+            <div class="section" style="display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 16px;">
+                <!-- Logo -->
+                <a href="#" class="dfs-header__logo dfs-header__logo--main">
+                    <img src="../assets/fenster-online-kaufen-logo.png" alt="Deutscher Fenstershop">
+                </a>
+                
+                <!-- Center - Contact Info -->
+                <div class="dfs-header__center">
+                    <a href="mailto:info@deutscher-fenstershop.de" class="dfs-header__contact-item dfs-header__contact-item--email">
+                        <div class="dfs-header__contact-icon">
+                            <img src="../assets/icon-email.svg" alt="Email">
+                        </div>
+                        <span class="dfs-header__contact-text">Anfrage stellen</span>
+                    </a>
+                    
+                    <a href="tel:+4972213022333" class="dfs-header__contact-item dfs-header__contact-item--phone">
+                        <div class="dfs-header__contact-icon">
+                            <img src="../assets/icon-phone.svg" alt="Phone">
+                        </div>
+                        <div>
+                            <div class="dfs-header__contact-text">+49 7221 / 3022-333</div>
+                            <div class="dfs-header__contact-subtext">Mo – Fr. 8:00 – 17:00</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Right - CTAs and Icons -->
+                <div class="dfs-header__right">
+                    <!-- Mobile Menu Toggle -->
+                    <button class="dfs-header__menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <a href="#" class="dfs-header__cta dfs-header__cta--fenster"><span>Fensterkonfigurator</span></a>
+                    <a href="#" class="dfs-header__cta dfs-header__cta--tueren"><span>Türenkonfigurator</span></a>
+                    
+                    <a href="#" class="dfs-header__icon-btn dfs-header__icon-btn--search" aria-label="Suche">
+                        <img src="../assets/icon-search.svg" alt="Search">
+                    </a>
+                    
+                    <a href="#" class="dfs-header__icon-btn dfs-header__icon-btn--account" aria-label="Mein Konto">
+                        <img src="../assets/icon-account.svg" alt="Account">
+                    </a>
+                    
+                    <a href="#" class="dfs-header__icon-btn dfs-header__icon-btn--cart" aria-label="Warenkorb">
+                        <img src="../assets/icon-cart.svg" alt="Cart">
+                        <span class="dfs-header__cart-badge">1</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Navigation -->
+        <nav class="dfs-nav">
+            <ul class="dfs-nav__container section">
+                <!-- Fenster -->
+                <li class="dfs-nav__item dfs-nav__item--fenster">
+                    <a href="#" class="dfs-nav__link dfs-nav__link--fenster">Fenster</a>
+                    <div class="dfs-dropdown dfs-dropdown--extra-wide dfs-dropdown--fenster">
+                        <div class="dfs-dropdown__section dfs-dropdown__section--fenster-material">
+                            <h3 class="dfs-dropdown__title">Nach Material</h3>
+                            <div class="dfs-grid dfs-grid--two-col">
+                                <a href="#" class="dfs-image-item dfs-image-item--fenster-kunststoff">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-fenster-kunststoff.svg" alt="Kunststofffenster">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Kunststofffenster</div>
+                                        <div class="dfs-image-item__desc">PVC Profile</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--fenster-kunststoff-alu">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-fenster-kunststoff-alu.svg" alt="Kunststoff-Alu Fenster">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Kunststoff-Alu Fenster</div>
+                                        <div class="dfs-image-item__desc">Hybrid Profile</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--fenster-alu">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-fenster-alu.svg" alt="Alu Fenster">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Alu Fenster</div>
+                                        <div class="dfs-image-item__desc">Aluminium Profile</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--fenster-holz">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-fenster-holz.svg" alt="Holzfenster">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Holzfenster</div>
+                                        <div class="dfs-image-item__desc">Massivholz</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--fenster-holz-alu">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-fenster-holz-alu.svg" alt="Holz-Alu Fenster">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Holz-Alu Fenster</div>
+                                        <div class="dfs-image-item__desc">Premium Hybrid</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="dfs-cta dfs-cta--fenster-konfigurator">Fenster konfigurieren</a>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--fenster-spezial">
+                            <h3 class="dfs-dropdown__title">Weitere Fenster</h3>
+                            <div class="dfs-grid dfs-grid--two-col">
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-brandschutz">Brandschutzfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-bogen">Bogenfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-durchreiche">Durchreichefenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-englisch">Englische Schiebefenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-klapp">Klappfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-loft">Loftfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-aussen">Nach aussen öffnende</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-niederlaendisch">Niederländische Fenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-renovation">Renovationsfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-schiebe">Schiebefenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-skandinavisch">Skandinavische Fenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-stahl">Stahlfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--fenster-verglasung">Verglasung</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Balkontüren -->
+                <li class="dfs-nav__item dfs-nav__item--balkontueren">
+                    <a href="#" class="dfs-nav__link dfs-nav__link--balkontueren">Balkontüren</a>
+                    <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--balkontueren">
+                        <div class="dfs-dropdown__section dfs-dropdown__section--balkontueren-material">
+                            <h3 class="dfs-dropdown__title">Nach Material</h3>
+                            <div class="dfs-grid">
+                                <a href="#" class="dfs-image-item dfs-image-item--balkontueren-kunststoff">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-balkontueren-kunststoff.svg" alt="Kunststoffbalkontüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Kunststoffbalkontüren</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--balkontueren-kunststoff-alu">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-balkontueren-kunststoff-alu.svg" alt="Kunststoff-Alu Balkontüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Kunststoff-Alu Balkontüren</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--balkontueren-alu">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-balkontueren-alu.svg" alt="Alu Balkontüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Alu Balkontüren</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--balkontueren-holz">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-balkontueren-holz.svg" alt="Holzbalkontüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Holzbalkontüren</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="dfs-cta dfs-cta--balkontueren-konfigurator">Balkontür konfigurieren</a>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--balkontueren-optionen">
+                            <h3 class="dfs-dropdown__title">Weitere Balkontüren</h3>
+                            <div class="dfs-grid">
+                                <a href="#" class="dfs-text-link dfs-text-link--balkontueren-abschliessbar">Abschließbare Balkontüren</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--balkontueren-aussen">Nach aussen öffnende Balkontüren</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Terrassentüren -->
+                <li class="dfs-nav__item dfs-nav__item--terrassentueren">
+                    <a href="#" class="dfs-nav__link dfs-nav__link--terrassentueren">Terrassentüren</a>
+                    <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--terrassentueren">
+                        <div class="dfs-dropdown__section dfs-dropdown__section--terrassentueren-typen">
+                            <h3 class="dfs-dropdown__title">Nach Türentyp</h3>
+                            <div class="dfs-grid">
+                                <a href="#" class="dfs-image-item dfs-image-item--terrassentueren-schiebe">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-terrassentueren-schiebe.svg" alt="Schiebetüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Schiebetüren</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--terrassentueren-psk">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-terrassentueren-psk.svg" alt="PSK-Türen">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">PSK-Türen</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--terrassentueren-hebeschiebe">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-terrassentueren-hebeschiebe.svg" alt="Hebeschiebetüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Hebeschiebetüren</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--terrassentueren-faltschiebe">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-terrassentueren-faltschiebe.svg" alt="Faltschiebetüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Faltschiebetüren</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--terrassentueren-konfiguratoren">
+                            <a href="#" class="dfs-cta dfs-cta--terrassentueren-psk">PSK konfigurieren</a>
+                            <a href="#" class="dfs-cta dfs-cta--terrassentueren-hebeschiebe">Hebeschiebetür konfigurieren</a>
+                            <a href="#" class="dfs-cta dfs-cta--terrassentueren-faltschiebe">Faltschiebetüre konfigurieren</a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Haustüren -->
+                <li class="dfs-nav__item dfs-nav__item--haustueren">
+                    <a href="#" class="dfs-nav__link dfs-nav__link--haustueren">Haustüren</a>
+                    <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--haustueren">
+                        <div class="dfs-dropdown__section dfs-dropdown__section--haustueren-material">
+                            <h3 class="dfs-dropdown__title">Nach Material</h3>
+                            <div class="dfs-grid">
+                                <a href="#" class="dfs-image-item dfs-image-item--haustueren-alu">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-haustueren-alu.svg" alt="Aluminium-Haustüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Aluminium-Haustüren</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--haustueren-holz">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-haustueren-holz.svg" alt="Holz-Haustüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Holz-Haustüren</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--haustueren-pvc">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-haustueren-pvc.svg" alt="PVC-Haustüren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">PVC-Haustüren</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="dfs-cta dfs-cta--haustueren-konfigurator">Haustür konfigurieren</a>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--haustueren-weitere">
+                            <h3 class="dfs-dropdown__title">Weitere Türen</h3>
+                            <div class="dfs-grid dfs-grid--two-col">
+                                <a href="#" class="dfs-text-link dfs-text-link--haustueren-brandschutz">Brand- / Rauchschutztüren</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--haustueren-seitenteil">Haustüren mit Seitenteil</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--haustueren-keller">Kellertüren</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--haustueren-modell">Modell-Haustüren</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--haustueren-nebeneingang">Nebeneinganstüren</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--haustueren-pivot">Pivottüren</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Sonnenschutz -->
+                <li class="dfs-nav__item dfs-nav__item--sonnenschutz">
+                    <a href="#" class="dfs-nav__link dfs-nav__link--sonnenschutz">Sonnenschutz</a>
+                    <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--sonnenschutz">
+                        <div class="dfs-dropdown__section dfs-dropdown__section--sonnenschutz-rollladen">
+                            <h3 class="dfs-dropdown__title">Rollläden & Raffstoren</h3>
+                            <div class="dfs-grid">
+                                <a href="#" class="dfs-image-item dfs-image-item--sonnenschutz-aufsatz">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-sonnenschutz-aufsatz.svg" alt="Aufsatzrollläden">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Aufsatzrollläden</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--sonnenschutz-raffstoren">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-sonnenschutz-raffstoren.svg" alt="Raffstoren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Raffstoren</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--sonnenschutz-vorbau">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-sonnenschutz-vorbau.svg" alt="Vorbaurollläden">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Vorbaurollläden</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--sonnenschutz-konfiguratoren">
+                            <a href="#" class="dfs-cta dfs-cta--sonnenschutz-rollladen">Rollläden konfigurieren</a>
+                            <a href="#" class="dfs-cta dfs-cta--sonnenschutz-raffstoren">Raffstoren konfigurieren</a>
+                        </div>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--sonnenschutz-weitere">
+                            <h3 class="dfs-dropdown__title">Weitere Optionen</h3>
+                            <div class="dfs-grid">
+                                <a href="#" class="dfs-text-link dfs-text-link--sonnenschutz-fensterlaeden">Fensterläden</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--sonnenschutz-textilscreens">Textilscreens</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Garagentore -->
+                <li class="dfs-nav__item dfs-nav__item--garagentore">
+                    <a href="#" class="dfs-nav__link dfs-nav__link--garagentore">Garagentore</a>
+                    <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--garagentore">
+                        <div class="dfs-dropdown__section dfs-dropdown__section--garagentore-sektional">
+                            <h3 class="dfs-dropdown__title">Sektionaltore</h3>
+                            <div class="dfs-grid">
+                                <a href="#" class="dfs-image-item dfs-image-item--garagentore-sektional">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-garagentore-sektional.svg" alt="Sektionaltore">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Sektionaltore</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="dfs-cta dfs-cta--garagentore-konfigurator">Sektionaltor Konfigurieren</a>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--garagentore-marken">
+                            <h3 class="dfs-dropdown__title">Marken & Varianten</h3>
+                            <div class="dfs-grid dfs-grid--two-col">
+                                <a href="#" class="dfs-text-link dfs-text-link--garagentore-drutex">Drutex Sektionaltore</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--garagentore-krispol">Krispol Sektionaltore</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--garagentore-schlupf">Sektionaltore mit Schlupftüre</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--garagentore-farben">Sektionaltor Farben und Dekore</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--garagentore-roll">Rolltore</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Zubehör -->
+                <li class="dfs-nav__item dfs-nav__item--zubehoer">
+                    <a href="#" class="dfs-nav__link dfs-nav__link--zubehoer">Zubehör</a>
+                    <div class="dfs-dropdown dfs-dropdown--extra-wide dfs-dropdown--zubehoer">
+                        <div class="dfs-dropdown__section dfs-dropdown__section--zubehoer-teile">
+                            <h3 class="dfs-dropdown__title">Zubehör & Ersatzteile</h3>
+                            <div class="dfs-grid dfs-grid--two-col">
+                                <a href="#" class="dfs-image-item dfs-image-item--zubehoer-abdeckleisten">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-zubehoer-abdeckleisten.svg" alt="Abdeckleisten / Winkelprofile">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Abdeckleisten / Winkelprofile</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--zubehoer-blenrahmen">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-zubehoer-blenrahmen.svg" alt="Blenrahmenverbreiterungen">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Blenrahmenverbreiterungen</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--zubehoer-fensterbank">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-zubehoer-fensterbank.svg" alt="Fensterbänke">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Fensterbänke</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--zubehoer-anschlussprofil">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-zubehoer-anschlussprofil.svg" alt="Fensterbankanschlussprofile">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Fensterbankanschlussprofile</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--zubehoer-scheiben">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-zubehoer-fensterscheiben.svg" alt="Fensterscheiben">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Fensterscheiben</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--zubehoer-kopplungen">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-zubehoer-kopplungen.svg" alt="Fensterkopplungen">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Fensterkopplungen</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--zubehoer-ctas">
+                            <a href="#" class="dfs-cta dfs-cta--zubehoer-montage">Montagematerial</a>
+                            <a href="#" class="dfs-cta dfs-cta--zubehoer-rollladen">Rollladenzubehör</a>
+                        </div>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--zubehoer-weitere">
+                            <h3 class="dfs-dropdown__title">Weitere Zubehörteile</h3>
+                            <div class="dfs-grid dfs-grid--two-col">
+                                <a href="#" class="dfs-text-link dfs-text-link--zubehoer-dichtungen">Fensterdichtungen</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--zubehoer-folien">Folienfächer / Farbmuster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--zubehoer-griffe">Griffe</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--zubehoer-insekten">Insektenschutz</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Informationsportal -->
+                <li class="dfs-nav__item dfs-nav__item--infoportal">
+                    <a href="#" class="dfs-nav__link dfs-nav__link--infoportal">Informationsportal</a>
+                    <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--infoportal">
+                        <div class="dfs-dropdown__section dfs-dropdown__section--infoportal-ressourcen">
+                            <h3 class="dfs-dropdown__title">Ressourcen</h3>
+                            <div class="dfs-grid dfs-grid--two-col">
+                                <a href="#" class="dfs-image-item dfs-image-item--infoportal-kataloge">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-infoportal-kataloge.svg" alt="Produktkataloge">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Produktkataloge</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--infoportal-schnitt">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-infoportal-schnitt.svg" alt="Schnittzeichnungen Suche">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Schnittzeichnungen Suche</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--infoportal-schnitt-kataloge">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-infoportal-schnitt-kataloge.svg" alt="Schnittzeichnungen Kataloge">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Schnittzeichnungen Kataloge</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--infoportal-wiki">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-infoportal-wiki.svg" alt="Fenster Wiki">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Fenster Wiki</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--infoportal-lexikon">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/icon-infoportal-lexikon.svg" alt="Fachbegriffe Lexikon">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Fachbegriffe Lexikon</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--infoportal-ctas">
+                            <a href="#" class="dfs-cta dfs-cta--infoportal-anleitungen">Anleitungen</a>
+                        </div>
+                        
+                        <div class="dfs-dropdown__section dfs-dropdown__section--infoportal-themen">
+                            <h3 class="dfs-dropdown__title">Themen</h3>
+                            <div class="dfs-grid dfs-grid--two-col">
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-brandschutz">Brandschutzfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-dreieck">Dreieckfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-energie">Energiesparfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-videos">Erklärvideos</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-innenraum">Innenraumfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-eckverglasung">Rahmenlose Eckverglasung</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-schall">Schallschutzfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-sicherheit">Sicherheitsfenster</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-farben">Fensterfarben</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-beschlaege">Fensterbeschläge</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-sprossen">Sprossenarten</a>
+                                <a href="#" class="dfs-text-link dfs-text-link--infoportal-smarthome">Smart-Home Lösungen</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="dfs-hero">
+        <img src="../assets/hero-image.jpg" alt="Hero Image" class="dfs-hero__image">
+        <div class="dfs-hero__overlay">
+            <div class="dfs-hero__content section">
+                <h1 class="dfs-hero__title">Fenster schnell und einfach online kaufen</h1>
+                <p class="dfs-hero__subtitle">Ihre Experten für hochwertige Fenster, Türen und mehr. Individuelle Beratung, faire Preise und professionelle Montage.</p>
+                <a href="#" class="dfs-hero__cta">Jetzt konfigurieren</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skeleton Sections -->
+    <section class="dfs-skeleton-section">
+        <div class="dfs-skeleton-container section">
+            <div class="dfs-skeleton-box dfs-skeleton-box--large"></div>
+            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
+            <div class="dfs-skeleton-box dfs-skeleton-box--small"></div>
+        </div>
+    </section>
+
+    <section class="dfs-skeleton-section">
+        <div class="dfs-skeleton-container section">
+            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
+            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
+            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
+        </div>
+    </section>
+
+    <section class="dfs-skeleton-section">
+        <div class="dfs-skeleton-container section">
+            <div class="dfs-skeleton-box dfs-skeleton-box--wide"></div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="dfs-newsletter">
+        <div class="dfs-newsletter__container section">
+            <div class="dfs-newsletter__content">
+                <h2 class="dfs-newsletter__title">Newsletter abonnieren</h2>
+                <p class="dfs-newsletter__text">Bleiben Sie auf dem Laufenden mit unseren neuesten Angeboten und Tipps.</p>
+                <form class="dfs-newsletter__form" action="#" method="post">
+                    <input type="email" class="dfs-newsletter__input" placeholder="Ihre E-Mail-Adresse" required>
+                    <button type="submit" class="dfs-newsletter__button">Abonnieren</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- DFS Footer -->
+    <footer class="dfs-footer">
+        <div class="dfs-footer__container section">
+            <!-- Footer Top Section -->
+            <div class="dfs-footer__top">
+                <div class="dfs-footer__row">
+                    <!-- Column 1 - Service -->
+                    <div class="dfs-footer__col dfs-footer__col--service">
+                        <h3 class="dfs-footer__title">Service</h3>
+                        <ul class="dfs-footer__list">
+                            <li><a href="https://deutscher-fenstershop.de/bestellverfolgung" class="dfs-footer__link">Bestellung verfolgen</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/fenstermonteure" class="dfs-footer__link">Montagepartner finden</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/produktions-und-lieferzeiten" class="dfs-footer__link">Lieferzeiten</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/grafik/agb/Lieferbedingungen.pdf" class="dfs-footer__link">Lieferbedingungen</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/versandkosten" class="dfs-footer__link">Lieferkosten</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/grafik/agb/garantiebedingungen-fenster-tueren-itsline.pdf" class="dfs-footer__link">Garantiebedingungen</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/zahlungsarten" class="dfs-footer__link">Zahlungsarten</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2 - Unternehmen -->
+                    <div class="dfs-footer__col dfs-footer__col--unternehmen">
+                        <h3 class="dfs-footer__title">Unternehmen</h3>
+                        <ul class="dfs-footer__list">
+                            <li><a href="https://deutscher-fenstershop.de/ueber-itsline" class="dfs-footer__link">Über uns</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/job-vertrieb" class="dfs-footer__link">Jobs</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/montagepartner" class="dfs-footer__link">Montagepartner werden</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/impressum" class="dfs-footer__link">Impressum</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/grafik/agb/AGB.pdf" class="dfs-footer__link">AGB</a></li>
+                            <li><a href="#" class="dfs-footer__link" id="dfs-footer-cookies">Cookies</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/datenschutzerklaerung" class="dfs-footer__link">Datenschutz</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3 - Wissenswertes -->
+                    <div class="dfs-footer__col dfs-footer__col--wissenswertes">
+                        <h3 class="dfs-footer__title">Wissenswertes</h3>
+                        <ul class="dfs-footer__list">
+                            <li><a href="https://deutscher-fenstershop.de/fenster-selbst-ausmessen" class="dfs-footer__link">Fenster ausmessen</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/foerderung-fenster" class="dfs-footer__link">Fensterförderung</a></li>
+                            <li><a href="#" class="dfs-footer__link">Hinweise zu Produktabbildungen</a></li>
+                            <li><a href="#" class="dfs-footer__link">Fenster Preise</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/anleitungen" class="dfs-footer__link">Anleitungen</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/fensterbegriffe" class="dfs-footer__link">Fachbegriffe</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/wissenswertes" class="dfs-footer__link">Fensterwiki</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4 - Kontakt -->
+                    <div class="dfs-footer__col dfs-footer__col--kontakt">
+                        <h3 class="dfs-footer__title">Kontakt</h3>
+                        <ul class="dfs-footer__list">
+                            <li>
+                                <a href="tel:+4972213022333" class="dfs-footer__link">
+                                    <img src="../assets/icon-phone.svg" alt="Phone" class="dfs-footer__item-icon">
+                                    +49 7221 / 3022-333
+                                </a>
+                            </li>
+                            <li class="dfs-footer__opening-hours">
+                                <img src="../assets/icon-clock.svg" alt="Clock" class="dfs-footer__item-icon">
+                                Mo – Fr. 8:00 – 17:00
+                            </li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send/?phone=491773872159&text&type=phone_number&app_absent=0" class="dfs-footer__link" target="_blank" rel="noopener noreferrer">
+                                    <img src="../assets/icon-whatsapp.svg" alt="WhatsApp" class="dfs-footer__item-icon">
+                                    WhatsApp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@deutscher-fenstershop.de" class="dfs-footer__link">
+                                    <img src="../assets/icon-email.svg" alt="Email" class="dfs-footer__item-icon">
+                                    Mail
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:anfrage@deutscher-fenstershop.de" class="dfs-footer__link">
+                                    <img src="../assets/icon-fenster-anfragen.svg" alt="Fenster anfragen" class="dfs-footer__item-icon">
+                                    Fenster anfragen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://deutscher-fenstershop.de/showroom" class="dfs-footer__link">
+                                    <img src="../assets/icon-location.svg" alt="Location" class="dfs-footer__item-icon">
+                                    Showroom
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://deutscher-fenstershop.de/callback" class="dfs-footer__link">
+                                    <img src="../assets/icon-calendar.svg" alt="Calendar" class="dfs-footer__item-icon">
+                                    Termin vereinbaren
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://deutscher-fenstershop.de/callback" class="dfs-footer__link">
+                                    <img src="../assets/icon-form.svg" alt="Form" class="dfs-footer__item-icon">
+                                    Kontaktformular
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Payment and Social Icons Row - Payment spans 2 columns, Social in column 4 -->
+                    <div class="dfs-footer__payment-icons-container">
+                        <div class="dfs-footer__payment-icons-left">
+                            <img src="../assets/paypal-logo-100x26.png" alt="PayPal">
+                            <img src="../assets/cc-logo.png" alt="Credit Card">
+                            <img src="../assets/bank-logo.png" alt="Bank Transfer">
+                            <img src="../assets/bu_skonto.jpg" alt="Skonto">
+                            <img src="../assets/easyCredit-Ratenkauf_eC-blau_1000x652_mit-Schutzraum_RGB.svg" alt="EasyCredit Ratenkauf">
+                        </div>
+                    </div>
+                    <div class="dfs-footer__social-icons-container">
+                        <div class="dfs-footer__social-icons">
+                            <a href="https://www.pinterest.de/itslinefenster/" target="_blank" rel="noopener noreferrer">
+                                <img src="../assets/icons8-pinterest-100.svg" alt="Pinterest">
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61553972203457" target="_blank" rel="noopener noreferrer">
+                                <img src="../assets/icons8-facebook-100.svg" alt="Facebook">
+                            </a>
+                            <a href="https://www.instagram.com/itslinefenster" target="_blank" rel="noopener noreferrer">
+                                <img src="../assets/icons8-instagram-100.svg" alt="Instagram">
+                            </a>
+                            <a href="https://www.youtube.com/@itslinefenster" target="_blank" rel="noopener noreferrer">
+                                <img src="../assets/icons8-youtube-play-100.svg" alt="YouTube">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <div class="dfs-footer__bottom">
+                <div class="dfs-footer__row">
+                    <div class="dfs-footer__col dfs-footer__col--copyright">
+                        <p class="dfs-footer__copyright">
+                            &copy; <span id="current-year"></span> Deutscher Fenstershop. Alle Rechte vorbehalten.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 4 JS (for testing that nothing breaks) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- DFS Mega Menu - Click-to-blur Script -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Verhindert, dass Klick auf Nav-Links das Dropdown offen hält
+        document.querySelectorAll('.dfs-nav__link').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                // Blur entfernt den Focus-State
+                this.blur();
+            });
+            
+            // Optional: Bei Mouseout auch blur aufrufen
+            link.addEventListener('mouseleave', function(e) {
+                this.blur();
+            });
+        });
+        
+        // Blur auch bei Dropdown-Links
+        document.querySelectorAll('.dfs-dropdown a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                this.blur();
+            });
+        });
+        
+        // Mobile Menu Toggle Functionality
+        (function() {
+            const menuToggle = document.querySelector('.dfs-header__menu-toggle');
+            const nav = document.querySelector('.dfs-nav');
+            const navItems = document.querySelectorAll('.dfs-nav__item');
+            
+            if (!menuToggle || !nav) return;
+            
+            // Add has-dropdown class to items with dropdowns
+            navItems.forEach(function(item) {
+                if (item.querySelector('.dfs-dropdown')) {
+                    item.classList.add('has-dropdown');
+                }
+            });
+            
+            // Toggle main navigation
+            menuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isOpen = nav.classList.contains('mobile-open');
+                
+                if (isOpen) {
+                    nav.classList.remove('mobile-open');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Menü öffnen');
+                    document.body.classList.remove('menu-open');
+                    // Close all dropdowns
+                    navItems.forEach(function(item) {
+                        item.classList.remove('mobile-open');
+                    });
+                } else {
+                    nav.classList.add('mobile-open');
+                    menuToggle.classList.add('active');
+                    menuToggle.setAttribute('aria-expanded', 'true');
+                    menuToggle.setAttribute('aria-label', 'Menü schließen');
+                    document.body.classList.add('menu-open');
+                }
+            });
+            
+            // Toggle dropdowns on mobile
+            navItems.forEach(function(item) {
+                const link = item.querySelector('.dfs-nav__link');
+                const dropdown = item.querySelector('.dfs-dropdown');
+                
+                if (!link) return;
+                
+                link.addEventListener('click', function(e) {
+                    // Only handle on mobile/tablet (when nav is in mobile mode)
+                    if (window.innerWidth <= 1024) {
+                        // If item has dropdown, toggle it
+                        if (dropdown) {
+                            const hasDropdown = item.classList.contains('mobile-open');
+                            
+                            // Close all other dropdowns
+                            navItems.forEach(function(otherItem) {
+                                if (otherItem !== item) {
+                                    otherItem.classList.remove('mobile-open');
+                                }
+                            });
+                            
+                            // Toggle current dropdown
+                            if (hasDropdown) {
+                                item.classList.remove('mobile-open');
+                            } else {
+                                e.preventDefault();
+                                item.classList.add('mobile-open');
+                            }
+                        } else {
+                            // If no dropdown, close the menu and navigate
+                            nav.classList.remove('mobile-open');
+                            menuToggle.classList.remove('active');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                            menuToggle.setAttribute('aria-label', 'Menü öffnen');
+                            document.body.classList.remove('menu-open');
+                        }
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 1024) {
+                    if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                        nav.classList.remove('mobile-open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.setAttribute('aria-label', 'Menü öffnen');
+                        document.body.classList.remove('menu-open');
+                        navItems.forEach(function(item) {
+                            item.classList.remove('mobile-open');
+                        });
+                    }
+                }
+            });
+            
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (window.innerWidth > 1024) {
+                        nav.classList.remove('mobile-open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.setAttribute('aria-label', 'Menü öffnen');
+                        document.body.classList.remove('menu-open');
+                        navItems.forEach(function(item) {
+                            item.classList.remove('mobile-open');
+                        });
+                    }
+                }, 250);
+            });
+        })();
+    </script>
+</body>
+</html>

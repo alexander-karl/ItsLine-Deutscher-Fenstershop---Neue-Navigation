@@ -1,0 +1,11 @@
+<svg viewBox="0 0 50 60" xmlns="http://www.w3.org/2000/svg">
+    <!-- Window frame -->
+    <rect x="8" y="8" width="34" height="44" rx="2" fill="#ecf0f1" stroke="#34495e" stroke-width="2"/>
+    <!-- Cover strip / angle profile -->
+    <rect x="5" y="5" width="40" height="3" fill="#2c3e50"/>
+    <rect x="5" y="5" width="3" height="50" fill="#2c3e50"/>
+    <rect x="42" y="5" width="3" height="50" fill="#2c3e50"/>
+    <rect x="5" y="52" width="40" height="3" fill="#2c3e50"/>
+    <!-- Window pane -->
+    <rect x="12" y="15" width="26" height="30" fill="#bdc3c7" stroke="#34495e" stroke-width="1"/>
+</svg>
