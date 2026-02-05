@@ -3,78 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deutscher Fenstershop - Mega Menu Demo (Alternative)</title>
+    <title>Deutscher Fenstershop - Fenster und Türen online kaufen</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <!-- Bootstrap 4 CSS (for testing compatibility) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    
-    <!-- 
-    =====================================================
-    DFS MEGA MENU - Gekapseltes CSS für Bootstrap 4
-    =====================================================
-    Alle Klassen haben das Prefix "dfs-" um Konflikte 
-    mit Bootstrap-4- und bestehenden Klassen im Shop
-    zu vermeiden.
-    
-    Styleguide-Farben (Alternative):
-    - Primär/Sekundär: #272727 (Dunkelgrau)
-    - Sekundär/Primär: #fc7c2c (Orange)
-    - Tertiär: #157A85 (Seriöses Petrol)
-    
-    Typografie:
-    - Headlines: Helvetica
-    - Body/Buttons: Arial
-    =====================================================
-    -->
+    <link rel="stylesheet" href="../assets/apps.css">
     <link rel="stylesheet" href="../assets/styles.css">
-    
-    <!-- Alternative Navigation Color Overrides -->
     <style>
-        /* Override CSS Variables for Alternative Color Scheme */
+        /* Homepage Redesign - Wireframe Based Styles */
+        .home-hero-section {
+            min-height: 600px;
+        }
+        
+        /* Ensure footer is at the bottom and doesn't float */
+        .dfs-footer {
+            position: relative !important;
+            clear: both !important;
+            margin-top: 0 !important;
+            width: 100% !important;
+            display: block !important;
+            order: 9999 !important;
+        }
+        
+        /* Ensure main content wrapper is properly structured */
+        .page_new_container {
+            position: relative;
+            z-index: 1;
+            display: block;
+            order: 1;
+        }
+        
+        /* Ensure dfs-megamenu-wrapper doesn't contain footer */
         .dfs-megamenu-wrapper {
-            /* Updated Primary/Secondary Colors */
-            --dfs-orange: #fc7c2c;
-            --dfs-orange-hover: #e66a1a;
-            --dfs-darkblue: #272727;
-            --dfs-skyblue: #157A85; /* Tertiary color - Serious Petrol */
+            display: block;
+            order: 0;
         }
         
-        /* Navigation Background - Primary/Secondary Dark Gray */
-        .dfs-nav {
-            background: #272727;
+        /* Force proper document flow */
+        body > * {
+            display: block;
         }
         
-        /* Navigation Link Hover Border - Secondary/Primary Orange */
-        .dfs-nav__link:hover,
-        a.dfs-nav__link:hover {
-            border-bottom-color: #fc7c2c;
+        @media (max-width: 768px) {
+            .home-hero-section {
+                min-height: 400px;
+            }
+            
+            .home-hero-section h1 {
+                font-size: 2rem !important;
+            }
+            
+            .home-hero-section p {
+                font-size: 1rem !important;
+            }
+            
+            /* Product Grids - 5 columns to 2 columns on mobile */
+            section .section > div[style*="grid-template-columns: repeat(5"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px !important;
+            }
+            
+            /* Steps Section - horizontal to vertical on mobile */
+            section .section > div[style*="justify-content: space-between"] {
+                flex-direction: column !important;
+                gap: 32px !important;
+            }
+            
+            /* Two Column Sections - stack on mobile */
+            section .section > div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+            
+            /* Testimonials - 3 columns to 1 column on mobile */
+            section .section > div[style*="grid-template-columns: repeat(3"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Delivery Features - 3 columns to 1 column on mobile */
+            section .section > div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
         }
         
-        /* Cart Badge - Use tertiary color for accent */
-        .dfs-header__cart-badge {
-            background: #157A85;
-        }
-        
-        /* Update hover states for contact items to use new orange */
-        .dfs-header__contact-item:hover {
-            color: #272727;
-        }
-        
-        /* Update text link hover to use tertiary color */
-        .dfs-text-link:hover,
-        a.dfs-text-link:hover {
-            color: #157A85;
-        }
-        
-        /* Update image item hover to use tertiary color */
-        .dfs-image-item:hover .dfs-image-item__text,
-        a.dfs-image-item:hover .dfs-image-item__text {
-            color: #157A85;
-        }
-        
-        /* Mobile navigation active state */
-        .dfs-nav__item.has-dropdown.mobile-open > .dfs-nav__link {
-            color: #fc7c2c;
+        @media (max-width: 480px) {
+            /* Product Grids - 2 columns to 1 column on small mobile */
+            section .section > div[style*="grid-template-columns: repeat(5"] {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -148,7 +164,7 @@
                             <div class="dfs-grid dfs-grid--two-col">
                                 <a href="https://deutscher-fenstershop.de/kaufen/kunststofffenster" class="dfs-image-item dfs-image-item--fenster-kunststoff">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-fenster-kunststoff.svg" alt="Kunststofffenster">
+                                        <img src="../assets/images/Kunststofffenster.jpg" alt="Kunststofffenster" class="dfs-product-image dfs-product-image--kunststofffenster">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Kunststofffenster</div>
@@ -157,7 +173,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kunststoff-alu-fenster" class="dfs-image-item dfs-image-item--fenster-kunststoff-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-fenster-kunststoff-alu.svg" alt="Kunststoff-Alu Fenster">
+                                        <img src="../assets/images/Kunstsotff-Alu-Fenster.jpg" alt="Kunststoff-Alu Fenster" class="dfs-product-image dfs-product-image--kunststoff-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Kunststoff-Alu Fenster</div>
@@ -166,7 +182,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kaufen/alu-fenster" class="dfs-image-item dfs-image-item--fenster-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-fenster-alu.svg" alt="Alu Fenster">
+                                        <img src="../assets/images/Alufenster.png" alt="Alu Fenster" class="dfs-product-image dfs-product-image--alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Alu Fenster</div>
@@ -175,7 +191,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kaufen/holzfenster" class="dfs-image-item dfs-image-item--fenster-holz">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-fenster-holz.svg" alt="Holzfenster">
+                                        <img src="../assets/images/Holzfenster.jpg" alt="Holzfenster" class="dfs-product-image dfs-product-image--holz">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Holzfenster</div>
@@ -184,7 +200,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kaufen/holz-alu-fenster" class="dfs-image-item dfs-image-item--fenster-holz-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-fenster-holz-alu.svg" alt="Holz-Alu Fenster">
+                                        <img src="../assets/images/Alu-Holz-Fenster.png" alt="Holz-Alu Fenster" class="dfs-product-image dfs-product-image--holz-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Holz-Alu Fenster</div>
@@ -226,7 +242,7 @@
                             <div class="dfs-grid">
                                 <a href="https://deutscher-fenstershop.de/balkontuer-kunststoff" class="dfs-image-item dfs-image-item--balkontueren-kunststoff">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-balkontueren-kunststoff.svg" alt="Kunststoffbalkontüren">
+                                        <img src="../assets/images/Kunststoffbalkontüren.png" alt="Kunststoffbalkontüren" class="dfs-product-image dfs-product-image--balkontueren-kunststoff">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Kunststoffbalkontüren</div>
@@ -234,7 +250,7 @@
                                 </a>
                                 <a href="#" class="dfs-image-item dfs-image-item--balkontueren-kunststoff-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-balkontueren-kunststoff-alu.svg" alt="Kunststoff-Alu Balkontüren">
+                                        <img src="../assets/images/Kunststoff-Alu Balkontüren.png" alt="Kunststoff-Alu Balkontüren" class="dfs-product-image dfs-product-image--balkontueren-kunststoff-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Kunststoff-Alu Balkontüren</div>
@@ -242,7 +258,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/balkontuer-aluminium" class="dfs-image-item dfs-image-item--balkontueren-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-balkontueren-alu.svg" alt="Alu Balkontüren">
+                                        <img src="../assets/images/Alu Balkontüren.png" alt="Alu Balkontüren" class="dfs-product-image dfs-product-image--balkontueren-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Alu Balkontüren</div>
@@ -250,7 +266,7 @@
                                 </a>
                                 <a href="#" class="dfs-image-item dfs-image-item--balkontueren-holz">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-balkontueren-holz.svg" alt="Holzbalkontüren">
+                                        <img src="../assets/images/Holzbalkontüren.png" alt="Holzbalkontüren" class="dfs-product-image dfs-product-image--balkontueren-holz">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Holzbalkontüren</div>
@@ -280,7 +296,7 @@
                             <div class="dfs-grid">
                                 <a href="#" class="dfs-image-item dfs-image-item--terrassentueren-schiebe">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-terrassentueren-schiebe.svg" alt="Schiebetüren">
+                                        <img src="../assets/images/Schiebetüren.png" alt="Schiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-schiebe">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Schiebetüren</div>
@@ -288,7 +304,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/parallel-schiebe-kipptuer" class="dfs-image-item dfs-image-item--terrassentueren-psk">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-terrassentueren-psk.svg" alt="PSK-Türen">
+                                        <img src="../assets/images/PSK-Türen.png" alt="PSK-Türen" class="dfs-product-image dfs-product-image--terrassentueren-psk">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">PSK-Türen</div>
@@ -296,7 +312,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/hebeschiebetuer" class="dfs-image-item dfs-image-item--terrassentueren-hebeschiebe">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-terrassentueren-hebeschiebe.svg" alt="Hebeschiebetüren">
+                                        <img src="../assets/images/Hebeschiebetüren.png" alt="Hebeschiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-hebeschiebe">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Hebeschiebetüren</div>
@@ -304,10 +320,18 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/faltschiebetueren-terrasse" class="dfs-image-item dfs-image-item--terrassentueren-faltschiebe">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-terrassentueren-faltschiebe.svg" alt="Faltschiebetüren">
+                                        <img src="../assets/images/Faltschiebetüren.png" alt="Faltschiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-faltschiebe">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Faltschiebetüren</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--terrassentueren-pas">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/images/PAS-Türen.png" alt="PAS-Türen" class="dfs-product-image dfs-product-image--terrassentueren-pas">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">PAS-Türen</div>
                                     </div>
                                 </a>
                             </div>
@@ -330,7 +354,7 @@
                             <div class="dfs-grid">
                                 <a href="https://deutscher-fenstershop.de/haustueren-aluminium" class="dfs-image-item dfs-image-item--haustueren-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-haustueren-alu.svg" alt="Aluminium-Haustüren">
+                                        <img src="../assets/images/Aluminium-Haustüren.jpg" alt="Aluminium-Haustüren" class="dfs-product-image dfs-product-image--haustueren-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Aluminium-Haustüren</div>
@@ -338,7 +362,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/haustueren-holz" class="dfs-image-item dfs-image-item--haustueren-holz">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-haustueren-holz.svg" alt="Holz-Haustüren">
+                                        <img src="../assets/images/Holz-Haustüren.png" alt="Holz-Haustüren" class="dfs-product-image dfs-product-image--haustueren-holz">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Holz-Haustüren</div>
@@ -346,7 +370,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/haustueren-kunststoff" class="dfs-image-item dfs-image-item--haustueren-pvc">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/icon-haustueren-pvc.svg" alt="PVC-Haustüren">
+                                        <img src="../assets/images/PVC-Haustüren.png" alt="PVC-Haustüren" class="dfs-product-image dfs-product-image--haustueren-pvc">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">PVC-Haustüren</div>
@@ -377,8 +401,16 @@
                     <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--sonnenschutz">
                         <div class="dfs-dropdown__section dfs-dropdown__section--sonnenschutz-rollladen">
                             <h3 class="dfs-dropdown__title">Rollläden & Raffstoren</h3>
-                            <div class="dfs-grid">
-                                <a href="https://deutscher-fenstershop.de/aufsatzrollladen-preisrechner" class="dfs-image-item dfs-image-item--sonnenschutz-aufsatz">
+                            <div class="dfs-grid dfs-grid--two-col">
+                                <a href="#" class="dfs-image-item dfs-image-item--sonnenschutz-aufsatz-raffstoren">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/images/Aufsatz-Raffstoren.png" alt="Aufsatzraffstoren" class="dfs-product-image dfs-product-image--aufsatz-raffstoren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Aufsatzraffstoren</div>
+                                    </div>
+                                </a>
+                                <a href="https://deutscher-fenstershop.de/aufsatzrollladen-preisrechner" class="dfs-image-item dfs-image-item--sonnenschutz-aufsatz-rollladen">
                                     <div class="dfs-image-item__icon">
                                         <img src="../assets/images/Aufsatz-Rollläden.png" alt="Aufsatzrollläden" class="dfs-product-image dfs-product-image--aufsatz-rolllaeden">
                                     </div>
@@ -386,15 +418,31 @@
                                         <div class="dfs-image-item__text">Aufsatzrollläden</div>
                                     </div>
                                 </a>
-                                <a href="#" class="dfs-image-item dfs-image-item--sonnenschutz-raffstoren">
+                                <a href="#" class="dfs-image-item dfs-image-item--sonnenschutz-unterputz-raffstoren">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Aufsatz-Raffstoren.png" alt="Raffstoren" class="dfs-product-image dfs-product-image--aufsatz-raffstoren">
+                                        <img src="../assets/images/Unterputz-Raffstoren.png" alt="Unterputzraffstoren" class="dfs-product-image dfs-product-image--unterputz-raffstoren">
                                     </div>
                                     <div>
-                                        <div class="dfs-image-item__text">Raffstoren</div>
+                                        <div class="dfs-image-item__text">Unterputzraffstoren</div>
                                     </div>
                                 </a>
-                                <a href="https://deutscher-fenstershop.de/vorbaurollladen" class="dfs-image-item dfs-image-item--sonnenschutz-vorbau">
+                                <a href="#" class="dfs-image-item dfs-image-item--sonnenschutz-unterputz-rollladen">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/images/Unterputz-Rollläden.png" alt="Unterputzrollläden" class="dfs-product-image dfs-product-image--unterputz-rolllaeden">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Unterputzrollläden</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dfs-image-item dfs-image-item--sonnenschutz-vorbau-raffstoren">
+                                    <div class="dfs-image-item__icon">
+                                        <img src="../assets/images/Vorbau-Raffstore.png" alt="Vorbauraffstoren" class="dfs-product-image dfs-product-image--vorbau-raffstoren">
+                                    </div>
+                                    <div>
+                                        <div class="dfs-image-item__text">Vorbauraffstoren</div>
+                                    </div>
+                                </a>
+                                <a href="https://deutscher-fenstershop.de/vorbaurollladen" class="dfs-image-item dfs-image-item--sonnenschutz-vorbau-rollladen">
                                     <div class="dfs-image-item__icon">
                                         <img src="../assets/images/Vorbau-Rollläden.png" alt="Vorbaurollläden" class="dfs-product-image dfs-product-image--vorbau-rolllaeden">
                                     </div>
@@ -605,54 +653,436 @@
         </nav>
     </div>
 
-    <!-- Hero Section -->
-    <section class="dfs-hero">
-        <img src="../assets/hero-image.jpg" alt="Hero Image" class="dfs-hero__image">
-        <div class="dfs-hero__overlay">
-            <div class="dfs-hero__content section">
-                <h1 class="dfs-hero__title">Fenster schnell und einfach online kaufen</h1>
-                <p class="dfs-hero__subtitle">Ihre Experten für hochwertige Fenster, Türen und mehr. Individuelle Beratung, faire Preise und professionelle Montage.</p>
-                <a href="#" class="dfs-hero__cta">Jetzt konfigurieren</a>
+<div data-type="Block" class="col-md-12 page_new_container padding0" style="background-color:#ffffff;">
+
+    <!-- Hero Section - Based on Wireframe -->
+    <section class="home-hero-section" style="position: relative; width: 100%; min-height: 600px; overflow: hidden; margin-bottom: 0;">
+        <img src="../assets/hero-image.jpg" alt="Modern living room with large glass sliding door" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: center;">
+            <div class="section" style="text-align: center; color: #000; max-width: 1200px; padding: 60px 20px;">
+                <h1 style="font-family: Helvetica, Arial, sans-serif; font-size: 3.5rem; font-weight: 700; color: #000; margin-bottom: 24px; text-shadow: 0 2px 4px rgba(255,255,255,0.8);">
+                    Hochwertige Fenster & Türen für Ihr Zuhause
+                </h1>
+                <p style="font-family: Arial, sans-serif; font-size: 1.3rem; color: #000; margin-bottom: 40px; text-shadow: 0 2px 4px rgba(255,255,255,0.8);">
+                    Individuelle Lösungen von der leichten Konfiguration – Schnelle Lieferung, faire Preise
+                </p>
+                <a href="/konfigurator/fenster" class="btn" style="display: inline-block; padding: 18px 48px; background: #F47C26; color: #FFFFFF; text-decoration: none; border-radius: 4px; font-family: Arial, sans-serif; font-weight: 600; font-size: 1.2rem; transition: all 0.3s;">
+                    Fenster konfigurieren
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Skeleton Sections -->
-    <section class="dfs-skeleton-section">
-        <div class="dfs-skeleton-container section">
-            <div class="dfs-skeleton-box dfs-skeleton-box--large"></div>
-            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
-            <div class="dfs-skeleton-box dfs-skeleton-box--small"></div>
+    <!-- Trust Elements Strip -->
+    <div class="section" style="background: #F5F5F5; padding: 30px 20px; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 30px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="font-size: 1.5rem; font-weight: 700; color: #F47C26;">5.000</div>
+            <div>
+                <div style="font-size: 1.1rem; font-weight: 600; color: #333;">4.9 / 5</div>
+                <div style="font-size: 0.9rem; color: #666;">1397 Bewertungen</div>
+            </div>
         </div>
-    </section>
-
-    <section class="dfs-skeleton-section">
-        <div class="dfs-skeleton-container section">
-            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
-            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
-            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: #F47C26; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">✓</div>
+            <span style="font-family: Arial, sans-serif; font-size: 1rem; color: #333;">30 Jahre Garantie</span>
         </div>
-    </section>
-
-    <section class="dfs-skeleton-section">
-        <div class="dfs-skeleton-container section">
-            <div class="dfs-skeleton-box dfs-skeleton-box--wide"></div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: #F47C26; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">🚚</div>
+            <span style="font-family: Arial, sans-serif; font-size: 1rem; color: #333;">Kostenlose Lieferung</span>
         </div>
-    </section>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: #F47C26; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">🇩🇪</div>
+            <span style="font-family: Arial, sans-serif; font-size: 1rem; color: #333;">Made in Germany</span>
+        </div>
+    </div>
 
-    <!-- Newsletter Signup Section -->
-    <section class="dfs-newsletter">
-        <div class="dfs-newsletter__container section">
-            <div class="dfs-newsletter__content">
-                <h2 class="dfs-newsletter__title">Newsletter abonnieren</h2>
-                <p class="dfs-newsletter__text">Bleiben Sie auf dem Laufenden mit unseren neuesten Angeboten und Tipps.</p>
-                <form class="dfs-newsletter__form" action="#" method="post">
-                    <input type="email" class="dfs-newsletter__input" placeholder="Ihre E-Mail-Adresse" required>
-                    <button type="submit" class="dfs-newsletter__button">Abonnieren</button>
-                </form>
+    <!-- Fenster nach Maß Section -->
+    <section class="section" style="padding: 80px 20px;">
+        <h2 style="font-family: Helvetica, Arial, sans-serif; font-size: 2.5rem; font-weight: 700; text-align: center; color: #000; margin-bottom: 16px;">
+            Fenster nach Maß
+        </h2>
+        <p style="font-family: Arial, sans-serif; font-size: 1.1rem; text-align: center; color: #666; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Wählen Sie aus unserer großen Auswahl hochwertiger Fenster
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; max-width: 1400px; margin: 0 auto;">
+            <!-- Kunststofffenster -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/kaufen/kunststofffenster" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/home/kunststofffenster.webp" alt="Kunststofffenster" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Kunststofffenster</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Holzfenster -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/kaufen/holzfenster" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/home/holzfenster.webp" alt="Holzfenster" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Holzfenster</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Alufenster -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/kaufen/alu-fenster" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/drutex/alu-79n-si/alufenster-mb79n-si-profil-300px.jpg" alt="Alufenster" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Alufenster</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Holz-Alu Fenster -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/kaufen/holz-alu-fenster" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/home/holz-aluminium-fenster.webp" alt="Holz-Alu Fenster" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Holz-Alu Fenster</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Panoramafenster -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/panoramafenster" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/home/panoramafenster.webp" alt="Panoramafenster" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Panoramafenster</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
+
+    <!-- Türen nach Maß Section -->
+    <section class="section" style="padding: 80px 20px; background: #F5F5F5;">
+        <h2 style="font-family: Helvetica, Arial, sans-serif; font-size: 2.5rem; font-weight: 700; text-align: center; color: #000; margin-bottom: 16px;">
+            Türen nach Maß
+        </h2>
+        <p style="font-family: Arial, sans-serif; font-size: 1.1rem; text-align: center; color: #666; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Hochwertige Türen für jeden Bereich Ihres Zuhauses
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; max-width: 1400px; margin: 0 auto;">
+            <!-- Haustüren -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/eingangstueren" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/home/haustueren.png" alt="Haustüren" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Haustüren</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Innentüren -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/innentueren" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/home/haustueren.png" alt="Innentüren" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Innentüren</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Terrassentüren -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/terrassentueren" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/home/hebeschiebetuer.png" alt="Terrassentüren" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Terrassentüren</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Balkontüren -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/balkontuer" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/home/balkontueren.png" alt="Balkontüren" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Balkontüren</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Spezialtüren -->
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="/spezialtueren" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://deutscher-fenstershop.de/grafik/home/psk-terrassentuer.png" alt="Spezialtüren" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 16px;">Spezialtüren</h3>
+                        <span style="color: #F47C26; font-weight: 600; font-size: 1rem;">Mehr erfahren →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ihr Fenster in 5 einfachen Schritten Section -->
+    <section class="section" style="padding: 80px 20px;">
+        <h2 style="font-family: Helvetica, Arial, sans-serif; font-size: 2.5rem; font-weight: 700; text-align: center; color: #000; margin-bottom: 16px;">
+            Ihr Fenster in 5 einfachen Schritten
+        </h2>
+        <p style="font-family: Arial, sans-serif; font-size: 1.1rem; text-align: center; color: #666; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Mit unserem online Konfigurator ist die Planung Ihrer Wunschfenster ganz einfach!
+        </p>
+        
+        <div style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto 50px; gap: 20px; flex-wrap: wrap;">
+            <!-- Step 1 -->
+            <div style="flex: 1; min-width: 180px; text-align: center;">
+                <div style="width: 80px; height: 80px; border: 3px solid #F47C26; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; background: #fff; font-size: 2rem; font-weight: 700; color: #F47C26;">1</div>
+                <h4 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.1rem; font-weight: 600; color: #000; margin-bottom: 8px;">Fenstertyp wählen</h4>
+                <p style="font-family: Arial, sans-serif; font-size: 0.95rem; color: #666;">Wählen Sie Ihren gewünschten Fenstertyp</p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div style="flex: 1; min-width: 180px; text-align: center;">
+                <div style="width: 80px; height: 80px; border: 3px solid #F47C26; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; background: #fff; font-size: 2rem; font-weight: 700; color: #F47C26;">2</div>
+                <h4 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.1rem; font-weight: 600; color: #000; margin-bottom: 8px;">Maße eingeben</h4>
+                <p style="font-family: Arial, sans-serif; font-size: 0.95rem; color: #666;">Geben Sie Breite, Höhe und Stückzahl ein</p>
+            </div>
+            
+            <!-- Step 3 -->
+            <div style="flex: 1; min-width: 180px; text-align: center;">
+                <div style="width: 80px; height: 80px; border: 3px solid #F47C26; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; background: #fff; font-size: 2rem; font-weight: 700; color: #F47C26;">3</div>
+                <h4 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.1rem; font-weight: 600; color: #000; margin-bottom: 8px;">Material & Farbe</h4>
+                <p style="font-family: Arial, sans-serif; font-size: 0.95rem; color: #666;">Wählen Sie Material und Farbgebung</p>
+            </div>
+            
+            <!-- Step 4 -->
+            <div style="flex: 1; min-width: 180px; text-align: center;">
+                <div style="width: 80px; height: 80px; border: 3px solid #F47C26; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; background: #fff; font-size: 2rem; font-weight: 700; color: #F47C26;">4</div>
+                <h4 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.1rem; font-weight: 600; color: #000; margin-bottom: 8px;">Ausstattung</h4>
+                <p style="font-family: Arial, sans-serif; font-size: 0.95rem; color: #666;">Wählen Sie Griffe, Glas und Rollos</p>
+            </div>
+            
+            <!-- Step 5 -->
+            <div style="flex: 1; min-width: 180px; text-align: center;">
+                <div style="width: 80px; height: 80px; border: 3px solid #F47C26; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; background: #fff; font-size: 2rem; font-weight: 700; color: #F47C26;">5</div>
+                <h4 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.1rem; font-weight: 600; color: #000; margin-bottom: 8px;">Angebot erhalten</h4>
+                <p style="font-family: Arial, sans-serif; font-size: 0.95rem; color: #666;">Erhalten Sie Ihr unverbindliches Angebot</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="/konfigurator/fenster" class="btn" style="display: inline-block; padding: 18px 48px; background: #F47C26; color: #FFFFFF; text-decoration: none; border-radius: 4px; font-family: Arial, sans-serif; font-weight: 600; font-size: 1.2rem; transition: all 0.3s;">
+                Jetzt konfigurieren
+            </a>
+        </div>
+    </section>
+
+    <!-- So einfach geht's Section -->
+    <section class="section" style="padding: 80px 20px; background: #F5F5F5;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center;">
+            <div>
+                <h2 style="font-family: Helvetica, Arial, sans-serif; font-size: 2.5rem; font-weight: 700; color: #000; margin-bottom: 24px;">
+                    So einfach geht's
+                </h2>
+                <p style="font-family: Arial, sans-serif; font-size: 1.1rem; color: #666; margin-bottom: 32px; line-height: 1.6;">
+                    Mit unserem benutzerfreundlichen Konfigurator können Sie Ihre Fenster und Türen ganz einfach online planen und bestellen.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0 0 32px 0;">
+                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+                        <span style="color: #F47C26; font-size: 1.5rem; font-weight: 700;">✓</span>
+                        <span style="font-family: Arial, sans-serif; font-size: 1rem; color: #333;">Kostenlos & unverbindlich</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+                        <span style="color: #F47C26; font-size: 1.5rem; font-weight: 700;">✓</span>
+                        <span style="font-family: Arial, sans-serif; font-size: 1rem; color: #333;">Sicherer Kauf</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+                        <span style="color: #F47C26; font-size: 1.5rem; font-weight: 700;">✓</span>
+                        <span style="font-family: Arial, sans-serif; font-size: 1rem; color: #333;">Schnelle Lieferung</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+                        <span style="color: #F47C26; font-size: 1.5rem; font-weight: 700;">✓</span>
+                        <span style="font-family: Arial, sans-serif; font-size: 1rem; color: #333;">Kundenbetreuung</span>
+                    </li>
+                </ul>
+                <a href="/mehr-erfahren" class="btn" style="display: inline-block; padding: 14px 32px; background: #003A66; color: #FFFFFF; text-decoration: none; border-radius: 4px; font-family: Arial, sans-serif; font-weight: 600; font-size: 1rem;">
+                    Mehr erfahren
+                </a>
+            </div>
+            <div>
+                <img src="https://deutscher-fenstershop.de/grafik/home/panoramafenster.webp" alt="Konfigurator Screenshot" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Schnelle Lieferung Section -->
+    <section class="section" style="padding: 80px 20px;">
+        <h2 style="font-family: Helvetica, Arial, sans-serif; font-size: 2.5rem; font-weight: 700; text-align: center; color: #000; margin-bottom: 16px;">
+            Schnelle Lieferung deutschlandweit
+        </h2>
+        <p style="font-family: Arial, sans-serif; font-size: 1.1rem; text-align: center; color: #666; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Wir liefern Ihre Fenster und Türen schnell und zuverlässig in ganz Deutschland
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; padding: 32px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="width: 80px; height: 80px; background: #F47C26; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 2rem;">📅</div>
+                <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.5rem; font-weight: 700; color: #000; margin-bottom: 12px;">3-4 Wochen</h3>
+                <p style="font-family: Arial, sans-serif; font-size: 1rem; color: #666;">Für die meisten Fenster und Türen</p>
+            </div>
+            
+            <div style="text-align: center; padding: 32px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="width: 80px; height: 80px; background: #F47C26; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 2rem;">🚚</div>
+                <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.5rem; font-weight: 700; color: #000; margin-bottom: 12px;">Express möglich</h3>
+                <p style="font-family: Arial, sans-serif; font-size: 1rem; color: #666;">Bei ausgewählten Produkten</p>
+            </div>
+            
+            <div style="text-align: center; padding: 32px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="width: 80px; height: 80px; background: #F47C26; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 2rem;">📦</div>
+                <h3 style="font-family: Helvetica, Arial, sans-serif; font-size: 1.5rem; font-weight: 700; color: #000; margin-bottom: 12px;">Kostenlos</h3>
+                <p style="font-family: Arial, sans-serif; font-size: 1rem; color: #666;">Ab einem Bestellwert von 1500€</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Montageservice Section -->
+    <section class="section" style="padding: 80px 20px; background: #F5F5F5;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center;">
+            <div>
+                <img src="https://deutscher-fenstershop.de/grafik/home/panoramafenster.webp" alt="Montageservice" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2 style="font-family: Helvetica, Arial, sans-serif; font-size: 2.5rem; font-weight: 700; color: #000; margin-bottom: 24px;">
+                    Montageservice verfügbar
+                </h2>
+                <p style="font-family: Arial, sans-serif; font-size: 1.1rem; color: #666; margin-bottom: 32px; line-height: 1.6;">
+                    Unsere erfahrenen Montagepartner sorgen für eine fachgerechte Installation Ihrer Fenster und Türen. Profitieren Sie von unserem professionellen Montageservice in ganz Deutschland.
+                </p>
+                <a href="/montageservice" class="btn" style="display: inline-block; padding: 14px 32px; background: #003A66; color: #FFFFFF; text-decoration: none; border-radius: 4px; font-family: Arial, sans-serif; font-weight: 600; font-size: 1rem;">
+                    Anfrage senden
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" style="padding: 80px 20px;">
+        <h2 style="font-family: Helvetica, Arial, sans-serif; font-size: 2.5rem; font-weight: 700; text-align: center; color: #000; margin-bottom: 16px;">
+            Das sagen unsere Kunden
+        </h2>
+        <p style="font-family: Arial, sans-serif; font-size: 1.1rem; text-align: center; color: #666; margin-bottom: 50px;">
+            Über 2.000 zufriedene Kunden haben uns bereits bewertet!
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto 40px;">
+            <!-- Testimonial 1 -->
+            <div style="background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="color: #F47C26; font-size: 1.2rem; margin-bottom: 16px;">★★★★★</div>
+                <p style="font-family: Arial, sans-serif; font-size: 1rem; color: #666; margin-bottom: 20px; line-height: 1.6;">
+                    Sehr zufrieden mit der Bestellung und der Qualität der Fenster. Die Lieferung war pünktlich und die Montage professionell.
+                </p>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 50px; height: 50px; background: #E5E5E5; border-radius: 50%;"></div>
+                    <div>
+                        <div style="font-family: Arial, sans-serif; font-weight: 700; color: #000;">Max Mustermann</div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.9rem; color: #666;">München, Bayern</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div style="background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="color: #F47C26; font-size: 1.2rem; margin-bottom: 16px;">★★★★★</div>
+                <p style="font-family: Arial, sans-serif; font-size: 1rem; color: #666; margin-bottom: 20px; line-height: 1.6;">
+                    Tolle Beratung und schnelle Bearbeitung. Die Fenster sind genau wie beschrieben und sehen fantastisch aus.
+                </p>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 50px; height: 50px; background: #E5E5E5; border-radius: 50%;"></div>
+                    <div>
+                        <div style="font-family: Arial, sans-serif; font-weight: 700; color: #000;">Anna Schmidt</div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.9rem; color: #666;">Berlin, Berlin</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div style="background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="color: #F47C26; font-size: 1.2rem; margin-bottom: 16px;">★★★★★</div>
+                <p style="font-family: Arial, sans-serif; font-size: 1rem; color: #666; margin-bottom: 20px; line-height: 1.6;">
+                    Unkomplizierte Bestellung und sehr gute Qualität. Kann ich nur weiterempfehlen!
+                </p>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 50px; height: 50px; background: #E5E5E5; border-radius: 50%;"></div>
+                    <div>
+                        <div style="font-family: Arial, sans-serif; font-weight: 700; color: #000;">Thomas Weber</div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.9rem; color: #666;">Hamburg, Hamburg</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 4 -->
+            <div style="background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="color: #F47C26; font-size: 1.2rem; margin-bottom: 16px;">★★★★★</div>
+                <p style="font-family: Arial, sans-serif; font-size: 1rem; color: #666; margin-bottom: 20px; line-height: 1.6;">
+                    Sehr professioneller Service von der Beratung bis zur Montage. Alles hat perfekt geklappt.
+                </p>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 50px; height: 50px; background: #E5E5E5; border-radius: 50%;"></div>
+                    <div>
+                        <div style="font-family: Arial, sans-serif; font-weight: 700; color: #000;">Maria Fischer</div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.9rem; color: #666;">Köln, NRW</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 5 -->
+            <div style="background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="color: #F47C26; font-size: 1.2rem; margin-bottom: 16px;">★★★★★</div>
+                <p style="font-family: Arial, sans-serif; font-size: 1rem; color: #666; margin-bottom: 20px; line-height: 1.6;">
+                    Preis-Leistungs-Verhältnis ist ausgezeichnet. Die Fenster sind sehr gut verarbeitet.
+                </p>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 50px; height: 50px; background: #E5E5E5; border-radius: 50%;"></div>
+                    <div>
+                        <div style="font-family: Arial, sans-serif; font-weight: 700; color: #000;">Peter Müller</div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.9rem; color: #666;">Stuttgart, BW</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 6 -->
+            <div style="background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div style="color: #F47C26; font-size: 1.2rem; margin-bottom: 16px;">★★★★★</div>
+                <p style="font-family: Arial, sans-serif; font-size: 1rem; color: #666; margin-bottom: 20px; line-height: 1.6;">
+                    Schnelle Lieferung und kompetente Beratung. Wir sind sehr zufrieden mit unserem Kauf.
+                </p>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 50px; height: 50px; background: #E5E5E5; border-radius: 50%;"></div>
+                    <div>
+                        <div style="font-family: Arial, sans-serif; font-weight: 700; color: #000;">Lisa Wagner</div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.9rem; color: #666;">Frankfurt, Hessen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="/bewertungen" class="btn" style="display: inline-block; padding: 14px 32px; background: #003A66; color: #FFFFFF; text-decoration: none; border-radius: 4px; font-family: Arial, sans-serif; font-weight: 600; font-size: 1rem;">
+                Alle Bewertungen ansehen
+            </a>
+        </div>
+    </section>
+
+    <!-- Newsletter Section Placeholder -->
+    <div id="newsletter-section-placeholder"></div>
+
+</div>
 
     <!-- DFS Footer -->
     <footer class="dfs-footer">
@@ -755,7 +1185,7 @@
                         </ul>
                     </div>
                     
-                    <!-- Payment and Social Icons Row - Payment spans 2 columns, Social in column 4 -->
+                    <!-- Payment and Social Icons Row -->
                     <div class="dfs-footer__payment-icons-container">
                         <div class="dfs-footer__payment-icons-left">
                             <img src="../assets/paypal-logo-100x26.png" alt="PayPal">
@@ -942,5 +1372,66 @@
             });
         })();
     </script>
+
+<!-- Script to dynamically load newsletter section -->
+<script>
+    (function() {
+        function loadNewsletterSection() {
+            const possiblePaths = [
+                'newsletter-signup.html',
+                './newsletter-signup.html',
+                'layout/newsletter-signup.html',
+                '../layout/newsletter-signup.html'
+            ];
+            
+            let pathIndex = 0;
+            
+            function tryLoad(path) {
+                fetch(path)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const newsletterSection = doc.querySelector('.newsletter');
+                        
+                        if (newsletterSection) {
+                            const placeholder = document.getElementById('newsletter-section-placeholder');
+                            if (placeholder && placeholder.parentNode) {
+                                const sectionHTML = newsletterSection.outerHTML;
+                                placeholder.outerHTML = sectionHTML;
+                                
+                                if (typeof window.REQUIRED_ERROR_MESSAGE !== 'undefined') {
+                                    console.log('Newsletter section loaded successfully');
+                                }
+                            }
+                        } else {
+                            console.error('Newsletter section not found in loaded HTML');
+                        }
+                    })
+                    .catch(error => {
+                        pathIndex++;
+                        if (pathIndex < possiblePaths.length) {
+                            tryLoad(possiblePaths[pathIndex]);
+                        } else {
+                            console.error('Error loading newsletter section from all paths:', error);
+                        }
+                    });
+            }
+            
+            tryLoad(possiblePaths[0]);
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadNewsletterSection);
+        } else {
+            loadNewsletterSection();
+        }
+    })();
+</script>
 </body>
 </html>

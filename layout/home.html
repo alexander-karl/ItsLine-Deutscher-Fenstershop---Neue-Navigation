@@ -440,6 +440,12 @@
   <div class="clear clearfix"></div><br>
   <br>
   
+  <!-- Newsletter Section - Dynamically Loaded -->
+  <div id="newsletter-section-placeholder"></div>
+  
+  <div class="clear clearfix"></div><br>
+  <br>
+  
   
   <div class="col-md-12" data-type="Block" itemprop="mainEntityOfPage">
   <h2 data-type="Text" class="" style="text-align:center;font-weight:bold;">Fenster online kaufen leicht gemacht – Tipps für Ihre Entscheidung</h2>
@@ -1330,7 +1336,7 @@
 
     .circle-text {
         text-align: center;
-        font-family: 'Montserrat', sans-serif;
+        font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1377,7 +1383,7 @@
     }
 
     .right-text .top {
-        font-family: 'Montserrat', sans-serif;
+        font-family: Arial, sans-serif;
         font-size: 2.5rem;
         font-weight: 700;
         line-height: 1.2;
@@ -1396,7 +1402,7 @@
         color: #FFFFFF;
         text-decoration: none;
         border-radius: 4px;
-        font-family: 'Montserrat', sans-serif;
+        font-family: Arial, sans-serif;
         font-weight: 600;
         font-size: 1.1rem;
         transition: all 0.3s ease;
@@ -1425,7 +1431,7 @@
     }
 
     .bottom-text {
-        font-family: 'Montserrat', sans-serif;
+        font-family: Arial, sans-serif;
         font-size: 1rem;
         color: #000000;
         font-weight: 500;
@@ -1589,4 +1595,216 @@
             font-size: 0.8rem;
         }
     }
-  </style><style></style>
+
+    /* Newsletter Section Styles */
+    .newsletter-section {
+        padding: 60px 20px;
+        background-color: #f8f9fa;
+    }
+    
+    .newsletter-container {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    
+    .newsletter-content {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+    }
+    
+    .newsletter-image {
+        flex: 1;
+        display: flex;
+        align-items: stretch;
+    }
+    
+    .newsletter-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .newsletter-form-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .newsletter-form-wrapper .sib-form {
+        width: 100%;
+        padding: 40px 0;
+    }
+    
+    .newsletter-form-wrapper .sib-form-container {
+        width: 100%;
+    }
+    
+    .sib-container--large.sib-container--vertical {
+        max-width: 700px !important;
+    }
+    
+    @media (min-width: 769px) {
+        .newsletter-form-wrapper .sib-form-container {
+            padding: 20px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .newsletter-section {
+            padding: 40px 15px;
+        }
+        
+        .newsletter-container {
+            max-width: 100%;
+        }
+        
+        .newsletter-content {
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        .newsletter-image {
+            order: 1;
+            width: 100%;
+        }
+        
+        .newsletter-image img {
+            height: auto;
+            width: 100%;
+        }
+        
+        .newsletter-form-wrapper {
+            order: 2;
+            width: 100%;
+            padding: 0 0 20px 0;
+        }
+        
+        .newsletter-form-wrapper .sib-form {
+            max-width: 100% !important;
+        }
+        
+        .newsletter-form-wrapper #sib-container {
+            max-width: 100% !important;
+        }
+    }
+
+    /* Brevo Form Styles */
+    #sib-container input:-ms-input-placeholder {
+      text-align: left;
+      font-family: Arial, sans-serif;
+      color: #c0ccda;
+    }
+
+    #sib-container input::placeholder {
+      text-align: left;
+      font-family: Arial, sans-serif;
+      color: #c0ccda;
+    }
+
+    #sib-container textarea::placeholder {
+      text-align: left;
+      font-family: Arial, sans-serif;
+      color: #c0ccda;
+    }
+
+    #sib-container a {
+      text-decoration: underline;
+      color: #2BB2FC;
+    }
+  </style>
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
+    window.LOCALE = 'de';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+
+    window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein. ";
+
+    window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+
+    window.translation = {
+      common: {
+        selectedList: '{quantity} Liste ausgewählt',
+        selectedLists: '{quantity} Listen ausgewählt',
+        selectedOption: '{quantity} ausgewählt',
+        selectedOptions: '{quantity} ausgewählt',
+      }
+    };
+
+    var AUTOHIDE = Boolean(0);
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+  
+  <!-- Script to dynamically load newsletter section -->
+  <script>
+    (function() {
+      // Wait for DOM to be ready
+      function loadNewsletterSection() {
+        // Try different possible paths for newsletter-signup.html
+        const possiblePaths = [
+          'newsletter-signup.html',
+          './newsletter-signup.html',
+          'layout/newsletter-signup.html',
+          '../layout/newsletter-signup.html'
+        ];
+        
+        let pathIndex = 0;
+        
+        function tryLoad(path) {
+          fetch(path)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.text();
+            })
+            .then(html => {
+              // Create a temporary DOM element to parse the HTML
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              
+              // Find the newsletter section
+              const newsletterSection = doc.querySelector('.newsletter-section');
+              
+              if (newsletterSection) {
+                // Get the placeholder element
+                const placeholder = document.getElementById('newsletter-section-placeholder');
+                if (placeholder && placeholder.parentNode) {
+                  // Replace the placeholder with the actual newsletter section
+                  const sectionHTML = newsletterSection.outerHTML;
+                  placeholder.outerHTML = sectionHTML;
+                  
+                  // Re-initialize Brevo form if the script is available
+                  if (typeof window.REQUIRED_ERROR_MESSAGE !== 'undefined') {
+                    // Brevo scripts are already loaded, form should work
+                    console.log('Newsletter section loaded successfully');
+                  }
+                }
+              } else {
+                console.error('Newsletter section not found in loaded HTML');
+              }
+            })
+            .catch(error => {
+              // Try next path if available
+              pathIndex++;
+              if (pathIndex < possiblePaths.length) {
+                tryLoad(possiblePaths[pathIndex]);
+              } else {
+                console.error('Error loading newsletter section from all paths:', error);
+              }
+            });
+        }
+        
+        tryLoad(possiblePaths[0]);
+      }
+      
+      // Wait for DOM to be ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadNewsletterSection);
+      } else {
+        loadNewsletterSection();
+      }
+    })();
+  </script>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- Brevo: Weiterleitung nach Double-Opt-in → Formular → Einstellungen → "Weiterleitungs-URL nach Bestätigung" -->
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vielen Dank für Ihre Newsletter-Anmeldung | Deutscher Fenstershop</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        .newsletter-thankyou { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        .newsletter-thankyou .layout-wrapper { display: flex; flex-wrap: nowrap; min-height: 420px; }
+        .newsletter-thankyou .image-column { flex: 0 0 50%; width: 50%; }
+        .newsletter-thankyou .hero-image { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; }
+        .newsletter-thankyou .content-column { flex: 0 0 50%; width: 50%; display: flex; align-items: center; justify-content: center; padding: 48px 32px; background-color: #FFFFFF; }
+        .newsletter-thankyou .content-inner { max-width: 440px; width: 100%; }
+        .newsletter-thankyou .success-icon { width: 64px; height: 64px; margin-bottom: 24px; background-color: #FC7C2C; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .newsletter-thankyou .success-icon svg { width: 32px; height: 32px; stroke: #FFFFFF; fill: none; }
+        .newsletter-thankyou .headline { font-size: 24px; font-weight: 700; color: #272727; margin: 0 0 16px 0; }
+        .newsletter-thankyou .intro-text { font-size: 16px; color: #333333; margin: 0 0 24px 0; line-height: 1.5; }
+        .newsletter-thankyou .benefits-section { margin-bottom: 28px; }
+        .newsletter-thankyou .benefits-title { font-size: 14px; font-weight: 600; color: #272727; margin: 0 0 10px 0; }
+        .newsletter-thankyou .benefits-list { list-style: none; padding: 0; margin: 0; }
+        .newsletter-thankyou .benefits-item { font-size: 14px; color: #333333; padding-left: 24px; position: relative; margin-bottom: 8px; line-height: 1.5; }
+        .newsletter-thankyou .benefits-item::before { content: "✓"; position: absolute; left: 0; color: #157A85; font-weight: 700; }
+        .newsletter-thankyou .cta-wrapper { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+        .newsletter-thankyou .btn { display: block; padding: 12px 24px; font-size: 16px; font-weight: 600; text-align: center; text-decoration: none; border-radius: 4px; cursor: pointer; outline: none; border: 2px solid transparent; }
+        .newsletter-thankyou .btn:focus { outline: none; }
+        .newsletter-thankyou .btn-primary { background-color: #FC7C2C; color: #FFFFFF; border-color: #FC7C2C; }
+        .newsletter-thankyou .btn-primary:hover { background-color: #E06A1F; }
+        .newsletter-thankyou .btn-secondary { background-color: transparent; color: #003A66; border-color: #003A66; }
+        .newsletter-thankyou .btn-secondary:hover { background-color: #003A66; color: #FFFFFF; }
+        .newsletter-thankyou .social-proof { padding-top: 20px; border-top: 1px solid #F5F5F5; }
+        .newsletter-thankyou .social-proof-text { font-size: 13px; color: #666666; margin: 0; }
+        .newsletter-thankyou .social-proof-text strong { color: #333333; }
+        @media (max-width: 767px) { .newsletter-thankyou .layout-wrapper { flex-wrap: wrap; flex-direction: column; min-height: auto; } .newsletter-thankyou .image-column { flex: none; width: 100%; max-height: 180px; overflow: hidden; } .newsletter-thankyou .hero-image { min-height: auto; height: 180px; } .newsletter-thankyou .content-column { flex: none; width: 100%; padding: 32px 24px; } }
+    </style>
+</head>
+<body>
+    <div class="dfs-megamenu-wrapper">
+        <header class="dfs-header">
+            <div class="section" style="display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 16px;">
+                <a href="main.html" class="dfs-header__logo dfs-header__logo--main">
+                    <img src="../assets/fenster-online-kaufen-logo.png" alt="Deutscher Fenstershop">
+                </a>
+                <div class="dfs-header__center">
+                    <a href="mailto:info@deutscher-fenstershop.de" class="dfs-header__contact-item dfs-header__contact-item--email">
+                        <div class="dfs-header__contact-icon"><img src="../assets/icon-email.svg" alt="Email"></div>
+                        <span class="dfs-header__contact-text">Anfrage stellen</span>
+                    </a>
+                    <a href="tel:+4972213022333" class="dfs-header__contact-item dfs-header__contact-item--phone">
+                        <div class="dfs-header__contact-icon"><img src="../assets/icon-phone.svg" alt="Phone"></div>
+                        <div>
+                            <div class="dfs-header__contact-text">+49 7221 / 3022-333</div>
+                            <div class="dfs-header__contact-subtext">Mo – Fr. 8:00 – 17:00</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="dfs-header__right">
+                    <button class="dfs-header__menu-toggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+                    <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="dfs-header__cta dfs-header__cta--fenster"><span>Fensterkonfigurator</span></a>
+                    <a href="https://deutscher-fenstershop.de/konfigurator/haustueren/material" class="dfs-header__cta dfs-header__cta--tueren"><span>Türenkonfigurator</span></a>
+                    <a href="#" class="dfs-header__icon-btn dfs-header__icon-btn--search" aria-label="Suche"><img src="../assets/icon-search.svg" alt="Search"></a>
+                    <a href="#" class="dfs-header__icon-btn dfs-header__icon-btn--account" aria-label="Mein Konto"><img src="../assets/icon-account.svg" alt="Account"></a>
+                    <a href="#" class="dfs-header__icon-btn dfs-header__icon-btn--cart" aria-label="Warenkorb"><img src="../assets/icon-cart.svg" alt="Cart"><span class="dfs-header__cart-badge">1</span></a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="dfs-nav">
+            <ul class="dfs-nav__container section">
+                <li class="dfs-nav__item"><a href="https://deutscher-fenstershop.de/kaufen/kunststofffenster" class="dfs-nav__link">Fenster</a></li>
+                <li class="dfs-nav__item"><a href="https://deutscher-fenstershop.de/balkontuer-kunststoff" class="dfs-nav__link">Balkontüren</a></li>
+                <li class="dfs-nav__item"><a href="https://deutscher-fenstershop.de/parallel-schiebe-kipptuer" class="dfs-nav__link">Terrassentüren</a></li>
+                <li class="dfs-nav__item"><a href="https://deutscher-fenstershop.de/haustueren-aluminium" class="dfs-nav__link">Haustüren</a></li>
+                <li class="dfs-nav__item"><a href="https://deutscher-fenstershop.de/vorbaurollladen" class="dfs-nav__link">Sonnenschutz</a></li>
+                <li class="dfs-nav__item"><a href="https://deutscher-fenstershop.de/sektionaltore" class="dfs-nav__link">Garagentore</a></li>
+                <li class="dfs-nav__item"><a href="https://deutscher-fenstershop.de/fensterbaenke-aluminium" class="dfs-nav__link">Zubehör</a></li>
+                <li class="dfs-nav__item"><a href="#" class="dfs-nav__link">Informationsportal</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="newsletter-thankyou">
+        <div class="layout-wrapper">
+            <div class="image-column">
+                <img src="../assets/hero-image.jpg" alt="Hochwertige Fenster für Ihr Zuhause" class="hero-image" />
+            </div>
+            <div class="content-column">
+                <div class="content-inner">
+                    <div class="success-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h1 class="headline">Vielen Dank für Ihre Anmeldung!</h1>
+                    <p class="intro-text">Sie sind jetzt dabei und erhalten regelmäßig exklusive Aktionen, Preisvorteile und Empfehlungsprämien von uns.</p>
+                    <div class="benefits-section">
+                        <p class="benefits-title">Das erwartet Sie:</p>
+                        <ul class="benefits-list">
+                            <li class="benefits-item">Exklusive Rabattaktionen bis zu 15%</li>
+                            <li class="benefits-item">Saisonale Angebote vor allen anderen</li>
+                            <li class="benefits-item">Praktische Tipps rund um Fenster &amp; Türen</li>
+                        </ul>
+                    </div>
+                    <div class="cta-wrapper">
+                        <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="btn btn-primary">Fenster konfigurieren</a>
+                        <a href="main.html" class="btn btn-secondary">Zur Startseite</a>
+                    </div>
+                    <div class="social-proof">
+                        <p class="social-proof-text">Über <strong>12.000 Kunden</strong> vertrauen bereits unserem Newsletter.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="dfs-footer">
+        <div class="dfs-footer__container section">
+            <div class="dfs-footer__top">
+                <div class="dfs-footer__row">
+                    <div class="dfs-footer__col dfs-footer__col--service">
+                        <h3 class="dfs-footer__title">Service</h3>
+                        <ul class="dfs-footer__list">
+                            <li><a href="https://deutscher-fenstershop.de/bestellverfolgung" class="dfs-footer__link">Bestellung verfolgen</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/fenstermonteure" class="dfs-footer__link">Montagepartner finden</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/produktions-und-lieferzeiten" class="dfs-footer__link">Lieferzeiten</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/impressum" class="dfs-footer__link">Impressum</a></li>
+                            <li><a href="https://deutscher-fenstershop.de/datenschutzerklaerung" class="dfs-footer__link">Datenschutz</a></li>
+                        </ul>
+                    </div>
+                    <div class="dfs-footer__col dfs-footer__col--kontakt">
+                        <h3 class="dfs-footer__title">Kontakt</h3>
+                        <ul class="dfs-footer__list">
+                            <li><a href="tel:+4972213022333" class="dfs-footer__link"><img src="../assets/icon-phone.svg" alt="Phone" class="dfs-footer__item-icon"> +49 7221 / 3022-333</a></li>
+                            <li><a href="mailto:info@deutscher-fenstershop.de" class="dfs-footer__link"><img src="../assets/icon-email.svg" alt="Email" class="dfs-footer__item-icon"> Mail</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="dfs-footer__bottom">
+                <div class="dfs-footer__row">
+                    <div class="dfs-footer__col dfs-footer__col--copyright">
+                        <p class="dfs-footer__copyright">&copy; <span id="current-year"></span> Deutscher Fenstershop. Alle Rechte vorbehalten.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
