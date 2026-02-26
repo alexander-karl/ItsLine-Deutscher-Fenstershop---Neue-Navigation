@@ -1556,16 +1556,28 @@
         margin-bottom: 30px;
     }
 
+    .dfs-newsletter__brevo-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
     .dfs-newsletter__form {
         display: flex;
+        flex-direction: column;
         gap: 12px;
-        max-width: 500px;
+        max-width: 600px;
         margin: 0 auto;
-        justify-content: center;
+    }
+
+    .dfs-newsletter__form-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
     }
 
     .dfs-newsletter__input {
         flex: 1;
+        min-width: 140px;
         padding: 14px 18px;
         font-family: Arial, sans-serif;
         font-size: 1rem;
@@ -1576,8 +1588,55 @@
         outline: none;
     }
 
+    .dfs-newsletter__input--name {
+        flex: 0 0 160px;
+    }
+
     .dfs-newsletter__input::placeholder {
         color: #999999;
+    }
+
+    .dfs-newsletter__optin {
+        text-align: center;
+    }
+
+    .dfs-newsletter__checkbox-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.95);
+        cursor: pointer;
+    }
+
+    .dfs-newsletter__checkbox {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .dfs-newsletter__message {
+        padding: 12px 16px;
+        border-radius: 4px;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+    }
+
+    .dfs-newsletter__message--error {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 1px solid rgba(255,200,200,0.5);
+    }
+
+    .dfs-newsletter__message--success {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 1px solid rgba(200,255,200,0.5);
+    }
+
+    .dfs-newsletter .input-hidden {
+        position: absolute;
+        left: -5000px;
     }
 
     .dfs-newsletter__button {
@@ -1611,9 +1670,12 @@
             font-size: 1.5rem;
         }
 
-        .dfs-newsletter__form {
+        .dfs-newsletter__form-row {
             flex-direction: column;
-            max-width: 100%;
+        }
+
+        .dfs-newsletter__input--name {
+            flex: 1 1 auto;
         }
 
         .dfs-newsletter__button {
@@ -1640,6 +1702,18 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 32px;
+    }
+
+    .dfs-footer__group {
+        margin-bottom: 24px;
+    }
+
+    .dfs-footer__group:last-child {
+        margin-bottom: 0;
+    }
+
+    .dfs-footer__group .dfs-footer__title {
+        margin-bottom: 12px;
     }
 
     .dfs-footer__col {

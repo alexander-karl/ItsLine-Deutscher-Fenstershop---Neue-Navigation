@@ -168,7 +168,7 @@
                     <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--balkontueren">
                         <div class="dfs-dropdown__section dfs-dropdown__section--balkontueren-material">
                             <h3 class="dfs-dropdown__title">Nach Material</h3>
-                            <div class="dfs-grid">
+                            <div class="dfs-grid dfs-grid--two-col">
                                 <a href="https://deutscher-fenstershop.de/balkontuer-kunststoff" class="dfs-image-item dfs-image-item--balkontueren-kunststoff">
                                     <div class="dfs-image-item__icon">
                                         <img src="../assets/images/Kunststoffbalkontüren.png" alt="Kunststoffbalkontüren" class="dfs-product-image dfs-product-image--balkontueren-kunststoff">
@@ -222,7 +222,7 @@
                     <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--terrassentueren">
                         <div class="dfs-dropdown__section dfs-dropdown__section--terrassentueren-typen">
                             <h3 class="dfs-dropdown__title">Nach Türentyp</h3>
-                            <div class="dfs-grid">
+                            <div class="dfs-grid dfs-grid--two-col">
                                 <a href="#" class="dfs-image-item dfs-image-item--terrassentueren-schiebe">
                                     <div class="dfs-image-item__icon">
                                         <img src="../assets/images/Schiebetüren.png" alt="Schiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-schiebe">
@@ -617,19 +617,51 @@
         </div>
     </section>
 
-    <!-- Newsletter Signup Section -->
+    <!-- Newsletter Signup Section (Brevo) -->
     <section class="dfs-newsletter">
         <div class="dfs-newsletter__container section">
             <div class="dfs-newsletter__content">
                 <h2 class="dfs-newsletter__title">Newsletter abonnieren</h2>
                 <p class="dfs-newsletter__text">Bleiben Sie auf dem Laufenden mit unseren neuesten Angeboten und Tipps.</p>
-                <form class="dfs-newsletter__form" action="#" method="post">
-                    <input type="email" class="dfs-newsletter__input" placeholder="Ihre E-Mail-Adresse" required>
-                    <button type="submit" class="dfs-newsletter__button">Abonnieren</button>
-                </form>
+                <div id="sib-form-container" class="dfs-newsletter__brevo-container">
+                    <div id="error-message" class="dfs-newsletter__message dfs-newsletter__message--error" style="display:none;">
+                        <span>Ihre Anmeldung konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.</span>
+                    </div>
+                    <div id="success-message" class="dfs-newsletter__message dfs-newsletter__message--success" style="display:none;">
+                        <span>Das hat geklappt! Sie erhalten in Kürze eine Bestätigungs-E-Mail.</span>
+                    </div>
+                    <div id="sib-container">
+                        <form id="sib-form" class="dfs-newsletter__form" method="POST" action="https://b2619547.sibforms.com/serve/MUIFANL7QbABweikAM3F445sG4oY99hTh9iXP_CtvHlH0iikeoLvfyUkCQ3Hr46fwHXKq8UlfJm_YpfQvdRjwJVSJx7J08i9CpZNLTxgjRoPAuIn0nDlYyItBFJABmc7rHABKglmio7YRAYet5CYKB7WIRCqPy64TmxDbNSeDSuZXtLnuJf89lW-Bh3ygFGsqPfXc0Tq0A8KgpVPuw==" data-type="subscription">
+                            <div class="dfs-newsletter__form-row">
+                                <input type="text" id="VOR_UND_NACHNAME" name="VOR_UND_NACHNAME" class="dfs-newsletter__input dfs-newsletter__input--name" placeholder="Ihr Name" maxlength="200" autocomplete="off" data-required="true" required>
+                                <input type="email" id="EMAIL" name="EMAIL" class="dfs-newsletter__input" placeholder="Ihre E-Mail-Adresse" autocomplete="off" data-required="true" required>
+                                <button type="submit" class="dfs-newsletter__button">Abonnieren</button>
+                            </div>
+                            <div class="dfs-newsletter__optin">
+                                <label class="dfs-newsletter__checkbox-label">
+                                    <input type="checkbox" value="1" id="OPT_IN" name="OPT_IN" class="dfs-newsletter__checkbox" required>
+                                    <span class="dfs-newsletter__checkbox-custom"></span>
+                                    <span>Ich akzeptiere die <a href="https://deutscher-fenstershop.de/datenschutzerklaerung" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Datenschutzerklärung</a>.</span>
+                                </label>
+                            </div>
+                            <input type="text" name="email_address_check" value="" class="input-hidden" style="position:absolute;left:-5000px;">
+                            <input type="hidden" name="locale" value="de">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <script>
+        window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
+        window.LOCALE = 'de';
+        window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfen Sie das Feldformat.";
+        window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein.";
+        window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig.";
+        window.translation = { common: { selectedList: '{quantity} Liste', selectedLists: '{quantity} Listen', selectedOption: '{quantity} ausgewählt', selectedOptions: '{quantity} ausgewählt' } };
+        var AUTOHIDE = Boolean(0);
+    </script>
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
     <!-- DFS Footer -->
     <footer class="dfs-footer">
@@ -637,46 +669,117 @@
             <!-- Footer Top Section -->
             <div class="dfs-footer__top">
                 <div class="dfs-footer__row">
-                    <!-- Column 1 - Service -->
-                    <div class="dfs-footer__col dfs-footer__col--service">
-                        <h3 class="dfs-footer__title">Service</h3>
-                        <ul class="dfs-footer__list">
-                            <li><a href="https://deutscher-fenstershop.de/bestellverfolgung" class="dfs-footer__link">Bestellung verfolgen</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/fenstermonteure" class="dfs-footer__link">Montagepartner finden</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/produktions-und-lieferzeiten" class="dfs-footer__link">Lieferzeiten</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/grafik/agb/Lieferbedingungen.pdf" class="dfs-footer__link">Lieferbedingungen</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/versandkosten" class="dfs-footer__link">Lieferkosten</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/grafik/agb/garantiebedingungen-fenster-tueren-itsline.pdf" class="dfs-footer__link">Garantiebedingungen</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/zahlungsarten" class="dfs-footer__link">Zahlungsarten</a></li>
-                        </ul>
+                    <!-- Column 1 - Produkte (Fenster, Balkontüren, Terrassentüren, Haustüren) -->
+                    <div class="dfs-footer__col dfs-footer__col--produkte">
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Fenster</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/kunststofffenster" class="dfs-footer__link">Kunststofffenster</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kunststoff-alu-fenster" class="dfs-footer__link">Kunststoff-Alu Fenster</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/alu-fenster" class="dfs-footer__link">Alu Fenster</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/holzfenster" class="dfs-footer__link">Holzfenster</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/holz-alu-fenster" class="dfs-footer__link">Holz-Alu Fenster</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Balkontüren</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/balkontuer-kunststoff" class="dfs-footer__link">Kunststoffbalkontüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/balkontuer-kunststoff-alu" class="dfs-footer__link">Kunststoff-Alu Balkontüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/balkontuer-aluminium" class="dfs-footer__link">Alu Balkontüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/balkontuer-holz" class="dfs-footer__link">Holzbalkontüren</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Terrassentüren</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/schiebetueren-terrasse" class="dfs-footer__link">Schiebetüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/parallel-schiebe-kipptuer" class="dfs-footer__link">PSK-Türen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/hebeschiebetuer" class="dfs-footer__link">Hebeschiebetüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/faltschiebetueren-terrasse" class="dfs-footer__link">Faltschiebetüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/pas-tueren" class="dfs-footer__link">PAS-Türen</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Haustüren</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/haustueren-aluminium" class="dfs-footer__link">Aluminium-Haustüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/haustueren-holz" class="dfs-footer__link">Holz-Haustüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/haustueren-kunststoff" class="dfs-footer__link">PVC-Haustüren</a></li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <!-- Column 2 - Unternehmen -->
-                    <div class="dfs-footer__col dfs-footer__col--unternehmen">
-                        <h3 class="dfs-footer__title">Unternehmen</h3>
-                        <ul class="dfs-footer__list">
-                            <li><a href="https://deutscher-fenstershop.de/ueber-itsline" class="dfs-footer__link">Über uns</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/job-vertrieb" class="dfs-footer__link">Jobs</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/montagepartner" class="dfs-footer__link">Montagepartner werden</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/impressum" class="dfs-footer__link">Impressum</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/grafik/agb/AGB.pdf" class="dfs-footer__link">AGB</a></li>
-                            <li><a href="#" class="dfs-footer__link" id="dfs-footer-cookies">Cookies</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/datenschutzerklaerung" class="dfs-footer__link">Datenschutz</a></li>
-                        </ul>
+                    <!-- Column 2 - Sonnenschutz, Garagentore, Zubehör -->
+                    <div class="dfs-footer__col dfs-footer__col--produkte-2">
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Sonnenschutz</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/aufsatzraffstore" class="dfs-footer__link">Aufsatzraffstoren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/aufsatzrollladen-preisrechner" class="dfs-footer__link">Aufsatzrollläden</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/unterputzraffstore" class="dfs-footer__link">Unterputzraffstoren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/unterputzrollladen" class="dfs-footer__link">Unterputzrollläden</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/vorbauraffstore" class="dfs-footer__link">Vorbauraffstoren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/vorbaurollladen" class="dfs-footer__link">Vorbaurollläden</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Garagentore</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/sektionaltore" class="dfs-footer__link">Sektionaltore</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Zubehör</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/abdeckleisten-fuer-fenster" class="dfs-footer__link">Abdeckleisten / Winkelprofile</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/blendrahmenverbreiterungen-aufdopplungsprofil" class="dfs-footer__link">Blendrahmenverbreiterungen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/fensterbaenke-aluminium" class="dfs-footer__link">Fensterbänke</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/fensterbankanschlussprofile" class="dfs-footer__link">Fensterbankanschlussprofile</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/isolierglasfenster2" class="dfs-footer__link">Fensterscheiben</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kopplungen" class="dfs-footer__link">Fensterkopplungen</a></li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <!-- Column 3 - Wissenswertes -->
-                    <div class="dfs-footer__col dfs-footer__col--wissenswertes">
-                        <h3 class="dfs-footer__title">Wissenswertes</h3>
-                        <ul class="dfs-footer__list">
-                            <li><a href="https://deutscher-fenstershop.de/fenster-selbst-ausmessen" class="dfs-footer__link">Fenster ausmessen</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/foerderung-fenster" class="dfs-footer__link">Fensterförderung</a></li>
-                            <li><a href="#" class="dfs-footer__link">Hinweise zu Produktabbildungen</a></li>
-                            <li><a href="#" class="dfs-footer__link">Fenster Preise</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/anleitungen" class="dfs-footer__link">Anleitungen</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/fensterbegriffe" class="dfs-footer__link">Fachbegriffe</a></li>
-                            <li><a href="https://deutscher-fenstershop.de/wissenswertes" class="dfs-footer__link">Fensterwiki</a></li>
-                        </ul>
+                    <!-- Column 3 - Unternehmen, Service, Wissenswertes -->
+                    <div class="dfs-footer__col dfs-footer__col--info">
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Unternehmen</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/ueber-itsline" class="dfs-footer__link">Über uns</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/job-vertrieb" class="dfs-footer__link">Jobs</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/montagepartner" class="dfs-footer__link">Montagepartner werden</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/impressum" class="dfs-footer__link">Impressum</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/grafik/agb/AGB.pdf" class="dfs-footer__link">AGB</a></li>
+                                <li><a href="#" class="dfs-footer__link" id="dfs-footer-cookies">Cookies</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/datenschutzerklaerung" class="dfs-footer__link">Datenschutz</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Service</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/bestellverfolgung" class="dfs-footer__link">Bestellung verfolgen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/fenstermonteure" class="dfs-footer__link">Montagepartner finden</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/produktions-und-lieferzeiten" class="dfs-footer__link">Lieferzeiten</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/grafik/agb/Lieferbedingungen.pdf" class="dfs-footer__link">Lieferbedingungen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/versandkosten" class="dfs-footer__link">Lieferkosten</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/grafik/agb/garantiebedingungen-fenster-tueren-itsline.pdf" class="dfs-footer__link">Garantiebedingungen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/zahlungsarten" class="dfs-footer__link">Zahlungsarten</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Wissenswertes</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/fenster-selbst-ausmessen" class="dfs-footer__link">Fenster ausmessen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/foerderung-fenster" class="dfs-footer__link">Fensterförderung</a></li>
+                                <li><a href="#" class="dfs-footer__link">Hinweise zu Produktabbildungen</a></li>
+                                <li><a href="#" class="dfs-footer__link">Fenster Preise</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/anleitungen" class="dfs-footer__link">Anleitungen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/fensterbegriffe" class="dfs-footer__link">Fachbegriffe</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/wissenswertes" class="dfs-footer__link">Fensterwiki</a></li>
+                            </ul>
+                        </div>
                     </div>
 
                     <!-- Column 4 - Kontakt -->
