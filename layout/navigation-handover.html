@@ -54,10 +54,14 @@
             left: 0;
             right: 0;
             z-index: 2000;
+            background: var(--dfs-bg-white);
+            padding-top: env(safe-area-inset-top);
         }
 
         .navigation-handover {
+            margin: 0;
             padding-top: var(--dfs-menu-offset, 120px);
+            overscroll-behavior-y: none;
         }
 
         /* ============================================
