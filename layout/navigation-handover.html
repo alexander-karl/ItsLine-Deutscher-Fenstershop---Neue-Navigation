@@ -287,9 +287,9 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            margin-left: -11px;
-            margin-top: -1px;
-            transform: rotate(45deg);
+            margin-left: 0;
+            margin-top: 0;
+            transform: translate(-50%, -50%) rotate(45deg);
         }
 
         .navigation-handover .dfs-header__menu-toggle.active span:nth-child(2) {
@@ -300,9 +300,9 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            margin-left: -11px;
-            margin-top: -1px;
-            transform: rotate(-45deg);
+            margin-left: 0;
+            margin-top: 0;
+            transform: translate(-50%, -50%) rotate(-45deg);
         }
 
         /* Header Responsive - Large Tablets and Small Desktops */
@@ -573,6 +573,11 @@
             
             .navigation-handover .dfs-header__menu-toggle span {
                 width: 18px;
+            }
+
+            .navigation-handover .dfs-header__menu-toggle.active span:nth-child(1),
+            .navigation-handover .dfs-header__menu-toggle.active span:nth-child(3) {
+                left: calc(50% + 1px);
             }
             
             .navigation-handover .dfs-header__icon-btn {
