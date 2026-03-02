@@ -725,6 +725,20 @@
             }
         }
 
+        @media (min-width: 1025px) {
+            /* Keep one desktop dropdown panel alive and only switch content. */
+            .navigation-handover .dfs-dropdown {
+                transform: none;
+                transition: opacity 0.12s ease, visibility 0.12s ease;
+            }
+
+            .navigation-handover li.dfs-nav__item.is-active > .dfs-dropdown {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+        }
+
         .navigation-handover .dfs-dropdown--wide {
             min-width: 400px;
         }
@@ -763,6 +777,120 @@
                 right: 0;
                 max-width: calc(100vw - 80px);
                 width: auto;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            /* Two-column mega menu layout:
+               left = featured/image items, right = links + CTAs */
+            .navigation-handover .dfs-dropdown--wide,
+            .navigation-handover .dfs-dropdown--extra-wide {
+                display: grid;
+                grid-template-columns: minmax(380px, 1.15fr) minmax(320px, 1fr);
+                column-gap: 28px;
+                row-gap: 0;
+                align-items: start;
+                width: min(1100px, calc(100vw - 80px));
+                max-height: calc(100vh - 150px);
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+            .navigation-handover .dfs-dropdown--fenster .dfs-dropdown__section--fenster-material,
+            .navigation-handover .dfs-dropdown--balkontueren .dfs-dropdown__section--balkontueren-material,
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-typen,
+            .navigation-handover .dfs-dropdown--haustueren .dfs-dropdown__section--haustueren-material,
+            .navigation-handover .dfs-dropdown--sonnenschutz .dfs-dropdown__section--sonnenschutz-rollladen,
+            .navigation-handover .dfs-dropdown--garagentore .dfs-dropdown__section--garagentore-sektional,
+            .navigation-handover .dfs-dropdown--zubehoer .dfs-dropdown__section--zubehoer-teile,
+            .navigation-handover .dfs-dropdown--infoportal .dfs-dropdown__section--infoportal-ressourcen {
+                grid-column: 1;
+                grid-row: 1 / span 10;
+                margin-bottom: 0;
+            }
+
+            .navigation-handover .dfs-dropdown--fenster .dfs-dropdown__section--fenster-spezial,
+            .navigation-handover .dfs-dropdown--balkontueren .dfs-dropdown__section--balkontueren-optionen,
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-material,
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-material-falt,
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-konfiguratoren,
+            .navigation-handover .dfs-dropdown--haustueren .dfs-dropdown__section--haustueren-weitere,
+            .navigation-handover .dfs-dropdown--sonnenschutz .dfs-dropdown__section--sonnenschutz-konfiguratoren,
+            .navigation-handover .dfs-dropdown--sonnenschutz .dfs-dropdown__section--sonnenschutz-weitere,
+            .navigation-handover .dfs-dropdown--garagentore .dfs-dropdown__section--garagentore-marken,
+            .navigation-handover .dfs-dropdown--zubehoer .dfs-dropdown__section--zubehoer-ctas,
+            .navigation-handover .dfs-dropdown--zubehoer .dfs-dropdown__section--zubehoer-weitere,
+            .navigation-handover .dfs-dropdown--infoportal .dfs-dropdown__section--infoportal-ctas,
+            .navigation-handover .dfs-dropdown--infoportal .dfs-dropdown__section--infoportal-themen {
+                grid-column: 2;
+            }
+
+            /* Some menus use direct CTA links as top-level children. Keep them on the right side. */
+            .navigation-handover .dfs-dropdown--fenster > .dfs-cta,
+            .navigation-handover .dfs-dropdown--balkontueren > .dfs-cta,
+            .navigation-handover .dfs-dropdown--haustueren > .dfs-cta,
+            .navigation-handover .dfs-dropdown--garagentore > .dfs-cta {
+                grid-column: 2;
+                margin-top: 0;
+            }
+
+            /* Add breathing room above CTA areas on desktop. */
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-konfiguratoren,
+            .navigation-handover .dfs-dropdown--sonnenschutz .dfs-dropdown__section--sonnenschutz-konfiguratoren,
+            .navigation-handover .dfs-dropdown--zubehoer .dfs-dropdown__section--zubehoer-ctas,
+            .navigation-handover .dfs-dropdown--infoportal .dfs-dropdown__section--infoportal-ctas,
+            .navigation-handover .dfs-dropdown--fenster > .dfs-cta,
+            .navigation-handover .dfs-dropdown--balkontueren > .dfs-cta,
+            .navigation-handover .dfs-dropdown--haustueren > .dfs-cta,
+            .navigation-handover .dfs-dropdown--garagentore > .dfs-cta {
+                margin-top: 14px;
+            }
+
+            /* Ensure CTA blocks are always below secondary menu sections (desktop). */
+            .navigation-handover .dfs-dropdown--fenster .dfs-dropdown__section--fenster-spezial { grid-row: 1; }
+            .navigation-handover .dfs-dropdown--fenster > .dfs-cta { grid-row: 2; }
+
+            .navigation-handover .dfs-dropdown--balkontueren .dfs-dropdown__section--balkontueren-optionen { grid-row: 1; }
+            .navigation-handover .dfs-dropdown--balkontueren > .dfs-cta { grid-row: 2; }
+
+            .navigation-handover .dfs-dropdown--haustueren .dfs-dropdown__section--haustueren-weitere { grid-row: 1; }
+            .navigation-handover .dfs-dropdown--haustueren > .dfs-cta { grid-row: 2; }
+
+            .navigation-handover .dfs-dropdown--garagentore .dfs-dropdown__section--garagentore-marken { grid-row: 1; }
+            .navigation-handover .dfs-dropdown--garagentore > .dfs-cta { grid-row: 2; }
+
+            .navigation-handover .dfs-dropdown--sonnenschutz .dfs-dropdown__section--sonnenschutz-weitere { grid-row: 1; }
+            .navigation-handover .dfs-dropdown--sonnenschutz .dfs-dropdown__section--sonnenschutz-konfiguratoren { grid-row: 2; }
+
+            .navigation-handover .dfs-dropdown--zubehoer .dfs-dropdown__section--zubehoer-weitere { grid-row: 1; }
+            .navigation-handover .dfs-dropdown--zubehoer .dfs-dropdown__section--zubehoer-ctas { grid-row: 2; }
+
+            .navigation-handover .dfs-dropdown--infoportal .dfs-dropdown__section--infoportal-themen { grid-row: 1; }
+            .navigation-handover .dfs-dropdown--infoportal .dfs-dropdown__section--infoportal-ctas { grid-row: 2; }
+
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-material { grid-row: 1; }
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-material-falt { grid-row: 2; }
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-konfiguratoren { grid-row: 3; }
+
+            /* Unified desktop dropdown behavior:
+               all menus open with the same left start point and same width. */
+            .navigation-handover li.dfs-nav__item {
+                position: static;
+            }
+
+            .navigation-handover .dfs-dropdown,
+            .navigation-handover li.dfs-nav__item:nth-last-child(-n+3) > .dfs-dropdown,
+            .navigation-handover li.dfs-nav__item--zubehoer > .dfs-dropdown,
+            .navigation-handover li.dfs-nav__item--infoportal > .dfs-dropdown {
+                left: clamp(24px, 4vw, 80px) !important;
+                right: auto !important;
+                width: min(1200px, calc(100vw - (2 * clamp(24px, 4vw, 80px)))) !important;
+                max-width: min(1200px, calc(100vw - (2 * clamp(24px, 4vw, 80px)))) !important;
+            }
+
+            .navigation-handover .dfs-dropdown--wide,
+            .navigation-handover .dfs-dropdown--extra-wide {
+                grid-template-columns: minmax(420px, 1.2fr) minmax(320px, 1fr);
             }
         }
 
@@ -1205,6 +1333,34 @@
             .navigation-handover a.dfs-cta {
                 padding: 14px 16px;
                 min-height: 48px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            /* Tablet: keep featured/image item areas in two columns where space allows. */
+            .navigation-handover .dfs-dropdown--fenster .dfs-dropdown__section--fenster-material .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--balkontueren .dfs-dropdown__section--balkontueren-material .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-typen .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--haustueren .dfs-dropdown__section--haustueren-material .dfs-grid,
+            .navigation-handover .dfs-dropdown--sonnenschutz .dfs-dropdown__section--sonnenschutz-rollladen .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--zubehoer .dfs-dropdown__section--zubehoer-teile .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--infoportal .dfs-dropdown__section--infoportal-ressourcen .dfs-grid--two-col {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px 16px;
+            }
+
+            /* Tablet: also show secondary text-link sections in two columns where possible. */
+            .navigation-handover .dfs-dropdown--fenster .dfs-dropdown__section--fenster-spezial .dfs-grid,
+            .navigation-handover .dfs-dropdown--balkontueren .dfs-dropdown__section--balkontueren-optionen .dfs-grid,
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-material .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-material-falt .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--haustueren .dfs-dropdown__section--haustueren-weitere .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--sonnenschutz .dfs-dropdown__section--sonnenschutz-weitere .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--garagentore .dfs-dropdown__section--garagentore-marken .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--zubehoer .dfs-dropdown__section--zubehoer-weitere .dfs-grid--two-col,
+            .navigation-handover .dfs-dropdown--infoportal .dfs-dropdown__section--infoportal-themen .dfs-grid--two-col {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px 16px;
             }
         }
 
@@ -3678,6 +3834,45 @@
     <script>
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Desktop: keep dropdown panel persistent and only swap content between items.
+        (function() {
+            const nav = document.querySelector('.dfs-nav');
+            if (!nav) return;
+
+            const desktopItems = Array.from(
+                nav.querySelectorAll('.dfs-nav__item')
+            ).filter(function(item) {
+                return item.querySelector('.dfs-dropdown');
+            });
+
+            if (!desktopItems.length) return;
+
+            function clearDesktopActive() {
+                desktopItems.forEach(function(item) {
+                    item.classList.remove('is-active');
+                });
+            }
+
+            desktopItems.forEach(function(item) {
+                item.addEventListener('mouseenter', function() {
+                    if (window.innerWidth <= 1024) return;
+                    clearDesktopActive();
+                    item.classList.add('is-active');
+                });
+            });
+
+            nav.addEventListener('mouseleave', function() {
+                if (window.innerWidth <= 1024) return;
+                clearDesktopActive();
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 1024) {
+                    clearDesktopActive();
+                }
+            });
+        })();
 
         // Prevents nav-link clicks from keeping dropdowns open
         document.querySelectorAll('.dfs-nav__link').forEach(function(link) {
