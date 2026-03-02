@@ -49,6 +49,15 @@
             
             /* Shadows */
             --dfs-shadow: 0 8px 32px rgba(0,58,102,0.12);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2000;
+        }
+
+        .navigation-handover {
+            padding-top: var(--dfs-menu-offset, 120px);
         }
 
         /* ============================================
@@ -3695,8 +3704,23 @@
             const menuToggle = document.querySelector('.dfs-header__menu-toggle');
             const nav = document.querySelector('.dfs-nav');
             const navItems = document.querySelectorAll('.dfs-nav__item');
+            const menuWrapper = document.querySelector('.dfs-megamenu-wrapper');
             
             if (!menuToggle || !nav) return;
+
+            function syncMenuOffset() {
+                if (!menuWrapper) return;
+                const wasOpen = nav.classList.contains('mobile-open');
+
+                // Measure closed menu height so page content keeps a stable offset.
+                if (wasOpen && window.innerWidth <= 1024) {
+                    nav.classList.remove('mobile-open');
+                    document.body.style.setProperty('--dfs-menu-offset', menuWrapper.offsetHeight + 'px');
+                    nav.classList.add('mobile-open');
+                } else {
+                    document.body.style.setProperty('--dfs-menu-offset', menuWrapper.offsetHeight + 'px');
+                }
+            }
             
             // Add has-dropdown class to items with dropdowns
             navItems.forEach(function(item) {
@@ -3704,6 +3728,8 @@
                     item.classList.add('has-dropdown');
                 }
             });
+
+            syncMenuOffset();
             
             // Toggle main navigation
             menuToggle.addEventListener('click', function(e) {
@@ -3743,6 +3769,8 @@
                     if (window.innerWidth <= 1024) {
                         // If item has dropdown, toggle it
                         if (dropdown) {
+                            // Parent items toggle only on mobile; do not navigate.
+                            e.preventDefault();
                             const hasDropdown = item.classList.contains('mobile-open');
                             
                             // Close all other dropdowns
@@ -3756,7 +3784,6 @@
                             if (hasDropdown) {
                                 item.classList.remove('mobile-open');
                             } else {
-                                e.preventDefault();
                                 item.classList.add('mobile-open');
                             }
                         } else {
@@ -3802,6 +3829,7 @@
                             item.classList.remove('mobile-open');
                         });
                     }
+                    syncMenuOffset();
                 }, 250);
             });
         })();
