@@ -3,52 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deutscher Fenstershop - Mega Menu Demo</title>
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-    <!-- Bootstrap 4 CSS (for testing compatibility) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     
-    <!-- 
-    =====================================================
-    DFS MEGA MENU - Scoped CSS for Bootstrap 4
-    =====================================================
-    All classes use the "dfs-" prefix to prevent conflicts 
-    with Bootstrap 4 and existing shop classes
-    from happening.
-    
-    Style guide colors:
-    - Primary orange: #F47C26
-    - Primary dark blue: #003A66
-    - Accent sky blue: #3FA9F5
-    
-    Typography:
-    - Headlines: Helvetica
-    - Body/Buttons: Arial
-    =====================================================
-    -->
     <style>
-/* ============================================
-           DFS MEGA MENU - CSS Variables (Style Guide)
-           ============================================ */
-           .navigation-handover .dfs-megamenu-wrapper {
-            /* Primary colors */
+.navigation-handover {
             --dfs-orange: #F47C26;
             --dfs-orange-hover: #D86818;
             --dfs-darkblue: #003A66;
             --dfs-skyblue: #3FA9F5;
-            
-            /* Text colors */
             --dfs-black: #000000;
             --dfs-text-dark: #333333;
             --dfs-text-muted: #666666;
-            
-            /* Backgrounds */
             --dfs-bg-light: #F5F5F5;
             --dfs-bg-white: #FFFFFF;
             --dfs-border: #e0e0e0;
-            
-            /* Shadows */
             --dfs-shadow: 0 8px 32px rgba(0,58,102,0.12);
+            --dfs-breakpoint-desktop: 1024px;
+            --dfs-newsletter-bg: #004A7A;
+            margin: 0;
+            padding-top: var(--dfs-menu-offset, 120px);
+            overscroll-behavior-y: none;
+        }
+
+        .navigation-handover .dfs-megamenu-wrapper {
             position: fixed;
             top: 0;
             left: 0;
@@ -58,15 +35,7 @@
             padding-top: env(safe-area-inset-top);
         }
 
-        .navigation-handover {
-            margin: 0;
-            padding-top: var(--dfs-menu-offset, 120px);
-            overscroll-behavior-y: none;
-        }
-
-        /* ============================================
-           DFS Header (White background - matching design)
-           ============================================ */
+        
         .navigation-handover .dfs-header {
             background: var(--dfs-bg-white);
             padding-top: 12px;
@@ -76,6 +45,14 @@
             box-sizing: border-box;
             position: relative;
             overflow: hidden;
+        }
+
+        .navigation-handover .dfs-header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 16px;
         }
 
         .navigation-handover .dfs-header__logo,
@@ -106,7 +83,6 @@
             outline: none;
         }
 
-        /* Header Center - Contact Info */
         .navigation-handover .dfs-header__center {
             display: flex;
             align-items: center;
@@ -179,7 +155,6 @@
             line-height: 1.2;
         }
 
-        /* Header Right - CTAs and Icons */
         .navigation-handover .dfs-header__right {
             display: flex;
             align-items: center;
@@ -273,7 +248,6 @@
             justify-content: center;
         }
 
-        /* Search Bar - Expandable */
         .navigation-handover .dfs-header__search {
             position: relative;
             display: flex;
@@ -293,8 +267,7 @@
         }
 
         .navigation-handover .dfs-header__search-bar.dfs-header__search-bar--open {
-            /* Width spans 2 CTA buttons + gap + search icon so they don't show behind */
-            width: 468px; /* 2 × ~200px CTAs + 12px gap + 40px icon + 16px margin */
+            width: 468px;
         }
 
         .navigation-handover .dfs-header__search-bar form {
@@ -384,7 +357,6 @@
             overflow: visible;
         }
 
-        /* Mobile Menu Toggle Button */
         .navigation-handover .dfs-header__menu-toggle {
             display: none;
             width: 40px;
@@ -438,7 +410,6 @@
             transform: translate(-50%, -50%) rotate(-45deg);
         }
 
-        /* Header Responsive - Large Tablets and Small Desktops */
         @media (max-width: 1400px) {
             .navigation-handover .dfs-header__center {
                 margin-left: 24px;
@@ -466,7 +437,7 @@
             }
         }
 
-        /* Medium Tablets */
+        
         @media (max-width: 1024px) {
             .navigation-handover .dfs-header {
                 padding-top: 10px;
@@ -529,7 +500,7 @@
             }
         }
 
-        /* Small Tablets - CTAs become 40px icons, match icon height */
+        
         @media (max-width: 1024px) {
             .navigation-handover .dfs-header__search-bar {
                 height: 36px;
@@ -542,7 +513,7 @@
                 height: 36px;
             }
             .navigation-handover .dfs-header__search-bar.dfs-header__search-bar--open {
-                /* 2 × 40px CTAs + 12px gap + 36px icon + 8px margin = 136px */
+                
                 width: 140px;
             }
         }
@@ -553,7 +524,7 @@
             }
         }
 
-        /* Small Tablets - Hide contact text, show icons only */
+        
         @media (max-width: 900px) {
             .navigation-handover .dfs-header__center {
                 margin-left: 12px;
@@ -599,10 +570,10 @@
             }
         }
 
-        /* Mobile Landscape and Small Tablets - CTAs hidden */
+        
         @media (max-width: 768px) {
             .navigation-handover .dfs-header__search-bar.dfs-header__search-bar--open {
-                width: min(280px, calc(100vw - 140px)); /* Account for other icons */
+                width: min(280px, calc(100vw - 140px)); 
             }
 
             .navigation-handover .dfs-header {
@@ -657,7 +628,7 @@
             }
         }
 
-        /* Mobile Portrait */
+        
         @media (max-width: 640px) {
             .navigation-handover .dfs-header {
                 padding-top: 8px;
@@ -696,7 +667,7 @@
             }
         }
 
-        /* Small Mobile */
+        
         @media (max-width: 480px) {
             .navigation-handover .dfs-header {
                 padding-top: 8px;
@@ -771,7 +742,7 @@
             }
         }
 
-        /* Extra Small Mobile */
+        
         @media (max-width: 360px) {
             .navigation-handover .dfs-header {
                 padding: 6px 10px;
@@ -819,9 +790,7 @@
             }
         }
 
-        /* ============================================
-           DFS Main Navigation (Blue background)
-           ============================================ */
+        
         .navigation-handover .dfs-nav {
             background: var(--dfs-darkblue);
             border-bottom: none;
@@ -830,7 +799,7 @@
             overflow: visible;
         }
 
-        /* Reset Bootstrap ul styles */
+        
         .navigation-handover ul.dfs-nav__container {
             display: flex;
             flex-wrap: wrap;
@@ -840,7 +809,7 @@
             margin-bottom: 0;
         }
 
-        /* Reset Bootstrap li styles */
+        
         .navigation-handover li.dfs-nav__item {
             position: relative;
             list-style: none;
@@ -869,7 +838,7 @@
         .navigation-handover a.dfs-nav__link:hover {
             background: rgba(255,255,255,0.1);
             border-bottom-color: var(--dfs-orange);
-            color: #E5E5E5; /* Light gray font color */
+            color: #E5E5E5; 
             text-decoration: none;
         }
         
@@ -879,9 +848,7 @@
             text-decoration: none;
         }
 
-        /* ============================================
-           DFS Mega Dropdown
-           ============================================ */
+        
         .navigation-handover .dfs-dropdown {
             position: absolute;
             top: 100%;
@@ -901,7 +868,7 @@
             box-sizing: border-box;
         }
 
-        /* Hover state - hover only, no focus (desktop only) */
+        
         @media (min-width: 1025px) {
         .navigation-handover li.dfs-nav__item:hover > .dfs-dropdown {
             opacity: 1;
@@ -912,7 +879,7 @@
         }
 
         @media (min-width: 1025px) {
-            /* Keep one desktop dropdown panel alive and only switch content. */
+            
             .navigation-handover .dfs-dropdown {
                 transform: none;
                 transition: opacity 0.12s ease, visibility 0.12s ease;
@@ -933,15 +900,15 @@
             min-width: 480px;
         }
 
-        /* Position dropdowns from right for last navigation items to prevent overflow */
+        
         @media (min-width: 1025px) {
-            /* Last 3 navigation items - position dropdowns from right to prevent cutoff */
+            
             .navigation-handover li.dfs-nav__item:nth-last-child(-n+3) > .dfs-dropdown {
                 left: auto;
                 right: 0;
             }
             
-            /* For extra-wide and wide dropdowns on last items, ensure they don't overflow */
+            
             .navigation-handover li.dfs-nav__item:nth-last-child(-n+3) > .dfs-dropdown--extra-wide,
             .navigation-handover li.dfs-nav__item:nth-last-child(-n+3) > .dfs-dropdown--wide {
                 left: auto;
@@ -950,7 +917,7 @@
                 width: auto;
             }
             
-            /* Specific targeting for Accessories and Info Portal dropdowns */
+            
             .navigation-handover li.dfs-nav__item--zubehoer > .dfs-dropdown,
             .navigation-handover li.dfs-nav__item--infoportal > .dfs-dropdown {
                 left: auto;
@@ -967,8 +934,7 @@
         }
 
         @media (min-width: 1025px) {
-            /* Two-column mega menu layout:
-               left = featured/image items, right = links + CTAs */
+            
             .navigation-handover .dfs-dropdown--wide,
             .navigation-handover .dfs-dropdown--extra-wide {
                 display: grid;
@@ -1011,7 +977,7 @@
                 grid-column: 2;
             }
 
-            /* Some menus use direct CTA links as top-level children. Keep them on the right side. */
+            
             .navigation-handover .dfs-dropdown--fenster > .dfs-cta,
             .navigation-handover .dfs-dropdown--balkontueren > .dfs-cta,
             .navigation-handover .dfs-dropdown--haustueren > .dfs-cta,
@@ -1020,7 +986,7 @@
                 margin-top: 0;
             }
 
-            /* Add breathing room above CTA areas on desktop. */
+            
             .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-konfiguratoren,
             .navigation-handover .dfs-dropdown--sonnenschutz .dfs-dropdown__section--sonnenschutz-konfiguratoren,
             .navigation-handover .dfs-dropdown--zubehoer .dfs-dropdown__section--zubehoer-ctas,
@@ -1032,7 +998,7 @@
                 margin-top: 14px;
             }
 
-            /* Ensure CTA blocks are always below secondary menu sections (desktop). */
+            
             .navigation-handover .dfs-dropdown--fenster .dfs-dropdown__section--fenster-spezial { grid-row: 1; }
             .navigation-handover .dfs-dropdown--fenster > .dfs-cta { grid-row: 2; }
 
@@ -1058,8 +1024,7 @@
             .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-material-falt { grid-row: 2; }
             .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-konfiguratoren { grid-row: 3; }
 
-            /* Unified desktop dropdown behavior:
-               all menus open with the same left start point and same width. */
+            
             .navigation-handover li.dfs-nav__item {
                 position: static;
             }
@@ -1080,9 +1045,7 @@
             }
         }
 
-        /* ============================================
-           DFS Dropdown Sections
-           ============================================ */
+        
         .navigation-handover .dfs-dropdown__section {
             margin-bottom: 20px;
         }
@@ -1103,9 +1066,7 @@
             font-weight: 600;
         }
 
-        /* ============================================
-           DFS Grid Layout
-           ============================================ */
+        
         .navigation-handover .dfs-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1117,9 +1078,7 @@
             gap: 8px 16px;
         }
 
-        /* ============================================
-           DFS Image Items (Produktkarten mit Bildern)
-           ============================================ */
+        
         .navigation-handover .dfs-image-item,
         .navigation-handover a.dfs-image-item {
             display: flex;
@@ -1289,9 +1248,7 @@
             margin-top: 2px;
         }
 
-        /* ============================================
-           DFS CTA Buttons (Primary Button - Orange)
-           ============================================ */
+        
         .navigation-handover .dfs-cta,
         .navigation-handover a.dfs-cta {
             display: block;
@@ -1325,14 +1282,9 @@
             color: var(--dfs-bg-white);
         }
 
-        /*.dfs-cta::before,
-        a.dfs-cta::before {
-            content: "→ ";
-        }*/
+        
 
-        /* ============================================
-           DFS Text Links (Einfache Textlinks)
-           ============================================ */
+        
         .navigation-handover .dfs-text-link,
         .navigation-handover a.dfs-text-link {
             display: block;
@@ -1364,9 +1316,7 @@
             text-decoration: none;
         }
 
-        /* ============================================
-           DFS Divider
-           ============================================ */
+        
         .navigation-handover .dfs-divider,
         .navigation-handover hr.dfs-divider {
             height: 1px;
@@ -1375,9 +1325,7 @@
             border: none;
         }
 
-        /* ============================================
-           DFS Responsive Styles
-           ============================================ */
+        
         @media (max-width: 1200px) {
             .navigation-handover .dfs-nav__link,
             .navigation-handover a.dfs-nav__link {
@@ -1398,7 +1346,7 @@
         }
 
         @media (max-width: 1024px) {
-            /* Mobile Navigation - Hidden by default, shown when menu toggle is active */
+            
             .navigation-handover .dfs-nav {
                 max-height: 0;
                 overflow: hidden;
@@ -1415,7 +1363,7 @@
                 -webkit-overflow-scrolling: touch;
             }
             
-            /* Prevent body scroll when menu is open */
+            
             body.navigation-handover.menu-open {
                 overflow: hidden;
             }
@@ -1450,7 +1398,7 @@
                 border-bottom-color: transparent;
             }
             
-            /* Add arrow indicator for items with dropdowns */
+            
             .navigation-handover .dfs-nav__item.has-dropdown > .dfs-nav__link::after {
                 content: "▼";
                 font-size: 0.7rem;
@@ -1468,7 +1416,7 @@
                 transform: rotate(180deg);
             }
             
-            /* Mobile Dropdown Styles */
+            
             .navigation-handover .dfs-dropdown {
                 position: static;
                 opacity: 1;
@@ -1502,7 +1450,7 @@
                 grid-template-columns: 1fr;
             }
             
-            /* Improve touch targets on mobile */
+            
             .navigation-handover .dfs-image-item,
             .navigation-handover a.dfs-image-item {
                 padding: 14px 12px;
@@ -1523,7 +1471,7 @@
         }
 
         @media (min-width: 768px) and (max-width: 1024px) {
-            /* Tablet: keep featured/image item areas in two columns where space allows. */
+            
             .navigation-handover .dfs-dropdown--fenster .dfs-dropdown__section--fenster-material .dfs-grid--two-col,
             .navigation-handover .dfs-dropdown--balkontueren .dfs-dropdown__section--balkontueren-material .dfs-grid--two-col,
             .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-typen .dfs-grid--two-col,
@@ -1535,7 +1483,7 @@
                 gap: 10px 16px;
             }
 
-            /* Tablet: also show secondary text-link sections in two columns where possible. */
+            
             .navigation-handover .dfs-dropdown--fenster .dfs-dropdown__section--fenster-spezial .dfs-grid,
             .navigation-handover .dfs-dropdown--balkontueren .dfs-dropdown__section--balkontueren-optionen .dfs-grid,
             .navigation-handover .dfs-dropdown--terrassentueren .dfs-dropdown__section--terrassentueren-material .dfs-grid--two-col,
@@ -1591,321 +1539,24 @@
             }
         }
 
-        /* ============================================
-           Unified Section Padding
-           ============================================ */
+        
         .navigation-handover .section {
-            /* Viewport-based padding for non-mobile screens */
-            /* Scales from 24px (min) to 80px (max) based on viewport width */
+            
+            
             padding-left: clamp(24px, 4vw, 80px);
             padding-right: clamp(24px, 4vw, 80px);
         }
 
         @media (max-width: 480px) {
             .navigation-handover .section {
-                /* Fixed padding for mobile screens */
+                
                 padding-left: 16px;
                 padding-right: 16px;
             }
         }
-
-        /* ============================================
-           DFS Hero Section
-           ============================================ */
-        .navigation-handover .dfs-hero {
-            position: relative;
-            width: 100%;
-            height: 480px;
-            overflow: hidden;
-        }
-
-        .navigation-handover .dfs-hero__image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .navigation-handover .dfs-hero__overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0,58,102,0.7) 0%, rgba(0,58,102,0.3) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .navigation-handover .dfs-hero__content {
-            width: 100%;
-        }
-
-        .navigation-handover .dfs-hero__title {
-            font-family: Helvetica, Arial, sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #fff;
-            margin: 0 0 24px 0;
-            max-width: 600px;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .navigation-handover .dfs-hero__subtitle {
-            font-family: Arial, sans-serif;
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #fff;
-            margin: 0 0 32px 0;
-            max-width: 600px;
-            line-height: 1.6;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .navigation-handover .dfs-hero__cta {
-            display: inline-block;
-            padding: 16px 32px;
-            background: #F47C26;
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 4px;
-            font-family: Arial, sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .navigation-handover .dfs-hero__cta:hover {
-            background: #003A66;
-            color: #FFFFFF;
-            text-decoration: none;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,58,102,0.4);
-        }
-
-        @media (max-width: 768px) {
-            .navigation-handover .dfs-hero {
-                height: 300px;
-            }
-            
-            .navigation-handover .dfs-hero__title {
-                font-size: 2rem;
-            }
-            
-            .navigation-handover .dfs-hero__subtitle {
-                font-size: 1rem;
-                margin-bottom: 24px;
-            }
-            
-            .navigation-handover .dfs-hero__cta {
-                padding: 14px 24px;
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navigation-handover .dfs-hero__title {
-                font-size: 1.5rem;
-            }
-            
-            .navigation-handover .dfs-hero__subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 20px;
-            }
-        }
-
-        /* ============================================
-           Demo Content (nicht Teil des Mega Menus)
-           ============================================ */
-        .navigation-handover .dfs-demo {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 24px;
-        }
-
-        .navigation-handover .dfs-demo__title {
-            font-family: Helvetica, Arial, sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--dfs-black);
-            margin-bottom: 16px;
-        }
-
-        .navigation-handover .dfs-demo__subtitle {
-            color: var(--dfs-text-dark);
-            font-family: Arial, sans-serif;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-
-        .navigation-handover .dfs-demo__legend {
-            background: var(--dfs-bg-white);
-            border-radius: 4px;
-            padding: 24px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-
-        .navigation-handover .dfs-demo__legend-title {
-            font-family: Helvetica, Arial, sans-serif;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--dfs-black);
-        }
-
-        .navigation-handover .dfs-demo__legend-items {
-            display: flex;
-            gap: 32px;
-            flex-wrap: wrap;
-        }
-
-        .navigation-handover .dfs-demo__legend-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .navigation-handover .dfs-demo__legend-color {
-            width: 16px;
-            height: 16px;
-            border-radius: 2px;
-        }
-
-        .navigation-handover .dfs-demo__legend-color--orange {
-            background: var(--dfs-orange);
-        }
-
-        .navigation-handover .dfs-demo__legend-color--green {
-            background: var(--dfs-orange);
-        }
-
-        .navigation-handover .dfs-demo__legend-color--purple {
-            background: var(--dfs-darkblue);
-        }
-
-        .navigation-handover .dfs-demo__legend-text {
-            font-family: Arial, sans-serif;
-            font-size: 0.9rem;
-            color: var(--dfs-text-dark);
-        }
-
-        .navigation-handover .dfs-demo__hint {
-            display: inline-block;
-            background: var(--dfs-darkblue);
-            color: var(--dfs-bg-white);
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-family: Arial, sans-serif;
-            font-size: 0.85rem;
-            margin-top: 24px;
-            animation: dfs-pulse 2s infinite;
-        }
-
-        @keyframes dfs-pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .navigation-handover .dfs-demo__note {
-            background: var(--dfs-bg-light);
-            border-left: 4px solid var(--dfs-darkblue);
-            padding: 16px 20px;
-            margin-top: 32px;
-            border-radius: 0 4px 4px 0;
-        }
-
-        .navigation-handover .dfs-demo__note-title {
-            font-family: Helvetica, Arial, sans-serif;
-            font-weight: 600;
-            color: var(--dfs-darkblue);
-            margin-bottom: 8px;
-        }
-
-        .navigation-handover .dfs-demo__note-text {
-            font-family: Arial, sans-serif;
-            font-size: 0.9rem;
-            color: var(--dfs-text-dark);
-            margin: 0;
-        }
-
-        .navigation-handover .dfs-demo__note code {
-            background: rgba(0,0,0,0.05);
-            padding: 2px 6px;
-            border-radius: 2px;
-            font-size: 0.85em;
-        }
-
-    /* =====================================================
-       DFS SKELETON SECTIONS
-       ===================================================== */
-    .navigation-handover .dfs-skeleton-section {
-        padding: 60px 0;
-        background-color: #FFFFFF;
-    }
-
-    .navigation-handover .dfs-skeleton-container {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .navigation-handover .dfs-skeleton-box {
-        background-color: #E5E5E5;
-        border-radius: 4px;
-        flex-shrink: 0;
-    }
-
-    .navigation-handover .dfs-skeleton-box--large {
-        width: 100%;
-        height: 300px;
-    }
-
-    .navigation-handover .dfs-skeleton-box--medium {
-        flex: 1;
-        min-width: 250px;
-        height: 200px;
-    }
-
-    .navigation-handover .dfs-skeleton-box--small {
-        width: 200px;
-        height: 200px;
-    }
-
-    .navigation-handover .dfs-skeleton-box--wide {
-        width: 100%;
-        height: 250px;
-    }
-
-    @media (max-width: 768px) {
-        .navigation-handover .dfs-skeleton-section {
-            padding: 40px 0;
-        }
-
-        .navigation-handover .dfs-skeleton-container {
-            flex-direction: column;
-        }
-
-        .navigation-handover .dfs-skeleton-box--medium {
-            width: 100%;
-            min-width: 100%;
-        }
-
-        .navigation-handover .dfs-skeleton-box--small {
-            width: 100%;
-        }
-    }
-
-    /* =====================================================
-       DFS NEWSLETTER
-       ===================================================== */
     .navigation-handover .dfs-newsletter {
-        background: #004A7A; /* Lighter blue than footer */
-        color: #FFFFFF;
+        background: var(--dfs-newsletter-bg);
+        color: var(--dfs-bg-white);
         padding: 50px 0;
         margin-top: 80px;
     }
@@ -1925,7 +1576,7 @@
         font-family: Helvetica, Arial, sans-serif;
         font-size: 1.75rem;
         font-weight: 600;
-        color: #FFFFFF;
+        color: var(--dfs-bg-white);
         margin-bottom: 12px;
     }
 
@@ -2025,7 +1676,7 @@
         font-size: 1rem;
         font-weight: 600;
         color: #FFFFFF;
-        background-color: #F47C26; /* Orange accent color */
+        background-color: var(--dfs-orange); 
         border: none;
         border-radius: 4px;
         cursor: pointer;
@@ -2063,11 +1714,9 @@
         }
     }
 
-    /* =====================================================
-       DFS FOOTER
-       ===================================================== */
+    
     .navigation-handover .dfs-footer {
-        background: #003A66; /* Dark blue background */
+        background: var(--dfs-darkblue); 
         color: var(--dfs-bg-white);
         padding: 60px 0 0;
         margin-top: 0;
@@ -2105,7 +1754,7 @@
         font-family: Helvetica, Arial, sans-serif;
         font-size: 1.1rem;
         font-weight: 600;
-        color: #FFFFFF; /* White color */
+        color: #FFFFFF; 
         margin-bottom: 20px;
     }
 
@@ -2130,7 +1779,7 @@
     }
 
     .navigation-handover .dfs-footer__link:hover {
-        color: #E5E5E5; /* Light gray */
+        color: #E5E5E5; 
     }
 
     .navigation-handover .dfs-footer__opening-hours {
@@ -2276,10 +1925,10 @@
     }
 
     .navigation-handover .dfs-footer__legal-link:hover {
-        color: #E5E5E5; /* Light gray */
+        color: #E5E5E5; 
     }
 
-    /* Footer Responsive */
+    
     @media (max-width: 1024px) {
         .navigation-handover .dfs-footer {
             padding: 40px 0 0;
@@ -2335,813 +1984,16 @@
         }
     }
 
-    /* =====================================================
-       HOME PAGE STYLES
-       ===================================================== */
-
-    /* Hero Section with Promotional Overlays */
-    /* COMMENTED OUT: Styles moved to inline in home.html to allow custom styling */
-    /*
-    .text-block-image-lentz {
-        position: relative;
-        width: 100%;
-        min-height: 500px;
-        background-image: url('/assets/hero-image.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        overflow: hidden;
-    }
-
-    .hard-frame-500px {
-        position: relative;
-        width: 100%;
-        min-height: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .image-container {
-        position: relative;
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 40px clamp(24px, 4vw, 80px);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 40px;
-    }
-
-    .circle-link {
-        text-decoration: none;
-        display: block;
-    }
-
-    .circle-bg {
-        background: linear-gradient(135deg, #F47C26 0%, #E66A15 50%, #D4590A 100%);
-        border-radius: 50%;
-        width: 280px;
-        height: 280px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 24px rgba(244, 124, 38, 0.4);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .navigation-handover .circle-link:hover .circle-bg {
-        transform: scale(1.05);
-        box-shadow: 0 12px 32px rgba(244, 124, 38, 0.5);
-    }
-
-    .circle-text {
-        text-align: center;
-        color: #FFFFFF;
-        font-family: 'Montserrat', Arial, sans-serif;
-    }
-
-    .circle-text .line-small {
-        font-size: 1.2em;
-        font-weight: 500;
-        margin-bottom: 8px;
-    }
-
-    .circle-text .line-large {
-        font-size: 4.5em;
-        font-weight: 900;
-        line-height: 1;
-        margin: 8px 0;
-    }
-
-    .circle-text .line-tiny {
-        font-size: 0.8em;
-        font-weight: 400;
-        margin-top: 8px;
-    }
-
-    .right-wrapper {
-        flex: 1;
-        max-width: 500px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .right-text {
-        background: rgba(220, 0, 0, 0.95);
-        padding: 40px 50px;
-        border-radius: 8px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    }
-
-    .right-text .top {
-        color: #FFFFFF;
-        font-size: 2.5rem;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-    }
-
-    .right-text .top div {
-        display: block;
-    }
-
-    .right-text .bottom {
-        display: inline-block;
-        padding: 16px 32px;
-        background: rgba(255, 255, 255, 0.2);
-        color: #FFFFFF;
-        text-decoration: none;
-        border-radius: 4px;
-        font-family: Arial, sans-serif;
-        font-weight: 600;
-        font-size: 1.1rem;
-        border: 2px solid #FFFFFF;
-        transition: all 0.3s ease;
-    }
-
-    .navigation-handover .right-text .bottom:hover {
-        background: #FFFFFF;
-        color: #DC0000;
-        text-decoration: none;
-    }
-
-    .bottom-bar {
-        width: 100%;
-        background: #FFFFFF;
-        padding: 20px clamp(24px, 4vw, 80px);
-        margin-top: 0;
-        text-align: center;
-    }
-
-    .bottom-text {
-        font-family: Arial, sans-serif;
-        font-size: 1rem;
-        color: #333333;
-        font-weight: 500;
-    }
-    */
-
-    /* Main Title Section */
-    .navigation-handover .col-md-12 h1[data-type="Text"] {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 3rem;
-        font-weight: 700;
-        color: #000000;
-        text-align: center;
-        text-transform: uppercase;
-        margin: 60px 0 24px;
-        padding: 0 clamp(24px, 4vw, 80px);
-    }
-
-    .navigation-handover .col-md-12 > p[data-type="Text"] {
-        font-family: Arial, sans-serif;
-        font-size: 1.1rem;
-        color: #333333;
-        text-align: center;
-        max-width: 900px;
-        margin: 0 auto 30px;
-        padding: 0 clamp(24px, 4vw, 80px);
-        line-height: 1.6;
-    }
-
-    /* Delivery Info Section */
-    .navigation-handover .col-md-6 p[data-type="Text"] {
-        text-align: center;
-        font-family: Arial, sans-serif;
-    }
-
-    .navigation-handover .col-md-6 span[style*="color:#f0801a"] {
-        color: #F47C26 !important;
-        font-weight: 700;
-        font-size: 1.5rem !important;
-    }
-
-    /* Product Cards Grid */
-    .navigation-handover .container-fluid.flex-box.g15 {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 40px clamp(24px, 4vw, 80px);
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .navigation-handover .fl-20 {
-        flex: 0 0 calc(20% - 16px);
-        min-width: 280px;
-        background: #FFFFFF;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 24px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .navigation-handover .fl-20:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    }
-
-    .navigation-handover .block-text {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    .navigation-handover .block-text .heading h3,
-    .navigation-handover .block-text .heading strong {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #000000;
-        margin: 0 0 16px;
-        text-align: center;
-    }
-
-    .navigation-handover .block-img {
-        margin: 0 auto 20px;
-        text-align: center;
-    }
-
-    .navigation-handover .block-img img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-    }
-
-    .navigation-handover .text-bold {
-        font-family: Arial, sans-serif;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #000000;
-        margin-bottom: 12px;
-    }
-
-    .navigation-handover .text-bold span {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #F47C26;
-    }
-
-    .navigation-handover .block-text p.text-left {
-        font-family: Arial, sans-serif;
-        font-size: 0.95rem;
-        color: #666666;
-        line-height: 1.5;
-        margin-bottom: 20px;
-        flex-grow: 1;
-    }
-
-    /* Buttons */
-    .navigation-handover .btn {
-        display: inline-block;
-        padding: 12px 24px;
-        border-radius: 4px;
-        font-family: Arial, sans-serif;
-        font-weight: 600;
-        font-size: 0.9rem;
-        text-decoration: none;
-        text-align: center;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-    }
-
-    .navigation-handover .btn-block {
-        display: block;
-        width: 100%;
-        margin-bottom: 12px;
-    }
-
-    .navigation-handover .btn.bg-primary,
-    .navigation-handover .btn.btn-primary {
-        background: #003A66;
-        color: #FFFFFF;
-    }
-
-    .navigation-handover .btn.bg-primary:hover,
-    .navigation-handover .btn.btn-primary:hover {
-        background: #002A4D;
-        color: #FFFFFF;
-        text-decoration: none;
-    }
-
-    .navigation-handover .btn.bg-white,
-    .navigation-handover .btn.btn-black {
-        background: #FFFFFF;
-        color: #000000;
-        border: 2px solid #000000;
-    }
-
-    .navigation-handover .btn.bg-white:hover,
-    .navigation-handover .btn.btn-black:hover {
-        background: #000000;
-        color: #FFFFFF;
-        text-decoration: none;
-    }
-
-    .navigation-handover .btn.btn-orange {
-        background: #F47C26;
-        color: #FFFFFF;
-    }
-
-    .navigation-handover .btn.btn-orange:hover {
-        background: #E66A15;
-        color: #FFFFFF;
-        text-decoration: none;
-    }
-
-    .navigation-handover .m-b5 {
-        margin-bottom: 12px;
-    }
-
-    .navigation-handover .m-b {
-        margin-bottom: 20px;
-    }
-
-    /* Video Section */
-    .navigation-handover .col-md-12[data-type="Video"] {
-        background: #2C2C2C;
-        padding: 60px clamp(24px, 4vw, 80px);
-        text-align: center;
-    }
-
-    .navigation-handover .col-md-12[data-type="Video"] h2 {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #FFFFFF;
-        margin-bottom: 40px;
-    }
-
-    .navigation-handover .col-md-12[data-type="Video"] iframe {
-        max-width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    }
-
-    .navigation-handover .col-md-12[data-type="Video"] p {
-        font-family: Arial, sans-serif;
-        font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 900px;
-        margin: 30px auto 0;
-        line-height: 1.6;
-    }
-
-    /* Configurator Section */
-    .navigation-handover .col-md-12[style*=""] .block-text.col-md-6 {
-        padding: 40px clamp(24px, 4vw, 80px);
-    }
-
-    .navigation-handover .section-heading {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #F47C26;
-        margin-bottom: 30px;
-        line-height: 1.2;
-    }
-
-    .navigation-handover .block-text.col-md-6 h4 {
-        font-family: Arial, sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #003A66;
-        margin: 24px 0 12px;
-    }
-
-    .navigation-handover .block-text.col-md-6 p {
-        font-family: Arial, sans-serif;
-        font-size: 1rem;
-        color: #333333;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-
-    .navigation-handover .block-img.col-md-6 img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Orange CTA Bar */
-    .navigation-handover .page_new_container .btn-orange.btn-block {
-        background: #F47C26;
-        color: #FFFFFF;
-        padding: 20px 40px;
-        font-size: 1.2rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin: 40px 0;
-        border-radius: 0;
-    }
-
-    /* "Buy windows online" Section */
-    .navigation-handover .col-md-12 h2[style*="text-align:center"] {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #000000;
-        text-align: center;
-        margin: 60px 0 40px;
-        padding: 0 clamp(24px, 4vw, 80px);
-    }
-
-    .navigation-handover .article-block-four-col {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        padding: 0 clamp(24px, 4vw, 80px) 60px;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .navigation-handover .article-block-four-col .col {
-        flex: 0 0 calc(25% - 23px);
-        min-width: 280px;
-        background: #FFFFFF;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 24px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .navigation-handover .article-block-four-col .col:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    }
-
-    .navigation-handover .article-block-four-col .block-img {
-        margin-bottom: 20px;
-    }
-
-    .navigation-handover .article-block-four-col .block-img img {
-        width: 100%;
-        height: auto;
-        border-radius: 4px;
-    }
-
-    .navigation-handover .article-block-four-col h3 {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #000000;
-        margin: 0 0 16px;
-    }
-
-    .navigation-handover .article-block-four-col p {
-        font-family: Arial, sans-serif;
-        font-size: 0.95rem;
-        color: #666666;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-
-    .navigation-handover .article-block-four-col .btn {
-        background: #003A66;
-        color: #FFFFFF;
-        margin-top: auto;
-    }
-
-    /* Delivery Service Section */
-    .navigation-handover .block-img.col-md-4 img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    .navigation-handover .block-text.col-md-8 h2.section-heading {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #000000;
-        margin-bottom: 24px;
-    }
-
-    .navigation-handover .block-text.col-md-8 p {
-        font-family: Arial, sans-serif;
-        font-size: 1rem;
-        color: #333333;
-        line-height: 1.7;
-        margin-bottom: 24px;
-    }
-
-    .navigation-handover .block-text.col-md-8 p span[style*="font-weight:bold"] {
-        font-weight: 700;
-        color: #000000;
-    }
-
-    .navigation-handover .block-text.col-md-8 p span[style*="font-size:22px"] {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #003A66;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 1200px) {
-        .navigation-handover .fl-20 {
-            flex: 0 0 calc(25% - 15px);
-        }
-
-        .navigation-handover .article-block-four-col .col {
-            flex: 0 0 calc(33.333% - 20px);
-        }
-    }
-
-    @media (max-width: 992px) {
-        /* COMMENTED OUT: Hero section media queries moved to inline in home.html */
-        /*
-        .image-container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .circle-bg {
-            width: 240px;
-            height: 240px;
-        }
-
-        .right-wrapper {
-            max-width: 100%;
-        }
-        */
-
-        .navigation-handover .fl-20 {
-            flex: 0 0 calc(33.333% - 14px);
-        }
-
-        .navigation-handover .article-block-four-col .col {
-            flex: 0 0 calc(50% - 15px);
-        }
-    }
-
-    @media (max-width: 768px) {
-        /* COMMENTED OUT: Hero section media queries moved to inline in home.html */
-        /*
-        .text-block-image-lentz,
-        .hard-frame-500px {
-            min-height: 400px;
-        }
-
-        .circle-bg {
-            width: 200px;
-            height: 200px;
-        }
-
-        .circle-text .line-large {
-            font-size: 3.5em;
-        }
-
-        .right-text {
-            padding: 30px 30px;
-        }
-
-        .right-text .top {
-            font-size: 1.8rem;
-        }
-        */
-
-        .navigation-handover .col-md-12 h1[data-type="Text"] {
-            font-size: 2rem;
-        }
-
-        .navigation-handover .fl-20 {
-            flex: 0 0 calc(50% - 10px);
-        }
-
-        .navigation-handover .article-block-four-col .col {
-            flex: 0 0 100%;
-        }
-
-        .navigation-handover .section-heading {
-            font-size: 1.8rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        /* COMMENTED OUT: Hero section media queries moved to inline in home.html */
-        /*
-        .text-block-image-lentz,
-        .hard-frame-500px {
-            min-height: 350px;
-        }
-
-        .circle-bg {
-            width: 180px;
-            height: 180px;
-        }
-
-        .circle-text .line-large {
-            font-size: 2.5em;
-        }
-
-        .right-text {
-            padding: 24px 20px;
-        }
-
-        .right-text .top {
-            font-size: 1.5rem;
-        }
-        */
-
-        .navigation-handover .col-md-12 h1[data-type="Text"] {
-            font-size: 1.5rem;
-        }
-
-        .navigation-handover .fl-20 {
-            flex: 0 0 100%;
-        }
-
-        .navigation-handover .section-heading {
-            font-size: 1.5rem;
-        }
-    }
-
-    /* Testimonials/Reviews Section */
-    .navigation-handover [data-trustmary-status="active"] {
-        padding: 60px clamp(24px, 4vw, 80px);
-        background: #FFFFFF;
-        margin: 60px 0;
-    }
-
-    .navigation-handover [data-trustmary-status="active"] h2 {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #000000;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    /* Fixed Bottom CTA Buttons (if present) */
-    .navigation-handover .dfs-footer__fixed-cta {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #004A7A;
-        padding: 16px clamp(24px, 4vw, 80px);
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        z-index: 1000;
-        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .navigation-handover .dfs-footer__fixed-cta .btn {
-        flex: 1;
-        max-width: 300px;
-        padding: 14px 24px;
-        font-size: 1rem;
-    }
-
-    @media (max-width: 768px) {
-        .navigation-handover .dfs-footer__fixed-cta {
-            flex-direction: column;
-            padding: 12px 16px;
-        }
-
-        .navigation-handover .dfs-footer__fixed-cta .btn {
-            max-width: 100%;
-        }
-    }
-
-    /* Additional Utility Classes */
-    .navigation-handover .clear,
-    .navigation-handover .clearfix {
-        clear: both;
-    }
-
-    .navigation-handover .text-center {
-        text-align: center;
-    }
-
-    .navigation-handover .text-left {
-        text-align: left;
-    }
-
-    .navigation-handover .text-justify {
-        text-align: justify;
-    }
-
-    .navigation-handover .padding0 {
-        padding: 0;
-    }
-
-    .navigation-handover .page_new_container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 clamp(24px, 4vw, 80px);
-    }
-
-    @media (max-width: 480px) {
-        .navigation-handover .page_new_container {
-            padding: 0 16px;
-        }
-    }
-
-    /* Ensure proper spacing between sections */
-    .navigation-handover .col-md-12[data-type="Block"] {
-        margin-bottom: 40px;
-    }
-
-    /* Card styles for product grids */
-    .navigation-handover .card {
-        background: #FFFFFF;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .navigation-handover .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    }
-
-    .navigation-handover .card-image {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .navigation-handover .card-image img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .navigation-handover .card-action {
-        padding: 16px;
-        font-family: Arial, sans-serif;
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: #000000;
-        text-align: center;
-    }
-
-    /* Flex container for product rows */
-    .navigation-handover .flex-container.row-6 {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 40px clamp(24px, 4vw, 80px);
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .navigation-handover .flex-container.row-6 .col-md-2 {
-        flex: 0 0 calc(16.666% - 17px);
-        min-width: 200px;
-    }
-
-    @media (max-width: 1200px) {
-        .navigation-handover .flex-container.row-6 .col-md-2 {
-            flex: 0 0 calc(20% - 16px);
-        }
-    }
-
-    @media (max-width: 992px) {
-        .navigation-handover .flex-container.row-6 .col-md-2 {
-            flex: 0 0 calc(25% - 15px);
-        }
-    }
-
-    @media (max-width: 768px) {
-        .navigation-handover .flex-container.row-6 .col-md-2 {
-            flex: 0 0 calc(33.333% - 14px);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .navigation-handover .flex-container.row-6 .col-md-2 {
-            flex: 0 0 calc(50% - 10px);
-        }
-    }
     </style>
 </head>
 <body class="navigation-handover">
-    <!-- ============================================================================ -->
-    <!-- ========================= START HEADER NAVIGATION =========================== -->
-    <!-- ============================================================================ -->
-    <!-- DFS Mega Menu Wrapper -->
     <div class="dfs-megamenu-wrapper">
-        <!-- Header -->
         <header class="dfs-header">
-            <div class="section" style="display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 16px;">
-                <!-- Logo -->
+            <div class="section dfs-header__inner">
                 <a href="https://deutscher-fenstershop.de/" class="dfs-header__logo dfs-header__logo--main">
                     <img src="https://deutscher-fenstershop.de/grafik/logo/fenster-online-kaufen-logo.png" alt="Deutscher Fenstershop">
                 </a>
                 
-                <!-- Center - Contact Info -->
                 <div class="dfs-header__center">
                     <a href="mailto:info@deutscher-fenstershop.de" class="dfs-header__contact-item dfs-header__contact-item--email">
                         <div class="dfs-header__contact-icon">
@@ -3161,9 +2013,7 @@
                     </a>
                 </div>
                 
-                <!-- Right - CTAs and Icons -->
                 <div class="dfs-header__right">
-                    <!-- Mobile Menu Toggle -->
                     <button class="dfs-header__menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
                         <span></span>
                         <span></span>
@@ -3177,12 +2027,12 @@
                             <form method="get" action="https://deutscher-fenstershop.de/search" id="dfs-search-form">
                                 <input type="text" name="q" placeholder="Suche..." autocomplete="off" aria-label="Suche">
                                 <button type="submit" class="dfs-header__search-submit" aria-label="Suche starten">
-                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-search.svg" alt="">
+                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-search.svg" alt="" aria-hidden="true">
                                 </button>
                             </form>
                         </div>
                         <button type="button" class="dfs-header__icon-btn dfs-header__icon-btn--search" aria-label="Suche öffnen" aria-expanded="false">
-                            <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-search.svg" alt="" class="dfs-header__search-icon-open">
+                            <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-search.svg" alt="" class="dfs-header__search-icon-open" aria-hidden="true">
                             <svg class="dfs-header__search-icon-close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                         </button>
                     </div>
@@ -3193,18 +2043,16 @@
                     
                     <a href="https://deutscher-fenstershop.de/shop" class="dfs-header__icon-btn dfs-header__icon-btn--cart" aria-label="Warenkorb">
                         <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-cart.svg" alt="Cart">
-                        <span class="dfs-header__cart-badge" id="cart-count">1</span>
+                        <span class="dfs-header__cart-badge" id="cart-count">0</span>
                     </a>
                 </div>
             </div>
         </header>
 
-        <!-- Main Navigation -->
         <nav class="dfs-nav">
             <ul class="dfs-nav__container section">
-                <!-- Windows -->
                 <li class="dfs-nav__item dfs-nav__item--fenster">
-                    <a href="https://deutscher-fenstershop.de/fenster" class="dfs-nav__link dfs-nav__link--fenster">Fenster</a>
+                    <a href="https://deutscher-fenstershop.de/fenster" class="dfs-nav__link dfs-nav__link--fenster" aria-haspopup="true" aria-expanded="false">Fenster</a>
                     <div class="dfs-dropdown dfs-dropdown--extra-wide dfs-dropdown--fenster">
                         <div class="dfs-dropdown__section dfs-dropdown__section--fenster-material">
                             <h3 class="dfs-dropdown__title">Nach Material</h3>
@@ -3219,7 +2067,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kunststoff-alu-fenster" class="dfs-image-item dfs-image-item--fenster-kunststoff-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Kunstsotff-Alu-Fenster.jpg" alt="Kunststoff-Alu Fenster" class="dfs-product-image dfs-product-image--kunststoff-alu">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Kunststoff-Alu-Fenster.jpg" alt="Kunststoff-Alu Fenster" class="dfs-product-image dfs-product-image--kunststoff-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Kunststoff-Alu Fenster</div>
@@ -3275,9 +2123,8 @@
                     </div>
                 </li>
 
-                <!-- Balcony Doors -->
                 <li class="dfs-nav__item dfs-nav__item--balkontueren">
-                    <a href="https://deutscher-fenstershop.de/balkontuer" class="dfs-nav__link dfs-nav__link--balkontueren">Balkontüren</a>
+                    <a href="https://deutscher-fenstershop.de/balkontuer" class="dfs-nav__link dfs-nav__link--balkontueren" aria-haspopup="true" aria-expanded="false">Balkontüren</a>
                     <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--balkontueren">
                         <div class="dfs-dropdown__section dfs-dropdown__section--balkontueren-material">
                             <h3 class="dfs-dropdown__title">Nach Material</h3>
@@ -3329,9 +2176,8 @@
                     </div>
                 </li>
 
-                <!-- Patio Doors -->
                 <li class="dfs-nav__item dfs-nav__item--terrassentueren">
-                    <a href="https://deutscher-fenstershop.de/terrassentueren" class="dfs-nav__link dfs-nav__link--terrassentueren">Terrassentüren</a>
+                    <a href="https://deutscher-fenstershop.de/terrassentueren" class="dfs-nav__link dfs-nav__link--terrassentueren" aria-haspopup="true" aria-expanded="false">Terrassentüren</a>
                     <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--terrassentueren">
                         <div class="dfs-dropdown__section dfs-dropdown__section--terrassentueren-typen">
                             <h3 class="dfs-dropdown__title">Nach Türentyp</h3>
@@ -3403,9 +2249,8 @@
                     </div>
                 </li>
 
-                <!-- Entrance Doors -->
                 <li class="dfs-nav__item dfs-nav__item--haustueren">
-                    <a href="https://deutscher-fenstershop.de/haustuer" class="dfs-nav__link dfs-nav__link--haustueren">Haustüren</a>
+                    <a href="https://deutscher-fenstershop.de/haustuer" class="dfs-nav__link dfs-nav__link--haustueren" aria-haspopup="true" aria-expanded="false">Haustüren</a>
                     <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--haustueren">
                         <div class="dfs-dropdown__section dfs-dropdown__section--haustueren-material">
                             <h3 class="dfs-dropdown__title">Nach Material</h3>
@@ -3453,9 +2298,8 @@
                     </div>
                 </li>
 
-                <!-- Sun Protection -->
                 <li class="dfs-nav__item dfs-nav__item--sonnenschutz">
-                    <a href="https://deutscher-fenstershop.de/rollladen" class="dfs-nav__link dfs-nav__link--sonnenschutz">Sonnenschutz</a>
+                    <a href="https://deutscher-fenstershop.de/rollladen" class="dfs-nav__link dfs-nav__link--sonnenschutz" aria-haspopup="true" aria-expanded="false">Sonnenschutz</a>
                     <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--sonnenschutz">
                         <div class="dfs-dropdown__section dfs-dropdown__section--sonnenschutz-rollladen">
                             <h3 class="dfs-dropdown__title">Rollläden & Raffstoren</h3>
@@ -3529,9 +2373,8 @@
                     </div>
                 </li>
 
-                <!-- Garage Doors -->
                 <li class="dfs-nav__item dfs-nav__item--garagentore">
-                    <a href="https://deutscher-fenstershop.de/sektionaltore" class="dfs-nav__link dfs-nav__link--garagentore">Garagentore</a>
+                    <a href="https://deutscher-fenstershop.de/sektionaltore" class="dfs-nav__link dfs-nav__link--garagentore" aria-haspopup="true" aria-expanded="false">Garagentore</a>
                     <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--garagentore">
                         <div class="dfs-dropdown__section dfs-dropdown__section--garagentore-sektional">
                             <h3 class="dfs-dropdown__title">Sektionaltore</h3>
@@ -3562,9 +2405,8 @@
                     </div>
                 </li>
 
-                <!-- Accessories -->
                 <li class="dfs-nav__item dfs-nav__item--zubehoer">
-                    <a href="https://deutscher-fenstershop.de/kaufen/ersatzteile-zubehoer" class="dfs-nav__link dfs-nav__link--zubehoer">Zubehör</a>
+                    <a href="https://deutscher-fenstershop.de/kaufen/ersatzteile-zubehoer" class="dfs-nav__link dfs-nav__link--zubehoer" aria-haspopup="true" aria-expanded="false">Zubehör</a>
                     <div class="dfs-dropdown dfs-dropdown--extra-wide dfs-dropdown--zubehoer">
                         <div class="dfs-dropdown__section dfs-dropdown__section--zubehoer-teile">
                             <h3 class="dfs-dropdown__title">Zubehör & Ersatzteile</h3>
@@ -3647,9 +2489,8 @@
                     </div>
                 </li>
 
-                <!-- Information Portal -->
                 <li class="dfs-nav__item dfs-nav__item--infoportal">
-                    <a href="https://deutscher-fenstershop.de/wissenswertes" class="dfs-nav__link dfs-nav__link--infoportal">Informationsportal</a>
+                    <a href="https://deutscher-fenstershop.de/wissenswertes" class="dfs-nav__link dfs-nav__link--infoportal" aria-haspopup="true" aria-expanded="false">Informationsportal</a>
                     <div class="dfs-dropdown dfs-dropdown--wide dfs-dropdown--infoportal">
                         <div class="dfs-dropdown__section dfs-dropdown__section--infoportal-ressourcen">
                             <h3 class="dfs-dropdown__title">Ressourcen</h3>
@@ -3670,16 +2511,6 @@
                                         <div class="dfs-image-item__text">Schnittzeichnungen Suche</div>
                                     </div>
                                 </a>
-                                <!-- Section drawings catalogs - no URL yet
-                                <a href="#" class="dfs-image-item dfs-image-item--infoportal-schnitt-kataloge">
-                                    <div class="dfs-image-item__icon">
-                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Schnittzeichnungen%20Kataloge.png" alt="Schnittzeichnungen Kataloge" class="dfs-product-image dfs-product-image--schnittzeichnungen-kataloge">
-                                    </div>
-                                    <div>
-                                        <div class="dfs-image-item__text">Schnittzeichnungen Kataloge</div>
-                                    </div>
-                                </a>
-                                -->
                                 <a href="https://deutscher-fenstershop.de/wissenswertes" class="dfs-image-item dfs-image-item--infoportal-wiki">
                                     <div class="dfs-image-item__icon">
                                         <img src="https://deutscher-fenstershop.de/grafik/navigation/Fenster%20Wiki.png" alt="Fenster Wiki" class="dfs-product-image dfs-product-image--fenster-wiki">
@@ -3725,37 +2556,6 @@
             </ul>
         </nav>
     </div>
-    <!-- ============================================================================ -->
-    <!-- ========================== END HEADER NAVIGATION ============================ -->
-    <!-- ============================================================================ -->
-
-    <!-- Skeleton Sections -->
-    <section class="dfs-skeleton-section">
-        <div class="dfs-skeleton-container section">
-            <div class="dfs-skeleton-box dfs-skeleton-box--large"></div>
-            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
-            <div class="dfs-skeleton-box dfs-skeleton-box--small"></div>
-        </div>
-    </section>
-
-    <section class="dfs-skeleton-section">
-        <div class="dfs-skeleton-container section">
-            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
-            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
-            <div class="dfs-skeleton-box dfs-skeleton-box--medium"></div>
-        </div>
-    </section>
-
-    <section class="dfs-skeleton-section">
-        <div class="dfs-skeleton-container section">
-            <div class="dfs-skeleton-box dfs-skeleton-box--wide"></div>
-        </div>
-    </section>
-
-    <!-- ============================================================================ -->
-    <!-- ===================== START FOOTER AREA (NEWSLETTER + NAV) ================= -->
-    <!-- ============================================================================ -->
-    <!-- Newsletter Signup Section (Brevo) -->
     <section class="dfs-newsletter">
         <div class="dfs-newsletter__container section">
             <div class="dfs-newsletter__content">
@@ -3801,13 +2601,10 @@
     </script>
     <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
-    <!-- DFS Footer -->
     <footer class="dfs-footer">
         <div class="dfs-footer__container section">
-            <!-- Footer Top Section -->
             <div class="dfs-footer__top">
                 <div class="dfs-footer__row">
-                    <!-- Column 1 - Products (Windows, Balcony Doors, Patio Doors, Entrance Doors) -->
                     <div class="dfs-footer__col dfs-footer__col--produkte">
                         <div class="dfs-footer__group">
                             <h3 class="dfs-footer__title">Fenster</h3>
@@ -3848,7 +2645,6 @@
                         </div>
                     </div>
 
-                    <!-- Column 2 - Sun Protection, Garage Doors, Accessories -->
                     <div class="dfs-footer__col dfs-footer__col--produkte-2">
                         <div class="dfs-footer__group">
                             <h3 class="dfs-footer__title">Sonnenschutz</h3>
@@ -3885,7 +2681,6 @@
                         </div>
                     </div>
 
-                    <!-- Column 3 - Company, Service, Knowledge Base -->
                     <div class="dfs-footer__col dfs-footer__col--info">
                         <div class="dfs-footer__group">
                             <h3 class="dfs-footer__title">Unternehmen</h3>
@@ -3925,7 +2720,6 @@
                         </div>
                     </div>
 
-                    <!-- Column 4 - Contact -->
                     <div class="dfs-footer__col dfs-footer__col--kontakt">
                         <h3 class="dfs-footer__title">Kontakt</h3>
                         <ul class="dfs-footer__list">
@@ -3978,7 +2772,6 @@
                         </ul>
                     </div>
                     
-                    <!-- Payment and Social Icons Row - Payment spans 2 columns, Social in column 4 -->
                     <div class="dfs-footer__payment-icons-container">
                         <div class="dfs-footer__payment-icons-left">
                             <img src="https://deutscher-fenstershop.de/grafik/navigation/paypal-logo-100x26.png" alt="PayPal">
@@ -4007,7 +2800,6 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom Section -->
             <div class="dfs-footer__bottom">
                 <div class="dfs-footer__row">
                     <div class="dfs-footer__col dfs-footer__col--copyright">
@@ -4019,25 +2811,16 @@
             </div>
         </div>
     </footer>
-    <!-- ============================================================================ -->
-    <!-- ====================== END FOOTER AREA (NEWSLETTER + NAV) ================== -->
-    <!-- ============================================================================ -->
-
-    <!-- Bootstrap 4 JS (for testing that nothing breaks) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- DFS Mega Menu - Click-to-blur Script -->
     <script>
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        var BREAKPOINT_DESKTOP = 1024;
+        var yearEl = document.getElementById('current-year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-        // Desktop: keep dropdown panel persistent and only swap content between items.
         (function() {
-            const nav = document.querySelector('.dfs-nav');
+            var nav = document.querySelector('.dfs-nav');
             if (!nav) return;
 
-            const desktopItems = Array.from(
+            var desktopItems = Array.from(
                 nav.querySelectorAll('.dfs-nav__item')
             ).filter(function(item) {
                 return item.querySelector('.dfs-dropdown');
@@ -4048,24 +2831,28 @@
             function clearDesktopActive() {
                 desktopItems.forEach(function(item) {
                     item.classList.remove('is-active');
+                    var link = item.querySelector('.dfs-nav__link[aria-haspopup="true"]');
+                    if (link) link.setAttribute('aria-expanded', 'false');
                 });
             }
 
             desktopItems.forEach(function(item) {
                 item.addEventListener('mouseenter', function() {
-                    if (window.innerWidth <= 1024) return;
+                    if (window.innerWidth <= BREAKPOINT_DESKTOP) return;
                     clearDesktopActive();
                     item.classList.add('is-active');
+                    var link = item.querySelector('.dfs-nav__link[aria-haspopup="true"]');
+                    if (link) link.setAttribute('aria-expanded', 'true');
                 });
             });
 
             nav.addEventListener('mouseleave', function() {
-                if (window.innerWidth <= 1024) return;
+                if (window.innerWidth <= BREAKPOINT_DESKTOP) return;
                 clearDesktopActive();
             });
 
             window.addEventListener('resize', function() {
-                if (window.innerWidth <= 1024) {
+                if (window.innerWidth <= BREAKPOINT_DESKTOP) {
                     clearDesktopActive();
                 }
             });
@@ -4105,7 +2892,7 @@
                 const wasOpen = nav.classList.contains('mobile-open');
 
                 // Measure closed menu height so page content keeps a stable offset.
-                if (wasOpen && window.innerWidth <= 1024) {
+                if (wasOpen && window.innerWidth <= BREAKPOINT_DESKTOP) {
                     nav.classList.remove('mobile-open');
                     document.body.style.setProperty('--dfs-menu-offset', menuWrapper.offsetHeight + 'px');
                     nav.classList.add('mobile-open');
@@ -4139,6 +2926,8 @@
                     // Close all dropdowns
                     navItems.forEach(function(item) {
                         item.classList.remove('mobile-open');
+                        var link = item.querySelector('.dfs-nav__link[aria-haspopup="true"]');
+                        if (link) link.setAttribute('aria-expanded', 'false');
                     });
                 } else {
                     nav.classList.add('mobile-open');
@@ -4158,7 +2947,7 @@
                 
                 link.addEventListener('click', function(e) {
                     // Only handle on mobile/tablet (when nav is in mobile mode)
-                    if (window.innerWidth <= 1024) {
+                    if (window.innerWidth <= BREAKPOINT_DESKTOP) {
                         // If item has dropdown, toggle it
                         if (dropdown) {
                             // Parent items toggle only on mobile; do not navigate.
@@ -4169,14 +2958,17 @@
                             navItems.forEach(function(otherItem) {
                                 if (otherItem !== item) {
                                     otherItem.classList.remove('mobile-open');
+                                    var otherLink = otherItem.querySelector('.dfs-nav__link[aria-haspopup="true"]');
+                                    if (otherLink) otherLink.setAttribute('aria-expanded', 'false');
                                 }
                             });
-                            
                             // Toggle current dropdown
                             if (hasDropdown) {
                                 item.classList.remove('mobile-open');
+                                link.setAttribute('aria-expanded', 'false');
                             } else {
                                 item.classList.add('mobile-open');
+                                link.setAttribute('aria-expanded', 'true');
                             }
                         } else {
                             // If no dropdown, close the menu and navigate
@@ -4192,7 +2984,7 @@
             
             // Close menu when clicking outside
             document.addEventListener('click', function(e) {
-                if (window.innerWidth <= 1024) {
+                if (window.innerWidth <= BREAKPOINT_DESKTOP) {
                     if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
                         nav.classList.remove('mobile-open');
                         menuToggle.classList.remove('active');
@@ -4201,6 +2993,8 @@
                         document.body.classList.remove('menu-open');
                         navItems.forEach(function(item) {
                             item.classList.remove('mobile-open');
+                            var link = item.querySelector('.dfs-nav__link[aria-haspopup="true"]');
+                            if (link) link.setAttribute('aria-expanded', 'false');
                         });
                     }
                 }
@@ -4211,7 +3005,7 @@
             window.addEventListener('resize', function() {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(function() {
-                    if (window.innerWidth > 1024) {
+                    if (window.innerWidth > BREAKPOINT_DESKTOP) {
                         nav.classList.remove('mobile-open');
                         menuToggle.classList.remove('active');
                         menuToggle.setAttribute('aria-expanded', 'false');
@@ -4219,6 +3013,8 @@
                         document.body.classList.remove('menu-open');
                         navItems.forEach(function(item) {
                             item.classList.remove('mobile-open');
+                            var link = item.querySelector('.dfs-nav__link[aria-haspopup="true"]');
+                            if (link) link.setAttribute('aria-expanded', 'false');
                         });
                     }
                     syncMenuOffset();
@@ -4226,7 +3022,7 @@
             });
         })();
 
-        /* Search bar toggle */
+        
         (function() {
             var searchWrap = document.querySelector('.dfs-header__search');
             var searchBar = document.querySelector('.dfs-header__search-bar');
@@ -4279,7 +3075,7 @@
             });
         })();
 
-        /* Cart count: ensure "0" when empty (shop clears it) */
+        
         (function() {
             var badge = document.getElementById('cart-count');
             if (!badge) return;
