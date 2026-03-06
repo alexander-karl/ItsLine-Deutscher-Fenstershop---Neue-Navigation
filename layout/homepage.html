@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ItsLine Deutscher Fenstershop – Fenster & Türen online kaufen</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <!-- Bootstrap 4 CSS (for testing compatibility) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- 
+    =====================================================
+    DFS MEGA MENU - Gekapseltes CSS für Bootstrap 4
+    =====================================================
+    Alle Klassen haben das Prefix "dfs-" um Konflikte 
+    mit Bootstrap-4- und bestehenden Klassen im Shop
+    zu vermeiden.
+    
+    Styleguide-Farben:
+    - Primär Orange: #F47C26
+    - Primär Dunkelblau: #003A66
+    - Akzent Himmelblau: #3FA9F5
+    
+    Typografie:
+    - Headlines: Helvetica
+    - Body/Buttons: Arial
+    =====================================================
+    -->
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Figma 1:1 – ItsLine Deutscher Fenstershop Redesign */
+        :root { 
+            --figma-orange: #ff6b35; 
+            --figma-blue: #003d6b; 
+            --figma-blue-dark: #0d2844;
+        }
+        body { font-family: 'Inter', Helvetica, Arial, sans-serif; margin: 0; }
+        
+        /* Figma Header - 1:1 */
+        .figma-header { background: #fff; }
+        .figma-kopfzeile { display: flex; align-items: center; justify-content: space-between; height: 90px; padding: 20px 40px; max-width: 1440px; margin: 0 auto; }
+        .figma-logo { height: 32px; }
+        .figma-logo img { height: 100%; width: auto; }
+        .figma-contact { display: flex; gap: 54px; align-items: center; }
+        .figma-contact-item { display: flex; align-items: center; gap: 9px; color: #333; font-weight: 700; font-size: 16px; text-decoration: none; }
+        .figma-contact-item img { width: 34px; height: 34px; }
+        .figma-contact-item small { font-weight: 400; font-size: 12px; color: #666; display: block; }
+        .figma-func { display: flex; gap: 13px; align-items: center; }
+        .figma-btn { display: flex; align-items: center; justify-content: center; height: 48px; padding: 10px 16px; background: var(--figma-orange); color: #fff; font-weight: 700; font-size: 14px; text-decoration: none; border-radius: 4px; border: none; }
+        .figma-btn:hover { color: #fff; background: #e85a28; }
+        .figma-icon-btn { position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: var(--figma-orange); border-radius: 4px; border: none; padding: 0; cursor: pointer; text-decoration: none; }
+        .figma-icon-btn img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
+        .figma-cart-badge { position: absolute; top: -6px; right: 6px; background: var(--figma-blue-dark); color: #fff; font-size: 12px; font-weight: 700; min-width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .figma-nav { display: flex; align-items: center; justify-content: space-between; height: 52px; padding: 0 40px; background: var(--figma-blue); max-width: 1440px; margin: 0 auto; }
+        .figma-nav a { color: #fff; font-weight: 700; font-size: 14px; text-decoration: none; }
+        .figma-nav a:hover { color: rgba(255,255,255,0.9); }
+        @media (max-width: 1024px) {
+            .figma-kopfzeile { flex-wrap: wrap; height: auto; padding: 16px 24px; }
+            .figma-contact { order: 3; width: 100%; justify-content: center; }
+            .figma-nav { flex-wrap: wrap; padding: 12px 24px; height: auto; gap: 8px; }
+        }
+        
+        /* Hero */
+        .dfs-hero-v3 { position: relative; width: 100%; height: 600px; display: flex; align-items: center; background: #0a213b; overflow: hidden; }
+        .dfs-hero-v3__bg { position: absolute; inset: 0; }
+        .dfs-hero-v3__bg-img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+        .dfs-hero-v3__bg-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,33,59,0.9) 0%, rgba(10,33,59,0.4) 60%, transparent 100%); }
+        .dfs-hero-v3__window-img { position: absolute; right: 10%; top: 50%; transform: translateY(-50%); width: 35%; max-width: 500px; aspect-ratio: 1712/2560; object-fit: contain; }
+        .dfs-hero-v3__content { position: relative; z-index: 2; max-width: 1360px; margin: 0 auto; padding: 151px 97px; display: flex; flex-direction: column; gap: 40px; }
+        .dfs-hero-v3__title { font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 60px; font-weight: 700; color: #fff; margin: 0; line-height: 1.15; max-width: 725px; }
+        .dfs-hero-v3__subtitle { font-family: Arial, sans-serif; font-size: clamp(1rem, 1.5vw, 20px); color: rgba(255,255,255,0.95); margin: 0; max-width: 600px; line-height: 1.5; }
+        .dfs-hero-v3__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 24px; background: var(--figma-orange); color: #fff; font-family: Arial, sans-serif; font-weight: 700; font-size: 14px; text-transform: capitalize; text-decoration: none; border-radius: 4px; transition: background 0.2s; width: fit-content; }
+        .dfs-hero-v3__btn:hover { background: #e85a28; color: #fff; text-decoration: none; }
+        
+        /* Trusted bar */
+        .dfs-trusted { background: #f5f5f5; border-bottom: 1px solid #e5e7eb; padding: 18px 40px; min-height: 96px; display: flex; align-items: center; }
+        .dfs-trusted__inner { max-width: 1360px; margin: 0 auto; width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+        .dfs-trusted__rating { display: flex; align-items: center; gap: 16px; }
+        .dfs-trusted__stars { display: flex; gap: 2px; }
+        .dfs-trusted__stars svg { width: 24px; height: 24px; fill: var(--figma-orange); }
+        .dfs-trusted__count { font-family: Helvetica, Arial, sans-serif; font-weight: 700; font-size: 24px; color: #000; }
+        .dfs-trusted__reviews { font-family: Arial, sans-serif; font-size: 16px; color: #333; margin-left: 4px; }
+        .dfs-trusted__item { display: flex; align-items: center; gap: 12px; font-family: Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px; color: #333; }
+        .dfs-trusted__icon { width: 24px; height: 24px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .dfs-trusted__icon img { width: 100%; height: 100%; object-fit: contain; }
+        
+        /* Product section */
+        .dfs-prod-section { padding: 56px 40px; background: #fff; }
+        .dfs-prod-section--alt { background: #f5f5f5; }
+        .dfs-prod-section__heading { text-align: center; max-width: 800px; margin: 0 auto 40px; }
+        .dfs-prod-section__title { font-family: Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 700; color: #000; margin: 0 0 14px 0; }
+        .dfs-prod-section__subtitle { font-family: Arial, sans-serif; font-size: 18px; color: #333; margin: 0; line-height: 1.5; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .dfs-prod-section__grid { max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+        .dfs-prod-card { display: block; width: 252px; background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; }
+        .dfs-prod-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); text-decoration: none; }
+        .dfs-prod-card__img { aspect-ratio: 248/200; overflow: hidden; background: #f0f0f0; }
+        .dfs-prod-card__img img { width: 100%; height: 100%; object-fit: cover; }
+        .dfs-prod-card__body { padding: 16px; }
+        .dfs-prod-card__title { font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; color: #000; margin: 0 0 8px 0; }
+        .dfs-prod-card__desc { font-family: Arial, sans-serif; font-size: 14px; color: #333; margin: 0 0 10px 0; line-height: 1.4; min-height: 34px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; }
+        .dfs-prod-card__link { font-family: Arial, sans-serif; font-size: 14px; font-weight: 700; color: var(--figma-orange); }
+        .dfs-prod-card:hover .dfs-prod-card__link { color: #e85a28; }
+        
+        /* Weitere Fenster – Figma dark blue */
+        .figma-weitere-fenster { background: var(--figma-blue); padding: 56px 40px; }
+        .figma-weitere-fenster__heading { text-align: center; max-width: 844px; margin: 0 auto 40px; }
+        .figma-weitere-fenster__title { font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 700; color: #fff; margin: 0 0 8px 0; }
+        .figma-weitere-fenster__subtitle { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500; color: #fff; margin: 0; line-height: 1.5; }
+        .figma-weitere-fenster__grid { max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+        .figma-weitere-card { display: flex; align-items: center; justify-content: space-between; width: 442px; padding: 16px; background: #fff; border-radius: 8px; color: #000; font-weight: 700; font-size: 16px; text-decoration: none; }
+        .figma-weitere-card:hover { color: var(--figma-orange); }
+        .figma-weitere-card__icon { flex-shrink: 0; width: 24px; height: 24px; background: var(--figma-orange); color: #fff; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; padding: 8px; box-sizing: border-box; }
+.figma-weitere-card__icon svg { width: 10px; height: 10px; }
+        
+        /* 5 Steps */
+        .dfs-steps { padding: 56px 40px; background: #fff; }
+        .dfs-steps__heading { text-align: center; max-width: 800px; margin: 0 auto 40px; }
+        .dfs-steps__title { font-family: Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 700; color: #000; margin: 0 0 14px 0; }
+        .dfs-steps__subtitle { font-family: Arial, sans-serif; font-size: 18px; color: #333; margin: 0; }
+        .dfs-steps__container { max-width: 1360px; margin: 0 auto 32px; display: flex; align-items: flex-start; justify-content: center; gap: 20px; flex-wrap: wrap; position: relative; }
+        .dfs-step { flex: 1; min-width: 200px; max-width: 240px; padding: 16px; display: flex; flex-direction: column; gap: 16px; position: relative; }
+        .dfs-step:not(:last-child)::after { content: ''; position: absolute; top: 50px; right: -10px; width: 1px; height: calc(100% - 40px); background: linear-gradient(180deg, #e5e5e5, transparent); }
+        .dfs-step__num { font-family: Helvetica, Arial, sans-serif; font-size: 80px; font-weight: 900; line-height: 1; background: linear-gradient(180deg, var(--figma-orange) 0%, rgba(255,107,53,0.3) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .dfs-step__title { font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; color: #000; margin: 0; }
+        .dfs-step__text { font-family: Arial, sans-serif; font-size: 16px; color: #333; margin: 0; line-height: 1.4; }
+        .dfs-steps__btn { display: inline-flex; align-items: center; justify-content: center; margin: 0 auto; padding: 14px 24px; background: var(--figma-orange); color: #fff; font-family: Arial, sans-serif; font-weight: 700; font-size: 14px; text-decoration: none; border-radius: 4px; transition: background 0.2s; }
+        .dfs-steps__btn:hover { background: #e85a28; color: #fff; text-decoration: none; }
+        
+        /* Video section */
+        .dfs-video-section { padding: 0; background: #f5f5f5; display: flex; flex-wrap: wrap; align-items: stretch; }
+        .dfs-video-section__content { flex: 1; min-width: 320px; padding: 112px 80px 112px 112px; display: flex; flex-direction: column; gap: 40px; }
+        .dfs-video-section__title { font-family: Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 700; color: #000; margin: 0; }
+        .dfs-video-section__desc { font-family: Arial, sans-serif; font-size: 18px; color: #333; margin: 0; line-height: 1.5; }
+        .dfs-video-section__features { display: flex; flex-direction: column; gap: 24px; }
+        .dfs-video-section__feature { display: flex; gap: 13px; align-items: flex-start; }
+        .dfs-video-section__feature-icon { width: 24px; height: 24px; flex-shrink: 0; }
+        .dfs-video-section__feature-title { font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000; margin: 0 0 3px 0; }
+        .dfs-video-section__feature-text { font-family: Arial, sans-serif; font-size: 14px; color: #333; margin: 0; }
+        .dfs-video-section__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 24px; background: var(--figma-orange); color: #fff; font-family: Arial, sans-serif; font-weight: 700; font-size: 14px; text-decoration: none; border-radius: 4px; width: fit-content; transition: background 0.2s; }
+        .dfs-video-section__btn:hover { background: #e85a28; color: #fff; text-decoration: none; }
+        .dfs-video-section__media { width: 50%; min-width: 400px; position: relative; aspect-ratio: 1; background: #d9d9d9; overflow: hidden; }
+        .dfs-video-section__media img { width: 100%; height: 100%; object-fit: cover; }
+        .dfs-video-section__play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 56px; height: 56px; background: var(--figma-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .dfs-video-section__play svg { width: 24px; height: 24px; fill: #fff; margin-left: 4px; }
+        
+        /* Trust/Certifications */
+        .dfs-trust { padding: 56px 40px; background: #f9fafb; }
+        .dfs-trust__heading { text-align: center; max-width: 800px; margin: 0 auto 40px; }
+        .dfs-trust__title { font-family: Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 700; color: #000; margin: 0 0 14px 0; }
+        .dfs-trust__subtitle { font-family: Arial, sans-serif; font-size: 18px; color: #333; margin: 0; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .dfs-trust__grid { max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; justify-content: center; }
+        .dfs-trust-card { flex: 1; min-width: 240px; max-width: 400px; }
+        .dfs-trust-card__logo { width: 120px; height: 120px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .dfs-trust-card__logo img { width: 100%; height: 100%; object-fit: contain; }
+        .dfs-trust-card__logo:has(img) { border-radius: 0; }
+        .dfs-trust-card__title { font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #000; margin: 0 0 16px 0; }
+        .dfs-trust-card__list { list-style: none; padding: 0; margin: 0; }
+        .dfs-trust-card__item { display: flex; gap: 13px; align-items: center; margin-bottom: 10px; }
+        .dfs-trust-card__check { width: 24px; height: 24px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; color: var(--figma-orange); font-weight: bold; font-size: 14px; }
+        .dfs-trust-card__text { font-family: Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000; }
+        
+        /* Brands */
+        .dfs-brands { padding: 56px 40px; background: #fff; }
+        .dfs-brands__heading { text-align: center; max-width: 800px; margin: 0 auto 40px; }
+        .dfs-brands__title { font-family: Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 700; color: #000; margin: 0 0 14px 0; }
+        .dfs-brands__subtitle { font-family: Arial, sans-serif; font-size: 18px; color: #333; margin: 0; }
+        .dfs-brands__row { max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: center; }
+        .dfs-brands__logo { height: 120px; width: auto; max-width: 187px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; }
+        .dfs-brands__row--six { justify-content: space-between; flex-wrap: nowrap; }
+        @media (max-width: 1024px) { .dfs-brands__row--six { flex-wrap: wrap; justify-content: center; } }
+        .dfs-brands__logo:hover { filter: grayscale(0); opacity: 1; }
+        
+        /* Drutex CTA */
+        .dfs-drutex { padding: 80px 40px; background: #fff; }
+        .dfs-drutex__inner { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+        .dfs-drutex__content { flex: 1; min-width: 300px; }
+        .dfs-drutex__logo { max-height: 59px; margin-bottom: 24px; }
+        .dfs-drutex__text { font-family: Arial, sans-serif; font-size: 16px; color: #333; margin: 0 0 24px 0; line-height: 1.6; }
+        .dfs-drutex__stats { display: flex; gap: 32px; margin-bottom: 24px; }
+        .dfs-drutex__stat-num { font-family: Helvetica, Arial, sans-serif; font-size: 32px; font-weight: 700; color: var(--figma-orange); display: block; }
+        .dfs-drutex__stat-label { font-family: Arial, sans-serif; font-size: 14px; color: #333; }
+        .dfs-drutex__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 24px; background: var(--figma-orange); color: #fff; font-family: Arial, sans-serif; font-weight: 700; font-size: 14px; text-decoration: none; border-radius: 4px; width: fit-content; transition: background 0.2s; }
+        .dfs-drutex__btn:hover { background: #e85a28; color: #fff; text-decoration: none; }
+        .dfs-drutex__img { flex: 1; min-width: 300px; aspect-ratio: 696/366; border-radius: 8px; overflow: hidden; }
+        .dfs-drutex__img img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Delivery section */
+        .dfs-delivery { padding: 56px 40px; background: #fff; }
+        .dfs-delivery__heading { text-align: center; max-width: 800px; margin: 0 auto 40px; }
+        .dfs-delivery__grid { max-width: 1024px; margin: 0 auto 32px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; }
+        .dfs-delivery__card { background: #f5f5f5; padding: 40px 24px; border-radius: 16px; text-align: center; width: 320px; }
+        .dfs-delivery__icon { width: 56px; height: 56px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; }
+        .dfs-delivery__icon img { object-fit: contain; }
+        .dfs-delivery__title { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 700; color: #000; margin: 0 0 8px 0; }
+        .dfs-delivery__text { font-family: 'Inter', sans-serif; font-size: 16px; color: #333; margin: 0; line-height: 1.5; }
+        .dfs-delivery__montage { max-width: 1024px; margin: 0 auto; background: #f5f5f5; border-radius: 16px; padding: 40px; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+        .dfs-delivery__montage-content { flex: 1; min-width: 300px; }
+        .dfs-delivery__montage-title { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 700; color: #000; margin: 0 0 16px 0; }
+        .dfs-delivery__montage-text { font-family: 'Inter', sans-serif; font-size: 16px; color: #333; margin: 0 0 24px 0; line-height: 1.5; }
+        .dfs-delivery__montage-btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; height: 48px; background: var(--figma-blue); color: #fff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; text-decoration: none; border-radius: 4px; }
+        .dfs-delivery__montage-btn:hover { background: #002a4a; color: #fff; }
+        .dfs-delivery__montage-img { flex: 0 0 437px; max-width: 100%; height: 262px; overflow: hidden; border-radius: 8px; }
+        .dfs-delivery__montage-img img { width: 100%; height: 100%; object-fit: cover; }
+        
+        @media (max-width: 1024px) {
+            .dfs-prod-section__grid { justify-content: center; }
+            .dfs-steps__container { flex-direction: column; align-items: center; }
+            .dfs-step { max-width: 100%; }
+            .dfs-video-section__content { padding: 56px 40px; }
+            .dfs-video-section__media { width: 100%; min-width: 100%; }
+        }
+        /* Video Qualität – Section 16 */
+        .dfs-video-qualitaet { display: flex; align-items: stretch; background: #0d3a5c; }
+        .dfs-video-qualitaet__media { flex: 0 0 720px; height: 720px; overflow: hidden; }
+        .dfs-video-qualitaet__media img { width: 100%; height: 100%; object-fit: cover; }
+        .dfs-video-qualitaet__content { flex: 1; padding: 80px 120px 80px 80px; display: flex; flex-direction: column; gap: 24px; }
+        .dfs-video-qualitaet__title { font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 700; color: #fff; margin: 0; }
+        .dfs-video-qualitaet__text { font-family: 'Inter', sans-serif; font-size: 18px; color: #fff; line-height: 1.6; }
+        .dfs-video-qualitaet__text p { margin: 0 0 1em 0; }
+        .dfs-video-qualitaet__text p:last-child { margin-bottom: 0; }
+        @media (max-width: 1024px) {
+            .dfs-video-qualitaet { flex-direction: column; }
+            .dfs-video-qualitaet__media { flex: none; height: 400px; }
+            .dfs-video-qualitaet__content { padding: 40px 24px; }
+        }
+
+        /* Referenzprojekte – Section 17 */
+        .dfs-referenz { padding: 56px 40px; background: #fff; }
+        .dfs-referenz__grid { max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+        .dfs-referenz-card { display: block; width: 437px; background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; text-decoration: none; transition: box-shadow 0.2s; }
+        .dfs-referenz-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-decoration: none; }
+        .dfs-referenz-card__img { aspect-ratio: 437/280; overflow: hidden; background: #f0f0f0; }
+        .dfs-referenz-card__img img { width: 100%; height: 100%; object-fit: cover; }
+        .dfs-referenz-card__body { padding: 16px; }
+        .dfs-referenz-card__title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: #000; margin: 0 0 8px 0; }
+        .dfs-referenz-card__desc { font-family: 'Inter', sans-serif; font-size: 14px; color: #6b7280; margin: 0; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; }
+
+        /* Gallerie – Section 18 */
+        .dfs-gallerie { background: #e2e9eb; padding: 80px 40px; display: flex; gap: 80px; align-items: center; flex-wrap: wrap; }
+        .dfs-gallerie__content { flex: 1; min-width: 280px; }
+        .dfs-gallerie__title { font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 700; color: #000; margin: 0 0 16px 0; }
+        .dfs-gallerie__subtitle { font-family: 'Inter', sans-serif; font-size: 18px; color: #333; margin: 0; line-height: 1.5; }
+        .dfs-gallerie__carousel { flex: 1; min-width: 400px; }
+        .dfs-gallerie__images { display: flex; gap: 0; overflow: hidden; }
+        .dfs-gallerie__images img { width: 310px; height: 517px; object-fit: cover; flex-shrink: 0; }
+        .dfs-gallerie__nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: #000; }
+        .dfs-gallerie__nav-btn { width: 40px; height: 40px; background: #fff; border: 1px solid #000; border-radius: 4px; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .dfs-gallerie__dots { display: flex; gap: 8px; }
+        .dfs-gallerie__dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5); }
+        .dfs-gallerie__dot--active { background: var(--figma-orange); }
+
+        /* Testimonials – Section 20 */
+        .dfs-testimonials { padding: 56px 40px; background: #f5f5f5; }
+        .dfs-testimonials__grid { max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+        .dfs-testimonial-card { width: 389px; background: #fff; border-radius: 4px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .dfs-testimonial-card__stars { color: var(--figma-orange); font-size: 16px; margin-bottom: 16px; }
+        .dfs-testimonial-card__text { font-family: 'Inter', sans-serif; font-size: 14px; color: #333; line-height: 1.5; margin: 0 0 16px 0; }
+        .dfs-testimonial-card__author { display: flex; gap: 13px; align-items: center; }
+        .dfs-testimonial-card__avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--figma-blue); color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .dfs-testimonial-card__name { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #000; margin: 0 0 3px 0; }
+        .dfs-testimonial-card__meta { font-family: 'Inter', sans-serif; font-size: 14px; color: #333; margin: 0; }
+
+        /* Chatbox – Section 23 */
+        .dfs-chatbox { position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 420px; max-width: calc(100vw - 48px); }
+        .dfs-chatbox__inner { background: #fff; border: 2px solid var(--figma-orange); border-radius: 16px; padding: 24px; position: relative; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+        .dfs-chatbox__close { position: absolute; top: -10px; right: -10px; width: 24px; height: 24px; background: #000; color: #fff; border: none; border-radius: 50%; font-size: 18px; line-height: 1; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; }
+        .dfs-chatbox__header { display: flex; gap: 13px; align-items: center; margin-bottom: 16px; }
+        .dfs-chatbox__icon { width: 40px; height: 40px; flex-shrink: 0; }
+        .dfs-chatbox__icon img { width: 100%; height: 100%; object-fit: contain; }
+        .dfs-chatbox__title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #000; margin: 0 0 3px 0; }
+        .dfs-chatbox__subtitle { font-family: 'Inter', sans-serif; font-size: 14px; color: #333; margin: 0; }
+        .dfs-chatbox__text { font-family: 'Inter', sans-serif; font-size: 14px; color: #374151; line-height: 1.5; margin: 0 0 20px 0; }
+        .dfs-chatbox__actions { display: flex; flex-direction: column; gap: 8px; }
+        .dfs-chatbox__btn { display: flex; align-items: center; justify-content: center; height: 48px; padding: 10px 16px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; text-decoration: none; border-radius: 4px; }
+        .dfs-chatbox__btn--primary { background: var(--figma-orange); color: #fff; }
+        .dfs-chatbox__btn--primary:hover { background: #e85a28; color: #fff; }
+        .dfs-chatbox__btn--outline { background: #fff; color: var(--figma-orange); border: 2px solid var(--figma-orange); }
+        .dfs-chatbox__btn--outline:hover { background: #fff5f0; color: #e85a28; border-color: #e85a28; }
+        .dfs-chatbox__footer { font-family: 'Inter', sans-serif; font-size: 14px; color: #374151; text-align: center; margin: 16px 0 0 0; }
+
+        /* Newsletter Figma 1:1 */
+        .dfs-newsletter { background: #1a5a8a !important; padding: 56px 0 !important; min-height: 280px; }
+        .dfs-newsletter__title { font-size: 36px !important; }
+        .dfs-newsletter__text { font-size: 18px !important; }
+        .dfs-newsletter__input { max-width: 400px !important; height: 48px !important; }
+        .dfs-newsletter__button { min-width: 113px; height: 48px !important; }
+        
+        @media (max-width: 768px) {
+            .dfs-hero-v3 { min-height: 450px; }
+            .dfs-hero-v3__content { padding: 48px 24px; }
+            .dfs-trusted { padding: 16px 24px; }
+            .dfs-trusted__inner { gap: 20px; }
+            .dfs-prod-section, .dfs-steps, .dfs-trust, .dfs-brands { padding: 40px 24px; }
+            .dfs-prod-section__title, .dfs-steps__title, .dfs-trust__title, .dfs-brands__title { font-size: 28px; }
+            .dfs-prod-card { width: 100%; max-width: 320px; margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Figma Header (1:1) -->
+    <header class="figma-header">
+        <div class="figma-kopfzeile">
+            <a href="https://deutscher-fenstershop.de/" class="figma-logo"><img src="https://www.figma.com/api/mcp/asset/6ec002e4-37bd-4792-99b0-70be7654a5ef" alt="Deutscher Fenstershop" onerror="this.src='../assets/fenster-online-kaufen-logo.png'"></a>
+            <div class="figma-contact">
+                <a href="mailto:info@deutscher-fenstershop.de" class="figma-contact-item"><img src="https://www.figma.com/api/mcp/asset/5e4cbaf6-de43-4e76-bce8-dfa1d9c68c23" alt="" onerror="this.src='../assets/icon-email.svg'" style="width:34px;height:34px;"> Anfrage stellen</a>
+                <a href="tel:+4972213022333" class="figma-contact-item"><img src="https://www.figma.com/api/mcp/asset/1d57dd81-0f71-4887-99b4-0647b56d152c" alt="" onerror="this.src='../assets/icon-phone.svg'" style="width:34px;height:34px;"> <span>+49 7221 / 3022-333<br><small>Mo – Fr. 8:00 – 17:00</small></span></a>
+            </div>
+            <div class="figma-func">
+                <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="figma-btn">Fensterkonfigurator</a>
+                <a href="https://deutscher-fenstershop.de/konfigurator/tueren" class="figma-btn">Türenkonfigurator</a>
+                <button type="button" class="figma-icon-btn" aria-label="Suche"><img src="../assets/icon-search.svg" alt="" style="width:20px;height:20px;filter:brightness(0) invert(1);"></button>
+                <a href="https://deutscher-fenstershop.de/users" class="figma-icon-btn" aria-label="Konto"><img src="../assets/icon-account.svg" alt="" style="width:20px;height:20px;filter:brightness(0) invert(1);"></a>
+                <a href="https://deutscher-fenstershop.de/shop" class="figma-icon-btn figma-cart" aria-label="Warenkorb"><img src="../assets/icon-cart.svg" alt="" style="width:20px;height:20px;filter:brightness(0) invert(1);"><span class="figma-cart-badge">1</span></a>
+            </div>
+        </div>
+        <nav class="figma-nav">
+            <a href="https://deutscher-fenstershop.de/fenster">Fenster</a>
+            <a href="https://deutscher-fenstershop.de/balkontuer">Balkontüren</a>
+            <a href="https://deutscher-fenstershop.de/terrassentueren">Terrassentüren</a>
+            <a href="https://deutscher-fenstershop.de/haustuer">Haustüren</a>
+            <a href="https://deutscher-fenstershop.de/rollladen">Sonnenschutz</a>
+            <a href="https://deutscher-fenstershop.de/sektionaltore">Garagentore</a>
+            <a href="https://deutscher-fenstershop.de/kaufen/ersatzteile-zubehoer">Zubehör</a>
+            <a href="https://deutscher-fenstershop.de/wissenswertes">Informationsportal</a>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <!-- Hero Section – Figma 1:1 -->
+    <section class="dfs-hero-v3">
+        <div class="dfs-hero-v3__bg">
+            <img src="https://www.figma.com/api/mcp/asset/f81f23e5-0081-4551-9b4b-ac2b0e2323d5" alt="" class="dfs-hero-v3__bg-img" onerror="this.src='../assets/hero-image.jpg'">
+            <div class="dfs-hero-v3__bg-overlay"></div>
+            <img src="https://www.figma.com/api/mcp/asset/e9e6f994-37d8-4c29-ad05-d2c72d4d41d7" alt="Fensterprofil" class="dfs-hero-v3__window-img" onerror="this.style.display='none'">
+        </div>
+        <div class="dfs-hero-v3__content">
+            <h1 class="dfs-hero-v3__title">Ihr Wunschfenster in 5 Minuten konfiguriert</h1>
+            <p class="dfs-hero-v3__subtitle">Maßgefertigte Fenster &amp; Türen – direkt vom Fachbetrieb. Faire Preise, schnelle Lieferung.</p>
+            <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="dfs-hero-v3__btn">Fenster konfigurieren</a>
+        </div>
+    </section>
+
+    <!-- Trusted Bar -->
+    <section class="dfs-trusted">
+        <div class="dfs-trusted__inner">
+            <div class="dfs-trusted__rating">
+                <div class="dfs-trusted__stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <span><span class="dfs-trusted__count">4,9/5</span><span class="dfs-trusted__reviews">aus 2.800+ Bewertungen</span></span>
+            </div>
+            <div class="dfs-trusted__item">
+                <div class="dfs-trusted__icon"><img src="https://www.figma.com/api/mcp/asset/d911a932-0129-46c2-833e-daae0b381fe7" alt="" onerror="this.src='../assets/icon-calendar.svg'" style="width:24px;height:24px;"></div>
+                <span>5 Jahre Garantie</span>
+            </div>
+            <div class="dfs-trusted__item">
+                <div class="dfs-trusted__icon" style="width:30px;height:30px;"><img src="https://www.figma.com/api/mcp/asset/8b521408-dafa-43e2-aa51-06bf45951626" alt="" onerror="this.src='../assets/icon-calendar.svg'" style="width:100%;height:100%;"></div>
+                <span>Kostenlose Lieferung</span>
+            </div>
+            <div class="dfs-trusted__item">
+                <div class="dfs-trusted__icon"><img src="https://www.figma.com/api/mcp/asset/07b4111a-c8b9-4d5a-b268-5d89338bc3ad" alt="" onerror="this.src='../assets/icon-calendar.svg'" style="width:24px;height:24px;"></div>
+                <span>Hergestellt in Europa</span>
+            </div>
+            <div class="dfs-trusted__item">
+                <div class="dfs-trusted__icon"><img src="https://www.figma.com/api/mcp/asset/bcfbd798-4ca0-4c2a-82fc-43d87fcd3ab5" alt="" onerror="this.src='../assets/icon-phone.svg'" style="width:24px;height:24px;"></div>
+                <span>Persönliche Beratung</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fenster nach Typ/Form -->
+    <section class="dfs-prod-section">
+        <div class="dfs-prod-section__heading">
+            <h2 class="dfs-prod-section__title">Fenster nach Typ/Form</h2>
+            <p class="dfs-prod-section__subtitle">Vom Klassiker bis zur Sonderform – wählen Sie den Fenstertyp, der zu Ihrer Situation passt.</p>
+        </div>
+        <div class="dfs-prod-section__grid">
+            <a href="https://deutscher-fenstershop.de/kaufen/kunststofffenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/d7d686be-7690-4539-925e-cbf483b03d1e" alt="Dreh-Kipp-Fenster" onerror="this.src='../assets/images/Kunststofffenster.jpg'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Dreh-Kipp-Fenster</h3>
+                    <p class="dfs-prod-card__desc">Der Klassiker unter den Fenstern</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/fenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/5b33705b-c78a-4da5-9520-e8d42ef2036e" alt="Festverglasung" onerror="this.src='../assets/images/Kunststofffenster.jpg'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Festverglasung</h3>
+                    <p class="dfs-prod-card__desc">Maximale Lichtausbeute ohne Öffnungsfunktion</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/schiebefenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/fd2460e1-5ab8-4ef2-8d1f-f9aa08e74138" alt="Schiebefenster" onerror="this.src='../assets/images/Schiebetüren.png'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Schiebefenster</h3>
+                    <p class="dfs-prod-card__desc">Platzsparende Lösung mit moderner Optik und komfortabler Bedienung.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/dreiecksfenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/639726cd-8edb-4c98-a156-3bbdd436dbc8" alt="Rund- & Sonderformen" onerror="this.src='../assets/images/Alu-Holz-Fenster.png'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Rund- &amp; Sonderformen</h3>
+                    <p class="dfs-prod-card__desc">Individuelle Formen wie Rund-, Dreieck- oder Segmentbogenfenster.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/sicherheitsfenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/8ecb9d6e-f224-4da3-8bd2-197878f4f5b0" alt="Sicherheitsfenster" onerror="this.src='../assets/images/Alufenster.png'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Sicherheitsfenster</h3>
+                    <p class="dfs-prod-card__desc">Erhöhter Einbruchschutz durch spezielle Beschläge und Sicherheitsverglasung.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Fenster nach Material – Figma 1:1 -->
+    <section class="dfs-prod-section">
+        <div class="dfs-prod-section__heading">
+            <h2 class="dfs-prod-section__title">Fenster nach Material</h2>
+            <p class="dfs-prod-section__subtitle">Kunststoff, Aluminium oder Holz – finden Sie das Material, das zu Ihrem Zuhause und Budget passt.</p>
+        </div>
+        <div class="dfs-prod-section__grid">
+            <a href="https://deutscher-fenstershop.de/kaufen/kunststofffenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="../assets/images/Kunststofffenster.jpg" alt="Kunststofffenster"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Kunststofffenster</h3>
+                    <p class="dfs-prod-card__desc">die beliebteste Fensterlösung in Deutschland.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/kaufen/alu-fenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="../assets/images/Alufenster.png" alt="Aluminiumfenster"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Aluminiumfenster</h3>
+                    <p class="dfs-prod-card__desc">Ideal für große Glasflächen.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/kaufen/holzfenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="../assets/images/Holzfenster.jpg" alt="Holzfenster"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Holzfenster</h3>
+                    <p class="dfs-prod-card__desc">Natürliches Design mit hervorragender Wärmedämmung</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/kaufen/holz-alu-fenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="../assets/images/Alu-Holz-Fenster.png" alt="Holz-Alu-Fenster"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Holz-Alu-Fenster</h3>
+                    <p class="dfs-prod-card__desc">Perfekte Kombination aus Design und Langlebigkeit.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/kunststoff-alu-fenster" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="../assets/images/Kunstsotff-Alu-Fenster.jpg" alt="Kunststoff-Alu-Fenster"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Kunststoff-Alu-Fenster</h3>
+                    <p class="dfs-prod-card__desc">Witterungsschutz durch Aluminium.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Weitere Fenster – Figma 1:1 (dark blue) -->
+    <section class="figma-weitere-fenster">
+        <div class="figma-weitere-fenster__heading">
+            <h2 class="figma-weitere-fenster__title">Weitere Fenster</h2>
+            <p class="figma-weitere-fenster__subtitle">Qualitätslösungen nach deutschen Standards: Entdecken Sie Fenster für jeden Anwendungsbereich in den vielfältigsten Bauformen.</p>
+        </div>
+        <div class="figma-weitere-fenster__grid">
+            <a href="https://deutscher-fenstershop.de/brandschutzfenster" class="figma-weitere-card">Brandschutzfenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/dreiecksfenster" class="figma-weitere-card">Dreiecksfenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/daenische-fenster" class="figma-weitere-card">Englische Fenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/energiesparfenster" class="figma-weitere-card">Energiesparfenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/daenische-fenster" class="figma-weitere-card">Fenster nach außen öffnend<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/bogenfenster" class="figma-weitere-card">Halbrund- / Halbkreisfenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/innenfenster" class="figma-weitere-card">Innenraumfenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/klappfenster" class="figma-weitere-card">Klappfenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/niederlaendische-fenster" class="figma-weitere-card">Niederländische Fenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/verglasung-ueber-eck-ohne-rahmen" class="figma-weitere-card">Rahmenlose Eckverglasung<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/bogenfenster" class="figma-weitere-card">Rundbogenfenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/schallschutzfenster" class="figma-weitere-card">Schallschutzfenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/schiebefenster" class="figma-weitere-card">Schiebefenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/sicherheitsfenster" class="figma-weitere-card">Sicherheitsfenster<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+        </div>
+    </section>
+
+    <!-- Türen nach Typ/Form – Section 7 (ADD) -->
+    <section class="dfs-prod-section">
+        <div class="dfs-prod-section__heading">
+            <h2 class="dfs-prod-section__title">Türen nach Typ/Form</h2>
+            <p class="dfs-prod-section__subtitle">Haustüren, Balkontüren, Hebeschiebetüren und Nebeneingangstüren</p>
+        </div>
+        <div class="dfs-prod-section__grid">
+            <a href="https://deutscher-fenstershop.de/haustuer" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/7fb56334-c7f5-4538-9d8d-3c317ffa2c7b" alt="Haustüren" onerror="this.src='../assets/images/Kunststofffenster.jpg'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Haustüren</h3>
+                    <p class="dfs-prod-card__desc">Der repräsentative Eingangsbereich mit Design und Sicherheit.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/balkontuer" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/d97a4bfd-bee0-41e9-a790-0b56330b8b10" alt="Balkontüren" onerror="this.src='../assets/images/Schiebetüren.png'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Balkontüren</h3>
+                    <p class="dfs-prod-card__desc">Mehr Licht und direkter Zugang zu Balkon oder Terrasse.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/hebeschiebetueren" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/7725e765-a676-431f-b78b-38ffa082bbe1" alt="Hebeschiebetüren" onerror="this.src='../assets/images/Schiebetüren.png'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Hebeschiebetüren</h3>
+                    <p class="dfs-prod-card__desc">Großzügige Glasflächen mit komfortabler Schiebetechnik.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/nebeneingangstueren" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/aa158ea5-5904-4ba8-9c1f-e3b9c27e7b20" alt="Nebeneingangstüren" onerror="this.src='../assets/images/Kunststofffenster.jpg'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Nebeneingangstüren</h3>
+                    <p class="dfs-prod-card__desc">Praktische und sichere Lösung für Keller, Garage oder Nebenräume.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/mehrfluegelige-tueren" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/27226231-9045-400f-a48f-7501850a965f" alt="Mehrflügelige Türen" onerror="this.src='../assets/images/Kunststofffenster.jpg'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Mehrflügelige Türen</h3>
+                    <p class="dfs-prod-card__desc">Ideal für großzügige Eingangsbereiche und repräsentative Gebäude.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Türen nach Material – Section 8 (ADD) -->
+    <section class="dfs-prod-section dfs-prod-section--alt">
+        <div class="dfs-prod-section__heading">
+            <h2 class="dfs-prod-section__title">Türen nach Material</h2>
+            <p class="dfs-prod-section__subtitle">Haustüren aus Kunststoff, Aluminium oder Holz – sicher, stabil und nach Maß gefertigt.</p>
+        </div>
+        <div class="dfs-prod-section__grid">
+            <a href="https://deutscher-fenstershop.de/haustuer/kunststoff" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/ec1eeb33-7701-479a-b6b1-b87b90aebe0d" alt="Kunststoff-Haustüren" onerror="this.src='../assets/images/Kunststofffenster.jpg'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Kunststoff-Haustüren</h3>
+                    <p class="dfs-prod-card__desc">Kosteneffizient, langlebig und pflegeleicht</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/haustuer/aluminium" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/4cc30c7d-7f3a-4e24-b344-e62dd2340870" alt="Aluminium-Haustüren" onerror="this.src='../assets/images/Alufenster.png'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Aluminium-Haustüren</h3>
+                    <p class="dfs-prod-card__desc">Hochwertige Designlösungen mit maximaler Stabilität und Sicherheit.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/haustuer/holz" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/0548afe0-6641-464d-ba65-eb702f29b9f2" alt="Holz-Haustüren" onerror="this.src='../assets/images/Holzfenster.jpg'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Holz-Haustüren</h3>
+                    <p class="dfs-prod-card__desc">Natürliche Eleganz kombiniert mit ausgezeichneter Wärmedämmung.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/haustuer/holz-alu" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/6eaa163e-beb8-4e75-b10e-6fa4a304d9f1" alt="Holz-Alu-Türen" onerror="this.src='../assets/images/Alu-Holz-Fenster.png'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Holz-Alu-Türen</h3>
+                    <p class="dfs-prod-card__desc">Innen warmes Holz, außen robustes Aluminium.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+            <a href="https://deutscher-fenstershop.de/stahltueren" class="dfs-prod-card">
+                <div class="dfs-prod-card__img"><img src="https://www.figma.com/api/mcp/asset/bb0fad39-6459-4e81-afc1-32bcb91a5eb5" alt="Stahltüren" onerror="this.src='../assets/images/Kunststofffenster.jpg'"></div>
+                <div class="dfs-prod-card__body">
+                    <h3 class="dfs-prod-card__title">Stahltüren</h3>
+                    <p class="dfs-prod-card__desc">Besonders widerstandsfähig und sicher.</p>
+                    <span class="dfs-prod-card__link">Mehr erfahren</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Weitere Türen – Section 9 (ADD) -->
+    <section class="figma-weitere-fenster figma-weitere-tueren">
+        <div class="figma-weitere-fenster__heading">
+            <h2 class="figma-weitere-fenster__title">Weitere Türen</h2>
+            <p class="figma-weitere-fenster__subtitle">Von Terrassentüren über Schiebetüren bis zu Spezialtüren – maßgefertigte Lösungen für jeden Bedarf.</p>
+        </div>
+        <div class="figma-weitere-fenster__grid">
+            <a href="https://deutscher-fenstershop.de/terrassentueren" class="figma-weitere-card">Terrassentüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/hebeschiebetueren" class="figma-weitere-card">Hebeschiebetüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/schiebetueren" class="figma-weitere-card">Schiebetüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/drehfluegeltueren" class="figma-weitere-card">Drehflügeltüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/falt-tueren" class="figma-weitere-card">Falttüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/pendeltueren" class="figma-weitere-card">Pendeltüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/sicherheitstueren" class="figma-weitere-card">Sicherheitstüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/brandschutztueren" class="figma-weitere-card">Brandschutztüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/rauchschutztueren" class="figma-weitere-card">Rauchschutztüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/schallschutztueren" class="figma-weitere-card">Schallschutztüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/eingangstueren" class="figma-weitere-card">Eingangstüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/innenraumtueren" class="figma-weitere-card">Innenraumtüren<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/balkontuer" class="figma-weitere-card">Balkontüren Übersicht<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/terrassentueren" class="figma-weitere-card">Terrassentüren Übersicht<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/haustuer" class="figma-weitere-card">Haustüren Übersicht<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/tuer-konfigurator" class="figma-weitere-card">Tür-Konfigurator<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+            <a href="https://deutscher-fenstershop.de/tueren" class="figma-weitere-card">Alle Türen<span class="figma-weitere-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg></span></a>
+        </div>
+    </section>
+
+    <!-- Vertrauenswürdig und zertifiziert -->
+    <section class="dfs-trust">
+        <div class="dfs-trust__heading">
+            <h2 class="dfs-trust__title">Vertrauenswürdig und zertifiziert</h2>
+            <p class="dfs-trust__subtitle">Geprüfte Qualität, sichere Abwicklung, zertifizierte Partner – damit Sie sorglos bestellen können.</p>
+        </div>
+        <div class="dfs-trust__grid">
+            <div class="dfs-trust-card">
+                <div class="dfs-trust-card__logo" style="background:#003A66;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;width:120px;height:120px;">PARTNER</div>
+                <h3 class="dfs-trust-card__title">Authorized Partner</h3>
+                <ul class="dfs-trust-card__list">
+                    <li class="dfs-trust-card__item"><span class="dfs-trust-card__check">✓</span><span class="dfs-trust-card__text">Originalität bestätigt</span></li>
+                    <li class="dfs-trust-card__item"><span class="dfs-trust-card__check">✓</span><span class="dfs-trust-card__text">Autorisierter Händler</span></li>
+                    <li class="dfs-trust-card__item"><span class="dfs-trust-card__check">✓</span><span class="dfs-trust-card__text">Sicher einkaufen</span></li>
+                </ul>
+            </div>
+            <div class="dfs-trust-card">
+                <div class="dfs-trust-card__logo"><img src="https://www.figma.com/api/mcp/asset/2b5345a6-0d5b-48aa-93f4-a4f5f2fbff82" alt="Trusted Shops" onerror="this.parentElement.innerHTML='TRUSTED';this.parentElement.style.cssText='background:#ffdc00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:700;font-size:12px;'" style="width:120px;height:120px;object-fit:contain;"></div>
+                <h3 class="dfs-trust-card__title">Trusted Shops</h3>
+                <ul class="dfs-trust-card__list">
+                    <li class="dfs-trust-card__item"><span class="dfs-trust-card__check">✓</span><span class="dfs-trust-card__text">Geprüfte Identität</span></li>
+                    <li class="dfs-trust-card__item"><span class="dfs-trust-card__check">✓</span><span class="dfs-trust-card__text">Verschlüsselte Datenübertragung</span></li>
+                    <li class="dfs-trust-card__item"><span class="dfs-trust-card__check">✓</span><span class="dfs-trust-card__text">Verständlicher Bestellvorgang</span></li>
+                </ul>
+            </div>
+            <div class="dfs-trust-card">
+                <div class="dfs-trust-card__logo"><img src="https://www.figma.com/api/mcp/asset/93019b1c-1b20-44b3-bbea-39ed58990c3c" alt="VFF" onerror="this.parentElement.innerHTML='VFF';this.parentElement.style.cssText='background:#3FA9F5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;'" style="width:180px;height:120px;object-fit:contain;"></div>
+                <h3 class="dfs-trust-card__title">Verband für Fenster und Fassade</h3>
+                <ul class="dfs-trust-card__list">
+                    <li class="dfs-trust-card__item"><span class="dfs-trust-card__check">✓</span><span class="dfs-trust-card__text">Rechtssicher und professionell tätig</span></li>
+                    <li class="dfs-trust-card__item"><span class="dfs-trust-card__check">✓</span><span class="dfs-trust-card__text">Hohe Technikstandards</span></li>
+                    <li class="dfs-trust-card__item"><span class="dfs-trust-card__check">✓</span><span class="dfs-trust-card__text">Anerkannte Fachkompetenz</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ihr Fenster in 5 Schritten – Section 12 -->
+    <section class="dfs-steps">
+        <div class="dfs-steps__heading">
+            <h2 class="dfs-steps__title">Ihr Fenster in 5 Schritten</h2>
+            <p class="dfs-steps__subtitle">Mit unserem Online-Konfigurator gestalten Sie Ihr Wunschfenster ganz einfach selbst</p>
+        </div>
+        <div class="dfs-steps__container">
+            <div class="dfs-step">
+                <span class="dfs-step__num">01</span>
+                <h3 class="dfs-step__title">Fenstertyp wählen</h3>
+                <p class="dfs-step__text">Wählen Sie zwischen Dreh-Kipp, Festverglasung, Schiebefenster oder Sonderformen – unser Konfigurator führt Sie Schritt für Schritt.</p>
+            </div>
+            <div class="dfs-step">
+                <span class="dfs-step__num">02</span>
+                <h3 class="dfs-step__title">Maße eingeben</h3>
+                <p class="dfs-step__text">Geben Sie Breite und Höhe Ihres Fensters in Millimetern ein. Unsere Anleitung hilft Ihnen beim richtigen Ausmessen.</p>
+            </div>
+            <div class="dfs-step">
+                <span class="dfs-step__num">03</span>
+                <h3 class="dfs-step__title">Material &amp; Farbe</h3>
+                <p class="dfs-step__text">Wählen Sie Ihr Wunschmaterial – Kunststoff, Aluminium oder Holz – und die passende Farbe aus unserem umfangreichen Dekorsortiment.</p>
+            </div>
+            <div class="dfs-step">
+                <span class="dfs-step__num">04</span>
+                <h3 class="dfs-step__title">Ausstattung</h3>
+                <p class="dfs-step__text">Konfigurieren Sie Verglasung, Beschläge, Griffe und optionale Extras wie Rollläden oder Insektenschutz ganz nach Bedarf.</p>
+            </div>
+            <div class="dfs-step">
+                <span class="dfs-step__num">05</span>
+                <h3 class="dfs-step__title">Angebot erhalten</h3>
+                <p class="dfs-step__text">Ihr individuelles Angebot wird sofort berechnet und angezeigt. Mit einem Klick direkt bestellen oder unverbindlich anfragen.</p>
+            </div>
+        </div>
+        <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="dfs-steps__btn">Jetzt Konfigurator starten</a>
+    </section>
+
+    <!-- Video Section -->
+    <section class="dfs-video-section">
+        <div class="dfs-video-section__content">
+            <h2 class="dfs-video-section__title">So funktioniert unser Fensterkonfigurator</h2>
+            <p class="dfs-video-section__desc">Erfahren Sie in unserem Erklärvideo, wie Sie in wenigen Minuten Ihr perfektes Fenster konfigurieren und direkt bestellen können.</p>
+            <div class="dfs-video-section__features">
+                <div class="dfs-video-section__feature">
+                    <div class="dfs-video-section__feature-icon"><img src="../assets/icon-calendar.svg" alt="" style="width:24px;height:24px;"></div>
+                    <div>
+                        <div class="dfs-video-section__feature-title">Einfache Konfiguration</div>
+                        <div class="dfs-video-section__feature-text">Intuitive Bedienung ohne Vorkenntnisse</div>
+                    </div>
+                </div>
+                <div class="dfs-video-section__feature">
+                    <div class="dfs-video-section__feature-icon"><img src="../assets/icon-calendar.svg" alt="" style="width:24px;height:24px;"></div>
+                    <div>
+                        <div class="dfs-video-section__feature-title">Sofortiger Preis</div>
+                        <div class="dfs-video-section__feature-text">Transparente Preisberechnung in Echtzeit</div>
+                    </div>
+                </div>
+                <div class="dfs-video-section__feature">
+                    <div class="dfs-video-section__feature-icon"><img src="../assets/icon-calendar.svg" alt="" style="width:24px;height:24px;"></div>
+                    <div>
+                        <div class="dfs-video-section__feature-title">Schnelle Lieferung</div>
+                        <div class="dfs-video-section__feature-text">Produktion und Versand in 3–4 Wochen</div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="dfs-video-section__btn">Jetzt Konfigurator starten</a>
+        </div>
+        <div class="dfs-video-section__media">
+            <img src="../assets/hero-image.jpg" alt="Fensterkonfigurator">
+            <a href="https://deutscher-fenstershop.de/erklaervideo" class="dfs-video-section__play" aria-label="Video abspielen">
+                <svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:#fff;"><path d="M8 5v14l11-7z"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Drutex Partner -->
+    <section class="dfs-drutex">
+        <div class="dfs-drutex__inner">
+            <div class="dfs-drutex__content">
+                <img src="../assets/fenster-online-kaufen-logo.png" alt="Deutscher Fenstershop" class="dfs-drutex__logo" style="max-height:59px;">
+                <p class="dfs-drutex__text">Als offizieller Partner des FC Bayern München steht DRUTEX für höchste Qualitätsstandards und innovative Fenstertechnologie. Unsere Premium-Fenster vereinen herausragende Energieeffizienz, exzellente Schalldämmung und modernes Design in perfekter Harmonie.</p>
+                <div class="dfs-drutex__stats">
+                    <div><span class="dfs-drutex__stat-num">30%</span><span class="dfs-drutex__stat-label">Bessere Wärmedämmung</span></div>
+                    <div><span class="dfs-drutex__stat-num">40+</span><span class="dfs-drutex__stat-label">Jahre Erfahrung</span></div>
+                </div>
+                <a href="https://deutscher-fenstershop.de/drutex" class="dfs-drutex__btn">Mehr erfahren</a>
+            </div>
+            <div class="dfs-drutex__img"><img src="../assets/drutex-home.jpg" alt="Drutex Fenster"></div>
+        </div>
+    </section>
+
+    <!-- Partnerhersteller -->
+    <section class="dfs-brands">
+        <div class="dfs-brands__heading">
+            <h2 class="dfs-brands__title">Unsere Partnerhersteller</h2>
+            <p class="dfs-brands__subtitle">Wir arbeiten mit den besten Marken der Branche zusammen</p>
+        </div>
+        <div class="dfs-brands__row dfs-brands__row--six">
+            <img src="https://www.figma.com/api/mcp/asset/ba407453-1cb6-49d3-9b4b-5ffe3cb8585c" alt="Drutex" class="dfs-brands__logo" onerror="this.src='../assets/fenster-online-kaufen-logo.png'">
+            <img src="https://www.figma.com/api/mcp/asset/2fc5ec91-5a95-4c0a-b35a-5807be7d7021" alt="aluplast" class="dfs-brands__logo" onerror="this.src='../assets/fenster-online-kaufen-logo.png'">
+            <img src="https://www.figma.com/api/mcp/asset/f973b1d1-9394-4583-90dc-1865cadca49a" alt="Schüco" class="dfs-brands__logo" onerror="this.src='../assets/fenster-online-kaufen-logo.png'">
+            <img src="https://www.figma.com/api/mcp/asset/8db7bdd4-2499-497c-aaba-1d7e15a953df" alt="VEKA" class="dfs-brands__logo" onerror="this.src='../assets/fenster-online-kaufen-logo.png'">
+            <img src="https://www.figma.com/api/mcp/asset/11eb46df-0066-4eba-9419-1da7de60e0b2" alt="Kömmerling" class="dfs-brands__logo" onerror="this.src='../assets/fenster-online-kaufen-logo.png'">
+            <img src="https://www.figma.com/api/mcp/asset/7ff70d34-e75d-424c-a58c-a9bc49baeb9d" alt="GEALAN" class="dfs-brands__logo" onerror="this.src='../assets/fenster-online-kaufen-logo.png'">
+        </div>
+    </section>
+
+    <!-- Video Qualität – Section 16 (ADD) -->
+    <section class="dfs-video-qualitaet">
+        <div class="dfs-video-qualitaet__media">
+            <img src="https://www.figma.com/api/mcp/asset/3e8de741-d0db-49e4-bc58-36dcf8b218ee" alt="Qualität" onerror="this.src='../assets/hero-image.jpg'">
+        </div>
+        <div class="dfs-video-qualitaet__content">
+            <h2 class="dfs-video-qualitaet__title">Qualität von Profis. Direkt vom Fachbetrieb.</h2>
+            <div class="dfs-video-qualitaet__text">
+                <p>Der Deutsche Fenstershop ist ein spezialisierter Onlineanbieter für maßgefertigte Fenster und Türen aus Kunststoff, Holz und Aluminium bekannter Marken wie Drutex, Aluplast, Schüco, Kömmerling oder Salamander. Das Unternehmen bietet privaten Bauherren, Sanierern und B2B-Kunden eine intuitive Plattform, um Maße, Verglasung, Farbe und Ausstattung individuell zu konfigurieren.</p>
+                <p>Das Sortiment umfasst Fenster in Sonderformen, Haustüren, Schiebetüren, Garagentore und Zubehör, wie Rollläden und Fensterbänke. Neben technischer Fachberatung und verbindlichen Lieferzeiten punktet der Anbieter durch die Vermittlung professioneller Montageservices.</p>
+                <p>Von der digitalen Planung bis zur Lieferung und dem Einbau begleitet der Deutsche Fenstershop Projekte zuverlässig als Partner für Neubau und Sanierung.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referenzprojekte – Section 17 (ADD) -->
+    <section class="dfs-referenz">
+        <div class="dfs-referenz__heading dfs-prod-section__heading">
+            <h2 class="dfs-prod-section__title">Referenzprojekte</h2>
+            <p class="dfs-prod-section__subtitle">Echte Projekte, echte Ergebnisse – sehen Sie, was unsere Kunden mit dem Deutschen Fenstershop realisiert haben.</p>
+        </div>
+        <div class="dfs-referenz__grid">
+            <a href="#" class="dfs-referenz-card">
+                <div class="dfs-referenz-card__img"><img src="https://www.figma.com/api/mcp/asset/d419a626-7278-4ba6-a0ab-23889cfa0fb8" alt="" onerror="this.src='../assets/hero-image.jpg'"></div>
+                <div class="dfs-referenz-card__body">
+                    <h3 class="dfs-referenz-card__title">Aluminium Fenster Aliplast GENESIS 75</h3>
+                    <p class="dfs-referenz-card__desc">Austausch von Küchenfenstern mit Aluminiumfenstern des Systems Aliplast GENESIS 75. Perfekte Passform und sehr gute Unterstützung während des gesamten Bestellprozesses.</p>
+                </div>
+            </a>
+            <a href="#" class="dfs-referenz-card">
+                <div class="dfs-referenz-card__img"><img src="https://www.figma.com/api/mcp/asset/520e9163-cef7-4f85-bd69-9acf22f9f642" alt="" onerror="this.src='../assets/hero-image.jpg'"></div>
+                <div class="dfs-referenz-card__body">
+                    <h3 class="dfs-referenz-card__title">Aluminiumsystem nach Montage</h3>
+                    <p class="dfs-referenz-card__desc">Wintergarten Verglasung Aluminium System Aluprof erfolgreich montiert</p>
+                </div>
+            </a>
+            <a href="#" class="dfs-referenz-card">
+                <div class="dfs-referenz-card__img"><img src="https://www.figma.com/api/mcp/asset/06cb8983-97a8-4f91-8b5b-e291972c7d0e" alt="" onerror="this.src='../assets/hero-image.jpg'"></div>
+                <div class="dfs-referenz-card__body">
+                    <h3 class="dfs-referenz-card__title">Giebelfenster mit Sprossen</h3>
+                    <p class="dfs-referenz-card__desc">Fenster von Drutex Iglo 5 Classic mit schokoladenbraunem Dekor und goldenen Sprossen in 8 mm</p>
+                </div>
+            </a>
+            <a href="#" class="dfs-referenz-card">
+                <div class="dfs-referenz-card__img"><img src="https://www.figma.com/api/mcp/asset/bce95413-80a6-4e49-8955-807e428d27d2" alt="" onerror="this.src='../assets/hero-image.jpg'"></div>
+                <div class="dfs-referenz-card__body">
+                    <h3 class="dfs-referenz-card__title">Palette mit Gealan Fenster</h3>
+                    <p class="dfs-referenz-card__desc">"Alles Perfekt, von der Angebotserstellung über die Fertigung bis zur Lieferung. Lieferdauer war mit 4 Wochen kürzer als angegeben. Freundlicher und fachlich guter Telefonkontakt. Auch die Preise sind angemessen. Ich werde noch öfter bestellen."</p>
+                </div>
+            </a>
+            <a href="#" class="dfs-referenz-card">
+                <div class="dfs-referenz-card__img"><img src="https://www.figma.com/api/mcp/asset/52542804-ce4a-4867-afab-24435f5e57cc" alt="" onerror="this.src='../assets/hero-image.jpg'"></div>
+                <div class="dfs-referenz-card__body">
+                    <h3 class="dfs-referenz-card__title">Kunde von Gealan Kubus</h3>
+                    <p class="dfs-referenz-card__desc">"Alles Top! Fensterrahmen sind ausgeblendet und unsichtbar. Gealan Kubus nach Montage im Anschlag"</p>
+                </div>
+            </a>
+            <a href="#" class="dfs-referenz-card">
+                <div class="dfs-referenz-card__img"><img src="https://www.figma.com/api/mcp/asset/a5b1164b-38e6-4799-9a82-822c8410722c" alt="" onerror="this.src='../assets/hero-image.jpg'"></div>
+                <div class="dfs-referenz-card__body">
+                    <h3 class="dfs-referenz-card__title">Kunststofffenster</h3>
+                    <p class="dfs-referenz-card__desc">Drutex Fenster ohne Mittelpfosten (Stulp) inkl. Aufsatzrollladen nach der Montage</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Gallerie – Section 18 (ADD) -->
+    <section class="dfs-gallerie">
+        <div class="dfs-gallerie__content">
+            <h2 class="dfs-gallerie__title">Unsere Galerie</h2>
+            <p class="dfs-gallerie__subtitle">Von klassisch bis modern – lassen Sie sich von unseren Fenster- und Türlösungen inspirieren.</p>
+        </div>
+        <div class="dfs-gallerie__carousel">
+            <div class="dfs-gallerie__images">
+                <img src="https://www.figma.com/api/mcp/asset/821e1c16-887e-4c25-9be4-730ed0c61dd7" alt="" onerror="this.src='../assets/hero-image.jpg'">
+                <img src="https://www.figma.com/api/mcp/asset/0a7b6835-844d-4e54-8179-47f0e7b5d16e" alt="" onerror="this.src='../assets/hero-image.jpg'">
+                <img src="https://www.figma.com/api/mcp/asset/35ff8e1d-0b47-4c66-9217-2d1d5bac6753" alt="" onerror="this.src='../assets/hero-image.jpg'">
+            </div>
+            <div class="dfs-gallerie__nav">
+                <button type="button" class="dfs-gallerie__nav-btn" aria-label="Vorheriges">‹</button>
+                <div class="dfs-gallerie__dots"><span class="dfs-gallerie__dot dfs-gallerie__dot--active"></span><span class="dfs-gallerie__dot"></span><span class="dfs-gallerie__dot"></span></div>
+                <button type="button" class="dfs-gallerie__nav-btn" aria-label="Nächstes">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schnelle Lieferung -->
+    <section class="dfs-delivery">
+        <div class="dfs-delivery__heading dfs-prod-section__heading">
+            <h2 class="dfs-delivery__title dfs-prod-section__title">Schnelle Lieferung deutschlandweit</h2>
+            <p class="dfs-prod-section__subtitle">Wir liefern Ihre maßgefertigten Fenster und Türen zuverlässig und termingerecht</p>
+        </div>
+        <div class="dfs-delivery__grid">
+            <div class="dfs-delivery__card">
+                <div class="dfs-delivery__icon"><img src="https://www.figma.com/api/mcp/asset/c9921b16-9514-4498-83be-1f8db3513c48" alt="" style="width:56px;height:56px;" onerror="this.src='../assets/icon-calendar.svg';this.style.filter='brightness(0) saturate(100%) invert(44%) sepia(96%) saturate(1500%) hue-rotate(0deg)';"></div>
+                <h3 class="dfs-delivery__title">3-4 Wochen</h3>
+                <p class="dfs-delivery__text">Standard-Lieferzeit<br>Für die meisten Fenster und Türen</p>
+            </div>
+            <div class="dfs-delivery__card">
+                <div class="dfs-delivery__icon"><img src="https://www.figma.com/api/mcp/asset/2ae6bc7f-8ecd-4f03-ad12-83ef097b977b" alt="" style="width:56px;height:56px;" onerror="this.src='../assets/icon-calendar.svg';this.style.filter='brightness(0) saturate(100%) invert(44%) sepia(96%) saturate(1500%) hue-rotate(0deg)';"></div>
+                <h3 class="dfs-delivery__title">Express möglich</h3>
+                <p class="dfs-delivery__text">Eilbestellung verfügbar<br>Für dringende Projekte</p>
+            </div>
+            <div class="dfs-delivery__card">
+                <div class="dfs-delivery__icon"><img src="https://www.figma.com/api/mcp/asset/2ae6bc7f-8ecd-4f03-ad12-83ef097b977b" alt="" style="width:56px;height:56px;" onerror="this.src='../assets/icon-calendar.svg';this.style.filter='brightness(0) saturate(100%) invert(44%) sepia(96%) saturate(1500%) hue-rotate(0deg)';"></div>
+                <h3 class="dfs-delivery__title">Kostenlos</h3>
+                <p class="dfs-delivery__text">Versandkostenfrei<br>ab 10 bestellten Elementen</p>
+            </div>
+        </div>
+        <div class="dfs-delivery__montage">
+            <div class="dfs-delivery__montage-content">
+                <h3 class="dfs-delivery__montage-title">Montageservice verfügbar</h3>
+                <p class="dfs-delivery__montage-text">Auf Wunsch übernehmen unsere erfahrenen Fachpartner die professionelle Montage Ihrer neuen Fenster und Türen. Kontaktieren Sie uns für ein individuelles Angebot.</p>
+                <a href="https://deutscher-fenstershop.de/montagepartner" class="dfs-delivery__montage-btn">Montage anfragen</a>
+            </div>
+            <div class="dfs-delivery__montage-img"><img src="https://www.figma.com/api/mcp/asset/e2455a21-9a84-4a5f-b0ee-eab3170202a5" alt="Montage" onerror="this.src='../assets/hero-image.jpg'"></div>
+        </div>
+    </section>
+
+    <!-- Das sagen unsere Kunden – Section 20 (ADD) -->
+    <section class="dfs-testimonials">
+        <div class="dfs-testimonials__heading dfs-prod-section__heading">
+            <h2 class="dfs-prod-section__title">Das sagen unsere Kunden</h2>
+            <p class="dfs-prod-section__subtitle">Über 2.800 zufriedene Kunden haben uns bereits bewertet</p>
+        </div>
+        <div class="dfs-testimonials__grid">
+            <div class="dfs-testimonial-card">
+                <div class="dfs-testimonial-card__stars">★★★★★</div>
+                <p class="dfs-testimonial-card__text">Hervorragende Qualität und sehr guter Service! Die Fenster wurden pünktlich geliefert und die Beratung war erstklassig. Der Online-Konfigurator ist super einfach zu bedienen.</p>
+                <div class="dfs-testimonial-card__author">
+                    <div class="dfs-testimonial-card__avatar">MH</div>
+                    <div>
+                        <div class="dfs-testimonial-card__name">Marcus Hoffmann</div>
+                        <div class="dfs-testimonial-card__meta">Berlin, vor 2 Wochen</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dfs-testimonial-card">
+                <div class="dfs-testimonial-card__stars">★★★★★</div>
+                <p class="dfs-testimonial-card__text">Wir haben unser ganzes Haus mit neuen Fenstern ausgestattet. Die Qualität ist ausgezeichnet und der Preis war fair. Besonders die schnelle Lieferzeit hat uns überzeugt!</p>
+                <div class="dfs-testimonial-card__author">
+                    <div class="dfs-testimonial-card__avatar">SK</div>
+                    <div>
+                        <div class="dfs-testimonial-card__name">Sandra Klein</div>
+                        <div class="dfs-testimonial-card__meta">München, vor 1 Monat</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dfs-testimonial-card">
+                <div class="dfs-testimonial-card__stars">★★★★★</div>
+                <p class="dfs-testimonial-card__text">Absolut empfehlenswert! Von der Bestellung bis zur Lieferung lief alles reibungslos. Die Fenster sind hochwertig verarbeitet und sehen toll aus. Vielen Dank!</p>
+                <div class="dfs-testimonial-card__author">
+                    <div class="dfs-testimonial-card__avatar">TB</div>
+                    <div>
+                        <div class="dfs-testimonial-card__name">Thomas Becker</div>
+                        <div class="dfs-testimonial-card__meta">Hamburg, vor 3 Wochen</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dfs-testimonial-card">
+                <div class="dfs-testimonial-card__stars">★★★★★</div>
+                <p class="dfs-testimonial-card__text">Die Beratung war kompetent und freundlich. Meine Haustür wurde maßgenau gefertigt und sieht fantastisch aus. Die Energieeffizienz ist beeindruckend!</p>
+                <div class="dfs-testimonial-card__author">
+                    <div class="dfs-testimonial-card__avatar">JW</div>
+                    <div>
+                        <div class="dfs-testimonial-card__name">Julia Wagner</div>
+                        <div class="dfs-testimonial-card__meta">Frankfurt, vor 5 Tagen</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dfs-testimonial-card">
+                <div class="dfs-testimonial-card__stars">★★★★★</div>
+                <p class="dfs-testimonial-card__text">Top Qualität zu fairen Preisen! Der Konfigurator ist intuitiv und die Lieferung erfolgte wie versprochen. Ich bin rundum zufrieden und kann den Shop nur weiterempfehlen.</p>
+                <div class="dfs-testimonial-card__author">
+                    <div class="dfs-testimonial-card__avatar">RL</div>
+                    <div>
+                        <div class="dfs-testimonial-card__name">Robert Lang</div>
+                        <div class="dfs-testimonial-card__meta">Köln, vor 1 Woche</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dfs-testimonial-card">
+                <div class="dfs-testimonial-card__stars">★★★★★</div>
+                <p class="dfs-testimonial-card__text">Sehr professioneller Service von Anfang bis Ende. Die Fenster sind perfekt verarbeitet und wurden sorgfältig verpackt geliefert. Absolut empfehlenswert!</p>
+                <div class="dfs-testimonial-card__author">
+                    <div class="dfs-testimonial-card__avatar">AM</div>
+                    <div>
+                        <div class="dfs-testimonial-card__name">Anna Meyer</div>
+                        <div class="dfs-testimonial-card__meta">Stuttgart, vor 4 Wochen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:24px;">
+            <a href="https://deutscher-fenstershop.de/bewertungen" class="dfs-steps__btn">Alle Bewertungen ansehen</a>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section (Brevo) -->
+    <section class="dfs-newsletter">
+        <div class="dfs-newsletter__container section">
+            <div class="dfs-newsletter__content">
+                <h2 class="dfs-newsletter__title">Newsletter abonnieren</h2>
+                <p class="dfs-newsletter__text">Bleiben Sie auf dem Laufenden mit unseren neuesten Angeboten und Tipps.</p>
+                <div id="sib-form-container" class="dfs-newsletter__brevo-container">
+                    <div id="error-message" class="dfs-newsletter__message dfs-newsletter__message--error" style="display:none;">
+                        <span>Ihre Anmeldung konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.</span>
+                    </div>
+                    <div id="success-message" class="dfs-newsletter__message dfs-newsletter__message--success" style="display:none;">
+                        <span>Das hat geklappt! Sie erhalten in Kürze eine Bestätigungs-E-Mail.</span>
+                    </div>
+                    <div id="sib-container">
+                        <form id="sib-form" class="dfs-newsletter__form" method="POST" action="https://b2619547.sibforms.com/serve/MUIFANL7QbABweikAM3F445sG4oY99hTh9iXP_CtvHlH0iikeoLvfyUkCQ3Hr46fwHXKq8UlfJm_YpfQvdRjwJVSJx7J08i9CpZNLTxgjRoPAuIn0nDlYyItBFJABmc7rHABKglmio7YRAYet5CYKB7WIRCqPy64TmxDbNSeDSuZXtLnuJf89lW-Bh3ygFGsqPfXc0Tq0A8KgpVPuw==" data-type="subscription">
+                            <div class="dfs-newsletter__form-row">
+                                <input type="text" id="VOR_UND_NACHNAME" name="VOR_UND_NACHNAME" class="dfs-newsletter__input dfs-newsletter__input--name" placeholder="Ihr Name" maxlength="200" autocomplete="off" data-required="true" required>
+                                <input type="email" id="EMAIL" name="EMAIL" class="dfs-newsletter__input" placeholder="Ihre E-Mail-Adresse" autocomplete="off" data-required="true" required>
+                                <button type="submit" class="dfs-newsletter__button">Abonnieren</button>
+                            </div>
+                            <div class="dfs-newsletter__optin">
+                                <label class="dfs-newsletter__checkbox-label">
+                                    <input type="checkbox" value="1" id="OPT_IN" name="OPT_IN" class="dfs-newsletter__checkbox" required>
+                                    <span class="dfs-newsletter__checkbox-custom"></span>
+                                    <span>Ich akzeptiere die <a href="https://deutscher-fenstershop.de/datenschutzerklaerung" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Datenschutzerklärung</a>.</span>
+                                </label>
+                            </div>
+                            <input type="text" name="email_address_check" value="" class="input-hidden" style="position:absolute;left:-5000px;">
+                            <input type="hidden" name="locale" value="de">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
+        window.LOCALE = 'de';
+        window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfen Sie das Feldformat.";
+        window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein.";
+        window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig.";
+        window.translation = { common: { selectedList: '{quantity} Liste', selectedLists: '{quantity} Listen', selectedOption: '{quantity} ausgewählt', selectedOptions: '{quantity} ausgewählt' } };
+        var AUTOHIDE = Boolean(0);
+    </script>
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+    <!-- DFS Footer -->
+    <footer class="dfs-footer">
+        <div class="dfs-footer__container section">
+            <!-- Footer Top Section -->
+            <div class="dfs-footer__top">
+                <div class="dfs-footer__row">
+                    <!-- Column 1 - Produkte (Fenster, Balkontüren, Terrassentüren, Haustüren) -->
+                    <div class="dfs-footer__col dfs-footer__col--produkte">
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Fenster</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/kunststofffenster" class="dfs-footer__link">Kunststofffenster</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kunststoff-alu-fenster" class="dfs-footer__link">Kunststoff-Alu Fenster</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/alu-fenster" class="dfs-footer__link">Alu Fenster</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/holzfenster" class="dfs-footer__link">Holzfenster</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/holz-alu-fenster" class="dfs-footer__link">Holz-Alu Fenster</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Balkontüren</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/balkontuer-kunststoff" class="dfs-footer__link">Kunststoffbalkontüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/balkontuer-kunststoff-alu" class="dfs-footer__link">Kunststoff-Alu Balkontüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/balkontuer-aluminium" class="dfs-footer__link">Alu Balkontüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/balkontuer-holz" class="dfs-footer__link">Holzbalkontüren</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Terrassentüren</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/schiebetuer" class="dfs-footer__link">Schiebetüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/parallel-schiebe-kipptuer" class="dfs-footer__link">PSK-Türen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/hebeschiebetuer" class="dfs-footer__link">Hebeschiebetüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/faltschiebetueren-terrasse" class="dfs-footer__link">Faltschiebetüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/pas-tueren" class="dfs-footer__link">PAS-Türen</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Haustüren</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/haustueren-aluminium" class="dfs-footer__link">Aluminium-Haustüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/haustueren-holz" class="dfs-footer__link">Holz-Haustüren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/haustueren-kunststoff" class="dfs-footer__link">PVC-Haustüren</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 - Sonnenschutz, Garagentore, Zubehör -->
+                    <div class="dfs-footer__col dfs-footer__col--produkte-2">
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Sonnenschutz</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/rollladen" class="dfs-footer__link">Rollläden</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/raffstore" class="dfs-footer__link">Raffstoren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/aufsatzraffstore" class="dfs-footer__link">Aufsatzraffstoren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/aufsatzrollladen" class="dfs-footer__link">Aufsatzrollläden</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/unterputzraffstore" class="dfs-footer__link">Unterputzraffstoren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/unterputzrollladen" class="dfs-footer__link">Unterputzrollläden</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/vorbauraffstore" class="dfs-footer__link">Vorbauraffstoren</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/vorbaurollladen" class="dfs-footer__link">Vorbaurollläden</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Garagentore</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/sektionaltore" class="dfs-footer__link">Sektionaltore</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Zubehör</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/ersatzteile-zubehoer" class="dfs-footer__link">Ersatzteile & Zubehör</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/abdeckleisten-fuer-fenster" class="dfs-footer__link">Abdeckleisten</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/winkelprofile" class="dfs-footer__link">Winkelprofile</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/fensterverglasung" class="dfs-footer__link">Fensterverglasung</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/tuer-und-fensterbeschlaege" class="dfs-footer__link">Tür- und Fensterbeschläge</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kaufen/blendrahmenverbreiterungen-aufdopplungsprofil" class="dfs-footer__link">Blendrahmenverbreiterungen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/fensterbaenke-aluminium" class="dfs-footer__link">Fensterbänke</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/fensterscheiben" class="dfs-footer__link">Fensterscheiben</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/kopplungen" class="dfs-footer__link">Fensterkopplungen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 - Unternehmen, Service, Wissenswertes -->
+                    <div class="dfs-footer__col dfs-footer__col--info">
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Unternehmen</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/ueber-itsline" class="dfs-footer__link">Über uns</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/job-vertrieb" class="dfs-footer__link">Jobs</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/montagepartner" class="dfs-footer__link">Montagepartner werden</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/impressum" class="dfs-footer__link">Impressum</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/grafik/agb/AGB.pdf" class="dfs-footer__link">AGB</a></li>
+                                <li><a href="#" class="dfs-footer__link" id="dfs-footer-cookies">Cookies</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/datenschutzerklaerung" class="dfs-footer__link">Datenschutz</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Service</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/bestellverfolgung" class="dfs-footer__link">Bestellung verfolgen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/fenstermonteure" class="dfs-footer__link">Montagepartner finden</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/produktions-und-lieferzeiten" class="dfs-footer__link">Lieferzeiten</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/grafik/agb/Lieferbedingungen.pdf" class="dfs-footer__link">Lieferbedingungen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/versandkosten" class="dfs-footer__link">Lieferkosten</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/grafik/agb/garantiebedingungen-fenster-tueren-itsline.pdf" class="dfs-footer__link">Garantiebedingungen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/zahlungsarten" class="dfs-footer__link">Zahlungsarten</a></li>
+                            </ul>
+                        </div>
+                        <div class="dfs-footer__group">
+                            <h3 class="dfs-footer__title">Wissenswertes</h3>
+                            <ul class="dfs-footer__list">
+                                <li><a href="https://deutscher-fenstershop.de/fenster-selbst-ausmessen" class="dfs-footer__link">Fenster ausmessen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/foerderung-fenster" class="dfs-footer__link">Fensterförderung</a></li>
+                                <li><a href="#" class="dfs-footer__link">Hinweise zu Produktabbildungen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/fensterpreise" class="dfs-footer__link">Fenster Preise</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/anleitungen" class="dfs-footer__link">Anleitungen</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/fensterbegriffe" class="dfs-footer__link">Fachbegriffe</a></li>
+                                <li><a href="https://deutscher-fenstershop.de/wissenswertes" class="dfs-footer__link">Fensterwiki</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Column 4 - Kontakt -->
+                    <div class="dfs-footer__col dfs-footer__col--kontakt">
+                        <h3 class="dfs-footer__title">Kontakt</h3>
+                        <ul class="dfs-footer__list">
+                            <li>
+                                <a href="tel:+4972213022333" class="dfs-footer__link">
+                                    <img src="../assets/icon-phone.svg" alt="Phone" class="dfs-footer__item-icon">
+                                    +49 7221 / 3022-333
+                                </a>
+                            </li>
+                            <li class="dfs-footer__opening-hours">
+                                <img src="../assets/icon-clock.svg" alt="Clock" class="dfs-footer__item-icon">
+                                Mo – Fr. 8:00 – 17:00
+                            </li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send/?phone=491773872159&text&type=phone_number&app_absent=0" class="dfs-footer__link" target="_blank" rel="noopener noreferrer">
+                                    <img src="../assets/icon-whatsapp.svg" alt="WhatsApp" class="dfs-footer__item-icon">
+                                    WhatsApp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@deutscher-fenstershop.de" class="dfs-footer__link">
+                                    <img src="../assets/icon-email.svg" alt="Email" class="dfs-footer__item-icon">
+                                    Mail
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:anfrage@deutscher-fenstershop.de" class="dfs-footer__link">
+                                    <img src="../assets/icon-fenster-anfragen.svg" alt="Fenster anfragen" class="dfs-footer__item-icon">
+                                    Fenster anfragen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://deutscher-fenstershop.de/showroom" class="dfs-footer__link">
+                                    <img src="../assets/icon-location.svg" alt="Location" class="dfs-footer__item-icon">
+                                    Showroom
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://deutscher-fenstershop.de/callback" class="dfs-footer__link">
+                                    <img src="../assets/icon-calendar.svg" alt="Calendar" class="dfs-footer__item-icon">
+                                    Termin vereinbaren
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://deutscher-fenstershop.de/callback" class="dfs-footer__link">
+                                    <img src="../assets/icon-form.svg" alt="Form" class="dfs-footer__item-icon">
+                                    Kontaktformular
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Payment and Social Icons Row - Payment spans 2 columns, Social in column 4 -->
+                    <div class="dfs-footer__payment-icons-container">
+                        <div class="dfs-footer__payment-icons-left">
+                            <img src="../assets/paypal-logo-100x26.png" alt="PayPal">
+                            <img src="../assets/cc-logo.png" alt="Credit Card">
+                            <img src="../assets/bank-logo.png" alt="Bank Transfer">
+                            <img src="../assets/bu_skonto.jpg" alt="Skonto">
+                            <img src="../assets/easyCredit-Ratenkauf_eC-blau_1000x652_mit-Schutzraum_RGB.svg" alt="EasyCredit Ratenkauf">
+                        </div>
+                    </div>
+                    <div class="dfs-footer__social-icons-container">
+                        <div class="dfs-footer__social-icons">
+                            <a href="https://www.pinterest.de/itslinefenster/" target="_blank" rel="noopener noreferrer">
+                                <img src="../assets/icons8-pinterest-100.svg" alt="Pinterest">
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61553972203457" target="_blank" rel="noopener noreferrer">
+                                <img src="../assets/icons8-facebook-100.svg" alt="Facebook">
+                            </a>
+                            <a href="https://www.instagram.com/itslinefenster" target="_blank" rel="noopener noreferrer">
+                                <img src="../assets/icons8-instagram-100.svg" alt="Instagram">
+                            </a>
+                            <a href="https://www.youtube.com/@itslinefenster" target="_blank" rel="noopener noreferrer">
+                                <img src="../assets/icons8-youtube-play-100.svg" alt="YouTube">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <div class="dfs-footer__bottom">
+                <div class="dfs-footer__row">
+                    <div class="dfs-footer__col dfs-footer__col--copyright">
+                        <p class="dfs-footer__copyright">
+                            &copy; <span id="current-year"></span> Deutscher Fenstershop. Alle Rechte vorbehalten.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbox – Section 23 (ADD) – floating widget -->
+    <div id="dfs-chatbox" class="dfs-chatbox">
+        <div class="dfs-chatbox__inner">
+            <button type="button" class="dfs-chatbox__close" aria-label="Schließen">&times;</button>
+            <div class="dfs-chatbox__header">
+                <div class="dfs-chatbox__icon"><img src="https://www.figma.com/api/mcp/asset/be9903ba-55e8-45e4-99f8-6ce929acbd52" alt="" onerror="this.style.display='none'"><span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--figma-orange);border-radius:50%;color:#fff;font-size:20px;">?</span></div>
+                <div>
+                    <div class="dfs-chatbox__title">Brauchen Sie Hilfe?</div>
+                    <div class="dfs-chatbox__subtitle">Wir sind für Sie da!</div>
+                </div>
+            </div>
+            <p class="dfs-chatbox__text">Haben Sie Fragen zu unseren Produkten oder benötigen Sie eine Beratung? Unser Team steht Ihnen gerne zur Verfügung.</p>
+            <div class="dfs-chatbox__actions">
+                <a href="tel:+4972213022333" class="dfs-chatbox__btn dfs-chatbox__btn--primary">Jetzt anrufen</a>
+                <a href="https://wa.me/4972213022333" class="dfs-chatbox__btn dfs-chatbox__btn--outline" target="_blank" rel="noopener">WhatsApp Chat</a>
+                <a href="mailto:info@deutscher-fenstershop.de" class="dfs-chatbox__btn dfs-chatbox__btn--outline">E-Mail senden</a>
+            </div>
+            <p class="dfs-chatbox__footer">Wir melden uns innerhalb 1 Stunde zurück</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap 4 JS (for testing that nothing breaks) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- DFS Mega Menu - Click-to-blur Script -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Chatbox close toggle
+        var chatbox = document.getElementById('dfs-chatbox');
+        if (chatbox) {
+            var closeBtn = chatbox.querySelector('.dfs-chatbox__close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() { chatbox.style.display = 'none'; });
+            }
+        }
+
+        // Verhindert, dass Klick auf Nav-Links das Dropdown offen hält
+        document.querySelectorAll('.dfs-nav__link').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                // Blur entfernt den Focus-State
+                this.blur();
+            });
+            
+            // Optional: Bei Mouseout auch blur aufrufen
+            link.addEventListener('mouseleave', function(e) {
+                this.blur();
+            });
+        });
+        
+        // Blur auch bei Dropdown-Links
+        document.querySelectorAll('.dfs-dropdown a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                this.blur();
+            });
+        });
+        
+        // Mobile Menu Toggle Functionality
+        (function() {
+            const menuToggle = document.querySelector('.dfs-header__menu-toggle');
+            const nav = document.querySelector('.dfs-nav');
+            const navItems = document.querySelectorAll('.dfs-nav__item');
+            
+            if (!menuToggle || !nav) return;
+            
+            // Add has-dropdown class to items with dropdowns
+            navItems.forEach(function(item) {
+                if (item.querySelector('.dfs-dropdown')) {
+                    item.classList.add('has-dropdown');
+                }
+            });
+            
+            // Toggle main navigation
+            menuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isOpen = nav.classList.contains('mobile-open');
+                
+                if (isOpen) {
+                    nav.classList.remove('mobile-open');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Menü öffnen');
+                    document.body.classList.remove('menu-open');
+                    // Close all dropdowns
+                    navItems.forEach(function(item) {
+                        item.classList.remove('mobile-open');
+                    });
+                } else {
+                    nav.classList.add('mobile-open');
+                    menuToggle.classList.add('active');
+                    menuToggle.setAttribute('aria-expanded', 'true');
+                    menuToggle.setAttribute('aria-label', 'Menü schließen');
+                    document.body.classList.add('menu-open');
+                }
+            });
+            
+            // Toggle dropdowns on mobile
+            navItems.forEach(function(item) {
+                const link = item.querySelector('.dfs-nav__link');
+                const dropdown = item.querySelector('.dfs-dropdown');
+                
+                if (!link) return;
+                
+                link.addEventListener('click', function(e) {
+                    // Only handle on mobile/tablet (when nav is in mobile mode)
+                    if (window.innerWidth <= 1024) {
+                        // If item has dropdown, toggle it
+                        if (dropdown) {
+                            const hasDropdown = item.classList.contains('mobile-open');
+                            
+                            // Close all other dropdowns
+                            navItems.forEach(function(otherItem) {
+                                if (otherItem !== item) {
+                                    otherItem.classList.remove('mobile-open');
+                                }
+                            });
+                            
+                            // Toggle current dropdown
+                            if (hasDropdown) {
+                                item.classList.remove('mobile-open');
+                            } else {
+                                e.preventDefault();
+                                item.classList.add('mobile-open');
+                            }
+                        } else {
+                            // If no dropdown, close the menu and navigate
+                            nav.classList.remove('mobile-open');
+                            menuToggle.classList.remove('active');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                            menuToggle.setAttribute('aria-label', 'Menü öffnen');
+                            document.body.classList.remove('menu-open');
+                        }
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 1024) {
+                    if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                        nav.classList.remove('mobile-open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.setAttribute('aria-label', 'Menü öffnen');
+                        document.body.classList.remove('menu-open');
+                        navItems.forEach(function(item) {
+                            item.classList.remove('mobile-open');
+                        });
+                    }
+                }
+            });
+            
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (window.innerWidth > 1024) {
+                        nav.classList.remove('mobile-open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.setAttribute('aria-label', 'Menü öffnen');
+                        document.body.classList.remove('menu-open');
+                        navItems.forEach(function(item) {
+                            item.classList.remove('mobile-open');
+                        });
+                    }
+                }, 250);
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -175,6 +175,10 @@
             margin-top: 2px;
         }
 
+        .navigation-handover .dfs-header__contact-item--phone > div:nth-child(2) {
+            line-height: 1.2;
+        }
+
         /* Header Right - CTAs and Icons */
         .navigation-handover .dfs-header__right {
             display: flex;
@@ -187,7 +191,10 @@
         .navigation-handover .dfs-header__cta {
             display: inline-flex;
             align-items: center;
-            padding: 10px 20px;
+            justify-content: center;
+            height: 40px;
+            padding: 0 20px;
+            box-sizing: border-box;
             background: var(--dfs-orange);
             color: var(--dfs-bg-white);
             text-decoration: none;
@@ -214,6 +221,7 @@
             height: 40px;
             background: var(--dfs-orange);
             border-radius: 4px;
+            border: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -225,6 +233,16 @@
         .navigation-handover .dfs-header__icon-btn:hover {
             background: var(--dfs-orange-hover);
             text-decoration: none;
+        }
+
+        .navigation-handover .dfs-header__icon-btn,
+        .navigation-handover .dfs-header__icon-btn:focus,
+        .navigation-handover .dfs-header__icon-btn:focus-visible,
+        .navigation-handover button.dfs-header__icon-btn:focus,
+        .navigation-handover button.dfs-header__icon-btn:focus-visible {
+            outline: none !important;
+            box-shadow: none !important;
+            border: 0;
         }
 
         .navigation-handover .dfs-header__icon-btn svg {
@@ -253,6 +271,117 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        /* Search Bar - Expandable */
+        .navigation-handover .dfs-header__search {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .navigation-handover .dfs-header__search-bar {
+            position: absolute;
+            right: 100%;
+            top: 0;
+            height: 40px;
+            width: 0;
+            overflow: hidden;
+            transition: width 0.25s ease;
+            margin-right: 8px;
+            z-index: 1;
+        }
+
+        .navigation-handover .dfs-header__search-bar.dfs-header__search-bar--open {
+            /* Width spans 2 CTA buttons + gap + search icon so they don't show behind */
+            width: 468px; /* 2 × ~200px CTAs + 12px gap + 40px icon + 16px margin */
+        }
+
+        .navigation-handover .dfs-header__search-bar form {
+            display: flex;
+            height: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--dfs-bg-white);
+            border: 2px solid var(--dfs-orange);
+            box-sizing: border-box;
+            box-shadow: var(--dfs-shadow);
+        }
+
+        .navigation-handover .dfs-header__search-bar input,
+        .navigation-handover .dfs-header__search-bar input:focus,
+        .navigation-handover .dfs-header__search-bar input:focus-visible {
+            flex: 1;
+            height: 100%;
+            padding: 0 12px;
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            color: var(--dfs-text-dark);
+            outline: none;
+            box-shadow: none;
+            min-width: 0;
+        }
+
+        .navigation-handover .dfs-header__search-bar input::placeholder {
+            color: var(--dfs-text-muted);
+        }
+
+        .navigation-handover .dfs-header__search-submit {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border: none;
+            background: var(--dfs-orange);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+
+        .navigation-handover .dfs-header__search-submit:hover {
+            background: var(--dfs-orange-hover);
+        }
+
+        .navigation-handover .dfs-header__search-submit:focus,
+        .navigation-handover .dfs-header__search-submit:focus-visible {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .navigation-handover .dfs-header__search-submit img {
+            width: 16px;
+            height: 16px;
+            filter: brightness(0) invert(1);
+        }
+
+        .navigation-handover .dfs-header__icon-btn--search .dfs-header__search-icon-close {
+            display: none;
+        }
+
+        .navigation-handover .dfs-header__icon-btn--search.active .dfs-header__search-icon-open {
+            display: none;
+        }
+
+        .navigation-handover .dfs-header__icon-btn--search.active .dfs-header__search-icon-close {
+            display: block;
+            color: white;
+            stroke: currentColor;
+        }
+
+        .navigation-handover .dfs-header__icon-btn--search.active,
+        .navigation-handover .dfs-header__icon-btn--search.active:focus,
+        .navigation-handover .dfs-header__icon-btn--search.active:focus-visible {
+            outline: none !important;
+            box-shadow: none !important;
+            border: 0;
+        }
+
+        .navigation-handover .dfs-header.dfs-header--search-open {
+            overflow: visible;
         }
 
         /* Mobile Menu Toggle Button */
@@ -332,7 +461,7 @@
             }
             
             .navigation-handover .dfs-header__cta {
-                padding: 8px 16px;
+                padding: 0 16px;
                 font-size: 0.8rem;
             }
         }
@@ -384,7 +513,7 @@
             }
             
             .navigation-handover .dfs-header__cta {
-                padding: 8px 12px;
+                padding: 0 12px;
                 font-size: 0.75rem;
             }
             
@@ -397,6 +526,30 @@
             .navigation-handover .dfs-header__icon-btn img {
                 width: 16px;
                 height: 16px;
+            }
+        }
+
+        /* Small Tablets - CTAs become 40px icons, match icon height */
+        @media (max-width: 1024px) {
+            .navigation-handover .dfs-header__search-bar {
+                height: 36px;
+            }
+            .navigation-handover .dfs-header__search-bar form {
+                height: 36px;
+            }
+            .navigation-handover .dfs-header__search-submit {
+                width: 36px;
+                height: 36px;
+            }
+            .navigation-handover .dfs-header__search-bar.dfs-header__search-bar--open {
+                /* 2 × 40px CTAs + 12px gap + 36px icon + 8px margin = 136px */
+                width: 140px;
+            }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1200px) {
+            .navigation-handover .dfs-header__search-bar.dfs-header__search-bar--open {
+                width: 380px;
             }
         }
 
@@ -426,7 +579,7 @@
             }
             
             .navigation-handover .dfs-header__cta {
-                padding: 10px;
+                padding: 0;
                 min-width: 40px;
                 width: 40px;
                 height: 40px;
@@ -446,8 +599,12 @@
             }
         }
 
-        /* Mobile Landscape and Small Tablets */
+        /* Mobile Landscape and Small Tablets - CTAs hidden */
         @media (max-width: 768px) {
+            .navigation-handover .dfs-header__search-bar.dfs-header__search-bar--open {
+                width: min(280px, calc(100vw - 140px)); /* Account for other icons */
+            }
+
             .navigation-handover .dfs-header {
                 padding-top: 10px;
                 padding-bottom: 10px;
@@ -584,17 +741,27 @@
                 left: calc(50% + 1px);
             }
             
+            .navigation-handover .dfs-header__search-bar {
+                height: 32px;
+            }
+            .navigation-handover .dfs-header__search-bar form {
+                height: 32px;
+            }
+            .navigation-handover .dfs-header__search-submit {
+                width: 32px;
+                height: 32px;
+            }
             .navigation-handover .dfs-header__icon-btn {
                 width: 32px;
                 height: 32px;
                 min-width: 32px;
             }
-            
+
             .navigation-handover .dfs-header__icon-btn img {
                 width: 14px;
                 height: 14px;
             }
-            
+
             .navigation-handover .dfs-header__cart-badge {
                 width: 16px;
                 height: 16px;
@@ -630,12 +797,22 @@
                 min-width: 28px;
             }
             
+            .navigation-handover .dfs-header__search-bar {
+                height: 28px;
+            }
+            .navigation-handover .dfs-header__search-bar form {
+                height: 28px;
+            }
+            .navigation-handover .dfs-header__search-submit {
+                width: 28px;
+                height: 28px;
+            }
             .navigation-handover .dfs-header__icon-btn {
                 width: 28px;
                 height: 28px;
                 min-width: 28px;
             }
-            
+
             .navigation-handover .dfs-header__icon-btn img {
                 width: 12px;
                 height: 12px;
@@ -2961,21 +3138,21 @@
             <div class="section" style="display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 16px;">
                 <!-- Logo -->
                 <a href="https://deutscher-fenstershop.de/" class="dfs-header__logo dfs-header__logo--main">
-                    <img src="../assets/fenster-online-kaufen-logo.png" alt="Deutscher Fenstershop">
+                    <img src="https://deutscher-fenstershop.de/grafik/logo/fenster-online-kaufen-logo.png" alt="Deutscher Fenstershop">
                 </a>
                 
                 <!-- Center - Contact Info -->
                 <div class="dfs-header__center">
                     <a href="mailto:info@deutscher-fenstershop.de" class="dfs-header__contact-item dfs-header__contact-item--email">
                         <div class="dfs-header__contact-icon">
-                            <img src="../assets/icon-email.svg" alt="Email">
+                            <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-email.svg" alt="Email">
                         </div>
                         <span class="dfs-header__contact-text">Anfrage stellen</span>
                     </a>
                     
                     <a href="tel:+4972213022333" class="dfs-header__contact-item dfs-header__contact-item--phone">
                         <div class="dfs-header__contact-icon">
-                            <img src="../assets/icon-phone.svg" alt="Phone">
+                            <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-phone.svg" alt="Phone">
                         </div>
                         <div>
                             <div class="dfs-header__contact-text">+49 7221 / 3022-333</div>
@@ -2995,16 +3172,27 @@
                     <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="dfs-header__cta dfs-header__cta--fenster"><span>Fensterkonfigurator</span></a>
                     <a href="https://deutscher-fenstershop.de/konfigurator/tueren" class="dfs-header__cta dfs-header__cta--tueren"><span>Türenkonfigurator</span></a>
                     
-                    <a href="#" class="dfs-header__icon-btn dfs-header__icon-btn--search" aria-label="Suche">
-                        <img src="../assets/icon-search.svg" alt="Search">
-                    </a>
+                    <div class="dfs-header__search" role="search">
+                        <div class="dfs-header__search-bar">
+                            <form method="get" action="https://deutscher-fenstershop.de/search" id="dfs-search-form">
+                                <input type="text" name="q" placeholder="Suche..." autocomplete="off" aria-label="Suche">
+                                <button type="submit" class="dfs-header__search-submit" aria-label="Suche starten">
+                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-search.svg" alt="">
+                                </button>
+                            </form>
+                        </div>
+                        <button type="button" class="dfs-header__icon-btn dfs-header__icon-btn--search" aria-label="Suche öffnen" aria-expanded="false">
+                            <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-search.svg" alt="" class="dfs-header__search-icon-open">
+                            <svg class="dfs-header__search-icon-close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        </button>
+                    </div>
                     
-                    <a href="https://deutscher-fenstershop.de/anmeldung" class="dfs-header__icon-btn dfs-header__icon-btn--account" aria-label="Mein Konto">
-                        <img src="../assets/icon-account.svg" alt="Account">
+                    <a href="https://deutscher-fenstershop.de/users" class="dfs-header__icon-btn dfs-header__icon-btn--account" aria-label="Mein Konto">
+                        <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-account.svg" alt="Account">
                     </a>
                     
                     <a href="https://deutscher-fenstershop.de/shop" class="dfs-header__icon-btn dfs-header__icon-btn--cart" aria-label="Warenkorb">
-                        <img src="../assets/icon-cart.svg" alt="Cart">
+                        <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-cart.svg" alt="Cart">
                         <span class="dfs-header__cart-badge">1</span>
                     </a>
                 </div>
@@ -3023,7 +3211,7 @@
                             <div class="dfs-grid dfs-grid--two-col">
                                 <a href="https://deutscher-fenstershop.de/kaufen/kunststofffenster" class="dfs-image-item dfs-image-item--fenster-kunststoff">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Kunststofffenster.jpg" alt="Kunststofffenster" class="dfs-product-image dfs-product-image--kunststofffenster">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Kunststofffenster.jpg" alt="Kunststofffenster" class="dfs-product-image dfs-product-image--kunststofffenster">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Kunststofffenster</div>
@@ -3031,7 +3219,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kunststoff-alu-fenster" class="dfs-image-item dfs-image-item--fenster-kunststoff-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Kunstsotff-Alu-Fenster.jpg" alt="Kunststoff-Alu Fenster" class="dfs-product-image dfs-product-image--kunststoff-alu">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Kunstsotff-Alu-Fenster.jpg" alt="Kunststoff-Alu Fenster" class="dfs-product-image dfs-product-image--kunststoff-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Kunststoff-Alu Fenster</div>
@@ -3039,7 +3227,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kaufen/alu-fenster" class="dfs-image-item dfs-image-item--fenster-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Alufenster.png" alt="Alu Fenster" class="dfs-product-image dfs-product-image--alu">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Alufenster.png" alt="Alu Fenster" class="dfs-product-image dfs-product-image--alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Alu Fenster</div>
@@ -3047,7 +3235,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kaufen/holzfenster" class="dfs-image-item dfs-image-item--fenster-holz">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Holzfenster.jpg" alt="Holzfenster" class="dfs-product-image dfs-product-image--holz">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Holzfenster.jpg" alt="Holzfenster" class="dfs-product-image dfs-product-image--holz">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Holzfenster</div>
@@ -3055,7 +3243,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kaufen/holz-alu-fenster" class="dfs-image-item dfs-image-item--fenster-holz-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Alu-Holz-Fenster.png" alt="Holz-Alu Fenster" class="dfs-product-image dfs-product-image--holz-alu">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Alu-Holz-Fenster.png" alt="Holz-Alu Fenster" class="dfs-product-image dfs-product-image--holz-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Holz-Alu Fenster</div>
@@ -3096,7 +3284,7 @@
                             <div class="dfs-grid dfs-grid--two-col">
                                 <a href="https://deutscher-fenstershop.de/balkontuer-kunststoff" class="dfs-image-item dfs-image-item--balkontueren-kunststoff">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Kunststoffbalkontüren.png" alt="Kunststoffbalkontüren" class="dfs-product-image dfs-product-image--balkontueren-kunststoff">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Kunststoffbalkontu%CC%88ren.png" alt="Kunststoffbalkontüren" class="dfs-product-image dfs-product-image--balkontueren-kunststoff">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Kunststoffbalkontüren</div>
@@ -3104,7 +3292,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/balkontuer-kunststoff-alu" class="dfs-image-item dfs-image-item--balkontueren-kunststoff-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Kunststoff-Alu Balkontüren.png" alt="Kunststoff-Alu Balkontüren" class="dfs-product-image dfs-product-image--balkontueren-kunststoff-alu">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Kunststoff-Alu%20Balkontu%CC%88ren.png" alt="Kunststoff-Alu Balkontüren" class="dfs-product-image dfs-product-image--balkontueren-kunststoff-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Kunststoff-Alu Balkontüren</div>
@@ -3112,7 +3300,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/balkontuer-aluminium" class="dfs-image-item dfs-image-item--balkontueren-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Alu Balkontüren.png" alt="Alu Balkontüren" class="dfs-product-image dfs-product-image--balkontueren-alu">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Alu%20Balkontu%CC%88ren.png" alt="Alu Balkontüren" class="dfs-product-image dfs-product-image--balkontueren-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Alu Balkontüren</div>
@@ -3120,7 +3308,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/balkontuer-holz" class="dfs-image-item dfs-image-item--balkontueren-holz">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Holzbalkontüren.png" alt="Holzbalkontüren" class="dfs-product-image dfs-product-image--balkontueren-holz">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Holzbalkontu%CC%88ren.png" alt="Holzbalkontüren" class="dfs-product-image dfs-product-image--balkontueren-holz">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Holzbalkontüren</div>
@@ -3150,7 +3338,7 @@
                             <div class="dfs-grid dfs-grid--two-col">
                                 <a href="https://deutscher-fenstershop.de/schiebetuer" class="dfs-image-item dfs-image-item--terrassentueren-schiebe">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Schiebetüren.png" alt="Schiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-schiebe">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Schiebetu%CC%88ren.png" alt="Schiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-schiebe">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Schiebetüren</div>
@@ -3158,7 +3346,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/parallel-schiebe-kipptuer" class="dfs-image-item dfs-image-item--terrassentueren-psk">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/PSK-Türen.png" alt="PSK-Türen" class="dfs-product-image dfs-product-image--terrassentueren-psk">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/PSK-Tu%CC%88ren.png" alt="PSK-Türen" class="dfs-product-image dfs-product-image--terrassentueren-psk">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">PSK-Türen</div>
@@ -3166,7 +3354,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/hebeschiebetuer-aluminium" class="dfs-image-item dfs-image-item--terrassentueren-hebeschiebe">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Hebeschiebetüren.png" alt="Hebeschiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-hebeschiebe">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Hebeschiebetu%CC%88ren.png" alt="Hebeschiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-hebeschiebe">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Hebeschiebetüren</div>
@@ -3174,7 +3362,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/faltschiebetueren-aluminium" class="dfs-image-item dfs-image-item--terrassentueren-faltschiebe">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Faltschiebetüren.png" alt="Faltschiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-faltschiebe">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Faltschiebetu%CC%88ren.png" alt="Faltschiebetüren" class="dfs-product-image dfs-product-image--terrassentueren-faltschiebe">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Faltschiebetüren</div>
@@ -3182,7 +3370,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/schiebetuer-smart-slide-aluplast" class="dfs-image-item dfs-image-item--terrassentueren-pas">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/PAS-Türen.png" alt="PAS-Türen" class="dfs-product-image dfs-product-image--terrassentueren-pas">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/PAS-Tu%CC%88ren.png" alt="PAS-Türen" class="dfs-product-image dfs-product-image--terrassentueren-pas">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">PAS-Türen</div>
@@ -3224,7 +3412,7 @@
                             <div class="dfs-grid">
                                 <a href="https://deutscher-fenstershop.de/haustueren-aluminium" class="dfs-image-item dfs-image-item--haustueren-alu">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Aluminium-Haustüren.jpg" alt="Aluminium-Haustüren" class="dfs-product-image dfs-product-image--haustueren-alu">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Aluminium-Haustu%CC%88ren.jpg" alt="Aluminium-Haustüren" class="dfs-product-image dfs-product-image--haustueren-alu">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Aluminium-Haustüren</div>
@@ -3232,7 +3420,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/haustueren-holz" class="dfs-image-item dfs-image-item--haustueren-holz">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Holz-Haustüren.png" alt="Holz-Haustüren" class="dfs-product-image dfs-product-image--haustueren-holz">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Holz-Haustu%CC%88ren.png" alt="Holz-Haustüren" class="dfs-product-image dfs-product-image--haustueren-holz">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Holz-Haustüren</div>
@@ -3240,7 +3428,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/haustueren-kunststoff" class="dfs-image-item dfs-image-item--haustueren-pvc">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/PVC-Haustüren.png" alt="PVC-Haustüren" class="dfs-product-image dfs-product-image--haustueren-pvc">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/PVC-Haustu%CC%88ren.png" alt="PVC-Haustüren" class="dfs-product-image dfs-product-image--haustueren-pvc">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">PVC-Haustüren</div>
@@ -3274,7 +3462,7 @@
                             <div class="dfs-grid dfs-grid--two-col">
                                 <a href="https://deutscher-fenstershop.de/aufsatzraffstore" class="dfs-image-item dfs-image-item--sonnenschutz-aufsatz-raffstoren">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Aufsatz-Raffstoren.png" alt="Aufsatzraffstoren" class="dfs-product-image dfs-product-image--aufsatz-raffstoren">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Aufsatz-Raffstoren.png" alt="Aufsatzraffstoren" class="dfs-product-image dfs-product-image--aufsatz-raffstoren">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Aufsatzraffstoren</div>
@@ -3282,7 +3470,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/aufsatzrollladen" class="dfs-image-item dfs-image-item--sonnenschutz-aufsatz-rollladen">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Aufsatz-Rollläden.png" alt="Aufsatzrollläden" class="dfs-product-image dfs-product-image--aufsatz-rolllaeden">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Aufsatz-Rollla%CC%88den.png" alt="Aufsatzrollläden" class="dfs-product-image dfs-product-image--aufsatz-rolllaeden">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Aufsatzrollläden</div>
@@ -3290,7 +3478,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/unterputzraffstore" class="dfs-image-item dfs-image-item--sonnenschutz-unterputz-raffstoren">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Unterputz-Raffstoren.png" alt="Unterputzraffstoren" class="dfs-product-image dfs-product-image--unterputz-raffstoren">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Unterputz-Raffstoren.png" alt="Unterputzraffstoren" class="dfs-product-image dfs-product-image--unterputz-raffstoren">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Unterputzraffstoren</div>
@@ -3298,7 +3486,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/unterputzrollladen" class="dfs-image-item dfs-image-item--sonnenschutz-unterputz-rollladen">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Unterputz-Rollläden.png" alt="Unterputzrollläden" class="dfs-product-image dfs-product-image--unterputz-rolllaeden">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Unterputz-Rollla%CC%88den.png" alt="Unterputzrollläden" class="dfs-product-image dfs-product-image--unterputz-rolllaeden">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Unterputzrollläden</div>
@@ -3306,7 +3494,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/vorbauraffstore" class="dfs-image-item dfs-image-item--sonnenschutz-vorbau-raffstoren">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Vorbau-Raffstore.png" alt="Vorbauraffstoren" class="dfs-product-image dfs-product-image--vorbau-raffstoren">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Vorbau-Raffstore.png" alt="Vorbauraffstoren" class="dfs-product-image dfs-product-image--vorbau-raffstoren">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Vorbauraffstoren</div>
@@ -3314,7 +3502,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/vorbaurollladen" class="dfs-image-item dfs-image-item--sonnenschutz-vorbau-rollladen">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Vorbau-Rollläden.png" alt="Vorbaurollläden" class="dfs-product-image dfs-product-image--vorbau-rolllaeden">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Vorbau-Rollla%CC%88den.png" alt="Vorbaurollläden" class="dfs-product-image dfs-product-image--vorbau-rolllaeden">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Vorbaurollläden</div>
@@ -3350,7 +3538,7 @@
                             <div class="dfs-grid">
                                 <a href="https://deutscher-fenstershop.de/sektionaltore" class="dfs-image-item dfs-image-item--garagentore-sektional">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Sektionaltore.png" alt="Sektionaltore" class="dfs-product-image dfs-product-image--sektionaltore">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Sektionaltore.png" alt="Sektionaltore" class="dfs-product-image dfs-product-image--sektionaltore">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Sektionaltore</div>
@@ -3383,7 +3571,7 @@
                             <div class="dfs-grid dfs-grid--two-col">
                                 <a href="https://deutscher-fenstershop.de/kaufen/abdeckleisten-fuer-fenster" class="dfs-image-item dfs-image-item--zubehoer-abdeckleisten">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Abdeckleisten.png" alt="Abdeckleisten" class="dfs-product-image dfs-product-image--abdeckleisten">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Abdeckleisten.png" alt="Abdeckleisten" class="dfs-product-image dfs-product-image--abdeckleisten">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Abdeckleisten</div>
@@ -3391,7 +3579,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kaufen/winkelprofile" class="dfs-image-item dfs-image-item--zubehoer-winkelprofile">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Abdeckleisten.png" alt="Winkelprofile" class="dfs-product-image dfs-product-image--winkelprofile">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Abdeckleisten.png" alt="Winkelprofile" class="dfs-product-image dfs-product-image--winkelprofile">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Winkelprofile</div>
@@ -3399,7 +3587,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kaufen/blendrahmenverbreiterungen-aufdopplungsprofil" class="dfs-image-item dfs-image-item--zubehoer-blenrahmen">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Blendrahmenverbreiterungen.png" alt="Blendrahmenverbreiterungen" class="dfs-product-image dfs-product-image--blendrahmenverbreiterungen">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Blendrahmenverbreiterungen.png" alt="Blendrahmenverbreiterungen" class="dfs-product-image dfs-product-image--blendrahmenverbreiterungen">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Blendrahmenverbreiterungen</div>
@@ -3407,7 +3595,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/fensterbaenke-aluminium" class="dfs-image-item dfs-image-item--zubehoer-fensterbank">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Fensterbänke.png" alt="Fensterbänke" class="dfs-product-image dfs-product-image--fensterbaenke">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Fensterba%CC%88nke.png" alt="Fensterbänke" class="dfs-product-image dfs-product-image--fensterbaenke">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Fensterbänke</div>
@@ -3415,7 +3603,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kaufen/fensterbankanschlussprofile" class="dfs-image-item dfs-image-item--zubehoer-anschlussprofil">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Fensterbankanschlussprofile.png" alt="Fensterbankanschlussprofile" class="dfs-product-image dfs-product-image--fensterbankanschlussprofile">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Fensterbankanschlussprofile.png" alt="Fensterbankanschlussprofile" class="dfs-product-image dfs-product-image--fensterbankanschlussprofile">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Fensterbankanschlussprofile</div>
@@ -3423,7 +3611,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/fensterscheiben" class="dfs-image-item dfs-image-item--zubehoer-scheiben">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Fensterscheiben.png" alt="Fensterscheiben" class="dfs-product-image dfs-product-image--fensterscheiben">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Fensterscheiben.png" alt="Fensterscheiben" class="dfs-product-image dfs-product-image--fensterscheiben">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Fensterscheiben</div>
@@ -3431,7 +3619,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/kopplungen" class="dfs-image-item dfs-image-item--zubehoer-kopplungen">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Fensterkopplungen.png" alt="Fensterkopplungen" class="dfs-product-image dfs-product-image--fensterkopplungen">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Fensterkopplungen.png" alt="Fensterkopplungen" class="dfs-product-image dfs-product-image--fensterkopplungen">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Fensterkopplungen</div>
@@ -3468,7 +3656,7 @@
                             <div class="dfs-grid dfs-grid--two-col">
                                 <a href="https://deutscher-fenstershop.de/kataloge" class="dfs-image-item dfs-image-item--infoportal-kataloge">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Produktkataloge.png" alt="Produktkataloge" class="dfs-product-image dfs-product-image--produktkataloge">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Produktkataloge.png" alt="Produktkataloge" class="dfs-product-image dfs-product-image--produktkataloge">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Produktkataloge</div>
@@ -3476,7 +3664,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/profilschnitte-detailzeichnungen/pvc" class="dfs-image-item dfs-image-item--infoportal-schnitt">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Schnittzeichnungen Suche.png" alt="Schnittzeichnungen Suche" class="dfs-product-image dfs-product-image--schnittzeichnungen-suche">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Schnittzeichnungen%20Suche.png" alt="Schnittzeichnungen Suche" class="dfs-product-image dfs-product-image--schnittzeichnungen-suche">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Schnittzeichnungen Suche</div>
@@ -3485,7 +3673,7 @@
                                 <!-- Section drawings catalogs - no URL yet
                                 <a href="#" class="dfs-image-item dfs-image-item--infoportal-schnitt-kataloge">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Schnittzeichnungen Kataloge.png" alt="Schnittzeichnungen Kataloge" class="dfs-product-image dfs-product-image--schnittzeichnungen-kataloge">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Schnittzeichnungen%20Kataloge.png" alt="Schnittzeichnungen Kataloge" class="dfs-product-image dfs-product-image--schnittzeichnungen-kataloge">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Schnittzeichnungen Kataloge</div>
@@ -3494,7 +3682,7 @@
                                 -->
                                 <a href="https://deutscher-fenstershop.de/wissenswertes" class="dfs-image-item dfs-image-item--infoportal-wiki">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Fenster Wiki.png" alt="Fenster Wiki" class="dfs-product-image dfs-product-image--fenster-wiki">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Fenster%20Wiki.png" alt="Fenster Wiki" class="dfs-product-image dfs-product-image--fenster-wiki">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Fenster Wiki</div>
@@ -3502,7 +3690,7 @@
                                 </a>
                                 <a href="https://deutscher-fenstershop.de/fensterbegriffe" class="dfs-image-item dfs-image-item--infoportal-lexikon">
                                     <div class="dfs-image-item__icon">
-                                        <img src="../assets/images/Fachbegriffe Lexikon.png" alt="Fachbegriffe Lexikon" class="dfs-product-image dfs-product-image--fachbegriffe-lexikon">
+                                        <img src="https://deutscher-fenstershop.de/grafik/navigation/Fachbegriffe%20Lexikon.png" alt="Fachbegriffe Lexikon" class="dfs-product-image dfs-product-image--fachbegriffe-lexikon">
                                     </div>
                                     <div>
                                         <div class="dfs-image-item__text">Fachbegriffe Lexikon</div>
@@ -3743,47 +3931,47 @@
                         <ul class="dfs-footer__list">
                             <li>
                                 <a href="tel:+4972213022333" class="dfs-footer__link">
-                                    <img src="../assets/icon-phone.svg" alt="Phone" class="dfs-footer__item-icon">
+                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-phone.svg" alt="Phone" class="dfs-footer__item-icon">
                                     +49 7221 / 3022-333
                                 </a>
                             </li>
                             <li class="dfs-footer__opening-hours">
-                                <img src="../assets/icon-clock.svg" alt="Clock" class="dfs-footer__item-icon">
+                                <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-clock.svg" alt="Clock" class="dfs-footer__item-icon">
                                 Mo – Fr. 8:00 – 17:00
                             </li>
                             <li>
                                 <a href="https://api.whatsapp.com/send/?phone=491773872159&text&type=phone_number&app_absent=0" class="dfs-footer__link" target="_blank" rel="noopener noreferrer">
-                                    <img src="../assets/icon-whatsapp.svg" alt="WhatsApp" class="dfs-footer__item-icon">
+                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-whatsapp.svg" alt="WhatsApp" class="dfs-footer__item-icon">
                                     WhatsApp
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:info@deutscher-fenstershop.de" class="dfs-footer__link">
-                                    <img src="../assets/icon-email.svg" alt="Email" class="dfs-footer__item-icon">
+                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-email.svg" alt="Email" class="dfs-footer__item-icon">
                                     Mail
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:anfrage@deutscher-fenstershop.de" class="dfs-footer__link">
-                                    <img src="../assets/icon-fenster-anfragen.svg" alt="Fenster anfragen" class="dfs-footer__item-icon">
+                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-fenster-anfragen.svg" alt="Fenster anfragen" class="dfs-footer__item-icon">
                                     Fenster anfragen
                                 </a>
                             </li>
                             <li>
                                 <a href="https://deutscher-fenstershop.de/showroom" class="dfs-footer__link">
-                                    <img src="../assets/icon-location.svg" alt="Location" class="dfs-footer__item-icon">
+                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-location.svg" alt="Location" class="dfs-footer__item-icon">
                                     Showroom
                                 </a>
                             </li>
                             <li>
                                 <a href="https://deutscher-fenstershop.de/callback" class="dfs-footer__link">
-                                    <img src="../assets/icon-calendar.svg" alt="Calendar" class="dfs-footer__item-icon">
+                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-calendar.svg" alt="Calendar" class="dfs-footer__item-icon">
                                     Termin vereinbaren
                                 </a>
                             </li>
                             <li>
                                 <a href="https://deutscher-fenstershop.de/callback" class="dfs-footer__link">
-                                    <img src="../assets/icon-form.svg" alt="Form" class="dfs-footer__item-icon">
+                                    <img src="https://deutscher-fenstershop.de/grafik/navigation/icon-form.svg" alt="Form" class="dfs-footer__item-icon">
                                     Kontaktformular
                                 </a>
                             </li>
@@ -3793,26 +3981,26 @@
                     <!-- Payment and Social Icons Row - Payment spans 2 columns, Social in column 4 -->
                     <div class="dfs-footer__payment-icons-container">
                         <div class="dfs-footer__payment-icons-left">
-                            <img src="../assets/paypal-logo-100x26.png" alt="PayPal">
-                            <img src="../assets/cc-logo.png" alt="Credit Card">
-                            <img src="../assets/bank-logo.png" alt="Bank Transfer">
-                            <img src="../assets/bu_skonto.jpg" alt="Skonto">
-                            <img src="../assets/easyCredit-Ratenkauf_eC-blau_1000x652_mit-Schutzraum_RGB.svg" alt="EasyCredit Ratenkauf">
+                            <img src="https://deutscher-fenstershop.de/grafik/navigation/paypal-logo-100x26.png" alt="PayPal">
+                            <img src="https://deutscher-fenstershop.de/grafik/navigation/cc-logo.png" alt="Credit Card">
+                            <img src="https://deutscher-fenstershop.de/grafik/navigation/bank-logo.png" alt="Bank Transfer">
+                            <img src="https://deutscher-fenstershop.de/grafik/navigation/bu_skonto.jpg" alt="Skonto">
+                            <img src="https://deutscher-fenstershop.de/grafik/navigation/easyCredit-Ratenkauf_eC-blau_1000x652_mit-Schutzraum_RGB.svg" alt="EasyCredit Ratenkauf">
                         </div>
                     </div>
                     <div class="dfs-footer__social-icons-container">
                         <div class="dfs-footer__social-icons">
                             <a href="https://www.pinterest.de/itslinefenster/" target="_blank" rel="noopener noreferrer">
-                                <img src="../assets/icons8-pinterest-100.svg" alt="Pinterest">
+                                <img src="https://deutscher-fenstershop.de/grafik/navigation/icons8-pinterest-100.svg" alt="Pinterest">
                             </a>
                             <a href="https://www.facebook.com/profile.php?id=61553972203457" target="_blank" rel="noopener noreferrer">
-                                <img src="../assets/icons8-facebook-100.svg" alt="Facebook">
+                                <img src="https://deutscher-fenstershop.de/grafik/navigation/icons8-facebook-100.svg" alt="Facebook">
                             </a>
                             <a href="https://www.instagram.com/itslinefenster" target="_blank" rel="noopener noreferrer">
-                                <img src="../assets/icons8-instagram-100.svg" alt="Instagram">
+                                <img src="https://deutscher-fenstershop.de/grafik/navigation/icons8-instagram-100.svg" alt="Instagram">
                             </a>
                             <a href="https://www.youtube.com/@itslinefenster" target="_blank" rel="noopener noreferrer">
-                                <img src="../assets/icons8-youtube-play-100.svg" alt="YouTube">
+                                <img src="https://deutscher-fenstershop.de/grafik/navigation/icons8-youtube-play-100.svg" alt="YouTube">
                             </a>
                         </div>
                     </div>
@@ -4035,6 +4223,59 @@
                     }
                     syncMenuOffset();
                 }, 250);
+            });
+        })();
+
+        /* Search bar toggle */
+        (function() {
+            var searchWrap = document.querySelector('.dfs-header__search');
+            var searchBar = document.querySelector('.dfs-header__search-bar');
+            var searchBtn = document.querySelector('.dfs-header__icon-btn--search');
+            var searchInput = document.querySelector('#dfs-search-form input[name="q"]');
+            var header = document.querySelector('.dfs-header');
+            if (!searchWrap || !searchBar || !searchBtn || !searchInput || !header) return;
+
+            function closeSearch() {
+                searchBar.classList.remove('dfs-header__search-bar--open');
+                searchBtn.classList.remove('active');
+                header.classList.remove('dfs-header--search-open');
+                searchBtn.setAttribute('aria-expanded', 'false');
+                searchBtn.setAttribute('aria-label', 'Suche öffnen');
+                searchInput.blur();
+            }
+
+            function openSearch() {
+                searchBar.classList.add('dfs-header__search-bar--open');
+                searchBtn.classList.add('active');
+                header.classList.add('dfs-header--search-open');
+                searchBtn.setAttribute('aria-expanded', 'true');
+                searchBtn.setAttribute('aria-label', 'Suche schließen');
+                searchInput.focus();
+            }
+
+            function isSearchOpen() {
+                return searchBar.classList.contains('dfs-header__search-bar--open');
+            }
+
+            searchBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (isSearchOpen()) {
+                    closeSearch();
+                } else {
+                    openSearch();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isSearchOpen()) {
+                    closeSearch();
+                }
+            });
+
+            document.addEventListener('click', function(e) {
+                if (isSearchOpen() && !searchWrap.contains(e.target)) {
+                    closeSearch();
+                }
             });
         })();
     </script>
