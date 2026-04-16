@@ -1714,6 +1714,84 @@
         }
     }
 
+    /* Newsletter scope hardening for cross-page embeds */
+    .navigation-handover #sib-form-container #sib-form.dfs-newsletter__form {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+    }
+
+    .navigation-handover #sib-form-container #sib-form .dfs-newsletter__form-row {
+        display: flex !important;
+        gap: 12px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .navigation-handover #sib-form-container #sib-form .dfs-newsletter__input {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 140px !important;
+        height: auto !important;
+        padding: 14px 18px !important;
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
+        border: none !important;
+        border-radius: 4px !important;
+        background-color: #FFFFFF !important;
+        color: #333333 !important;
+        outline: none !important;
+        box-sizing: border-box;
+    }
+
+    .navigation-handover #sib-form-container #sib-form .dfs-newsletter__input--name {
+        flex: 0 0 160px !important;
+    }
+
+    .navigation-handover #sib-form-container #sib-form .dfs-newsletter__input::placeholder {
+        color: #999999 !important;
+    }
+
+    .navigation-handover #sib-form-container #sib-form .dfs-newsletter__button {
+        min-width: 0 !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 14px 32px !important;
+        font-family: Arial, sans-serif !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        color: #FFFFFF !important;
+        background-color: var(--dfs-orange) !important;
+        border: none !important;
+        border-radius: 4px !important;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .navigation-handover #sib-form-container #sib-form .dfs-newsletter__button:hover {
+        background-color: #E66A15 !important;
+    }
+
+    .navigation-handover #sib-form-container #sib-form .dfs-newsletter__button:active {
+        background-color: #D4590A !important;
+    }
+
+    @media (max-width: 768px) {
+        .navigation-handover #sib-form-container #sib-form .dfs-newsletter__form-row {
+            flex-direction: column !important;
+        }
+
+        .navigation-handover #sib-form-container #sib-form .dfs-newsletter__input--name {
+            flex: 1 1 auto !important;
+        }
+
+        .navigation-handover #sib-form-container #sib-form .dfs-newsletter__button {
+            width: 100% !important;
+        }
+    }
+
     
     .navigation-handover .dfs-footer {
         background: var(--dfs-darkblue); 
@@ -2590,16 +2668,6 @@
             </div>
         </div>
     </section>
-    <script>
-        window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
-        window.LOCALE = 'de';
-        window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfen Sie das Feldformat.";
-        window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein.";
-        window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig.";
-        window.translation = { common: { selectedList: '{quantity} Liste', selectedLists: '{quantity} Listen', selectedOption: '{quantity} ausgewählt', selectedOptions: '{quantity} ausgewählt' } };
-        var AUTOHIDE = Boolean(0);
-    </script>
-    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
     <footer class="dfs-footer">
         <div class="dfs-footer__container section">

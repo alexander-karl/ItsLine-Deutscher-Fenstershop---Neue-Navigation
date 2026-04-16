@@ -1,0 +1,3643 @@
+<style class="no-parse">
+    .navigation-handover:not(#navigation-handover) {padding-top: 0 !important}
+    #main-container > div > section:nth-child(10) {margin-bottom: 0 !important}
+    section {margin: 0px !important}
+    section:not(.homepage-hero):not(.homepage-trusted):not(.homepage-product):not(.homepage-referenz-card):not(.dfs-newsletter):not(.homepage-testimonials):not(.homepage-section--reverse):not(.homepage-trust){
+        margin: 56px 0 !important
+    }
+          .homepage-new {
+              --homepage-orange: #f47c26;
+              --homepage-orange-hover: #d86818;
+              --homepage-orange-red: #ff6b35;
+              --homepage-darkblue: #003a66;
+              margin: 0;
+              overscroll-behavior-y: none;
+          }
+  
+          body {
+              min-width: 360px
+          }
+          .homepage-btn {
+              padding: 14px 16px;
+              background: #ff6b35;
+              border-radius: 4px;
+              display: inline-block;
+              color: #fff;
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 18px;
+              text-decoration: none;
+              -webkit-transition: background-color .3s ease;
+              transition: background-color .3s ease;
+              outline: none
+          }
+          .homepage-btn:hover, .homepage-btn:focus {
+              background: #e85a28;
+              color: #fff;
+              text-decoration: none
+          }
+          .homepage-btn--blue {
+              background: #003a66
+          }
+          .homepage-btn--blue:hover, .homepage-btn--blue:focus {
+              background: #002b4d
+          }
+  
+          .homepage-hero {
+              width: 100%;
+              height: 600px;
+              position: relative;
+              overflow: hidden;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              background: #0a213b;
+              font-family: "Inter", sans-serif;
+              z-index: 1
+          }
+          @media (max-width: 991px) {
+              .homepage-hero {
+                  min-height: 450px;
+                  height: auto;
+                  padding: 40px 0 25px
+              }
+          }
+          @media (min-width: 992px) {
+              .homepage-hero .container {
+                  padding-left: 0 !important;
+                  padding-right: 0 !important
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-hero .container {
+                  max-width: 1390px
+              }
+          }
+          .homepage-hero__space {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+              justify-content: space-between;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              gap: 80px
+          }
+          @media (max-width: 991px) {
+              .homepage-hero__space {
+                  gap: 44px
+              }
+          }
+          @media (max-width: 640px) {
+              .homepage-hero__space {
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: reverse;
+                  -ms-flex-direction: column-reverse;
+                  flex-direction: column-reverse
+              }
+          }
+          .homepage-hero__content {
+              max-width: 725px;
+              color: #fff
+          }
+          .homepage-hero__image {
+              width: 444px;
+              -ms-flex-negative: 0;
+              flex-shrink: 0
+          }
+          @media (max-width: 1399px) {
+              .homepage-hero__image {
+                  width: 433px
+              }
+          }
+          @media (max-width: 1199px) {
+              .homepage-hero__image {
+                  width: 320px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-hero__image {
+                  width: 250px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-hero__image {
+                  width: auto;
+                  max-width: 195px
+              }
+          }
+          .homepage-hero__image img {
+              max-width: 100%;
+              height: auto;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-hero__bg {
+              width: 100vw;
+              margin-left: -50vw;
+              position: absolute;
+              top: 0;
+              left: 50%;
+              bottom: 0;
+              z-index: -1
+          }
+          .homepage-hero__bg img {
+              width: 100%;
+              height: 100%;
+              display: block;
+              -o-object-fit: cover;
+              object-fit: cover;
+              -o-object-position: center;
+              object-position: center;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-hero__title {
+              margin: 0 0 16px 0;
+              font-size: 60px;
+              line-height: 73px;
+              font-weight: 700
+          }
+          @media (max-width: 1199px) {
+              .homepage-hero__title {
+                  font-size: 50px;
+                  line-height: 1.25
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-hero__title {
+                  font-size: 40px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-hero__title {
+                  font-size: 24px
+              }
+          }
+          .homepage-hero__subtitle {
+              font-size: 20px;
+              line-height: 1.2;
+              margin: 0
+          }
+          @media (max-width: 767px) {
+              .homepage-hero__subtitle {
+                  font-size: 16px
+              }
+          }
+          .homepage-hero .homepage-btn {
+              margin-top: 40px
+          }
+          @media (max-width: 768px) {
+              .homepage-hero .homepage-btn {
+                  margin-top: 24px
+              }
+          }
+          .homepage-trusted {
+              padding: 34px 0;
+              background: #f5f5f5;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              font-family: "Inter", sans-serif
+          }
+          @media (max-width: 767px) {
+              .homepage-trusted {
+                  padding: 18px 0
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-trusted .container {
+                  max-width: 1390px
+              }
+          }
+          .homepage-trusted__inner {
+              max-width: 1360px;
+              margin: 0 auto;
+              width: 100%;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+              justify-content: space-between;
+              gap: 24px
+          }
+          @media (max-width: 767px) {
+              .homepage-trusted__inner {
+                  gap: 16px
+              }
+          }
+          .homepage-trusted__rating {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              gap: 8px;
+              font-size: 16px;
+              line-height: 20px;
+              color: #333
+          }
+          @media (max-width: 767px) {
+              .homepage-trusted__rating {
+                  font-size: 14px;
+                  line-height: 17px;
+                  column-gap: 8px;
+                  row-gap: 4px;
+                  -ms-flex-wrap: wrap;
+                  flex-wrap: wrap
+              }
+          }
+          .homepage-trusted__rating strong {
+              font-weight: 700;
+              font-size: 24px;
+              line-height: 28px;
+              color: #000
+          }
+          @media (max-width: 767px) {
+              .homepage-trusted__rating strong {
+                  font-size: 16px;
+                  line-height: 19px
+              }
+          }
+          .homepage-trusted__stars {
+              width: 120px;
+              height: 24px;
+              display: block;
+              background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23ff6b35' d='M22.943 8.936a1.16 1.16 0 0 0-1.007-.801l-6.35-.575-2.51-5.853a1.17 1.17 0 0 0-2.151 0L8.414 7.56l-6.35.575a1.17 1.17 0 0 0-1.006.8 1.16 1.16 0 0 0 .341 1.238l4.8 4.193-1.415 6.21a1.17 1.17 0 0 0 1.739 1.258L12 18.574l5.475 3.26a1.169 1.169 0 0 0 1.74-1.258l-1.415-6.21 4.8-4.192a1.17 1.17 0 0 0 .343-1.238'/%3E%3C/svg%3E") repeat-x 0 0/auto 100%;
+              -ms-flex-negative: 0;
+              flex-shrink: 0
+          }
+          @media (max-width: 767px) {
+              .homepage-trusted__stars {
+                  width: 80px;
+                  height: 16px
+              }
+          }
+          .homepage-trusted__list {
+              padding: 0;
+              margin: 0;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 20px;
+              color: #333;
+              list-style: none;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              gap: 50px
+          }
+          @media (max-width: 1399px) {
+              .homepage-trusted__list {
+                  gap: 16px 20px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-trusted__list {
+                  font-size: 14px;
+                  line-height: 17px;
+                  -ms-flex-wrap: wrap;
+                  flex-wrap: wrap
+              }
+          }
+          .homepage-trusted__list li {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              gap: 12px;
+              white-space: nowrap
+          }
+          @media (max-width: 767px) {
+              .homepage-trusted__list li {
+                  gap: 8px
+              }
+          }
+          .homepage-trusted__list li img {
+              width: 24px;
+              height: 24px;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          @media (max-width: 767px) {
+              .homepage-trusted__list li img {
+                  width: 16px;
+                  height: 16px
+              }
+          }
+          .homepage-products {
+              margin: 56px 0;
+              font-family: "Inter", sans-serif;
+              background: #fff
+          }
+          @media (max-width: 1279px) {
+              .homepage-products {
+                  margin-top: 40px;
+                  margin-bottom: 40px
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-products .container {
+                  max-width: 1390px
+              }
+          }
+          .homepage-products__header {
+              max-width: 844px;
+              margin: 0 auto 30px;
+              text-align: center
+          }
+          @media (max-width: 1279px) {
+              .homepage-products__header {
+                  margin-bottom: 22px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-products__header {
+                  margin-bottom: 14px
+              }
+          }
+          .homepage-products__heading {
+              margin: 0 0 14px;
+              font: bold 36px/44px "Inter", sans-serif;
+              color: #000
+          }
+          @media (max-width: 1279px) {
+              .homepage-products__heading {
+                  font-size: 28px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-products__heading {
+                  font-size: 24px
+              }
+          }
+          .homepage-products__subheading {
+              max-width: 500px;
+              margin: 0 auto;
+              font: 18px/22px "Inter", sans-serif;
+              color: #333
+          }
+          @media (max-width: 1279px) {
+              .homepage-products__subheading {
+                  font-size: 16px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-products__subheading {
+                  font-size: 14px
+              }
+          }
+          .homepage-products__grid {
+              max-width: 1356px;
+              margin: 0 auto
+          }
+          @media (max-width: 991px) {
+              .homepage-products__grid {
+                  margin: 0 -30px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-products__grid {
+                  padding: 0 16px 56px;
+                  margin: 0 -15px
+              }
+          }
+          .homepage-products__grid .swiper-wrapper {
+              padding-top: 10px;
+              gap: 24px;
+              -webkit-box-align: stretch;
+              -ms-flex-align: stretch;
+              align-items: stretch
+          }
+          @media (max-width: 1399px) {
+              .homepage-products__grid .swiper-wrapper {
+                  gap: 16px
+              }
+          }
+          @media (max-width: 1199px) {
+              .homepage-products__grid .swiper-wrapper {
+                  gap: 12px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-products__grid .swiper-wrapper {
+                  gap: 0
+              }
+          }
+          .homepage-products__grid .swiper-slide {
+              width: auto;
+              height: auto;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column
+          }
+          @media (max-width: 1199px) {
+              .homepage-products__grid .swiper-slide {
+                  width: calc(20% - 10px)
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-products__grid .swiper-slide {
+                  width: 175px
+              }
+          }
+          .homepage-products .swiper-button-prev, .homepage-products .swiper-button-next {
+              width: 30px;
+              height: 30px;
+              border: 1px solid #000;
+              border-radius: 4px;
+              margin: 0 !important;
+              position: absolute;
+              top: unset;
+              bottom: 0;
+              z-index: 11;
+              background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='20' fill='none'%3E%3Cpath fill='%23000' d='M1.478.302a.9.9 0 0 0-.28-.223.74.74 0 0 0-.661 0 .9.9 0 0 0-.28.223Q.136.448.068.637a1.2 1.2 0 0 0 0 .79q.068.19.19.335l7.548 8.225L.258 18.21q-.124.146-.191.335a1.2 1.2 0 0 0 0 .79q.068.19.19.335A.85.85 0 0 0 .886 20c.11 0 .22-.025.32-.074a.8.8 0 0 0 .273-.214l8.245-8.964q.132-.149.205-.347a1.2 1.2 0 0 0 0-.828 1.1 1.1 0 0 0-.205-.347z'/%3E%3C/svg%3E") center center/8px 16px no-repeat;
+              display: none;
+              -ms-flex-negative: 0;
+              flex-shrink: 0;
+              cursor: pointer
+          }
+          @media (max-width: 767px) {
+              .homepage-products .swiper-button-prev, .homepage-products .swiper-button-next {
+                  display: block
+              }
+          }
+          .homepage-products .swiper-button-prev svg, .homepage-products .swiper-button-next svg {
+              display: none
+          }
+          .homepage-products .swiper-button-prev {
+              right: unset !important;
+              left: 50%;
+              margin-left: -110px !important;
+              -webkit-transform: rotate(180deg);
+              transform: rotate(180deg)
+          }
+          .homepage-products .swiper-button-next {
+              left: unset !important;
+              right: 50%;
+              margin-right: -110px !important
+          }
+          .homepage-products .swiper-pagination {
+              padding: 0;
+              margin: 0;
+              list-style: none;
+              display: none;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              gap: 16px;
+              position: absolute;
+              top: unset !important;
+              right: 0;
+              bottom: 10px;
+              left: 0;
+              z-index: 10
+          }
+          @media (max-width: 767px) {
+              .homepage-products .swiper-pagination {
+                  gap: 12px;
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  position: static;
+                  margin-top: 12px
+              }
+          }
+          .homepage-products .swiper-pagination .swiper-pagination-bullet {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              margin: 0 !important;
+              background: rgba(0, 0, 0, .2) !important;
+              opacity: 1 !important;
+              display: block
+          }
+          .homepage-products .swiper-pagination .swiper-pagination-bullet-active {
+              background: #ff6b35 !important
+          }
+          .homepage-product {
+              -webkit-box-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column;
+              font: 14px/17px "Inter", sans-serif
+          }
+          @media (max-width: 1199px) {
+              .homepage-product {
+                  font-size: 12px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-product {
+                  width: 175px;
+                  -webkit-box-flex: 0;
+                  -ms-flex-positive: 0;
+                  flex-grow: 0;
+                  -ms-flex-negative: 0;
+                  flex-shrink: 0;
+                  height: 100%
+              }
+          }
+          .homepage-product__link {
+              border: 1px solid #e5e5e5;
+              border-radius: 8px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column;
+              -webkit-box-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+              overflow: hidden;
+              text-decoration: none;
+              background: #fff;
+              -webkit-transition: -webkit-box-shadow .3s, -webkit-transform .3s;
+              transition: -webkit-box-shadow .3s, -webkit-transform .3s;
+              transition: box-shadow .3s, transform .3s;
+              transition: box-shadow .3s, transform .3s, -webkit-box-shadow .3s, -webkit-transform .3s;
+              height: 100%
+          }
+          .homepage-product__link:hover, .homepage-product__link:focus {
+              text-decoration: none;
+              outline: none
+          }
+          @media (min-width: 768px) {
+              .homepage-product__link:hover, .homepage-product__link:focus {
+                  -webkit-transform: translateY(-2px);
+                  transform: translateY(-2px)
+              }
+          }
+          .homepage-product__image {
+              padding: 0;
+              margin: 0;
+              aspect-ratio: 248/200;
+              overflow: hidden;
+              background: #f0f0f0
+          }
+          .homepage-product__image img {
+              width: 100%;
+              height: 100%;
+              -o-object-fit: cover;
+              object-fit: cover;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-product__content {
+              padding: 17px 15px 15px;
+              -webkit-box-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column
+          }
+          @media (max-width: 1279px) {
+              .homepage-product__content {
+                  padding: 12px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-product__content {
+                  padding: 9px 7px 24px
+              }
+          }
+          .homepage-product__title {
+              margin: 0 0 10px;
+              font: bold 18px "Inter", sans-serif;
+              color: #000
+          }
+          @media (max-width: 1279px) {
+              .homepage-product__title {
+                  font-size: 16px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-product__title {
+                  font-size: 14px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-product__title {
+                  min-height: 34px;
+                  max-height: 34px;
+                  line-height: 17px;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2;
+                  line-clamp: 2;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden
+              }
+          }
+          .homepage-product__text {
+              min-height: 34px;
+              margin: 0 0 10px;
+              color: #333
+          }
+          @media (max-width: 1279px) {
+              .homepage-product__text {
+                  min-height: 29px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-product__text {
+                  min-height: 54px;
+                  max-height: 54px;
+                  line-height: 18px;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 3;
+                  line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden
+              }
+          }
+          .homepage-product__more {
+              margin-top: auto;
+              font-size: 14px;
+              font-weight: 700;
+              color: #ff7a3d
+          }
+          @media (max-width: 1279px) {
+              .homepage-product__more {
+                  font-size: 13px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-product__more {
+                  font-size: 12px
+              }
+          }
+          .homepage-categories {
+              padding: 60px 0 55px;
+              background: #003d6b
+          }
+          @media (max-width: 1279px) {
+              .homepage-categories {
+                  padding-top: 44px;
+                  padding-bottom: 40px
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-categories .container {
+                  max-width: 1390px
+              }
+          }
+          .homepage-categories__header {
+              max-width: 844px;
+              margin: 0 auto 40px;
+              text-align: center
+          }
+          @media (max-width: 1279px) {
+              .homepage-categories__header {
+                  margin-bottom: 32px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-categories__header {
+                  margin-bottom: 24px
+              }
+          }
+          .homepage-categories__heading {
+              margin: 0 0 14px;
+              font: bold 36px/44px "Inter", sans-serif;
+              color: #fff
+          }
+          @media (max-width: 1279px) {
+              .homepage-categories__heading {
+                  margin-bottom: 11px;
+                  font-size: 28px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-categories__heading {
+                  font-size: 24px
+              }
+          }
+          .homepage-categories__subheading {
+              margin: 0;
+              font: 16px/1.5 "Inter", sans-serif;
+              letter-spacing: .005em;
+              color: #fff
+          }
+          @media (max-width: 1279px) {
+              .homepage-categories__subheading {
+                  font-size: 15px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-categories__subheading {
+                  font-size: 14px
+              }
+          }
+          .homepage-categories__grid {
+              margin: 0 auto;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              gap: 16px
+          }
+          @media (max-width: 1279px) {
+              .homepage-categories__grid {
+                  max-width: 840px;
+                  gap: 12px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-categories__grid {
+                  gap: 8px
+              }
+          }
+          .homepage-categories__card {
+              width: calc(33.33% - 11.5px);
+              padding: 16px 56px 16px 16px;
+              border-radius: 8px;
+              font: bold 16px/1.5 "Inter", sans-serif;
+              letter-spacing: .001em;
+              text-decoration: none;
+              color: #000;
+              background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Crect width='24' height='24' fill='%23ff6b35' rx='4'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m8 16 8-8M8 8h8v8'/%3E%3C/svg%3E") right 16px center no-repeat;
+              -webkit-transition: color .2s;
+              transition: color .2s
+          }
+          @media (max-width: 1279px) {
+              .homepage-categories__card {
+                  width: calc(50% - 6px);
+                  font-size: 15px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-categories__card {
+                  width: 100%;
+                  padding: 9.5px 40px 9.5px 17px;
+                  font-size: 14px;
+                  background-position: right 9px center
+              }
+          }
+          .homepage-categories__card:hover {
+              color: var(--figma-orange);
+              text-decoration: none
+          }
+          .homepage-trust {
+              padding: 56px 0;
+              background: #f9fafb;
+              font-family: "Inter", sans-serif
+          }
+          @media (max-width: 767px) {
+              .homepage-trust {
+                  padding: 40px 0 29px
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-trust .container {
+                  max-width: 1390px
+              }
+          }
+          .homepage-trust__header {
+              max-width: 844px;
+              margin: 0 auto 40px;
+              text-align: center
+          }
+          @media (max-width: 767px) {
+              .homepage-trust__header {
+                  margin-bottom: 39px
+              }
+          }
+          .homepage-trust__heading {
+              font-size: 36px;
+              line-height: 44px;
+              font-weight: 700;
+              color: #000;
+              margin: 0 0 14px 0
+          }
+          @media (max-width: 1279px) {
+              .homepage-trust__heading {
+                  font-size: 28px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-trust__heading {
+                  font-size: 24px
+              }
+          }
+          .homepage-trust__subheading {
+              font-size: 18px;
+              line-height: 22px;
+              color: #333;
+              margin: 0;
+              max-width: 500px;
+              margin-left: auto;
+              margin-right: auto
+          }
+          @media (max-width: 1279px) {
+              .homepage-trust__subheading {
+                  font-size: 16px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-trust__subheading {
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-trust__grid {
+              padding: 0 40px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              gap: 40px;
+              color: #000
+          }
+          @media (max-width: 1399px) {
+              .homepage-trust__grid {
+                  padding: 0;
+                  gap: 30px
+              }
+          }
+          @media (min-width: 992px) {
+              .homepage-trust-card:nth-child(1) {
+                  -ms-flex-preferred-size: calc((100% - 80px) * .294);
+                  flex-basis: calc((100% - 80px) * .294)
+              }
+              .homepage-trust-card:nth-child(2) {
+                  -ms-flex-preferred-size: calc((100% - 80px) * .377);
+                  flex-basis: calc((100% - 80px) * .377)
+              }
+              .homepage-trust-card:nth-child(3) {
+                  -ms-flex-preferred-size: calc((100% - 80px) * .329);
+                  flex-basis: calc((100% - 80px) * .329)
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-trust-card {
+                  -ms-flex-preferred-size: calc((100% - 80px) / 3);
+                  flex-basis: calc((100% - 80px) / 3)
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-trust-card {
+                  -webkit-box-flex: 1;
+                  -ms-flex: 1 1 100%;
+                  flex: 1 1 100%;
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  gap: 24px;
+                  -webkit-box-pack: justify;
+                  -ms-flex-pack: justify;
+                  justify-content: space-between
+              }
+          }
+          .homepage-trust-card__logo {
+              height: 120px;
+              margin-bottom: 24px
+          }
+          @media (max-width: 1279px) {
+              .homepage-trust-card__logo {
+                  height: 80px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-trust-card__logo {
+                  width: 120px;
+                  margin-bottom: 0;
+                  -ms-flex-negative: 0;
+                  flex-shrink: 0
+              }
+          }
+          .homepage-trust-card__logo img {
+              width: auto;
+              height: 100%;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-trust-card__content {
+              -webkit-box-flex: 1;
+              -ms-flex-positive: 1;
+              flex-grow: 1
+          }
+          .homepage-trust-card__title {
+              font-size: 24px;
+              font-weight: 700;
+              color: #000;
+              margin: 0 0 16px 0
+          }
+          @media (max-width: 1279px) {
+              .homepage-trust-card__title {
+                  font-size: 20px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-trust-card__title {
+                  font-size: 16px
+              }
+          }
+          .homepage-trust-card__list {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              font-size: 16px;
+              line-height: 24px;
+              font-weight: bold
+          }
+          @media (max-width: 1279px) {
+              .homepage-trust-card__list {
+                  font-size: 15px;
+                  line-height: 17px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-trust-card__list {
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-trust-card__list li {
+              margin-bottom: 10px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              gap: 13px
+          }
+          .homepage-trust-card__list li::before {
+              width: 24px;
+              height: 24px;
+              -ms-flex-negative: 0;
+              flex-shrink: 0;
+              display: block;
+              content: "";
+              overflow: hidden;
+              background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cg stroke='%23ff6b35' stroke-width='2' clip-path='url(%23a)'%3E%3Ccircle cx='12' cy='12' r='11'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m6 12.5 4.381 4.5L18 8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h24v24H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E") 0 0/contain no-repeat
+          }
+          .homepage-steps {
+              padding: 56px 0;
+              background: #fff;
+              font-family: "Inter", sans-serif
+          }
+          @media (max-width: 767px) {
+              .homepage-steps {
+                  padding: 40px 0;
+                  display: none
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-steps .container {
+                  max-width: 1390px
+              }
+          }
+          .homepage-steps__header {
+              max-width: 844px;
+              margin: 0 auto 40px;
+              text-align: center
+          }
+          @media (max-width: 1279px) {
+              .homepage-steps__header {
+                  margin-bottom: 32px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-steps__header {
+                  margin-bottom: 24px
+              }
+          }
+          .homepage-steps__heading {
+              margin: 0 0 14px 0;
+              font-size: 36px;
+              line-height: 44px;
+              font-weight: 700;
+              color: #000
+          }
+          @media (max-width: 1279px) {
+              .homepage-steps__heading {
+                  font-size: 28px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-steps__heading {
+                  font-size: 24px
+              }
+          }
+          .homepage-steps__subheading {
+              margin: 0;
+              font-size: 18px;
+              line-height: 22px;
+              color: #333
+          }
+          @media (max-width: 1279px) {
+              .homepage-steps__subheading {
+                  font-size: 16px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-steps__subheading {
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-steps__list {
+              padding: 0;
+              margin: 0 -20px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              list-style: none;
+              counter-reset: item;
+              -webkit-box-align: stretch;
+              -ms-flex-align: stretch;
+              align-items: stretch;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              font-size: 16px;
+              line-height: 22px;
+              color: #000
+          }
+          @media (max-width: 1199px) {
+              .homepage-steps__list {
+                  -webkit-box-pack: start;
+                  -ms-flex-pack: start;
+                  justify-content: flex-start;
+                  gap: 30px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-steps__list {
+                  margin: 0;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                  flex-direction: column
+              }
+          }
+          .homepage-steps__list li {
+              -webkit-box-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+              padding: 34px 35px 15px;
+              border-right: 1px solid #000
+          }
+          @media (max-width: 1399px) {
+              .homepage-steps__list li {
+                  padding-left: 20px;
+                  padding-right: 20px
+              }
+          }
+          @media (max-width: 1199px) {
+              .homepage-steps__list li {
+                  padding: 30px 0;
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 1 calc((100% - 60px) / 3);
+                  flex: 0 1 calc((100% - 60px) / 3);
+                  border-right: none;
+                  border-bottom: 1px solid #000
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-steps__list li {
+                  -ms-flex-preferred-size: calc(50% - 15px);
+                  flex-basis: calc(50% - 15px)
+              }
+              .homepage-steps__list li:first-child {
+                  padding-top: 0
+              }
+              .homepage-steps__list li:last-child {
+                  padding-bottom: 0
+              }
+          }
+          .homepage-steps__list li:last-child {
+              border-right: none
+          }
+          @media (max-width: 767px) {
+              .homepage-steps__list li:last-child {
+                  border-bottom: none
+              }
+          }
+          .homepage-steps__list li p:last-of-type {
+              margin-bottom: 0
+          }
+          .homepage-steps__list-number {
+              width: auto;
+              height: 65px;
+              display: block;
+              margin-left: 3px;
+              margin-bottom: 31px;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          @media (max-width: 767px) {
+              .homepage-steps__list-number {
+                  height: 38px;
+                  margin-bottom: 16px
+              }
+          }
+          .homepage-steps__list-title {
+              margin: 0 0 14px 0;
+              font-size: 18px;
+              line-height: 22px;
+              font-weight: 700
+          }
+          .homepage-steps__footer {
+              margin-top: 40px;
+              text-align: center
+          }
+          .homepage-section {
+              padding: 0;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              -webkit-box-align: stretch;
+              -ms-flex-align: stretch;
+              align-items: stretch;
+              color: #333;
+              background: #f5f5f5
+          }
+          .homepage-section .container {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex
+          }
+          @media (min-width: 1400px) {
+              .homepage-section .container {
+                  max-width: 1390px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-section .container {
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                  flex-direction: column
+              }
+          }
+          .homepage-section__content {
+              width: 50%;
+              -webkit-box-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+              font-size: 18px;
+              line-height: 22px;
+              letter-spacing: .0275em;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center
+          }
+          @media (max-width: 1279px) {
+              .homepage-section__content {
+                  font-size: 16px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-section__content {
+                  width: 100%
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-section__content {
+                  font-size: 14px;
+                  line-height: 17px;
+                  letter-spacing: .01em
+              }
+          }
+          .homepage-section__content p {
+              margin-bottom: 1.222em
+          }
+          .homepage-section__content p:last-child {
+              margin-bottom: 0
+          }
+          .homepage-section__space {
+              padding: 100px 72px 58px 120px
+          }
+          @media (max-width: 1399px) {
+              .homepage-section__space {
+                  padding-top: 60px;
+                  padding-right: 0;
+                  padding-bottom: 60px;
+                  padding-left: 60px
+              }
+          }
+          @media (max-width: 1279px) {
+              .homepage-section__space {
+                  padding-left: 40px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-section__space {
+                  max-width: 540px;
+                  padding: 60px 0;
+                  margin: 0 auto
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-section__space {
+                  max-width: none;
+                  padding: 23px 8px;
+                  margin: 0
+              }
+          }
+          .homepage-section__heading {
+              margin: 0 0 17px;
+              font: bold 36px "Inter", sans-serif;
+              letter-spacing: 0;
+              color: #000
+          }
+          @media (max-width: 1279px) {
+              .homepage-section__heading {
+                  font-size: 32px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-section__heading {
+                  font-size: 28px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-section__heading {
+                  font-size: 24px
+              }
+          }
+          .homepage-section__features {
+              padding: 0;
+              margin: 40px 0;
+              list-style: none;
+              font-size: 14px;
+              line-height: normal;
+              letter-spacing: .01em
+          }
+          @media (max-width: 1279px) {
+              .homepage-section__features {
+                  margin-top: 30px;
+                  margin-bottom: 30px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-section__features {
+                  margin-top: 24px;
+                  margin-bottom: 24px;
+                  font-size: 12px;
+                  line-height: 15px;
+                  letter-spacing: 0
+              }
+          }
+          .homepage-section__features strong {
+              margin-bottom: 4px;
+              font-size: 16px;
+              letter-spacing: .005em;
+              display: block
+          }
+          @media (max-width: 767px) {
+              .homepage-section__features strong {
+                  font-size: 14px;
+                  letter-spacing: -0.0025em
+              }
+          }
+          .homepage-section__features li {
+              padding-left: 37px;
+              position: relative
+          }
+          .homepage-section__features li::before {
+              width: 24px;
+              height: 24px;
+              margin: auto 0;
+              display: block;
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: 1px;
+              left: 0;
+              background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cg stroke='%23ff6b35' stroke-width='2' clip-path='url(%23a)'%3E%3Ccircle cx='12' cy='12' r='11'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m6 12.5 4.381 4.5L18 8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h24v24H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E") no-repeat center center
+          }
+          .homepage-section__features li + li {
+              margin-top: 40px
+          }
+          @media (max-width: 1279px) {
+              .homepage-section__features li + li {
+                  margin-top: 30px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-section__features li + li {
+                  margin-top: 25px
+              }
+          }
+          .homepage-section .homepage-btn {
+              letter-spacing: -0.0075em
+          }
+          .homepage-section__media {
+              width: 50%;
+              padding: 0;
+              margin: 0;
+              -webkit-box-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+              position: relative;
+              background: transparent;
+          }
+          @media (max-width: 991px) {
+              .homepage-section__media {
+                  width: auto;
+                  max-width: 540px;
+                  margin: 0 auto
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-section__media {
+                  max-width: none;
+                  margin: 0 -15px
+              }
+          }
+          .homepage-section__media img {
+              width: 50vw;
+              max-width: 835px;
+              height: 100%;
+              /* max-height: 720px; */
+              float: right;
+              -o-object-fit: cover;
+              object-fit: cover;
+              -o-object-position: top center;
+              object-position: top center;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          @media (max-width: 991px) {
+              .homepage-section__media img {
+                  width: 100%
+              }
+          }
+          .homepage-section__play {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+              width: 56px;
+              height: 56px;
+              background: var(--homepage-orange, #f47c26);
+              border-radius: 50%;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              cursor: pointer
+          }
+          .homepage-section__play svg {
+              width: 24px;
+              height: 24px;
+              fill: #fff;
+              margin-left: 4px
+          }
+          .homepage-section__play--blue {
+              background: var(--homepage-darkblue, #003a66)
+          }
+          .homepage-section__play--blue:hover {
+              background: #002b4d
+          }
+          .homepage-section__media--video .homepage-video-wrap {
+              position: relative;
+              width: 50vw;
+              max-width: 835px;
+              height: 100%;
+              max-height: 720px;
+              overflow: hidden;
+              cursor: pointer;
+              display: block
+          }
+          @media (max-width: 991px) {
+              .homepage-section__media--video .homepage-video-wrap {
+                  width: 100%
+              }
+          }
+          .homepage-section__media--video .homepage-video-thumb {
+              width: 100%;
+              height: 100%;
+              -o-object-fit: cover;
+              object-fit: cover;
+              -o-object-position: top center;
+              object-position: top center;
+              display: block;
+              vertical-align: top
+          }
+          .homepage-section__media--video .homepage-video-wrap iframe {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border: 0
+          }
+          .homepage-section--reverse .container {
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: reverse;
+              -ms-flex-direction: row-reverse;
+              flex-direction: row-reverse
+          }
+          @media (max-width: 991px) {
+              .homepage-section--reverse .container {
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                  flex-direction: column
+              }
+          }
+          .homepage-section--reverse .homepage-section__media img {
+              float: left
+          }
+          .homepage-section--reverse .homepage-section__media--video .homepage-video-wrap {
+              float: left
+          }
+          .homepage-section--reverse .homepage-section__space {
+              padding-right: 120px;
+              padding-left: 72px
+          }
+          @media (max-width: 1399px) {
+              .homepage-section--reverse .homepage-section__space {
+                  padding-right: 60px;
+                  padding-left: 0
+              }
+          }
+          @media (max-width: 1279px) {
+              .homepage-section--reverse .homepage-section__space {
+                  padding-right: 40px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-section--reverse .homepage-section__space {
+                  padding: 60px 0
+              }
+          }
+          @media (max-width: 768px) {
+              .homepage-section--reverse .homepage-section__space {
+                  padding: 23px 8px
+              }
+          }
+          .homepage-section--dark {
+              color: #fff;
+              background: #0d3a5c
+          }
+          .homepage-section--dark .homepage-section__heading {
+              color: #fff
+          }
+          .homepage-brands {
+              padding: 56px 0 77px;
+              font-family: "Inter", sans-serif
+          }
+          @media (max-width: 1399px) {
+              .homepage-brands {
+                  padding-bottom: 56px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-brands {
+                  padding-top: 40px;
+                  padding-bottom: 40px
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-brands .container {
+                  max-width: 1390px
+              }
+          }
+          .homepage-brands__header {
+              max-width: 800px;
+              margin: 0 auto 40px;
+              text-align: center
+          }
+          @media (max-width: 767px) {
+              .homepage-brands__header {
+                  margin-bottom: 24px
+              }
+          }
+          .homepage-brands__heading {
+              margin: 0 0 12px;
+              font: bold 36px/44px "Inter", sans-serif;
+              letter-spacing: .001em;
+              color: #000
+          }
+          @media (max-width: 1279px) {
+              .homepage-brands__heading {
+                  font-size: 32px;
+                  line-height: 38px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-brands__heading {
+                  font-size: 28px;
+                  line-height: 34px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-brands__heading {
+                  margin-bottom: 14px;
+                  font-size: 24px;
+                  line-height: normal
+              }
+          }
+          .homepage-brands__subheading {
+              margin: 0;
+              font-size: 18px;
+              color: #333
+          }
+          @media (max-width: 1279px) {
+              .homepage-brands__subheading {
+                  font-size: 16px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-brands__subheading {
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-brands__catalog {
+              max-width: 1360px;
+              margin: 0 auto;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              gap: 20px;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center
+          }
+          @media (max-width: 1279px) {
+              .homepage-brands__catalog {
+                  max-width: 700px;
+                  margin: 0 auto;
+                  gap: 24px 48px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-brands__catalog {
+                  gap: 16px
+              }
+          }
+          .homepage-brands__catalog img {
+              width: auto;
+              height: 80px;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          @media (max-width: 1399px) {
+              .homepage-brands__catalog img {
+                  height: 68px
+              }
+          }
+          @media (max-width: 1279px) {
+              .homepage-brands__catalog img {
+                  height: 80px
+              }
+          }
+          .homepage-drutex {
+              padding: 80px 0;
+              background: #0d3a5c;
+              font-family: "Inter", sans-serif
+          }
+          @media (max-width: 767px) {
+              .homepage-drutex {
+                  padding: 40px 0
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-drutex .container {
+                  max-width: 1310px
+              }
+          }
+          .homepage-drutex__inner {
+              padding: 40px;
+              background: #fff;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              gap: 56px
+          }
+          @media (max-width: 991px) {
+              .homepage-drutex__inner {
+                  padding: 24px;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: reverse;
+                  -ms-flex-direction: column-reverse;
+                  flex-direction: column-reverse;
+                  gap: 24px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-drutex__inner {
+                  padding: 16px;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: reverse;
+                  -ms-flex-direction: column-reverse;
+                  flex-direction: column-reverse
+              }
+          }
+          .homepage-drutex__content {
+              -webkit-box-flex: 0;
+              -ms-flex: 0 1 448px;
+              flex: 0 1 448px;
+              font-size: 16px;
+              line-height: 19px;
+              color: #374151;
+              font-weight: normal;
+              text-align: left;
+              letter-spacing: -0.003em
+          }
+          @media (max-width: 991px) {
+              .homepage-drutex__content {
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 1 auto;
+                  flex: 0 1 auto
+              }
+          }
+          .homepage-drutex__content p {
+              margin-bottom: 24px
+          }
+          .homepage-drutex__logo {
+              width: 196px;
+              height: 59px;
+              margin: 0 0 23px;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-drutex__stats {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              gap: 35px;
+              margin-bottom: 24px;
+              font-size: 14px;
+              line-height: 17px;
+              color: #6b7280
+          }
+          .homepage-drutex__stats strong {
+              font-size: 32px;
+              line-height: 39px;
+              font-weight: bold;
+              color: #ff6b35;
+              display: block
+          }
+          .homepage-drutex__image {
+              margin: 0;
+              -webkit-box-flex: 1;
+              -ms-flex-positive: 1;
+              flex-grow: 1;
+              aspect-ratio: 696/366;
+              overflow: hidden
+          }
+          .homepage-drutex__image img {
+              width: 100%;
+              height: 100%;
+              -o-object-fit: cover;
+              object-fit: cover;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-referenz {
+              padding: 56px 0;
+              font-family: "Inter", sans-serif
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz {
+                  padding: 40px 0
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-referenz .container {
+                  max-width: 1390px
+              }
+          }
+          .homepage-referenz__header {
+              max-width: 844px;
+              margin: 0 auto 40px;
+              text-align: center
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz__header {
+                  margin-bottom: 24px
+              }
+          }
+          .homepage-referenz__heading {
+              font-size: 36px;
+              line-height: 44px;
+              font-weight: 700;
+              color: #000;
+              margin: 0 0 14px 0
+          }
+          @media (max-width: 1279px) {
+              .homepage-referenz__heading {
+                  font-size: 28px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz__heading {
+                  font-size: 24px
+              }
+          }
+          .homepage-referenz__subheading {
+              max-width: 500px;
+              margin: 0 auto;
+              font-size: 18px;
+              line-height: 22px;
+              color: #333
+          }
+          @media (max-width: 1279px) {
+              .homepage-referenz__subheading {
+                  font-size: 16px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz__subheading {
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-referenz__grid {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              gap: 24px;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center
+          }
+          @media (max-width: 1199px) {
+              .homepage-referenz__grid {
+                  gap: 16px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-referenz__grid {
+                  margin: 0 -30px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz__grid {
+                  padding: 0 16px;
+                  margin: 0;
+                  gap: 16px;
+                  overflow: visible;
+                  overflow-x: visible;
+                  -webkit-box-pack: start;
+                  -ms-flex-pack: start;
+                  justify-content: flex-start;
+                  -ms-overflow-style: none;
+                  scrollbar-width: none;
+                  -webkit-overflow-scrolling: touch
+              }
+              .homepage-referenz__grid::-webkit-scrollbar {
+                  display: none
+              }
+          }
+          .homepage-referenz-card {
+              -webkit-box-flex: 0;
+              -ms-flex: 0 1 calc((100% - 48px) / 3);
+              flex: 0 1 calc((100% - 48px) / 3);
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column;
+              font: 14px/17px "Inter", sans-serif;
+              color: #6b7280
+          }
+          @media (max-width: 1199px) {
+              .homepage-referenz-card {
+                  font-size: 12px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz-card {
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 1 100%;
+                  flex: 0 1 100%;
+                  width: 100%;
+                  max-width: 100%
+              }
+          }
+          .homepage-referenz-card__link {
+              border: 1px solid #e5e5e5;
+              border-radius: 8px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column;
+              color: inherit;
+              -webkit-box-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+              overflow: hidden;
+              text-decoration: none;
+              background: #fff;
+              -webkit-transition: -webkit-box-shadow .3s, -webkit-transform .3s;
+              transition: -webkit-box-shadow .3s, -webkit-transform .3s;
+              transition: box-shadow .3s, transform .3s;
+              transition: box-shadow .3s, transform .3s, -webkit-box-shadow .3s, -webkit-transform .3s
+          }
+          .homepage-referenz-card__link:hover, .homepage-referenz-card__link:focus {
+              text-decoration: none;
+              outline: none;
+              color: inherit
+          }
+          @media (min-width: 768px) {
+              .homepage-referenz-card__link:hover, .homepage-referenz-card__link:focus {
+                  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, .08);
+                  box-shadow: 0 8px 16px rgba(0, 0, 0, .08);
+                  -webkit-transform: translateY(-2px);
+                  transform: translateY(-2px)
+              }
+          }
+          .homepage-referenz-card__image {
+              margin: 0;
+              aspect-ratio: 437/280;
+              overflow: hidden;
+              background: #f0f0f0
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz-card__image {
+                  aspect-ratio: 174/140
+              }
+          }
+          .homepage-referenz-card__image img {
+              width: 100%;
+              height: 100%;
+              -o-object-fit: cover;
+              object-fit: cover;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-referenz-card__content {
+              padding: 16px 14px
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz-card__content {
+                  padding: 8px 8px 30px
+              }
+          }
+          .homepage-referenz-card__title {
+              margin-bottom: 12px;
+              font-family: "Inter", sans-serif;
+              font-size: 18px;
+              line-height: 22px;
+              font-weight: 700;
+              color: #1f2937
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz-card__title {
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-referenz-card__text {
+              min-height: 34px;
+              margin: 0;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              line-clamp: 2;
+              -webkit-box-orient: vertical
+          }
+          @media (max-width: 1199px) {
+              .homepage-referenz-card__text {
+                  min-height: 29px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-referenz-card__text {
+                  min-height: 0;
+                  overflow: visible;
+                  text-overflow: clip;
+                  display: block;
+                  -webkit-line-clamp: unset;
+                  line-clamp: unset;
+                  -webkit-box-orient: initial
+              }
+          }
+          .homepage-gallery {
+              background: #e2e9eb;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              gap: 80px;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              font-family: "Inter", sans-serif
+          }
+          @media (max-width: 991px) {
+              .homepage-gallery {
+                  background: transparent
+              }
+          }
+          @media (min-width: 1200px) {
+              .homepage-gallery .container {
+                  max-width: 1310px
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-gallery .container {
+                  padding-left: 0 !important;
+                  padding-right: 0 !important
+              }
+          }
+          .homepage-gallery__space {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              position: relative
+          }
+          @media (max-width: 991px) {
+              .homepage-gallery__space {
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: reverse;
+                  -ms-flex-direction: column-reverse;
+                  flex-direction: column-reverse;
+                  -webkit-box-align: stretch;
+                  -ms-flex-align: stretch;
+                  align-items: stretch
+              }
+          }
+          .homepage-gallery__content {
+              padding: 30px 30px 30px 0;
+              -webkit-box-flex: 0;
+              -ms-flex: 0 0 calc(50% - 212px);
+              flex: 0 0 calc(50% - 212px)
+          }
+          @media (max-width: 1399px) {
+              .homepage-gallery__content {
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 0 calc(50% - 100px);
+                  flex: 0 0 calc(50% - 100px)
+              }
+          }
+          @media (max-width: 1199px) {
+              .homepage-gallery__content {
+                  padding-left: 0
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-gallery__content {
+                  width: 100%;
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 1 auto;
+                  flex: 0 1 auto;
+                  padding: 39px 8px;
+                  background: #e2e9eb
+              }
+          }
+          .homepage-gallery__content-inner {
+              width: 100%
+          }
+          .homepage-gallery__heading {
+              font-size: 36px;
+              line-height: 44px;
+              font-weight: 700;
+              color: #000;
+              margin: 0 0 18px 0
+          }
+          @media (max-width: 1199px) {
+              .homepage-gallery__heading {
+                  font-size: 28px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-gallery__heading {
+                  font-size: 24px
+              }
+          }
+          .homepage-gallery__subheading {
+              font-size: 18px;
+              line-height: 22px;
+              color: #333;
+              margin: 0
+          }
+          @media (max-width: 1199spx) {
+              .homepage-gallery__subheading {
+                  font-size: 16px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-gallery__subheading {
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-gallery__carousel {
+              width: calc(50vw + 212px);
+              max-width: 1040px
+          }
+          @media (max-width: 1399px) {
+              .homepage-gallery__carousel {
+                  width: calc(50vw + 100px)
+              }
+          }
+          @media (max-width: 991px) {
+              .homepage-gallery__carousel {
+                  width: 100vw;
+                  max-width: 100vw;
+                  margin-left: calc(50% - 50vw);
+                  margin-right: calc(50% - 50vw);
+                  left: 0;
+                  -webkit-transform: none;
+                  transform: none;
+                  -webkit-box-flex: 1;
+                  -ms-flex: 1 0 auto;
+                  flex: 1 0 auto
+              }
+          }
+          .homepage-gallery__carousel .swiper {
+              width: 100%
+          }
+          .homepage-gallery__carousel .swiper-wrapper {
+              height: auto
+          }
+          .homepage-gallery__carousel .swiper-slide {
+              height: auto
+          }
+          @media (max-width: 991px) {
+              .swiper-backface-hidden .swiper-slide {
+                  width: 100% !important
+              }
+          }
+          .homepage-gallery__swiper {
+              width: 100%;
+              overflow: hidden
+          }
+          .homepage-gallery__image {
+              margin: 0;
+              width: 100%;
+              aspect-ratio: 517 / 310;
+              overflow: hidden
+          }
+          .homepage-gallery__image img {
+              width: 100%;
+              height: 100%;
+              -o-object-fit: cover;
+              object-fit: cover;
+              -o-object-position: center;
+              object-position: center;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-gallery__nav {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+              justify-content: space-between;
+              padding: 18px 26px;
+              background: #000
+          }
+          @media (max-width: 767px) {
+              .homepage-gallery__nav {
+                  padding: 18px
+              }
+          }
+          .homepage-gallery__nav-prev, .homepage-gallery__nav-next {
+              width: 36px;
+              height: 36px;
+              border-radius: 4px;
+              margin: 0 !important;
+              position: relative !important;
+              top: unset !important;
+              right: unset !important;
+              bottom: unset !important;
+              left: unset !important;
+              background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='20' fill='none'%3E%3Cpath fill='%23000' d='M1.478.302a.9.9 0 0 0-.28-.223.74.74 0 0 0-.661 0 .9.9 0 0 0-.28.223Q.136.448.068.637a1.2 1.2 0 0 0 0 .79q.068.19.19.335l7.548 8.225L.258 18.21q-.124.146-.191.335a1.2 1.2 0 0 0 0 .79q.068.19.19.335A.85.85 0 0 0 .886 20c.11 0 .22-.025.32-.074a.8.8 0 0 0 .273-.214l8.245-8.964q.132-.149.205-.347a1.2 1.2 0 0 0 0-.828 1.1 1.1 0 0 0-.205-.347z'/%3E%3C/svg%3E") center center/10px 20px no-repeat;
+              display: block;
+              -ms-flex-negative: 0;
+              flex-shrink: 0
+          }
+          @media (max-width: 767px) {
+              .homepage-gallery__nav-prev, .homepage-gallery__nav-next {
+                  width: 28px;
+                  height: 28px;
+                  background-size: 8px 16px
+              }
+          }
+          .homepage-gallery__nav-prev svg, .homepage-gallery__nav-next svg {
+              display: none
+          }
+          .homepage-gallery__nav-prev {
+              -webkit-transform: rotate(180deg);
+              transform: rotate(180deg)
+          }
+          .homepage-gallery__nav-pagination {
+              padding: 0;
+              margin: 0;
+              list-style: none;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              gap: 16px;
+              position: relative !important;
+              top: unset !important;
+              right: unset !important;
+              bottom: unset !important;
+              left: unset !important
+          }
+          @media (max-width: 767px) {
+              .homepage-gallery__nav-pagination {
+                  gap: 12px
+              }
+          }
+          .homepage-gallery__nav-pagination .swiper-pagination-bullet {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              margin: 0 !important;
+              background: #fff !important;
+              opacity: 1 !important;
+              display: block
+          }
+          .homepage-gallery__nav-pagination .swiper-pagination-bullet-active {
+              background: #ff6b35 !important
+          }
+          .homepage-delivery {
+              padding: 56px 0;
+              background: #fff;
+              font-family: "Inter", sans-serif
+          }
+          @media (max-width: 767px) {
+              .homepage-delivery {
+                  padding: 40px 0
+              }
+          }
+          .homepage-delivery__header {
+              max-width: 844px;
+              margin: 0 auto 40px;
+              text-align: center
+          }
+          .homepage-delivery__heading {
+              font-size: 36px;
+              line-height: 44px;
+              font-weight: 700;
+              color: #000;
+              margin: 0 0 14px 0
+          }
+          @media (max-width: 1279px) {
+              .homepage-delivery__heading {
+                  font-size: 28px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-delivery__heading {
+                  font-size: 24px
+              }
+          }
+          .homepage-delivery__subheading {
+              font-size: 18px;
+              line-height: 22px;
+              color: #333;
+              margin: 0
+          }
+          @media (max-width: 1279px) {
+              .homepage-delivery__subheading {
+                  font-size: 16px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-delivery__subheading {
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-delivery__features {
+              margin: 0 auto 0;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              gap: 32px;
+              font-size: 16px;
+              line-height: 24px;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center
+          }
+          @media (max-width: 991px) {
+              .homepage-delivery__features {
+                  margin-bottom: 0;
+                  font-size: 14px;
+                  line-height: 21px;
+                  gap: 16px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-delivery__features {
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                  flex-direction: column
+              }
+          }
+          .homepage-delivery__features-card {
+              background: #f5f5f5;
+              padding: 40px 24px;
+              border-radius: 16px;
+              text-align: center;
+              -webkit-box-flex: 0;
+              -ms-flex: 0 1 calc((100% - 64px) / 3);
+              flex: 0 1 calc((100% - 64px) / 3)
+          }
+          @media (max-width: 991px) {
+              .homepage-delivery__features-card {
+                  padding: 24px 16px;
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 1 calc((100% - 32px) / 3);
+                  flex: 0 1 calc((100% - 32px) / 3)
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-delivery__features-card {
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 1 auto;
+                  flex: 0 1 auto
+              }
+          }
+          .homepage-delivery__features-card p:last-of-type {
+              margin-bottom: 0
+          }
+          .homepage-delivery__features-icon {
+              width: 56px;
+              height: 56px;
+              margin: 0 auto 16px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center
+          }
+          .homepage-delivery__features-icon img {
+              -o-object-fit: contain;
+              object-fit: contain;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-delivery__features-title {
+              margin: 0 0 8px;
+              font-family: "Inter", sans-serif;
+              font-size: 24px;
+              line-height: 28px;
+              font-weight: 700;
+              color: #000
+          }
+          @media (max-width: 991px) {
+              .homepage-delivery__features-title {
+                  font-size: 20px;
+                  line-height: 24px
+              }
+          }
+          .homepage-delivery__cta {
+              background: #f5f5f5;
+              border-radius: 16px;
+              padding: 40px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              gap: 40px;
+              font-size: 16px;
+              line-height: 19px;
+              color: #333
+          }
+          @media (max-width: 991px) {
+              .homepage-delivery__cta {
+                  padding: 24px;
+                  gap: 24px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-delivery__cta {
+                  padding: 16px;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: reverse;
+                  -ms-flex-direction: column-reverse;
+                  flex-direction: column-reverse;
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-delivery__cta-content {
+              -webkit-box-flex: 1;
+              -ms-flex-positive: 1;
+              flex-grow: 1
+          }
+          .homepage-delivery__cta-content p:last-of-type {
+              margin-bottom: 0
+          }
+          .homepage-delivery__cta-content .homepage-btn {
+              margin-top: 40px
+          }
+          @media (max-width: 767px) {
+              .homepage-delivery__cta-content .homepage-btn {
+                  width: 100%;
+                  margin-top: 24px
+              }
+          }
+          .homepage-delivery__cta-title {
+              margin: 0 0 16px;
+              font-size: 24px;
+              line-height: 29px;
+              font-weight: 700;
+              color: #000
+          }
+          @media (max-width: 767px) {
+              .homepage-delivery__cta-title {
+                  font-size: 20px;
+                  line-height: 24px
+              }
+          }
+          .homepage-delivery__cta-image {
+              -webkit-box-flex: 0;
+              -ms-flex: 0 0 437px;
+              flex: 0 0 437px;
+              height: 262px;
+              overflow: hidden;
+              border-radius: 8px
+          }
+          @media (max-width: 991px) {
+              .homepage-delivery__cta-image {
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 0 50%;
+                  flex: 0 0 50%
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-delivery__cta-image {
+                  height: 195px;
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 1 auto;
+                  flex: 0 1 auto
+              }
+          }
+          .homepage-delivery__cta-image img {
+              width: 100%;
+              height: 100%;
+              -o-object-fit: cover;
+              object-fit: cover;
+              display: block;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none
+          }
+          .homepage-testimonials {
+              padding: 56px 0;
+              background: #f5f5f5;
+              font-family: "Inter", sans-serif
+          }
+          @media (max-width: 767px) {
+              .homepage-testimonials {
+                  padding: 40px 0
+              }
+          }
+          @media (min-width: 1400px) {
+              .homepage-testimonials .container {
+                  max-width: 1230px
+              }
+          }
+          .homepage-testimonials__header {
+              max-width: 844px;
+              margin: 0 auto 24px;
+              text-align: center
+          }
+          .homepage-testimonials__heading {
+              font-size: 36px;
+              line-height: 44px;
+              font-weight: 700;
+              color: #000;
+              margin: 0 0 14px 0
+          }
+          @media (max-width: 1279px) {
+              .homepage-testimonials__heading {
+                  font-size: 28px;
+                  line-height: normal
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-testimonials__heading {
+                  font-size: 24px
+              }
+          }
+          .homepage-testimonials__subheading {
+              font-size: 18px;
+              line-height: 22px;
+              color: #333;
+              margin: 0
+          }
+          @media (max-width: 1279px) {
+              .homepage-testimonials__subheading {
+                  font-size: 16px
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-testimonials__subheading {
+                  font-size: 14px;
+                  line-height: 17px
+              }
+          }
+          .homepage-testimonials__grid {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              gap: 16px;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center
+          }
+          @media (max-width: 767px) {
+              .homepage-testimonials__grid {
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                  flex-direction: column
+              }
+          }
+          .homepage-testimonials-card {
+              background: #fff;
+              border-radius: 4px;
+              padding: 24px;
+              -webkit-box-flex: 0;
+              -ms-flex: 0 1 calc((100% - 32px) / 3);
+              flex: 0 1 calc((100% - 32px) / 3);
+              font-size: 14px;
+              line-height: 17px;
+              color: #333
+          }
+          @media (max-width: 991px) {
+              .homepage-testimonials-card {
+                  -webkit-box-flex: 0;
+                  -ms-flex: 0 1 calc((100% - 60px) / 2);
+                  flex: 0 1 calc((100% - 60px) / 2)
+              }
+          }
+          @media (max-width: 767px) {
+              .homepage-testimonials-card {
+                  padding: 16px
+              }
+          }
+          .homepage-testimonials-card__stars {
+              width: 80px;
+              height: 16px;
+              margin-bottom: 16px;
+              display: block;
+              background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23ff6b35' d='M22.943 8.936a1.16 1.16 0 0 0-1.007-.801l-6.35-.575-2.51-5.853a1.17 1.17 0 0 0-2.151 0L8.414 7.56l-6.35.575a1.17 1.17 0 0 0-1.006.8 1.16 1.16 0 0 0 .341 1.238l4.8 4.193-1.415 6.21a1.17 1.17 0 0 0 1.739 1.258L12 18.574l5.475 3.26a1.169 1.169 0 0 0 1.74-1.258l-1.415-6.21 4.8-4.192a1.17 1.17 0 0 0 .343-1.238'/%3E%3C/svg%3E") repeat-x 0 0/auto 100%;
+              -ms-flex-negative: 0;
+              flex-shrink: 0
+          }
+          .homepage-testimonials-card__content p:last-of-type {
+              margin-bottom: 0
+          }
+          .homepage-testimonials-card__footer {
+              margin-top: 16px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              gap: 13px;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center
+          }
+          .homepage-testimonials-card__avatar {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background: #003a66;
+              color: #fff;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 19px;
+              text-transform: uppercase;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              -ms-flex-negative: 0;
+              flex-shrink: 0
+          }
+          .homepage-testimonials-card__name {
+              display: block
+          }
+          .homepage-testimonials-card__name strong {
+              margin-bottom: 2px;
+              display: block;
+              font-weight: bold;
+              font-size: 16px;
+              line-height: 19px
+          }
+          .homepage-testimonials__footer {
+              margin-top: 24px;
+              text-align: center
+          }
+          .homepage-banner {
+              padding: 30px 0 40px
+          }
+          .homepage-banner img {
+              max-width: 100%;
+              height: auto;
+              display: block;
+              margin: 0 auto
+          }
+  
+      </style>
+  
+  <!-- Hero -->
+  <section class="homepage-hero">
+      <div class="container">
+          <div class="homepage-hero__space">
+              <div class="homepage-hero__content">
+                  <h1 class="homepage-hero__title">Ihr Wunschfenster in 5 Minuten konfiguriert</h1>
+                  <p class="homepage-hero__subtitle">Maßgefertigte Fenster &amp; Türen – direkt vom Fachbetrieb. Faire Preise, schnelle Lieferung.</p>
+                  <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="homepage-btn">Fenster konfigurieren</a>
+              </div>
+              <div class="homepage-hero__image">
+                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-image.webp" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-image.webp 1x, https://deutscher-fenstershop.de/grafik/home/homepage-image@2x.webp 2x, https://deutscher-fenstershop.de/grafik/home/homepage-image@3x.webp 3x" width="338" height="506" alt="">
+              </div>
+          </div>
+          <div class="homepage-hero__bg">
+              <img src="https://deutscher-fenstershop.de/grafik/home/homepage-bg.webp" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-bg.webp 1x, https://deutscher-fenstershop.de/grafik/home/homepage-bg@2x.webp 2x, https://deutscher-fenstershop.de/grafik/home/homepage-bg@3x.webp 3x" width="1440" height="600" alt="">
+          </div>
+      </div>
+  </section>
+  
+  <!-- Trusted -->
+  <section class="homepage-trusted">
+      <div class="container">
+          <div class="homepage-trusted__inner">
+              <div class="homepage-trusted__rating">
+                  <span class="homepage-trusted__stars"></span>
+                  <strong>4,9/5</strong>
+                  <span>aus 250+ Bewertungen</span>
+              </div>
+              <ul class="homepage-trusted__list">
+                  <li><img src="https://deutscher-fenstershop.de/grafik/home/homepage-shield.png" alt="Shield"> 5 Jahre Garantie</li>
+                  <li><img src="https://deutscher-fenstershop.de/grafik/home/homepage-truck.png" alt="Truck"> Kostenlose Lieferung</li>
+                  <li><img src="https://deutscher-fenstershop.de/grafik/home/homepage-eu.png" alt="EU"> Hergestellt in Europa</li>
+                  <li><img src="https://deutscher-fenstershop.de/grafik/home/homepage-headset.png" alt="Headset"> Persönliche Beratung</li>
+              </ul>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Fenster nach Typ/Form -->
+  <section class="homepage-products">
+      <div class="container">
+          <header class="homepage-products__header">
+              <h2 class="homepage-products__heading">Fenster nach Typ/Form</h2>
+              <p class="homepage-products__subheading">Vom Klassiker bis zur Sonderform – wählen Sie den Fenstertyp, der zu Ihrer Situation passt.</p>
+          </header>
+          <div class="homepage-products__grid swiper swiper-backface-hidden">
+              <div class="swiper-wrapper" id="swiper-wrapper-ba651d77b736af22" aria-live="polite">
+                  <div class="swiper-slide" role="group" aria-label="1 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/kaufen/kunststofffenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-1.jpg" alt="Dreh-Kipp-Fenster">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Dreh-Kipp-Fenster</h3>
+                                  <p class="homepage-product__text">Der Klassiker unter den Fenstern</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="2 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/fenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-2.jpg" alt="Festverglasung">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Festverglasung</h3>
+                                  <p class="homepage-product__text">Maximale Lichtausbeute ohne Öffnungsfunktion</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="3 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/schiebefenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-3.jpg" alt="Schiebefenster">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Schiebefenster</h3>
+                                  <p class="homepage-product__text">Platzsparende Lösung mit moderner Optik und komfortabler Bedienung.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="4 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/dreiecksfenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-4.jpg" alt="Rund- &amp; Sonderformen">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Rund- &amp; Sonderformen</h3>
+                                  <p class="homepage-product__text">Individuelle Formen wie Rund-, Dreieck- oder Segmentbogenfenster.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="5 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/sicherheitsfenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-5.jpg" alt="Sicherheitsfenster">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Sicherheitsfenster</h3>
+                                  <p class="homepage-product__text">Erhöhter Einbruchschutz durch spezielle Beschläge und Sicherheitsverglasung.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+              </div>
+              <div class="swiper-button-next swiper-button-lock" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-ba651d77b736af22" aria-disabled="true"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+              <div class="swiper-pagination swiper-pagination-lock"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span></div>
+              <div class="swiper-button-prev swiper-button-lock" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-ba651d77b736af22" aria-disabled="true"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-products">
+      <div class="container">
+          <header class="homepage-products__header">
+              <h2 class="homepage-products__heading">Fenster nach Material</h2>
+              <p class="homepage-products__subheading">Kunststoff, Aluminium oder Holz – finden Sie das Material, das zu Ihrem Zuhause und Budget passt.</p>
+          </header>
+          <div class="homepage-products__grid swiper swiper-backface-hidden">
+              <div class="swiper-wrapper" id="swiper-wrapper-fed28e7eb4744bea" aria-live="polite">
+                  <div class="swiper-slide" role="group" aria-label="1 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/kaufen/kunststofffenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-6.jpg" alt="Kunststofffenster">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Kunststofffenster</h3>
+                                  <p class="homepage-product__text">die beliebteste Fensterlösung in Deutschland.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="2 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/kaufen/alu-fenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-7.jpg" alt="Aluminiumfenster">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Aluminiumfenster</h3>
+                                  <p class="homepage-product__text">Ideal für große Glasflächen.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="3 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/kaufen/holzfenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-8.jpg" alt="Holzfenster">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Holzfenster</h3>
+                                  <p class="homepage-product__text">Natürliches Design mit hervorragender Wärmedämmung</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="4 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/kaufen/holz-alu-fenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-9.jpg" alt="Holz-Alu-Fenster">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Holz-Alu-Fenster</h3>
+                                  <p class="homepage-product__text">Perfekte Kombination aus Design und Langlebigkeit.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="5 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/kunststoff-alu-fenster" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-10.jpg" alt="Kunststoff-Alu-Fenster">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Kunststoff-Alu-Fenster</h3>
+                                  <p class="homepage-product__text">Witterungsschutz durch Aluminium.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+              </div>
+              <div class="swiper-button-next swiper-button-lock" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-fed28e7eb4744bea" aria-disabled="true"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+              <div class="swiper-pagination swiper-pagination-lock"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span></div>
+              <div class="swiper-button-prev swiper-button-lock" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-fed28e7eb4744bea" aria-disabled="true"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-categories">
+      <div class="container">
+          <header class="homepage-categories__header">
+              <h2 class="homepage-categories__heading">Weitere Fenster</h2>
+              <p class="homepage-categories__subheading">Qualitätslösungen nach deutschen Standards: Entdecken Sie Fenster für jeden Anwendungsbereich in den vielfältigsten Bauformen.</p>
+          </header>
+          <div class="homepage-categories__grid">
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/brandschutzfenster">Brandschutzfenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/dreiecksfenster">Dreiecksfenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/daenische-fenster">Englische Fenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/energiesparfenster">Energiesparfenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/daenische-fenster">Fenster nach außen öffnend</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/bogenfenster">Halbrund- / Halbkreisfenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/innenfenster">Innenraumfenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/klappfenster">Klappfenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/verglasung-ueber-eck-ohne-rahmen">Rahmenlose Eckverglasung</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/bogenfenster">Rundbogenfenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/niederlaendische-fenster">Niederländische Fenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/schallschutzfenster">Schallschutzfenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/schiebefenster">Schiebefenster</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/sicherheitsfenster">Sicherheitsfenster</a>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-products">
+      <div class="container">
+          <header class="homepage-products__header">
+              <h2 class="homepage-products__heading">Türen nach Typ/Form</h2>
+              <p class="homepage-products__subheading">Haustüren, Balkontüren, Hebeschiebetüren und Nebeneingangstüren</p>
+          </header>
+          <div class="homepage-products__grid swiper swiper-backface-hidden">
+              <div class="swiper-wrapper" id="swiper-wrapper-fbd36ea2f62775fb" aria-live="polite">
+                  <div class="swiper-slide" role="group" aria-label="1 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/haustuer" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-11.jpg" alt="Haustüren">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Haustüren</h3>
+                                  <p class="homepage-product__text">Der repräsentative Eingangsbereich mit Design und Sicherheit.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="2 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/balkontuer" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-12.jpg" alt="Balkontüren">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Balkontüren</h3>
+                                  <p class="homepage-product__text">Mehr Licht und direkter Zugang zu Balkon oder Terrasse.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="3 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/hebeschiebetueren" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-13.jpg" alt="Hebeschiebetüren">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Hebeschiebetüren</h3>
+                                  <p class="homepage-product__text">Großzügige Glasflächen mit komfortabler Schiebetechnik.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="4 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/nebeneingangstueren" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-14.jpg" alt="Nebeneingangstüren">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Nebeneingangstüren</h3>
+                                  <p class="homepage-product__text">Praktische und sichere Lösung für Keller, Garage oder Nebenräume.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="5 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/mehrfluegelige-tueren" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-15.jpg" alt="Mehrflügelige Türen">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Mehrflügelige Türen</h3>
+                                  <p class="homepage-product__text">Ideal für großzügige Eingangsbereiche und repräsentative Gebäude.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+              </div>
+              <div class="swiper-button-next swiper-button-lock" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-fbd36ea2f62775fb" aria-disabled="true"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+              <div class="swiper-pagination swiper-pagination-lock"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span></div>
+              <div class="swiper-button-prev swiper-button-lock" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-fbd36ea2f62775fb" aria-disabled="true"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-products homepage-products--alt">
+      <div class="container">
+          <header class="homepage-products__header">
+              <h2 class="homepage-products__heading">Türen nach Material</h2>
+              <p class="homepage-products__subheading">Haustüren aus Kunststoff, Aluminium oder Holz – sicher, stabil und nach Maß gefertigt.</p>
+          </header>
+          <div class="homepage-products__grid swiper swiper-backface-hidden">
+              <div class="swiper-wrapper" id="swiper-wrapper-2b9bbd5861ad4278" aria-live="polite">
+                  <div class="swiper-slide" role="group" aria-label="1 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/haustuer/kunststoff" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-16.jpg" alt="Kunststoff-Haustüren">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Kunststoff-Haustüren</h3>
+                                  <p class="homepage-product__text">Kosteneffizient, langlebig und pflegeleicht</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="2 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/haustuer/aluminium" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-17.jpg" alt="Aluminium-Haustüren">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Aluminium-Haustüren</h3>
+                                  <p class="homepage-product__text">Hochwertige Designlösungen mit maximaler Stabilität und Sicherheit.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="3 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/haustuer/holz" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-18.jpg" alt="Holz-Haustüren">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Holz-Haustüren</h3>
+                                  <p class="homepage-product__text">Natürliche Eleganz kombiniert mit ausgezeichneter Wärmedämmung.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="4 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/haustuer/holz-alu" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-19.jpg" alt="Holz-Alu-Türen">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Holz-Alu-Türen</h3>
+                                  <p class="homepage-product__text">Innen warmes Holz, außen robustes Aluminium.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="5 / 5">
+                      <section class="homepage-product">
+                          <a href="https://deutscher-fenstershop.de/stahltueren" class="homepage-product__link">
+                              <figure class="homepage-product__image">
+                                  <img src="https://deutscher-fenstershop.de/grafik/home/homepage-product-20.jpg" alt="Stahltüren">
+                              </figure>
+                              <div class="homepage-product__content">
+                                  <h3 class="homepage-product__title">Stahltüren</h3>
+                                  <p class="homepage-product__text">Besonders widerstandsfähig und sicher.</p>
+                                  <span class="homepage-product__more">Jetzt entdecken</span>
+                              </div>
+                          </a>
+                      </section>
+                  </div>
+              </div>
+              <div class="swiper-button-next swiper-button-lock" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-2b9bbd5861ad4278" aria-disabled="true"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+              <div class="swiper-pagination swiper-pagination-lock"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span></div>
+              <div class="swiper-button-prev swiper-button-lock" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-2b9bbd5861ad4278" aria-disabled="true"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-categories">
+      <div class="container">
+          <header class="homepage-categories__header">
+              <h2 class="homepage-categories__heading">Weitere Produkte</h2>
+              <p class="homepage-categories__subheading">Innovative Lösungen für Haus und Fassade – von Garagentoren und Sonnenschutzsystemen bis hin zu Outdoor- und Smart-Home-Technik, entwickelt für Sicherheit, Komfort und maximale Energieeffizienz.</p>
+          </header>
+          <div class="homepage-categories__grid">
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/rollladen">Rollladenarten</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/aufsatzrollladen">Aufsatzrollladen</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/vorbaurollladen">Vorbaurollladen</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/rollladen-mit-eps-kasten">Rollladen mit EPS Kasten</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/kaufen/pergola">Pergolen</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/rollladen-farben">Rollladen-Panzerfarben</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/rollladenkasten">Rollladenkasten Arten &amp; Formen</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/konfigurator/rolladen">Rolllädenkonfigurator</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/raffstore">Raffstore</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/konfigurator/sektionaltor">Sektionaltor-Konfigurator</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/krispol-sektionaltor-isolierung">Krispol Sektionaltore</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/sektionaltore">Sektionaltore Übersicht</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/sektionaltor-mit-schlupftuer">Sektionaltor mit Schlupftür</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/sektionaltore-farben">Sektionaltor Farben und Dekore</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/drutex-sektionaltore">Drutex Sektionaltore</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/sektionaltor-antrieb">Sektionaltorantriebe</a>
+              <a class="homepage-categories__card" href="https://deutscher-fenstershop.de/carport">Aluminium Carports</a>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-trust">
+      <div class="container">
+          <div class="homepage-trust__header">
+              <h2 class="homepage-trust__heading">Vertrauenswürdig und zertifiziert</h2>
+              <p class="homepage-trust__subheading">Geprüfte Qualität, sichere Abwicklung, zertifizierte Partner – damit Sie sorglos bestellen können.</p>
+          </div>
+          <div class="homepage-trust__grid">
+              <div class="homepage-trust-card">
+                  <figure class="homepage-trust-card__logo"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-authorized-partner.png" width="120" height="120" alt="Authorized Partner"></figure>
+                  <div class="homepage-trust-card__content">
+                      <h3 class="homepage-trust-card__title">Authorized Partner</h3>
+                      <ul class="homepage-trust-card__list">
+                          <li>Originalität bestätigt</li>
+                          <li>Autorisierter Händler</li>
+                          <li>Sicher einkaufen</li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="homepage-trust-card">
+                  <figure class="homepage-trust-card__logo"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-trusted-shops.png" width="120" height="120" alt="Trusted Shops"></figure>
+                  <div class="homepage-trust-card__content">
+                      <h3 class="homepage-trust-card__title">Trusted Shops</h3>
+                      <ul class="homepage-trust-card__list">
+                          <li>Geprüfte Identität</li>
+                          <li>Verschlüsselte Datenübertragung</li>
+                          <li>Verständlicher Bestellvorgang</li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="homepage-trust-card">
+                  <figure class="homepage-trust-card__logo"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-vff.png" width="180" height="120" alt="Verband für Fenster und Fassade"></figure>
+                  <div class="homepage-trust-card__content">
+                      <h3 class="homepage-trust-card__title">Verband für Fenster und Fassade</h3>
+                      <ul class="homepage-trust-card__list">
+                          <li>Rechtssicher und professionell tätig</li>
+                          <li>Hohe Technikstandards</li>
+                          <li>Anerkannte Fachkompetenz</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <!-- =========================================================
+       CMS PLACEHOLDER: ELFSIGHT BANNER
+       Paste the Elfsight embed code for the banner here later.
+       Example:
+       <script src="https://elfsightcdn.com/platform.js" async></script>
+       <div class="elfsight-app-..."></div>
+       ========================================================= -->
+  
+  <section class="homepage-steps">
+      <div class="container">
+          <div class="homepage-steps__header">
+              <h2 class="homepage-steps__heading">Ihr Fenster in 5 einfachen Schritten</h2>
+              <p class="homepage-steps__subheading">Mit unserem Online-Konfigurator gestalten Sie Ihr Wunschfenster ganz einfach selbst</p>
+          </div>
+          <ol class="homepage-steps__list">
+              <li>
+                  <img class="homepage-steps__list-number" src="https://deutscher-fenstershop.de/grafik/home/homepage-1.svg" width="92" height="65" alt="01">
+                  <h3 class="homepage-steps__list-title">Fenstertyp wählen</h3>
+                  <p>Wählen Sie zwischen Dreh-Kipp, Festverglasung, Schiebefenster oder Sonderformen – unser Konfigurator führt Sie Schritt für Schritt.</p>
+              </li>
+              <li>
+                  <img class="homepage-steps__list-number" src="https://deutscher-fenstershop.de/grafik/home/homepage-2.svg" width="108" height="65" alt="02">
+                  <h3 class="homepage-steps__list-title">Maße eingeben</h3>
+                  <p>Geben Sie Breite und Höhe Ihres Fensters in Millimetern ein. Unsere Anleitung hilft Ihnen beim richtigen Ausmessen.</p>
+              </li>
+              <li>
+                  <img class="homepage-steps__list-number" src="https://deutscher-fenstershop.de/grafik/home/homepage-3.svg" width="110" height="65" alt="03">
+                  <h3 class="homepage-steps__list-title">Material &amp; Farbe</h3>
+                  <p>Wählen Sie Ihr Wunschmaterial – Kunststoff, Aluminium oder Holz – und die passende Farbe aus unserem umfangreichen Dekorsortiment.</p>
+              </li>
+              <li>
+                  <img class="homepage-steps__list-number" src="https://deutscher-fenstershop.de/grafik/home/homepage-4.svg" width="113" height="65" alt="04">
+                  <h3 class="homepage-steps__list-title">Ausstattung</h3>
+                  <p>Konfigurieren Sie Verglasung, Beschläge, Griffe und optionale Extras wie Rollläden oder Insektenschutz ganz nach Bedarf.</p>
+              </li>
+              <li>
+                  <img class="homepage-steps__list-number" src="https://deutscher-fenstershop.de/grafik/home/homepage-5.svg" width="110" height="65" alt="05">
+                  <h3 class="homepage-steps__list-title">Angebot erhalten</h3>
+                  <p>Ihr individuelles Angebot wird sofort berechnet und angezeigt. Mit einem Klick direkt bestellen oder unverbindlich anfragen.</p>
+              </li>
+          </ol>
+          <div class="homepage-steps__footer">
+              <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="homepage-btn">Jetzt Konfigurator starten</a>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-section homepage-section--reverse">
+      <div class="container">
+          <figure class="homepage-section__media homepage-section__media--video">
+              <div class="homepage-video-wrap" id="homepage-konfigurator-video" data-youtube-id="kppvE34x9qo">
+                  <img class="homepage-video-thumb" src="https://img.youtube.com/vi/kppvE34x9qo/maxresdefault.jpg" alt="Fensterkonfigurator Erklärvideo">
+                  <button type="button" class="homepage-section__play homepage-section__play--blue" aria-label="Video abspielen">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+                  </button>
+              </div>
+          </figure>
+          <div class="homepage-section__content">
+              <div class="homepage-section__space">
+                  <h2 class="homepage-section__heading">So funktioniert unser Fensterkonfigurator</h2>
+                  <p>Erfahren Sie in unserem Erklärvideo, wie Sie in wenigen Minuten Ihr perfektes Fenster konfigurieren und direkt bestellen können.</p>
+                  <ul class="homepage-section__features">
+                      <li>
+                          <strong>Einfache Konfiguration</strong>
+                          Intuitive Bedienung ohne Vorkenntnisse
+                      </li>
+                      <li>
+                          <strong>Sofortiger Preis</strong>
+                          Transparente Preisberechnung in Echtzeit
+                      </li>
+                      <li>
+                          <strong>Schnelle Lieferung</strong>
+                          Schnelle Lieferung – Produktion und Versand in 3–4 Wochen
+                      </li>
+                  </ul>
+                  <a href="https://deutscher-fenstershop.de/konfigurator/fenster" class="homepage-btn">Jetzt Konfigurator starten</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <div class="homepage-drutex">
+      <div class="container">
+          <div class="homepage-drutex__inner">
+              <div class="homepage-drutex__content">
+                  <img class="homepage-drutex__logo" src="https://deutscher-fenstershop.de/grafik/home/homepage-logo.png" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-logo.png 1x, https://deutscher-fenstershop.de/grafik/home/homepage-logo@2x.png 2x, https://deutscher-fenstershop.de/grafik/home/homepage-logo@3x.png 3x" width="196" height="59" alt="Drutex">
+                  <p>Als offizieller Partner des FC Bayern München steht DRUTEX für höchste Qualitätsstandards und innovative Fenstertechnologie. Unsere Premium-Fenster vereinen herausragende Energieeffizienz, exzellente Schalldämmung und modernes Design in perfekter Harmonie.</p>
+                  <div class="homepage-drutex__stats">
+                      <span><strong>30%</strong> Bessere <br>Wärmedämmung</span>
+                      <span><strong>40+</strong> Jahre <br>Erfahrung</span>
+                  </div>
+                  <a href="https://deutscher-fenstershop.de/drutex" class="homepage-btn">DRUTEX Produkte entdecken</a>
+              </div>
+              <figure class="homepage-drutex__image"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-picture.png" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-picture.png 1x, https://deutscher-fenstershop.de/grafik/home/homepage-picture@2x.png 2x, https://deutscher-fenstershop.de/grafik/home/homepage-picture@3x.png 3x" width="696" height="366" alt="Drutex | Official Partner of FC Bayern"></figure>
+          </div>
+      </div>
+  </div>
+  
+  <section class="homepage-brands">
+      <div class="container">
+          <div class="homepage-brands__header">
+              <h2 class="homepage-brands__heading">Unsere Partnerhersteller</h2>
+              <p class="homepage-brands__subheading">Wir arbeiten mit den besten Marken der Branche zusammen</p>
+          </div>
+          <div class="homepage-brands__catalog">
+              <img src="https://deutscher-fenstershop.de/grafik/home/homepage-drutex.png" alt="Drutex">
+              <img src="https://deutscher-fenstershop.de/grafik/home/homepage-aluplast.png" alt="aluplast">
+              <img src="https://deutscher-fenstershop.de/grafik/home/homepage-schuco.png" alt="Schüco">
+              <img src="https://deutscher-fenstershop.de/grafik/home/homepage-veka.png" alt="VEKA">
+              <img src="https://deutscher-fenstershop.de/grafik/home/homepage-kommerling.png" alt="Kömmerling">
+              <img src="https://deutscher-fenstershop.de/grafik/home/homepage-gealan.png" alt="GEALAN">
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-section homepage-section--dark">
+      <div class="container">
+          <figure class="homepage-section__media">
+              <img src="https://deutscher-fenstershop.de/grafik/home/homepage-qualitat.jpg" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-qualitat.jpg 1x, https://deutscher-fenstershop.de/grafik/home/homepage-qualitat@2x.jpg 2x, https://deutscher-fenstershop.de/grafik/home/homepage-qualitat@3x.jpg 3x" alt="Fensterkonfigurator">
+          </figure>
+          <div class="homepage-section__content">
+              <div class="homepage-section__space">
+                  <h2 class="homepage-section__heading">Qualität von Profis. Direkt vom Fachbetrieb.</h2>
+                  <p>Der Deutsche Fenstershop ist ein spezialisierter Onlineanbieter für maßgefertigte Fenster und Türen aus Kunststoff, Holz und Aluminium bekannter Marken wie Drutex, Aluplast, Schüco, Kömmerling oder Salamander. Das Unternehmen bietet privaten Bauherren, Sanierern und B2B-Kunden eine intuitive Plattform, um Maße, Verglasung, Farbe und Ausstattung individuell zu konfigurieren.</p>
+                  <p>Das Sortiment umfasst Fenster in Sonderformen, Haustüren, Schiebetüren, Garagentore und Zubehör, wie Rollläden und Fensterbänke. Neben technischer Fachberatung und verbindlichen Lieferzeiten punktet der Anbieter durch die Vermittlung professioneller Montageservices.</p>
+                  <p>Von der digitalen Planung bis zur Lieferung und dem Einbau begleitet der Deutsche Fenstershop Projekte zuverlässig als Partner für Neubau und Sanierung.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-referenz">
+      <div class="container">
+          <div class="homepage-referenz__header">
+              <h2 class="homepage-referenz__heading">Referenzprojekte</h2>
+              <p class="homepage-referenz__subheading">Echte Projekte, echte Ergebnisse – sehen Sie, was unsere Kunden mit dem Deutschen Fenstershop realisiert haben.</p>
+          </div>
+          <div class="homepage-referenz__grid">
+              <section class="homepage-referenz-card">
+                  <a href="https://deutscher-fenstershop.de/referenzen" class="homepage-referenz-card__link">
+                      <figure class="homepage-referenz-card__image"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-referenz-1.jpg" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-referenz-1.jpg 1x, https://deutscher-fenstershop.de/grafik/home/homepage-referenz-1@2x.jpg 2x, https://deutscher-fenstershop.de/grafik/home/homepage-referenz-1@3x.jpg 3x" width="437" height="280" alt=""></figure>
+                      <div class="homepage-referenz-card__content">
+                          <h3 class="homepage-referenz-card__title">Aluminium Fenster Aliplast GENESIS 75</h3>
+                          <p class="homepage-referenz-card__text">Austausch von Küchenfenstern mit Aluminiumfenstern des Systems Aliplast GENESIS 75. Perfekte Passform und sehr gute Unterstützung während des gesamten Bestellprozesses.</p>
+                      </div>
+                  </a>
+              </section>
+              <section class="homepage-referenz-card">
+                  <a href="https://deutscher-fenstershop.de/referenzen" class="homepage-referenz-card__link">
+                      <figure class="homepage-referenz-card__image"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-2.jpg" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-2.jpg 1x, https://deutscher-fenstershop.de/grafik/home/homepage-2@2x.jpg 2x, https://deutscher-fenstershop.de/grafik/home/homepage-2@3x.jpg 3x" width="437" height="280" alt=""></figure>
+                      <div class="homepage-referenz-card__content">
+                          <h3 class="homepage-referenz-card__title">Aluminiumsystem nach Montage</h3>
+                          <p class="homepage-referenz-card__text">Wintergarten Verglasung Aluminium System Aluprof erfolgreich montiert</p>
+                      </div>
+                  </a>
+              </section>
+              <section class="homepage-referenz-card">
+                  <a href="https://deutscher-fenstershop.de/referenzen" class="homepage-referenz-card__link">
+                      <figure class="homepage-referenz-card__image"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-3.jpg" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-3.jpg 1x, https://deutscher-fenstershop.de/grafik/home/homepage-3@2x.jpg 2x, https://deutscher-fenstershop.de/grafik/home/homepage-3@3x.jpg 3x" width="437" height="280" alt=""></figure>
+                      <div class="homepage-referenz-card__content">
+                          <h3 class="homepage-referenz-card__title">Giebelfenster mit Sprossen</h3>
+                          <p class="homepage-referenz-card__text">Fenster von Drutex Iglo 5 Classic mit schokoladenbraunem Dekor und goldenen Sprossen in 8 mm</p>
+                      </div>
+                  </a>
+              </section>
+              <section class="homepage-referenz-card">
+                  <a href="https://deutscher-fenstershop.de/referenzen" class="homepage-referenz-card__link">
+                      <figure class="homepage-referenz-card__image"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-4.jpg" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-4.jpg 1x, https://deutscher-fenstershop.de/grafik/home/homepage-4@2x.jpg 2x, https://deutscher-fenstershop.de/grafik/home/homepage-4@3x.jpg 3x" width="437" height="280" alt=""></figure>
+                      <div class="homepage-referenz-card__content">
+                          <h3 class="homepage-referenz-card__title">Palette mit Gealan Fenster</h3>
+                          <p class="homepage-referenz-card__text">"Alles Perfekt, von der Angebotserstellung über die Fertigung bis zur Lieferung. Lieferdauer war mit 4 Wochen kürzer als angegeben. Freundlicher und fachlich guter Telefonkontakt. Auch die Preise sind angemessen. Ich werde noch öfter bestellen."</p>
+                      </div>
+                  </a>
+              </section>
+              <section class="homepage-referenz-card">
+                  <a href="https://deutscher-fenstershop.de/referenzen" class="homepage-referenz-card__link">
+                      <figure class="homepage-referenz-card__image"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-5.jpg" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-5.jpg 1x, https://deutscher-fenstershop.de/grafik/home/homepage-5@2x.jpg 2x, https://deutscher-fenstershop.de/grafik/home/homepage-5@3x.jpg 3x" width="437" height="280" alt=""></figure>
+                      <div class="homepage-referenz-card__content">
+                          <h3 class="homepage-referenz-card__title">Kunde von Gealan Kubus</h3>
+                          <p class="homepage-referenz-card__text">"Alles Top! Fensterrahmen sind ausgeblendet und unsichtbar. Gealan Kubus nach Montage im Anschlag"</p>
+                      </div>
+                  </a>
+              </section>
+              <section class="homepage-referenz-card">
+                  <a href="https://deutscher-fenstershop.de/referenzen" class="homepage-referenz-card__link">
+                      <figure class="homepage-referenz-card__image"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-6.jpg" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-6.jpg 1x, https://deutscher-fenstershop.de/grafik/home/homepage-6@2x.jpg 2x, https://deutscher-fenstershop.de/grafik/home/homepage-6@3x.jpg 3x" width="437" height="280" alt=""></figure>
+                      <div class="homepage-referenz-card__content">
+                          <h3 class="homepage-referenz-card__title">Kunststofffenster</h3>
+                          <p class="homepage-referenz-card__text">Drutex Fenster ohne Mittelpfosten (Stulp) inkl. Aufsatzrollladen nach der Montage</p>
+                      </div>
+                  </a>
+              </section>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-gallery">
+      <div class="container">
+          <div class="homepage-gallery__space">
+              <div class="homepage-gallery__content">
+                  <div class="homepage-gallery__content-inner">
+                      <h2 class="homepage-gallery__heading">Im Einsatz für Fenster und Türen nach Maß</h2>
+                      <p class="homepage-gallery__subheading">Unsere Galerie zeigt echte Einsatzbilder aus dem Alltag von Deutscher-Fenstershop – vom Showroom bis zu Kundenfahrten in den Bergen bei Sommer- und Winterwetter. So erhalten Sie einen authentischen Eindruck von Beratung, Planung und Lieferung hochwertiger Fenster und Türen nach Maß.</p>
+                  </div>
+              </div>
+              <div class="homepage-gallery__carousel">
+                  <div class="homepage-gallery__swiper">
+                      <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                          <div class="swiper-wrapper" id="swiper-wrapper-ee9ca925faab3931" aria-live="polite">
+                              <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 5" data-swiper-slide-index="0" style="width: 1040px;">
+                                  <figure class="homepage-gallery__image">
+                                      <img src="https://deutscher-fenstershop.de/grafik/home/homepage-3.jpeg" alt="">
+                                  </figure>
+                              </div>
+                              <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 5" data-swiper-slide-index="1" style="width: 1040px;">
+                                  <figure class="homepage-gallery__image">
+                                      <img src="https://deutscher-fenstershop.de/grafik/home/homepage-10.jpeg" alt="">
+                                  </figure>
+                              </div>
+                              <div class="swiper-slide" role="group" aria-label="3 / 5" data-swiper-slide-index="2" style="width: 1040px;">
+                                  <figure class="homepage-gallery__image">
+                                      <img src="https://deutscher-fenstershop.de/grafik/home/homepage-16.jpeg" alt="">
+                                  </figure>
+                              </div>
+                              <div class="swiper-slide" role="group" aria-label="4 / 5" data-swiper-slide-index="3" style="width: 1040px;">
+                                  <figure class="homepage-gallery__image">
+                                      <img src="https://deutscher-fenstershop.de/grafik/home/homepage-17.jpeg" alt="">
+                                  </figure>
+                              </div>
+                              <div class="swiper-slide" role="group" aria-label="5 / 5" data-swiper-slide-index="4" style="width: 1040px;">
+                                  <figure class="homepage-gallery__image">
+                                      <img src="https://deutscher-fenstershop.de/grafik/home/homepage-18.jpeg" alt="">
+                                  </figure>
+                              </div>
+                          </div>
+  
+                          <div class="homepage-gallery__nav">
+                              <div class="swiper-button-prev homepage-gallery__nav-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-ee9ca925faab3931"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+                              <div class="swiper-pagination homepage-gallery__nav-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+                              <div class="swiper-button-next homepage-gallery__nav-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-ee9ca925faab3931"><svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path></svg></div>
+                          </div>
+                      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="homepage-delivery">
+      <div class="container">
+          <div class="homepage-delivery__header">
+              <h2 class="homepage-delivery__heading">Schnelle Lieferung deutschlandweit</h2>
+              <p class="homepage-delivery__subheading">Wir liefern Ihre maßgefertigten Fenster und Türen zuverlässig und termingerecht</p>
+          </div>
+          <div class="homepage-delivery__features">
+              <div class="homepage-delivery__features-card">
+                  <img class="homepage-delivery__features-icon" src="https://deutscher-fenstershop.de/grafik/home/homepage-calendar-check.svg" width="56" height="56" alt="Calendar Check">
+                  <h3 class="homepage-delivery__features-title">3-4 Wochen</h3>
+                  <p>Standard-Lieferzeit<br>Für die meisten Fenster und Türen</p>
+              </div>
+              <div class="homepage-delivery__features-card">
+                  <img class="homepage-delivery__features-icon" src="https://deutscher-fenstershop.de/grafik/home/homepage-delivery-truck.svg" width="56" height="56" alt="Delivery Truck">
+                  <h3 class="homepage-delivery__features-title">Express möglich</h3>
+                  <p>Eilbestellung verfügbar<br>Für dringende Projekte</p>
+              </div>
+              <div class="homepage-delivery__features-card">
+                  <img class="homepage-delivery__features-icon" src="https://deutscher-fenstershop.de/grafik/home/homepage-delivery-truck.svg" width="56" height="56" alt="Delivery Truck">
+                  <h3 class="homepage-delivery__features-title">Kostenlos</h3>
+                  <p>Versandkostenfrei<br>ab 10 bestellten Elementen</p>
+              </div>
+          </div>
+          <!-- <section class="homepage-delivery__cta">
+              <div class="homepage-delivery__cta-content">
+                  <h3 class="homepage-delivery__cta-title">Montageservice Verfügbar</h3>
+                  <p>Auf Wunsch übernehmen unsere erfahrenen Fachpartner die professionelle Montage Ihrer neuen Fenster und Türen. Kontaktieren Sie uns für ein individuelles Angebot.</p>
+                  <a href="https://deutscher-fenstershop.de/montagepartner" class="homepage-btn homepage-btn--blue">Montage anfragen</a>
+              </div>
+              <div class="homepage-delivery__cta-image"><img src="https://deutscher-fenstershop.de/grafik/home/homepage-cta.jpg" srcset="https://deutscher-fenstershop.de/grafik/home/homepage-cta.jpg 1x, https://deutscher-fenstershop.de/grafik/home/homepage-cta@2x.jpg 2x, https://deutscher-fenstershop.de/grafik/home/homepage-cta@3x.jpg 3x" width="438" height="262" alt=""></div>
+          </section> -->
+      </div>
+  </section>
+  
+  
+  <section class="homepage-testimonials">
+      <div class="container">
+          <!-- Elfsight Google Reviews | Google Bewertungen -->
+          <script src="https://elfsightcdn.com/platform.js" async=""></script>
+          <div class="elfsight-app-ad1695af-f465-4748-b92c-afa386f5de40" data-elfsight-app-lazy="" data-miwrid="2f7be011-2185-4622-ba62-620dbcca3cf6"><div class="EmbedRoot__Root-sc-67f2186e-0 cqAxeQ es-embed-root eapps-google-reviews-ad1695af-f465-4748-b92c-afa386f5de40-custom-css-root" style="max-width: 1280px;"><div class="Main__Container-sc-a5e5d75f-0 hBUGyh es-main-container"><div class="WidgetBackground__Container-sc-386b5057-0 jFNRRy es-widget-background-container WidgetBackground__StyledWidgetBackground-sc-b6fb78c-0 iltOVH es-background-container" style="border-radius: 0px;"><div class="WidgetBackground__Wrapper-sc-386b5057-1 dIlOny es-widget-background-wrapper" style="padding: 0px;"><div class="Background__Container-sc-fd94690c-0 iRfhKy es-background-container" style="border-radius: 0px;"><div class="Background__Base-sc-fd94690c-1 kinpGA es-background-base" style="display: block; background-color: transparent;"></div><div class="Background__Overlay-sc-fd94690c-2 jtZZdl es-background-overlay" style="display: block; background-color: rgba(255, 255, 255, 0);"></div></div><div class="WidgetBackground__Content-sc-386b5057-2 cMTovS es-widget-background-content WidgetBackground__ContentContainer-sc"><div class="Main__Content-sc-a5e5d75f-1 fZvkTJ es-main-content"><div class="WidgetTitle__Container-sc-9c92769d-0 lfCQiA es-widget-title-container"><div class="WidgetTitle__Container-sc-c581efe-0 IxlKD es-widget-title"><div class="WidgetTitle__Inner-sc-c581efe-1 jdWHYA"><div class="WidgetTitle__Header-sc-c581efe-2 jfNaXc">Das sagen unsere Kunden</div><div class="WidgetTitle__Caption-sc-c581efe-3 fqUHWQ"><div>Über 250 zufriedene Kunden haben uns bereits bewertet</div></div></div></div></div><div class="HeaderComponent__Top-sc-82145d0b-2 dvexJb es-header-component-top"><div class="HeaderContainer__Inner-sc-4da6b4d0-0 bZQnmy es-header-container HeaderComponent__StyledHeader-sc-82145d0b-0 hMUqhT"><div class="HeaderInfoContainer__Info-sc-eae7c90d-0 jCgCoq es-header-info HeaderStyle1__Info-sc-8e169032-0 doAQna"><div class="HeaderHeading__Container-sc-ee189375-0 itrBPw es-header-heading-container"><div class="Icon__IconContainer-sc-7af45730-0 fjNnUn es-source-image HeadingSourceImage__StyledSourceLogo-sc-6d2488c0-1 Ihuyz es-header-heading-logo es-google-logo"><div><div class="Skeleton__StyledSkeleton-sc-78719e48-0 dDFQja es-skeleton-loader"></div><div><div data-src="https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg" src=""></div></div></div></div><div class="HeaderHeading__Text-sc-ee189375-1 gfAgMN es-header-heading-text" style="text-transform: capitalize;">Bewertungen</div></div></div></div></div><div class="Loader__Container-sc-5ff6e8e0-1 bgzEgp Carousel__StyledLoader-sc-568197e-0 tRkRJ"><div class="Loader__Spinner-sc-5ff6e8e0-0 jskpWn"></div></div></div></div></div></div></div></div></div>
+      </div>
+  </section>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+  
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          // #region agent log
+          (function () {
+              var grid = document.querySelector('.homepage-referenz__grid');
+              var firstCard = document.querySelector('.homepage-referenz__grid .homepage-referenz-card');
+              var secondCard = document.querySelectorAll('.homepage-referenz__grid .homepage-referenz-card')[1];
+              if (!grid || !firstCard) {
+                  fetch('http://127.0.0.1:7737/ingest/bad57958-36c9-4ce5-91d0-4fa4adb8ec22',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'07821d'},body:JSON.stringify({sessionId:'07821d',runId:'referenz-columns-pre-fix',hypothesisId:'R1_R2_R3_R4_R5',location:'homepage-handover.html:referenz-grid',message:'referenz grid/card missing',data:{viewportWidth:window.innerWidth},timestamp:Date.now()})}).catch(()=>{});
+                  return;
+              }
+
+              var gcs = getComputedStyle(grid);
+              var ccs = getComputedStyle(firstCard);
+              var gridRect = grid.getBoundingClientRect();
+              var cardRect = firstCard.getBoundingClientRect();
+              var secondRect = secondCard ? secondCard.getBoundingClientRect() : null;
+
+              fetch('http://127.0.0.1:7737/ingest/bad57958-36c9-4ce5-91d0-4fa4adb8ec22',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'07821d'},body:JSON.stringify({sessionId:'07821d',runId:'referenz-columns-pre-fix',hypothesisId:'R1_R2_R3_R4_R5',location:'homepage-handover.html:referenz-grid',message:'referenz mobile geometry',data:{viewportWidth:window.innerWidth,gridWidth:gridRect.width,gridOverflowX:gcs.overflowX,gridGap:gcs.columnGap||gcs.gap,gridPadding:gcs.padding,gridMargin:gcs.margin,cardWidth:cardRect.width,cardFlex:ccs.flex,cardBasis:ccs.flexBasis,cardMaxWidth:ccs.maxWidth,secondCardLeft:secondRect?secondRect.left:null,firstCardRight:cardRect.right},timestamp:Date.now()})}).catch(()=>{});
+          })();
+          // #endregion
+
+          // #region agent log
+          (function () {
+              var heroContainer = document.querySelector('.homepage-hero .container');
+              var heroSection = document.querySelector('.homepage-hero');
+              if (!heroContainer) {
+                  fetch('http://127.0.0.1:7737/ingest/bad57958-36c9-4ce5-91d0-4fa4adb8ec22',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'07821d'},body:JSON.stringify({sessionId:'07821d',runId:'hero-padding-pre-fix',hypothesisId:'H1_H2_H3_H4',location:'homepage-handover.html:hero-padding',message:'hero container not found',data:{viewportWidth:window.innerWidth},timestamp:Date.now()})}).catch(()=>{});
+                  return;
+              }
+              var cs = getComputedStyle(heroContainer);
+              var hs = heroSection ? getComputedStyle(heroSection) : null;
+              var rect = heroContainer.getBoundingClientRect();
+              fetch('http://127.0.0.1:7737/ingest/bad57958-36c9-4ce5-91d0-4fa4adb8ec22',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'07821d'},body:JSON.stringify({sessionId:'07821d',runId:'hero-padding-pre-fix',hypothesisId:'H1_H2_H3_H4',location:'homepage-handover.html:hero-padding',message:'hero container computed styles',data:{viewportWidth:window.innerWidth,paddingLeft:cs.paddingLeft,paddingRight:cs.paddingRight,containerWidth:cs.width,containerRectLeft:rect.left,containerRectRight:rect.right,heroPaddingLeft:hs?hs.paddingLeft:null,heroPaddingRight:hs?hs.paddingRight:null},timestamp:Date.now()})}).catch(()=>{});
+          })();
+          // #endregion
+
+          (function () {
+              var videoWrap = document.getElementById('homepage-konfigurator-video');
+              if (videoWrap) {
+                  var youtubeId = videoWrap.getAttribute('data-youtube-id');
+                  function playVideo() {
+                      var iframe = document.createElement('iframe');
+                      iframe.src = 'https://www.youtube.com/embed/' + youtubeId + '?autoplay=1';
+                      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                      iframe.setAttribute('allowfullscreen', '');
+                      videoWrap.innerHTML = '';
+                      videoWrap.appendChild(iframe);
+                  }
+                  videoWrap.addEventListener('click', playVideo);
+              }
+          })();
+  
+          (function () {
+              const gallery = document.querySelector('.homepage-gallery__swiper .swiper');
+              if (!gallery || typeof Swiper === 'undefined') return;
+
+              // Keep gallery initialization idempotent in CMS context.
+              if (gallery.swiper) return;
+
+              // Sanitize pasted runtime Swiper state/classes before fresh init.
+              gallery.classList.remove('swiper-initialized', 'swiper-horizontal', 'swiper-backface-hidden');
+              gallery.removeAttribute('style');
+
+              var preWrapper = gallery.querySelector('.swiper-wrapper');
+              if (preWrapper) {
+                  preWrapper.removeAttribute('style');
+                  preWrapper.removeAttribute('id');
+                  preWrapper.removeAttribute('aria-live');
+              }
+
+              gallery.querySelectorAll('.swiper-slide').forEach(function (slide) {
+                  slide.classList.remove('swiper-slide-active', 'swiper-slide-next', 'swiper-slide-prev');
+                  slide.removeAttribute('style');
+                  slide.removeAttribute('aria-label');
+                  slide.removeAttribute('role');
+                  slide.removeAttribute('data-swiper-slide-index');
+              });
+
+              new Swiper(gallery, {
+                  loop: true,
+                  slidesPerView: 1,
+                  spaceBetween: 0,
+                  navigation: {
+                      nextEl: '.homepage-gallery__nav-next',
+                      prevEl: '.homepage-gallery__nav-prev'
+                  },
+                  pagination: {
+                      el: '.homepage-gallery__nav-pagination',
+                      clickable: true
+                  },
+              });
+          })();
+  
+          (function () {
+              var productCarousels = document.querySelectorAll('.homepage-products__grid.swiper');
+              if (!productCarousels.length || typeof Swiper === 'undefined') return;
+  
+              var mobileQuery = window.matchMedia('(max-width: 767px)');
+              var instances = new Map();
+  
+              function initCarousel(el) {
+                  if (instances.has(el)) return;
+  
+                  var nextEl = el.querySelector('.swiper-button-next');
+                  var prevEl = el.querySelector('.swiper-button-prev');
+                  var paginationEl = el.querySelector('.swiper-pagination');
+  
+                  var instance = new Swiper(el, {
+                      loop: false,
+                      speed: 400,
+                      slidesPerView: 'auto',
+                      watchOverflow: true,
+                      spaceBetween: 8,
+                      navigation: {
+                          nextEl: nextEl,
+                          prevEl: prevEl
+                      },
+                      pagination: {
+                          el: paginationEl,
+                          clickable: true
+                      }
+                  });
+
+                  // #region agent log
+                  var firstSlide = el.querySelector('.swiper-slide');
+                  var secondSlide = el.querySelectorAll('.swiper-slide')[1];
+                  fetch('http://127.0.0.1:7737/ingest/bad57958-36c9-4ce5-91d0-4fa4adb8ec22',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'07821d'},body:JSON.stringify({sessionId:'07821d',runId:'products-card-width-pre-fix',hypothesisId:'P1_P2_P3_P4',location:'homepage-handover.html:products-initCarousel',message:'products carousel immediate geometry',data:{viewportWidth:window.innerWidth,carouselWidth:el.clientWidth,slidesPerView:instance.params.slidesPerView,spaceBetween:instance.params.spaceBetween,firstSlideClientWidth:firstSlide?firstSlide.clientWidth:null,firstSlideInlineWidth:firstSlide&&firstSlide.style?firstSlide.style.width||null:null,secondSlideClientWidth:secondSlide?secondSlide.clientWidth:null},timestamp:Date.now()})}).catch(()=>{});
+                  // #endregion
+
+                  // #region agent log
+                  requestAnimationFrame(function () {
+                      var firstSlideRaf = el.querySelector('.swiper-slide');
+                      var secondSlideRaf = el.querySelectorAll('.swiper-slide')[1];
+                      fetch('http://127.0.0.1:7737/ingest/bad57958-36c9-4ce5-91d0-4fa4adb8ec22',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'07821d'},body:JSON.stringify({sessionId:'07821d',runId:'products-card-width-pre-fix',hypothesisId:'P1_P2_P3_P4',location:'homepage-handover.html:products-initCarousel',message:'products carousel rAF geometry',data:{viewportWidth:window.innerWidth,carouselWidth:el.clientWidth,wrapperScrollWidth:(el.querySelector('.swiper-wrapper')||{}).scrollWidth||null,firstSlideClientWidth:firstSlideRaf?firstSlideRaf.clientWidth:null,firstSlideInlineWidth:firstSlideRaf&&firstSlideRaf.style?firstSlideRaf.style.width||null:null,secondSlideClientWidth:secondSlideRaf?secondSlideRaf.clientWidth:null},timestamp:Date.now()})}).catch(()=>{});
+                  });
+                  // #endregion
+
+                  // #region agent log
+                  requestAnimationFrame(function () {
+                      var paginationElRaf = el.querySelector('.swiper-pagination');
+                      var slideElRaf = el.querySelector('.swiper-slide');
+                      var paginationRect = paginationElRaf ? paginationElRaf.getBoundingClientRect() : null;
+                      var slideRect = slideElRaf ? slideElRaf.getBoundingClientRect() : null;
+                      fetch('http://127.0.0.1:7737/ingest/bad57958-36c9-4ce5-91d0-4fa4adb8ec22',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'07821d'},body:JSON.stringify({sessionId:'07821d',runId:'products-pagination-overlap-pre-fix',hypothesisId:'P5_P6',location:'homepage-handover.html:products-initCarousel',message:'products pagination overlap geometry',data:{viewportWidth:window.innerWidth,paginationBottomStyle:paginationElRaf?getComputedStyle(paginationElRaf).bottom:null,paginationRect:paginationRect?{top:paginationRect.top,bottom:paginationRect.bottom,height:paginationRect.height}:null,slideRect:slideRect?{top:slideRect.top,bottom:slideRect.bottom,height:slideRect.height}:null,isOverlap:(paginationRect&&slideRect)?paginationRect.top<slideRect.bottom:false},timestamp:Date.now()})}).catch(()=>{});
+                  });
+                  // #endregion
+  
+                  instances.set(el, instance);
+              }
+  
+              function destroyCarousel(el) {
+                  var instance = instances.get(el);
+                  if (!instance) return;
+  
+                  instance.destroy(true, true);
+                  instances.delete(el);
+              }
+  
+              function toggleAll() {
+                  productCarousels.forEach(function (el) {
+                      if (mobileQuery.matches) {
+                          initCarousel(el);
+                      } else {
+                          destroyCarousel(el);
+                      }
+                  });
+              }
+  
+              toggleAll();
+  
+              if (typeof mobileQuery.addEventListener === 'function') {
+                  mobileQuery.addEventListener('change', toggleAll);
+              } else {
+                  mobileQuery.addListener(toggleAll);
+              }
+          })();
+      });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  

@@ -1,0 +1,1561 @@
+<style class="no-parse">
+  .foerderung-page {
+    --homepage-orange: #f47c26;
+    --homepage-orange-hover: #d86818;
+    --homepage-orange-red: #ff6b35;
+    --homepage-darkblue: #003a66;
+    --foerderung-text: #22313f;
+    --foerderung-muted: #5a6872;
+    --foerderung-border: #e6e9ec;
+    --foerderung-bg: #f7f9fb;
+    font-family: "Inter", sans-serif;
+    color: var(--foerderung-text);
+  }
+
+  .foerderung-page section {
+    margin: 56px 0;
+  }
+
+  .foerderung-page .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .homepage-btn {
+    padding: 14px 16px;
+    background: #ff6b35;
+    border-radius: 4px;
+    display: inline-block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    outline: none;
+  }
+
+  .homepage-btn:hover,
+  .homepage-btn:focus {
+    background: #e85a28;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .homepage-btn--blue {
+    background: #003a66;
+  }
+
+  .homepage-btn--blue:hover,
+  .homepage-btn--blue:focus {
+    background: #002b4d;
+  }
+
+  .foerderung-hero {
+    margin-top: 0 !important;
+    background: linear-gradient(120deg, #0a213b 0%, #003a66 65%, #0e3e68 100%);
+    color: #fff;
+    padding: 72px 0;
+  }
+
+  .foerderung-hero__layout {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .foerderung-hero__eyebrow {
+    display: inline-flex;
+    margin-bottom: 14px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.15);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .foerderung-page h1,
+  .foerderung-page h2,
+  .foerderung-page h3,
+  .foerderung-page h4,
+  .foerderung-page h5 {
+    font-weight: 700 !important;
+  }
+
+  .foerderung-hero h1 {
+    margin: 0 0 16px;
+    font-size: 52px;
+    line-height: 1.15;
+  }
+
+  .foerderung-hero p {
+    margin: 0;
+    max-width: 760px;
+    font-size: 20px;
+    line-height: 1.35;
+    color: #f0f5f9;
+  }
+
+  .foerderung-hero__actions {
+    margin-top: 28px;
+  }
+
+  .foerderung-hero__trust {
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 14px;
+    color: #dfebf7;
+  }
+
+  .foerderung-hero__trust li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .foerderung-hero__trust li::before {
+    content: "✓";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ff6b35;
+    flex-shrink: 0;
+    position: relative;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .foerderung-hero__card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 22px;
+  }
+
+  .foerderung-hero__image {
+    margin: 0 0 14px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+  }
+
+  .foerderung-hero__image img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .foerderung-hero__card h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #fff;
+  }
+
+  .foerderung-hero__card p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .foerderung-hero__card strong {
+    color: #fff;
+  }
+
+  .foerderung-toc {
+    margin-top: 24px !important;
+  }
+
+  .foerderung-toc__inner {
+    position: sticky;
+    top: 12px;
+    z-index: 4;
+    background: #fff;
+    border: 1px solid var(--foerderung-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 8px 20px rgba(9, 24, 38, 0.06);
+  }
+
+  .foerderung-toc__inner strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .foerderung-toc__links {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    white-space: nowrap;
+    padding-bottom: 2px;
+  }
+
+  .foerderung-toc__links a {
+    display: inline-block;
+    padding: 7px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--foerderung-border);
+    color: #003a66;
+    font-size: 15px;
+    line-height: 1.2;
+    text-decoration: none;
+    font-weight: 600;
+    background: #f9fbfd;
+  }
+
+  .foerderung-toc__links a:hover,
+  .foerderung-toc__links a:focus {
+    color: #fff;
+    background: #003a66;
+    border-color: #003a66;
+  }
+
+  .foerderung-section h2 {
+    margin: 0 0 16px;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #000;
+  }
+
+  .foerderung-section h3 {
+    margin: 30px 0 10px;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #000;
+  }
+
+  .foerderung-section h4 {
+    margin: 20px 0 10px;
+    font-size: 19px;
+    line-height: 1.3;
+    color: #000;
+  }
+
+  .foerderung-section p {
+    margin: 0 0 14px;
+    max-width: 980px;
+    font-size: 18px;
+    line-height: 1.58;
+    color: var(--foerderung-text);
+  }
+
+  .foerderung-section ul:not(.foerderung-benefit-grid):not(.foerderung-target-list):not(.foerderung-steps-inline),
+  .foerderung-section ol {
+    margin: 0 0 18px;
+    padding-left: 22px;
+    max-width: 980px;
+  }
+
+  .foerderung-section li {
+    margin-bottom: 8px;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .foerderung-muted {
+    color: var(--foerderung-muted);
+  }
+
+  .foerderung-alt {
+    background: var(--foerderung-bg);
+    padding: 56px 0;
+    margin: 56px 0 !important;
+  }
+
+  .foerderung-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .foerderung-card {
+    background: #fff;
+    border: 1px solid var(--foerderung-border);
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 10px 22px rgba(14, 35, 50, 0.05);
+  }
+
+  .foerderung-card h4 {
+    margin-top: 0;
+  }
+
+  .foerderung-callout {
+    background: #fff8f3;
+    border: 1px solid #dfe6ec;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(20, 44, 62, 0.04);
+    padding: 22px;
+    margin: 18px 0;
+  }
+
+  .foerderung-callout h4 {
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .foerderung-callout__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 9px;
+    border-radius: 999px;
+    border: 1px solid #d7e2ea;
+    background: #f3f7fa;
+    color: #4d6578;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .foerderung-callout ul {
+    margin-top: 8px;
+  }
+
+  .foerderung-callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  .foerderung-callout p + p {
+    margin-top: 6px;
+  }
+
+  .foerderung-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 14px 0 22px;
+  }
+
+  .foerderung-topic-card {
+    border: 1px solid var(--foerderung-border);
+    border-radius: 10px;
+    background: #fff;
+    padding: 14px 14px 10px;
+  }
+
+  .foerderung-topic-card h4 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .foerderung-topic-card p {
+    margin: 0 0 8px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .foerderung-kriterium {
+    margin-top: 4px;
+    display: block;
+    color: #3c4e5c;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .foerderung-benefit-grid {
+    list-style: none;
+    margin: 8px 0 16px;
+    margin-left: 0;
+    padding: 0;
+    padding-left: 0;
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 12px;
+  }
+
+  .foerderung-benefit-grid li {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.45;
+    padding: 10px 12px 10px 34px;
+    border: 1px solid var(--foerderung-border);
+    border-radius: 8px;
+    background: #fff;
+    position: relative;
+  }
+
+  .foerderung-benefit-grid li::before {
+    content: "✓";
+    position: absolute;
+    left: 12px;
+    top: 11px;
+    color: #003a66;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .foerderung-benefit-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+    margin: 8px 0 16px;
+  }
+
+  .foerderung-benefit-layout .foerderung-benefit-grid {
+    margin: 0;
+  }
+
+  .foerderung-benefit-image {
+    margin: 0;
+    border: 1px solid var(--foerderung-border);
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+    align-self: start;
+  }
+
+  .foerderung-benefit-image img {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+  }
+
+  .foerderung-inline-note {
+    margin: 12px 0 0;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #dde4ea;
+    background: #f8fafc;
+  }
+
+  .foerderung-inline-note p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .foerderung-inline-note p + p {
+    margin-top: 8px;
+  }
+
+  .foerderung-fact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin: 12px 0 16px;
+  }
+
+  .foerderung-fact-item {
+    border: 1px solid var(--foerderung-border);
+    border-radius: 8px;
+    background: #fff;
+    padding: 12px;
+  }
+
+  .foerderung-fact-item strong {
+    display: block;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    color: #002f53;
+  }
+
+  .foerderung-fact-item span {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #3d4f5c;
+  }
+
+  .foerderung-target-card {
+    border: 1px solid var(--foerderung-border);
+    border-radius: 10px;
+    background: #fff;
+    padding: 14px;
+    margin: 10px 0 14px;
+  }
+
+  .foerderung-target-card h4 {
+    margin: 0 0 8px;
+  }
+
+  .foerderung-target-list {
+    margin: 0;
+    padding-left: 18px;
+    max-width: none;
+  }
+
+  .foerderung-target-list li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .foerderung-steps-inline {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .foerderung-steps-inline li {
+    margin: 0;
+    border: 1px solid var(--foerderung-border);
+    border-radius: 8px;
+    background: #fff;
+    padding: 12px 12px 12px 38px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .foerderung-steps-inline li::before {
+    content: attr(data-step);
+    position: absolute;
+    left: 12px;
+    top: 11px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #eef3f7;
+    color: #003a66;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  .foerderung-table-wrap {
+    margin: 16px 0 20px;
+    border: 1px solid var(--foerderung-border);
+    border-radius: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: #fff;
+  }
+
+  .foerderung-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .foerderung-table th,
+  .foerderung-table td {
+    border-bottom: 1px solid var(--foerderung-border);
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .foerderung-table th {
+    background: #f4f7fa;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .foerderung-table tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .foerderung-table-cards {
+    display: none;
+    padding: 12px;
+    gap: 10px;
+    background: #fff;
+  }
+
+  .foerderung-table-card {
+    border: 1px solid var(--foerderung-border);
+    border-radius: 8px;
+    padding: 12px;
+    background: #fff;
+  }
+
+  .foerderung-table-card h5 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .foerderung-table-card p {
+    margin: 0 0 6px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .foerderung-cta-strip {
+    background: #003a66;
+    border-radius: 12px;
+    padding: 24px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .foerderung-cta-strip p {
+    margin: 0;
+    color: #f1f7fc;
+    max-width: 820px;
+  }
+
+  .foerderung-process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .foerderung-process {
+    background: #fff;
+    border: 1px solid var(--foerderung-border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .foerderung-process h4 {
+    margin: 0 0 10px;
+  }
+
+  .foerderung-process ol {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .foerderung-page section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .foerderung-legal {
+    border-top: 1px solid var(--foerderung-border);
+    padding-top: 18px;
+    color: #6f7b84;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1199px) {
+    .foerderung-hero h1 {
+      font-size: 42px;
+    }
+
+    .foerderung-cards,
+    .foerderung-process-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .foerderung-fact-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+  }
+
+  @media (max-width: 899px) {
+    .foerderung-page section {
+      margin: 40px 0;
+    }
+
+    .foerderung-alt {
+      margin: 40px 0 !important;
+      padding: 40px 0;
+    }
+
+    .foerderung-hero {
+      padding: 46px 0;
+    }
+
+    .foerderung-hero__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .foerderung-hero h1 {
+      font-size: 34px;
+    }
+
+    .foerderung-hero p {
+      font-size: 17px;
+    }
+
+    .foerderung-section h2 {
+      font-size: 30px;
+    }
+
+    .foerderung-section h3 {
+      font-size: 22px;
+    }
+
+    .foerderung-section p {
+      font-size: 16px;
+    }
+
+    .foerderung-cards,
+    .foerderung-process-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .foerderung-topic-grid,
+    .foerderung-benefit-grid,
+    .foerderung-fact-grid,
+    .foerderung-steps-inline {
+      grid-template-columns: 1fr;
+    }
+
+    .foerderung-benefit-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .foerderung-benefit-image img {
+      max-height: 240px;
+    }
+
+    .foerderung-topic-card h4 {
+      font-size: 17px;
+    }
+
+    .foerderung-hero__image img {
+      height: 200px;
+    }
+
+    .foerderung-table-wrap--responsivecards .foerderung-table {
+      display: none;
+    }
+
+    .foerderung-table-wrap--responsivecards .foerderung-table-cards {
+      display: grid;
+    }
+
+    .foerderung-cta-strip {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: 10px;
+      gap: 14px;
+    }
+
+    .foerderung-cta-strip p {
+      font-size: 16px;
+    }
+
+    .foerderung-callout {
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .foerderung-callout h4 {
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 1.3;
+      flex-wrap: wrap;
+    }
+
+    .foerderung-callout__badge {
+      padding: 3px 8px;
+      font-size: 11px;
+    }
+
+    .foerderung-inline-note p {
+      font-size: 14px;
+    }
+
+    .foerderung-target-card {
+      padding: 12px;
+    }
+
+    .foerderung-target-list li {
+      font-size: 14px;
+    }
+
+    .foerderung-section li {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .foerderung-hero {
+      padding: 32px 0;
+    }
+
+    .foerderung-hero h1 {
+      font-size: 26px;
+    }
+
+    .foerderung-hero p {
+      font-size: 15px;
+    }
+
+    .foerderung-hero__trust {
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .foerderung-hero__card {
+      padding: 16px;
+    }
+
+    .foerderung-hero__card h2 {
+      font-size: 17px;
+    }
+
+    .foerderung-hero__card p {
+      font-size: 14px;
+    }
+
+    .foerderung-section h2 {
+      font-size: 24px;
+    }
+
+    .foerderung-section h3 {
+      font-size: 19px;
+    }
+
+    .foerderung-section h4 {
+      font-size: 17px;
+    }
+
+    .foerderung-section p {
+      font-size: 15px;
+    }
+
+    .foerderung-benefit-grid li {
+      font-size: 14px;
+      padding: 8px 10px 8px 30px;
+    }
+
+    .foerderung-benefit-grid li::before {
+      left: 10px;
+      top: 9px;
+    }
+
+    .foerderung-card {
+      padding: 14px;
+    }
+
+    .foerderung-cta-strip {
+      padding: 16px;
+    }
+
+    .foerderung-cta-strip p {
+      font-size: 15px;
+    }
+
+    .homepage-btn {
+      padding: 12px 14px;
+      font-size: 13px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .foerderung-toc__links a {
+      font-size: 13px;
+      padding: 6px 9px;
+    }
+
+    .foerderung-fact-item strong {
+      font-size: 16px;
+    }
+
+    .foerderung-fact-item span {
+      font-size: 13px;
+    }
+
+    .foerderung-process {
+      padding: 14px;
+    }
+
+    .foerderung-process ol {
+      padding-left: 16px;
+    }
+  }
+</style>
+
+<main class="homepage-new foerderung-page">
+  <section class="foerderung-hero">
+    <div class="container">
+      <div class="foerderung-hero__layout">
+        <div>
+          <span class="foerderung-hero__eyebrow">Staatliche Förderung für Modernisierung</span>
+          <h1>Förderung für Fenster, Türen und Garagentore – bis zu 20 % vom Staat</h1>
+          <p>Sparen Sie beim Kauf neuer Fenster, Haustüren und Garagentore mit staatlicher Förderung. Zuschuss, Kredit oder Steuerbonus – prüfen Sie jetzt in 5 Minuten, welche Förderung Ihnen zusteht.</p>
+          <div class="foerderung-hero__actions">
+            <a class="homepage-btn" href="https://förderheld.com/foerdermittelcheck-df/" target="_blank" rel="noopener">Kostenlosen Fördermittel-Check starten</a>
+          </div>
+          <ul class="foerderung-hero__trust">
+            <li>5-Minuten-Check</li>
+            <li>Unverbindlich</li>
+            <li>Digitale Antragshilfe</li>
+          </ul>
+        </div>
+        <aside class="foerderung-hero__card">
+          <figure class="foerderung-hero__image">
+            <img src="https://deutscher-fenstershop.de/grafik/waermeschutz/warme-kante-fenster.jpg" alt="Modernes Haus mit energieeffizienten Fenstern">
+          </figure>
+          <h2>Kurz überblicken, dann direkt handeln</h2>
+          <p><strong>Bis zu 20 % Zuschuss oder Steuerentlastung</strong> sind in vielen Fällen möglich – für energetische Sanierung, Einbruchschutz oder Barrierefreiheit.</p>
+          <p class="foerderung-muted">Auf dieser Seite finden Sie Förderarten, Förderhöhen, technische Voraussetzungen und den richtigen Antragsprozess.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-toc">
+    <div class="container">
+      <div class="foerderung-toc__inner">
+        <strong>Auf dieser Seite:</strong>
+        <nav class="foerderung-toc__links" aria-label="Inhaltsverzeichnis Förderung">
+          <a href="#foerderarten-im-ueberblick">Förderarten</a>
+          <a href="#wie-hoch-ist-die-foerderung">Förderhöhen</a>
+          <a href="#foerderung-fenster">Fenster</a>
+          <a href="#foerderung-tueren">Türen</a>
+          <a href="#foerderung-garagentore">Garagentore</a>
+          <a href="#voraussetzungen">Voraussetzungen</a>
+          <a href="#energieberatung">Energieberatung</a>
+          <a href="#foerderung-richtig-beantragen">Antrag stellen</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-section" id="warum-foerderung-nutzen">
+    <div class="container">
+      <h2>Warum Förderung nutzen?</h2>
+      <p>Fenster, Haustüren, Balkontüren und Terrassentüren gehören zur thermischen Gebäudehülle und sind oft eine Schwachstelle bei der Wärmedämmung. Durch den Einbau oder Austausch moderner Bauelemente senken Sie Heizkosten, steigern den Wohnkomfort und können sich gleichzeitig vom Staat unterstützen lassen.</p>
+      <p>Privatpersonen, Wohnungsbesitzer und Wohnungseigentümergemeinschaften profitieren bei bestimmten Maßnahmen von einer Förderung in Höhe von bis zu 20 % der Investitionssumme – oder mehr. Das gilt nicht nur für den Fenstertausch im Rahmen einer Sanierung, sondern auch für den erstmaligen Einbau.</p>
+      <p>Neben energetischen Maßnahmen werden auch Einbruchschutz (z. B. Garagentore, Rollläden) und Barrierefreiheit (z. B. schwellenlose Türen, automatische Antriebe) gefördert.</p>
+    </div>
+  </section>
+
+  <section class="foerderung-alt foerderung-section" id="foerderarten-im-ueberblick">
+    <div class="container">
+      <h2>Förderarten im Überblick</h2>
+      <p>Seit 2021 gilt die <strong>Bundesförderung für effiziente Gebäude (BEG)</strong>. Sie bündelt die früheren Programme und macht den Zugang zu Fördergeldern einfacher.</p>
+
+      <div class="foerderung-cards">
+        <article class="foerderung-card">
+          <h4>BAFA-Zuschuss</h4>
+          <p>Direkte Zuschüsse für Einzelmaßnahmen an der Gebäudehülle (BEG EM), die nicht zurückgezahlt werden müssen.</p>
+          <p><strong>Wichtig:</strong> Einbindung eines Energieeffizienz-Experten ist Voraussetzung.</p>
+          <p><strong>Sinnvoll für:</strong> konkrete Einzelmaßnahmen wie Fenstertausch in Bestandsgebäuden.</p>
+        </article>
+        <article class="foerderung-card">
+          <h4>KfW-Förderkredit</h4>
+          <p>Zinsgünstige Darlehen mit Tilgungszuschuss, besonders interessant für größere Sanierungen und Einbruchschutz.</p>
+          <p><strong>Relevant:</strong> u. a. BEG WG und Kredit 159.</p>
+          <p><strong>Sinnvoll für:</strong> höhere Investitionen mit Finanzierungsbedarf.</p>
+        </article>
+        <article class="foerderung-card">
+          <h4>Steuerbonus (Finanzamt)</h4>
+          <p>Alternativ zu BAFA/KfW können Sanierungskosten über die Einkommensteuererklärung (§ 35c EStG) geltend gemacht werden.</p>
+          <p><strong>Vorteil:</strong> Kann auch nachträglich beantragt werden.</p>
+          <p><strong>Sinnvoll für:</strong> Eigentümer mit ausreichender steuerlicher Belastung.</p>
+        </article>
+      </div>
+
+      <div class="foerderung-callout">
+        <p><strong>Wichtig:</strong> Für ein und dieselbe Maßnahme darf nur ein Förderprogramm genutzt werden – entweder BAFA, KfW oder Steuerbonus. Unter bestimmten Umständen lassen sich jedoch verschiedene Programme für unterschiedliche Maßnahmen kombinieren.</p>
+        <p>Daneben bieten auch viele Städte und Kommunen eigene regionale Förderprogramme an.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-section" id="wie-hoch-ist-die-foerderung">
+    <div class="container">
+      <h2>Wie hoch ist die Förderung?</h2>
+
+      <h3>Einzelmaßnahme an Bestandsgebäuden</h3>
+      <p>Gilt bei Erneuerung, Ersatz oder erstmaligem Einbau von Fenstern, Außentüren oder Garagentoren zur Erhöhung der Energieeffizienz.</p>
+      <div class="foerderung-table-wrap foerderung-table-wrap--responsivecards">
+        <table class="foerderung-table">
+          <thead>
+            <tr>
+              <th>Förderprogramm</th>
+              <th>Art</th>
+              <th>Höhe</th>
+              <th>Fördergeber</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BEG EM Zuschuss</td>
+              <td>Einmaliger Zuschuss</td>
+              <td>15 % der förderfähigen Ausgaben (min. 2.000 €, max. 30.000 € pro Wohneinheit) – mit iSFP max. 60.000 €</td>
+              <td>BAFA</td>
+            </tr>
+            <tr>
+              <td>BEG WG Kredit 262</td>
+              <td>Darlehen + Tilgungszuschuss</td>
+              <td>Max. 60.000 € zinsgünstiger Kredit + 15 % Tilgungszuschuss + 5 % iSFP-Bonus</td>
+              <td>KfW (über Hausbank)</td>
+            </tr>
+            <tr>
+              <td>Steuerbonus Sanierung</td>
+              <td>Steuerliche Vergünstigung</td>
+              <td>20 % der Gesamtkosten von max. 200.000 € – verteilt auf 3 Jahre (7 % / 7 % / 6 %)</td>
+              <td>Finanzamt</td>
+            </tr>
+            <tr>
+              <td>Steuerbonus Handwerker</td>
+              <td>Steuerliche Vergünstigung</td>
+              <td>20 % der Handwerkerkosten von max. 6.000 € – max. 1.200 € pro Haushalt/Jahr</td>
+              <td>Finanzamt</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="foerderung-table-cards">
+          <article class="foerderung-table-card">
+            <h5>BEG EM Zuschuss (BAFA)</h5>
+            <p><strong>Art:</strong> Einmaliger Zuschuss</p>
+            <p><strong>Höhe:</strong> 15 %, mit iSFP bis max. 60.000 € förderfähige Ausgaben.</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>BEG WG Kredit 262 (KfW)</h5>
+            <p><strong>Art:</strong> Darlehen + Tilgungszuschuss</p>
+            <p><strong>Höhe:</strong> Bis 60.000 € Kredit + 15 % TZ + 5 % iSFP-Bonus.</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Steuerbonus Sanierung (Finanzamt)</h5>
+            <p><strong>Art:</strong> Steuerliche Vergünstigung</p>
+            <p><strong>Höhe:</strong> 20 % von max. 200.000 €, verteilt über 3 Jahre.</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Steuerbonus Handwerker (Finanzamt)</h5>
+            <p><strong>Art:</strong> Steuerliche Vergünstigung</p>
+            <p><strong>Höhe:</strong> 20 % von max. 6.000 € Handwerkerkosten, max. 1.200 €/Jahr.</p>
+          </article>
+        </div>
+      </div>
+
+      <h3>Neubau und Komplettsanierung zum Effizienzhaus</h3>
+      <p>Gilt bei Erneuerung, Ersatz oder erstmaligem Einbau im Rahmen eines energieeffizienten Neubaus oder einer Komplettsanierung.</p>
+      <div class="foerderung-table-wrap foerderung-table-wrap--responsivecards">
+        <table class="foerderung-table">
+          <thead>
+            <tr>
+              <th>Förderprogramm</th>
+              <th>Art</th>
+              <th>Höhe</th>
+              <th>Fördergeber</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BEG WG Zuschuss 461</td>
+              <td>Einmaliger Zuschuss</td>
+              <td>20–50 % der förderfähigen Kosten von max. 150.000 € (bis max. 75.000 € pro Wohneinheit) + 5 % iSFP-Bonus</td>
+              <td>KfW</td>
+            </tr>
+            <tr>
+              <td>BEG WG Kredit 261</td>
+              <td>Darlehen + Tilgungszuschuss</td>
+              <td>Max. 150.000 € Kredit + 20–50 % Tilgungszuschuss + 5 % iSFP-Bonus</td>
+              <td>KfW (über Hausbank)</td>
+            </tr>
+            <tr>
+              <td>Steuerbonus Sanierung</td>
+              <td>Steuerliche Vergünstigung</td>
+              <td>20 % der Gesamtkosten von max. 200.000 € – verteilt auf 3 Jahre</td>
+              <td>Finanzamt</td>
+            </tr>
+            <tr>
+              <td>Steuerbonus Handwerker</td>
+              <td>Steuerliche Vergünstigung</td>
+              <td>20 % von max. 6.000 € Handwerkerkosten – max. 1.200 €/Jahr</td>
+              <td>Finanzamt</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="foerderung-table-cards">
+          <article class="foerderung-table-card">
+            <h5>BEG WG Zuschuss 461</h5>
+            <p><strong>Art:</strong> Einmaliger Zuschuss (KfW)</p>
+            <p><strong>Höhe:</strong> 20–50 %, bis 75.000 €/Wohneinheit + ggf. iSFP-Bonus.</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>BEG WG Kredit 261</h5>
+            <p><strong>Art:</strong> Darlehen + Tilgungszuschuss (KfW)</p>
+            <p><strong>Höhe:</strong> Bis 150.000 € Kredit + 20–50 % TZ + 5 % iSFP-Bonus.</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Steuerbonus Sanierung</h5>
+            <p><strong>Art:</strong> Steuerliche Vergünstigung</p>
+            <p><strong>Höhe:</strong> 20 % von max. 200.000 € Gesamtkosten.</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Steuerbonus Handwerker</h5>
+            <p><strong>Art:</strong> Steuerliche Vergünstigung</p>
+            <p><strong>Höhe:</strong> 20 % von max. 6.000 € Handwerkerkosten.</p>
+          </article>
+        </div>
+      </div>
+
+      <h3>Einbruchschutz und Barrierefreiheit</h3>
+      <div class="foerderung-table-wrap foerderung-table-wrap--responsivecards">
+        <table class="foerderung-table">
+          <thead>
+            <tr>
+              <th>Maßnahme</th>
+              <th>Programm</th>
+              <th>Höhe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Einbruchschutz (z. B. RC2-Fenster, Garagentore, Rollläden)</td>
+              <td>KfW 455-E (derzeit eingestellt, Stand Jan. 2024)</td>
+              <td>10–20 % je nach Investitionssumme</td>
+            </tr>
+            <tr>
+              <td>Barrierefreiheit (z. B. schwellenlose Türen, automatische Antriebe)</td>
+              <td>KfW 455-B Zuschuss oder KfW 159 Kredit</td>
+              <td>10–12,5 % Zuschuss oder bis zu 50.000 € Kredit</td>
+            </tr>
+            <tr>
+              <td>Sommerlicher Wärmeschutz (z. B. Rollläden, Sonnenschutz)</td>
+              <td>BEG EM Zuschuss</td>
+              <td>15 % + 5 % iSFP-Bonus</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="foerderung-table-cards">
+          <article class="foerderung-table-card">
+            <h5>Einbruchschutz</h5>
+            <p><strong>Programm:</strong> KfW 455-E (Stand Jan. 2024 eingestellt)</p>
+            <p><strong>Höhe:</strong> 10–20 % je nach Investitionssumme.</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Barrierefreiheit</h5>
+            <p><strong>Programm:</strong> KfW 455-B oder KfW 159</p>
+            <p><strong>Höhe:</strong> 10–12,5 % Zuschuss oder bis 50.000 € Kredit.</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Sommerlicher Wärmeschutz</h5>
+            <p><strong>Programm:</strong> BEG EM Zuschuss</p>
+            <p><strong>Höhe:</strong> 15 % + 5 % iSFP-Bonus.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="foerderung-callout">
+        <h4><span class="foerderung-callout__badge">Wichtig</span>Zusätzlich 5 % Bonus mit Sanierungsfahrplan (iSFP)</h4>
+        <p>Zum regulären Fördersatz erhalten Sie weitere 5 % Bonus, wenn Sie einen individuellen Sanierungsfahrplan (iSFP) vorlegen.</p>
+        <ul>
+          <li>Die geförderten Maßnahmen werden innerhalb von max. 15 Jahren vollständig umgesetzt.</li>
+          <li>Die Umsetzung erfolgt in sinnvoll aufeinander abgestimmten Schritten.</li>
+          <li>Mindestens die im Sanierungsplan definierte Effizienzhaus-Stufe wird erreicht.</li>
+        </ul>
+        <p>Bei einer Komplettsanierung in einem einzigen Schritt wird der iSFP-Bonus nicht gewährt. Ob Ihre Maßnahme als iSFP-Maßnahme zählt, prüft ein Energieeffizienz-Experte.</p>
+      </div>
+
+      <p class="foerderung-muted">Alle Angaben ohne Gewähr. Prüfen Sie vor Antragstellung die aktuellen Bedingungen beim jeweiligen Fördergeber.</p>
+    </div>
+  </section>
+
+  <section class="foerderung-section">
+    <div class="container">
+      <div class="foerderung-cta-strip">
+        <p><strong>Welche Förderung steht Ihnen konkret zu?</strong> Finden Sie es jetzt heraus.</p>
+        <a class="homepage-btn" href="https://förderheld.com/foerdermittelcheck-df/" target="_blank" rel="noopener">Kostenlosen Fördermittel-Check starten</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-alt foerderung-section" id="foerderung-fenster">
+    <div class="container">
+      <h2>Förderung Fenster</h2>
+      <h3>Welche Fenster werden gefördert?</h3>
+      <p>Neue Fenster werden gefördert, wenn sie folgende U-Wert-Anforderungen erfüllen:</p>
+      <div class="foerderung-table-wrap foerderung-table-wrap--responsivecards">
+        <table class="foerderung-table">
+          <thead>
+            <tr>
+              <th>Fenstertyp</th>
+              <th>Max. U-Wert (Uw)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Fenster mit Mehrscheiben-Isolierverglasung</td><td>0,95 W/(m²K)</td></tr>
+            <tr><td>Dachfenster</td><td>1,0 W/(m²K)</td></tr>
+            <tr><td>Barrierearme oder einbruchhemmende Fenster</td><td>1,1 W/(m²K)</td></tr>
+            <tr><td>Ertüchtigung bestehender Fenster / Kastenfenster / Sonderverglasung</td><td>1,3 W/(m²K)</td></tr>
+            <tr><td>Fenster an Baudenkmalen</td><td>1,4 W/(m²K), mit echten glasteilenden Sprossen: 1,6</td></tr>
+            <tr><td>Ertüchtigung an Baudenkmalen</td><td>1,6 W/(m²K)</td></tr>
+          </tbody>
+        </table>
+        <div class="foerderung-table-cards">
+          <article class="foerderung-table-card">
+            <h5>Mehrscheiben-Isolierverglasung</h5>
+            <p><strong>Max. U-Wert:</strong> 0,95 W/(m²K)</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Dachfenster</h5>
+            <p><strong>Max. U-Wert:</strong> 1,0 W/(m²K)</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Barrierearme / einbruchhemmende Fenster</h5>
+            <p><strong>Max. U-Wert:</strong> 1,1 W/(m²K)</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Ertüchtigung / Kastenfenster / Sonderverglasung</h5>
+            <p><strong>Max. U-Wert:</strong> 1,3 W/(m²K)</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Fenster an Baudenkmalen</h5>
+            <p><strong>Max. U-Wert:</strong> 1,4 W/(m²K), mit echten glasteilenden Sprossen: 1,6</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Ertüchtigung an Baudenkmalen</h5>
+            <p><strong>Max. U-Wert:</strong> 1,6 W/(m²K)</p>
+          </article>
+        </div>
+      </div>
+      <p>Auch die Ertüchtigung bestehender Fenster (z. B. Austausch der Scheiben, Erneuerung der Dichtungen) ist förderfähig.</p>
+
+      <div class="foerderung-topic-grid">
+        <article class="foerderung-topic-card">
+          <h4>Fenster-Förderung Barrierefreiheit (KfW 455-B / 159)</h4>
+          <p>Barrierearme Fenster müssen mit geringem Kraftaufwand bedienbar sein.</p>
+          <span class="foerderung-kriterium">Drehmoment am Griff &lt; 5 Nm, Kraft &lt; 30 N, Griffhöhe max. 1,05 m.</span>
+          <span class="foerderung-kriterium">Wenn baulich nicht möglich, sind automatische Bedienungs- und Antriebssysteme förderfähig.</span>
+        </article>
+        <article class="foerderung-topic-card">
+          <h4>Fenster-Förderung Einbruchschutz (KfW 455-E)</h4>
+          <p>Einbruchhemmende Fenster ab Widerstandsklasse RC 2 nach DIN EN 1627 sind förderfähig.</p>
+          <span class="foerderung-kriterium">Auch ohne Nachweis über die Festigkeit der umgebenden Wände.</span>
+        </article>
+      </div>
+
+      <h4>Vorteile moderner Fenster</h4>
+      <div class="foerderung-benefit-layout">
+        <ul class="foerderung-benefit-grid">
+          <li>Besserer thermischer Komfort und Wärmedämmung</li>
+          <li>Niedrigere Heizkosten</li>
+          <li>Verbesserter Schallschutz</li>
+          <li>Erhöhte Einbruchsicherheit</li>
+          <li>Mehr Tageslicht durch moderne schmale Rahmen</li>
+          <li>Steigerung des Immobilienwertes</li>
+          <li>Senkung des CO₂-Ausstoßes</li>
+        </ul>
+        <figure class="foerderung-benefit-image">
+          <img src="https://deutscher-fenstershop.de/grafik/fenstertypen/passivhausfenster.jpg" alt="Passivhausfenster mit hoher Energieeffizienz">
+        </figure>
+      </div>
+
+      <div class="foerderung-inline-note">
+        <p>Die Anfangsinvestition amortisiert sich durch die Einsparungen – mit staatlicher Förderung noch schneller.</p>
+      </div>
+
+      <div class="foerderung-cta-strip">
+        <p><strong>Welche Förderung steht Ihnen konkret zu?</strong> Finden Sie es jetzt heraus.</p>
+        <a class="homepage-btn" href="https://förderheld.com/foerdermittelcheck-df/" target="_blank" rel="noopener">Kostenlosen Fördermittel-Check starten</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-section" id="foerderung-tueren">
+    <div class="container">
+      <h2>Förderung Türen</h2>
+      <h3>Welche Türen werden gefördert?</h3>
+      <p>Haustüren, Wohnungseingangstüren, Balkontüren und Terrassentüren werden gefördert, wenn sie diese U-Wert-Anforderungen erfüllen:</p>
+      <div class="foerderung-table-wrap foerderung-table-wrap--responsivecards">
+        <table class="foerderung-table">
+          <thead>
+            <tr>
+              <th>Türentyp</th>
+              <th>Max. U-Wert (UD / Uw)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Balkontüren / Terrassentüren mit Mehrscheiben-Isolierverglasung</td><td>0,95 W/(m²K)</td></tr>
+            <tr><td>Barrierearme oder einbruchhemmende Balkontüren / Terrassentüren</td><td>1,1 W/(m²K)</td></tr>
+            <tr><td>Balkontüren / Terrassentüren mit Sonderverglasung</td><td>1,1 W/(m²K)</td></tr>
+            <tr><td>Hauseingangstüren, Wohnungseingangstüren</td><td>1,3 W/(m²K)</td></tr>
+            <tr><td>Ertüchtigung von Balkontüren / Terrassentüren</td><td>1,3 W/(m²K)</td></tr>
+            <tr><td>Türen an Baudenkmalen</td><td>1,4 W/(m²K), mit echten glasteilenden Sprossen: 1,6</td></tr>
+            <tr><td>Ertüchtigung an Baudenkmalen</td><td>1,6 W/(m²K)</td></tr>
+          </tbody>
+        </table>
+        <div class="foerderung-table-cards">
+          <article class="foerderung-table-card">
+            <h5>Balkontüren / Terrassentüren (Isolierverglasung)</h5>
+            <p><strong>Max. U-Wert:</strong> 0,95 W/(m²K)</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Barrierearme / einbruchhemmende Balkontüren</h5>
+            <p><strong>Max. U-Wert:</strong> 1,1 W/(m²K)</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Balkontüren / Terrassentüren (Sonderverglasung)</h5>
+            <p><strong>Max. U-Wert:</strong> 1,1 W/(m²K)</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Hauseingangstüren, Wohnungseingangstüren</h5>
+            <p><strong>Max. U-Wert:</strong> 1,3 W/(m²K)</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Ertüchtigung von Balkontüren / Terrassentüren</h5>
+            <p><strong>Max. U-Wert:</strong> 1,3 W/(m²K)</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Türen an Baudenkmalen</h5>
+            <p><strong>Max. U-Wert:</strong> 1,4 W/(m²K), mit echten glasteilenden Sprossen: 1,6</p>
+          </article>
+          <article class="foerderung-table-card">
+            <h5>Ertüchtigung an Baudenkmalen</h5>
+            <p><strong>Max. U-Wert:</strong> 1,6 W/(m²K)</p>
+          </article>
+        </div>
+      </div>
+      <div class="foerderung-topic-grid">
+        <article class="foerderung-topic-card">
+          <h4>Türen-Förderung Barrierefreiheit (KfW 455-B / 159)</h4>
+          <p>Barrierearme Balkon- und Terrassentüren müssen mit geringem Kraftaufwand bedienbar sein.</p>
+          <span class="foerderung-kriterium">Die untere Schwelle darf max. 2 cm hoch sein.</span>
+        </article>
+        <article class="foerderung-topic-card">
+          <h4>Türen-Förderung Einbruchschutz (KfW 455-E)</h4>
+          <p>Einbruchhemmende Türen ab Widerstandsklasse RC 2 nach DIN EN 1627 sind förderfähig.</p>
+        </article>
+      </div>
+
+      <h4>Vorteile moderner Haustüren</h4>
+      <div class="foerderung-benefit-layout">
+        <ul class="foerderung-benefit-grid">
+          <li>Optimierte Wärmedämmung</li>
+          <li>Reduzierte Heizkosten</li>
+          <li>Individueller Schallschutz</li>
+          <li>Erhöhter Einbruchschutz</li>
+          <li>Leichtgängige Bedienung</li>
+          <li>Steigerung von Wohnkomfort und Immobilienwert</li>
+          <li>Senkung des CO₂-Ausstoßes</li>
+        </ul>
+        <figure class="foerderung-benefit-image">
+          <img src="https://deutscher-fenstershop.de/grafik/home/haustueren.png" alt="Moderne Aluminium-Haustür">
+        </figure>
+      </div>
+
+      <div class="foerderung-cta-strip">
+        <p><strong>Welche Förderung steht Ihnen konkret zu?</strong> Finden Sie es jetzt heraus.</p>
+        <a class="homepage-btn" href="https://förderheld.com/foerdermittelcheck-df/" target="_blank" rel="noopener">Kostenlosen Fördermittel-Check starten</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-alt foerderung-section" id="foerderung-garagentore">
+    <div class="container">
+      <h2>Förderung Garagentore</h2>
+      <h3>Wird mein neues Garagentor gefördert?</h3>
+      <article class="foerderung-topic-card">
+        <p>Ja – die Förderung ist möglich, wenn das Garagentor RC 2 oder besser nach DIN/TS 18194 bzw. WK2 oder besser nach DIN V ENV 1627 erfüllt.</p>
+        <span class="foerderung-kriterium">Die Förderung läuft über Einbruchschutz, nicht über Energieeffizienz.</span>
+        <span class="foerderung-kriterium">Besonders relevant bei Garagen mit direkter Verbindung zum Wohnhaus.</span>
+        <span class="foerderung-kriterium">Achten Sie auf Herstellerkennzeichnung und Nachweis über zertifizierten, fachgerechten Einbau.</span>
+      </article>
+
+      <h3>KfW-Kredit 159 für einbruchhemmende Garagentore</h3>
+      <div class="foerderung-fact-grid">
+        <article class="foerderung-fact-item">
+          <strong>ab 2,48 %</strong>
+          <span>effektiver Jahreszins</span>
+        </article>
+        <article class="foerderung-fact-item">
+          <strong>bis 50.000 €</strong>
+          <span>pro Wohneinheit, altersunabhängig</span>
+        </article>
+        <article class="foerderung-fact-item">
+          <strong>Flexibel</strong>
+          <span>Gesamtauszahlung oder Teilbeträge</span>
+        </article>
+        <article class="foerderung-fact-item">
+          <strong>2 Darlehensarten</strong>
+          <span>Annuität oder endfälliges Darlehen</span>
+        </article>
+      </div>
+
+      <article class="foerderung-target-card">
+        <h4>Wer wird gefördert?</h4>
+        <ul class="foerderung-target-list">
+          <li>Privatpersonen (Eigentümer und Mieter)</li>
+          <li>Wohnungseigentümergemeinschaften</li>
+          <li>Bauträger, Wohnungsunternehmen und -genossenschaften</li>
+          <li>Körperschaften und Anstalten des öffentlichen Rechts</li>
+        </ul>
+      </article>
+
+      <div class="foerderung-callout">
+        <h4><span class="foerderung-callout__badge">Hinweis</span>Aktueller Programmstatus</h4>
+        <p>Das Zuschuss-Programm KfW 455-E (Einbruchschutz) ist derzeit eingestellt (Stand Januar 2024). Der Kredit 159 ist weiterhin verfügbar.</p>
+      </div>
+
+      <h4>Wichtig zum Antragsprozess</h4>
+      <ul class="foerderung-steps-inline">
+        <li data-step="1">Kredit wird über einen Finanzierungspartner bei der KfW beantragt (nicht direkt).</li>
+        <li data-step="2">Mit den Maßnahmen darf erst nach Erhalt der Förderzusage begonnen werden.</li>
+        <li data-step="3">Rückwirkende Förderung ist ausgeschlossen.</li>
+        <li data-step="4">Vorzeitige Vertragsabschlüsse sind nach Beratung und KfW-Formular möglich.</li>
+      </ul>
+
+      <h4>Vorteile moderner Garagentore</h4>
+      <div class="foerderung-benefit-layout">
+        <ul class="foerderung-benefit-grid">
+          <li>Erhöhter Einbruchschutz (RC 2 und höher)</li>
+          <li>Verbesserte Wärmedämmung bei beheizten Garagen</li>
+          <li>Leiser und komfortabler Antrieb</li>
+          <li>Smart-Home-Integration möglich</li>
+          <li>Steigerung des Immobilienwertes</li>
+          <li>Langlebige und wartungsarme Konstruktion</li>
+        </ul>
+        <figure class="foerderung-benefit-image">
+          <img src="https://deutscher-fenstershop.de/grafik/garagentor/sektionaltor/garagentor-schlupftuer.png" alt="Sektionaltor mit Schlupftür und Einbruchschutz">
+        </figure>
+      </div>
+
+      <div class="foerderung-inline-note">
+        <p><strong>Hinweis:</strong> Die konkrete Produktauswahl für Fenster, Türen und Garagentore erfolgt nach dem Fördermittelcheck.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-section">
+    <div class="container">
+      <div class="foerderung-cta-strip">
+        <p><strong>Welche Förderung steht Ihnen konkret zu?</strong> Finden Sie es jetzt heraus.</p>
+        <a class="homepage-btn" href="https://förderheld.com/foerdermittelcheck-df/" target="_blank" rel="noopener">Kostenlosen Fördermittel-Check starten</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-section" id="voraussetzungen">
+    <div class="container">
+      <h2>Voraussetzungen</h2>
+      <div class="foerderung-cards">
+        <article class="foerderung-card">
+          <h4>Voraussetzungen für BAFA und KfW</h4>
+          <ul>
+            <li>Technische Mindestanforderungen (U-Werte bzw. Widerstandsklassen) müssen erfüllt sein.</li>
+            <li>Fachunternehmen muss die Arbeiten ausführen; Eigenleistungen sind ausgeschlossen.</li>
+            <li>Antrag vor Auftragsvergabe stellen; Angebote dürfen vorher eingeholt werden.</li>
+            <li>Energieeffizienz-Experte ist bei energetischen Maßnahmen Pflicht.</li>
+            <li>KfW: Bauantrag/Bauanzeige des Wohngebäudes muss mind. 5 Jahre zurückliegen.</li>
+          </ul>
+        </article>
+        <article class="foerderung-card">
+          <h4>Voraussetzungen für den Steuerbonus (§ 35c EStG)</h4>
+          <ul>
+            <li>Sanierungsbeginn nach dem 31.12.2019, Abschluss vor dem 01.01.2030.</li>
+            <li>Immobilie muss selbst bewohnt werden (anteilig möglich).</li>
+            <li>Gebäude muss im EWR liegen.</li>
+            <li>Gebäude bei Sanierungsbeginn mind. 10 Jahre alt.</li>
+            <li>Fachunternehmen + Bescheinigung über korrekte Umsetzung erforderlich.</li>
+            <li>Technische Mindestanforderungen gemäß ESanMV.</li>
+          </ul>
+        </article>
+        <article class="foerderung-card">
+          <h4>Alternative: Handwerkerrechnung (§ 35a Abs. 3 EStG)</h4>
+          <ul>
+            <li>Nur Arbeitslohn, Fahrtkosten und Maschinenmiete sind begünstigt.</li>
+            <li>Materialkosten müssen separat auf der Rechnung ausgewiesen sein.</li>
+            <li>Bezahlung nur per Überweisung (keine Barzahlung).</li>
+            <li>Max. 20 % von 6.000 € = max. 1.200 € pro Jahr.</li>
+            <li>Aufbewahrungsfrist für Rechnungen und Belege: 2 Jahre.</li>
+            <li>Gilt auch für Garagentoreinbau bei Renovierung/Sanierung (nicht Neubau).</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-alt foerderung-section" id="energieberatung">
+    <div class="container">
+      <h2>80 % Zuschuss für Energieberatung</h2>
+      <p>Die Kosten für einen zertifizierten Energieberater werden durch den BAFA-Zuschuss EBW (Bundesförderung für Energieberatung für Wohngebäude) zu 80 % übernommen:</p>
+      <ul>
+        <li>Max. 1.300 € für Ein- und Zweifamilienhäuser</li>
+        <li>Max. 1.700 € für Wohngebäude mit drei und mehr Wohneinheiten</li>
+        <li>Einmalig max. 500 € für die Erläuterung des Berichts in einer WEG-Versammlung</li>
+      </ul>
+      <p>Der Förderantrag wird vom Experten online vor Beginn der Beratung gestellt. Der Zuschuss wird an den Experten ausgezahlt und mit dem Honorar verrechnet.</p>
+      <p><strong>Voraussetzung:</strong> Gebäude in Deutschland, Bauantrag/Bauanzeige mind. 10 Jahre zurückliegend, mind. 50 % der Fläche zu Wohnzwecken genutzt.</p>
+
+      <div class="foerderung-callout">
+        <h4><span class="foerderung-callout__badge">Hinweis</span>Schneller mit FörderHeld</h4>
+        <p>Sie möchten nicht wochenlang auf einen Energieberater-Termin warten? Über unseren Partner FörderHeld können Sie den Fördermittelcheck online in nur 5 Minuten durchführen und den BAFA-Antrag direkt starten – schnell, unkompliziert und digital.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-section" id="foerderung-richtig-beantragen">
+    <div class="container">
+      <h2>Förderung richtig beantragen</h2>
+      <p>Förderfähig sind nur Maßnahmen, mit denen zum Zeitpunkt der Antragstellung noch nicht begonnen wurde.</p>
+
+      <div class="foerderung-process-grid">
+        <article class="foerderung-process">
+          <h4>BAFA-Zuschuss beantragen</h4>
+          <ol>
+            <li>Energieeffizienz-Experten beauftragen und TPB-ID erstellen lassen.</li>
+            <li>BAFA-Förderantrag online über das Zuschussportal stellen.</li>
+            <li>Förderzusage abwarten, erst danach mit Maßnahmen beginnen.</li>
+            <li>Verwendungsnachweis spätestens 6 Monate nach Ablauf einreichen.</li>
+            <li>Zuschuss nach positiver Prüfung auf Ihr Konto erhalten.</li>
+          </ol>
+        </article>
+
+        <article class="foerderung-process">
+          <h4>KfW-Zuschuss 461 beantragen</h4>
+          <ol>
+            <li>Energieeffizienz-Experten beauftragen, BzA erstellen lassen.</li>
+            <li>KfW-Zuschuss beantragen und Bestätigung übermitteln.</li>
+            <li>Identität nachweisen, dann Maßnahmen umsetzen.</li>
+            <li>Bestätigung nach Durchführung über das Portal einreichen.</li>
+            <li>Direktzuschuss auf Ihr Konto erhalten.</li>
+          </ol>
+        </article>
+
+        <article class="foerderung-process">
+          <h4>KfW-Förderkredit 261/262 beantragen</h4>
+          <ol>
+            <li>Energieeffizienz-Experten beauftragen, BzA erstellen lassen.</li>
+            <li>Kredit über Finanzierungspartner beantragen.</li>
+            <li>Kreditvertrag abschließen, Auszahlung auf Ihr Konto.</li>
+            <li>Bestätigung nach Durchführung an KfW weiterleiten.</li>
+            <li>Tilgungszuschuss wird direkt von der Restschuld abgezogen.</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="foerderung-alt foerderung-section" id="jetzt-foerderung-sichern">
+    <div class="container">
+      <h2>Jetzt Ihre Förderung sichern</h2>
+      <p>Prüfen Sie in wenigen Minuten, welche Förderung Sie für Ihre neuen Fenster, Türen oder Garagentore erhalten:</p>
+      <p><a class="homepage-btn" href="https://förderheld.com/foerdermittelcheck-df/" target="_blank" rel="noopener">Kostenlosen Fördermittel-Check starten</a></p>
+
+      <h3>Nächster Schritt:</h3>
+      <p>Starten Sie den Fördermittelcheck, um Ihre passende Förderung zu ermitteln und die weitere Produktauswahl darauf abzustimmen.</p>
+
+      <p><strong>Fragen?</strong> Sie erreichen uns telefonisch unter +49 7221 / 3022-333 oder per WhatsApp unter +49 177 3872159.</p>
+
+      <p class="foerderung-legal">Alle Angaben ohne Gewähr. Die genannten Förderbedingungen und Zuschusshöhen können sich ändern. Prüfen Sie vor der Antragstellung die aktuellen Bedingungen des gewählten Förderprogramms direkt bei <a href="https://www.bafa.de">BAFA</a>, <a href="https://www.kfw.de">KfW</a> oder Ihrem Finanzamt.</p>
+    </div>
+  </section>
+</main>
