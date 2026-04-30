@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card</title>
+  <style>
+    .category-page {
+      --dfs-blue: #003d6b;
+      font-family: "Inter", Arial, sans-serif;
+      color: #2d2d2d;
+      background: #fff;
+    }
+
+    .category-page * {
+      box-sizing: border-box;
+    }
+
+    .category-page__product {
+      border: 0;
+      border-radius: 12px;
+      background: #fff;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 584px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      max-width: 320px;
+    }
+
+    .category-page__product-image {
+      padding: 18px;
+      min-height: 350px;
+      height: 60%;
+      display: flex;
+      align-items: center;
+    }
+
+    .category-page__product-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .category-page__product-head small {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #000;
+    }
+
+    .category-page__product-head strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--dfs-blue);
+    }
+
+    .category-page__divider {
+      display: none;
+    }
+
+    .category-page__specs {
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #000;
+    }
+
+    .category-page__spec {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .category-page__spec span:first-child {
+      font-weight: 700;
+    }
+
+    .category-page__product-price {
+      margin: 4px 0 6px;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #5b5b5b;
+    }
+
+    .category-page__product-price strong {
+      font-size: 22px;
+      line-height: 1.1;
+      font-weight: 700;
+      color: #1f1f1f;
+      margin-left: 4px;
+    }
+
+    .category-page a.category-page__product-btn {
+      margin-top: auto;
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: #ff6b35;
+      border: 2px solid #ff6b35;
+      color: #fff;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 700;
+      text-transform: capitalize;
+      transition: all 0.2s ease;
+      outline: none;
+      text-decoration: none;
+    }
+
+    .category-page a.category-page__product-btn:hover {
+      background: #e85a28;
+      border-color: #e85a28;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 767px) {
+      .category-page__product-image {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="category-page">
+    <article class="category-page__product">
+      <div class="category-page__product-image">
+        <img src="../assets/images/category-page/product-card.png" alt="Produktbild">
+      </div>
+      <div class="category-page__product-head">
+        <small>Kunststofffenster</small>
+        <strong>Drutex Iglo 5 &amp; Iglo 5 Classic</strong>
+      </div>
+      <div class="category-page__divider"></div>
+      <div class="category-page__specs">
+        <div class="category-page__spec"><span>Kammer</span><span>5</span></div>
+        <div class="category-page__spec"><span>Dichtungen</span><span>2</span></div>
+        <div class="category-page__spec"><span>Einbautiefe</span><span>70 mm</span></div>
+        <div class="category-page__spec"><span>Energieeffizienz</span><span>Uw ≥ 0,89</span></div>
+      </div>
+      <p class="category-page__product-price">ab <strong>399 €</strong></p>
+      <a class="category-page__product-btn" href="#">Zum Produkt</a>
+    </article>
+  </div>
+</body>
+</html>
